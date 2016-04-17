@@ -14,6 +14,8 @@ Enjoy!
 
 ## ArchLinux
 
+* [Pacman: clean cache](archlinux/pacman-clean-cache.md)
+
 ## Ubuntu
 
 * [Change default text editor](ubuntu/change-default-text-editor.md)
