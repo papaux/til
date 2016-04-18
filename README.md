@@ -6,11 +6,16 @@ Enjoy!
 
 ## Categories
 
+* [Linux General](#linux)
 * [Arch Linux](#archlinux)
 * [Ubuntu](#ubuntu)
 * [Markdown](#markdown)
 * [NodeJS](#nodejs)
 * [Docker](#docker)
+
+## Linux
+
+* [vi: write as sudo](linux/vi-write-sudo.md)
 
 ## ArchLinux
 
