@@ -9,6 +9,7 @@ Enjoy!
 * [Linux General](#linux)
 * [Arch Linux](#archlinux)
 * [Ubuntu](#ubuntu)
+* [Git](#git)
 * [Markdown](#markdown)
 * [NodeJS](#nodejs)
 * [Docker](#docker)
@@ -24,6 +25,10 @@ Enjoy!
 ## Ubuntu
 
 * [Change default text editor](ubuntu/change-default-text-editor.md)
+
+## Git
+
+* [Rebase with conflicts](git/rebase-with-conflicts.md)
 
 ## Markdown
 
