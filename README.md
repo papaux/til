@@ -1,8 +1,8 @@
 # TIL
 
-My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TIL are small I borrowed the concept from https://github.com/jbranchaud/til 
+My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-Enjoy!
+There are 7 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -29,6 +29,7 @@ Enjoy!
 ## Git
 
 * [Rebase with conflicts](git/rebase-with-conflicts.md)
+* [Kdiff as mergetool without auto merge](git/kdiff-as-mergetool.md)
 
 ## Markdown
 
