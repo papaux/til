@@ -17,6 +17,7 @@ There are 7 TILs in this repository! Enjoy!
 ## Linux
 
 * [vi: write as sudo](linux/vi-write-sudo.md)
+* [tcpdump: filters](linux/tcpdump-filters.md)
 
 ## ArchLinux
 
