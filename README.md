@@ -2,7 +2,7 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 7 TILs in this repository! Enjoy! 
+There are 9 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -41,3 +41,5 @@ There are 7 TILs in this repository! Enjoy!
  * [Update globally installed packages](nodejs/update-globally-installed-packages.md)
 
 ## Docker
+
+ * [Shell from running container](docker/shell-running-container.md)
