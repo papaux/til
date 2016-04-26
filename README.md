@@ -2,7 +2,7 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 9 TILs in this repository! Enjoy! 
+There are 10 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -31,6 +31,7 @@ There are 9 TILs in this repository! Enjoy!
 
 * [Rebase with conflicts](git/rebase-with-conflicts.md)
 * [Kdiff as mergetool without auto merge](git/kdiff-as-mergetool.md)
+* [Clean including untracked files](git/clean-including-untracked-files.md)
 
 ## Markdown
 
