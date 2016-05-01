@@ -2,13 +2,13 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 12 TILs in this repository! Enjoy! 
+There are 13 TILs in this repository! Enjoy! 
 
 ## Categories
 
 * [Linux General](#linux)
 * [Arch Linux](#archlinux)
-* [Ubuntu](#ubuntu)
+* [Ubuntu/Debian](#ubuntu--debian)
 * [Git](#git)
 * [Markdown](#markdown)
 * [NodeJS](#nodejs)
@@ -23,9 +23,10 @@ There are 12 TILs in this repository! Enjoy!
 
 * [Pacman: clean cache](archlinux/pacman-clean-cache.md)
 
-## Ubuntu
+## Ubuntu / Debian
 
 * [Change default text editor](ubuntu/change-default-text-editor.md)
+* [View packages support status](ubuntu/view-packages-support-status.md)
 
 ## Git
 
