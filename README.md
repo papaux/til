@@ -2,7 +2,7 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 14 TILs in this repository! Enjoy! 
+There are 15 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -18,6 +18,7 @@ There are 14 TILs in this repository! Enjoy!
 
 * [vi: write as sudo](linux/vi-write-sudo.md)
 * [tcpdump: filters](linux/tcpdump-filters.md)
+* [System resource usage per application](linux/system-resource-usage-per-application.md)
 
 ## ArchLinux
 
