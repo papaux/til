@@ -2,7 +2,7 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 20 TILs in this repository! Enjoy! 
+There are 21 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -54,3 +54,7 @@ There are 20 TILs in this repository! Enjoy!
 ## Docker
 
  * [Shell from running container](docker/shell-running-container.md)
+
+## C++
+
+ * [gdb: pretty print](cpp/gdb-pretty-print.md)
