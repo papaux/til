@@ -2,7 +2,7 @@
 
 My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
 
-There are 22 TILs in this repository! Enjoy! 
+There are 23 TILs in this repository! Enjoy! 
 
 ## Categories
 
@@ -57,5 +57,6 @@ There are 22 TILs in this repository! Enjoy!
 
 ## C++
 
+ * [gdb: commands](cpp/gdb-commands.md)
  * [gdb: pretty print](cpp/gdb-pretty-print.md)
  * [gdb: navigate in threads](cpp/gdb-navigate-in-threads.md)
