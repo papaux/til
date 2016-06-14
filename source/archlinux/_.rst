@@ -1,0 +1,9 @@
+ArchLinux
+==========
+
+
+.. toctree::
+   :maxdepth: 3
+
+   pacman-clean-cache.rst  
+   pacman-find-which-package-installed-file.rst

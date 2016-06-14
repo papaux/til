@@ -1,0 +1,19 @@
+Sphinx
+-------
+
+This page is a show case for what can be embedded in sphinx pages
+
+Paragraph markup
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a note
+
+.. warning::
+
+    This is a warning
+
+.. seealso::
+
+    This is a seealso

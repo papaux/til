@@ -1,0 +1,8 @@
+Ubuntu / Debian
+================
+
+.. toctree::
+   :maxdepth: 1
+   
+   change-default-text-editor.rst
+   view-packages-support-status.rst
