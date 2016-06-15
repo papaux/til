@@ -5,3 +5,4 @@ Docker
    :maxdepth: 3
 
    shell-running-container.rst
+   lamp-container.rst

@@ -1,7 +1,33 @@
 Sphinx
 -------
 
-This page is a show case for what can be embedded in sphinx pages
+This page is a show case for what can be embedded in sphinx pages.
+
+Text formatting
+~~~~~~~~~~~~~~~~
+
+Inline markups such as *italics*, **bold**, or ``monotype``.
+
+Lists
+~~~~~~
+
+Bullet point
+
+* item A
+* item B
+* item C
+
+OR
+
+- item A
+- item B
+- item C
+
+Numbered list
+
+#. item A
+#. item B
+#. item C
 
 Paragraph markup
 ~~~~~~~~~~~~~~~~
