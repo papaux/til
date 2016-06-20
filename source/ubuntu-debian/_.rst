@@ -6,3 +6,4 @@ Ubuntu / Debian
    
    change-default-text-editor.rst
    view-packages-support-status.rst
+   configure-timezone.rst
