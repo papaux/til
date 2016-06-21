@@ -10,3 +10,4 @@ Linux
    find-delete-files.rst
    disable-touch-pad-while-typing.rst
    vnc-server.rst
+   user-management-cheatsheet.rst
