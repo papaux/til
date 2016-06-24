@@ -11,3 +11,4 @@ Linux
    disable-touch-pad-while-typing.rst
    vnc-server.rst
    user-management-cheatsheet.rst
+   hard-disk-management.rst
