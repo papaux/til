@@ -46,3 +46,20 @@ Manage users
 
 Manage databases
 ~~~~~~~~~~~~~~~~~~~~
+
+**Export**
+
+Using mysqldump tool
+
+::
+    
+    mysqldump -u [user] -p [db_name] | gzip > [filename_to_compress.sql.gz] 
+
+**Import**
+
+Simply execute the following command
+
+::
+    gunzip < [compressed_filename.sql.gz]  | mysql -u [user] -p[password] [databasename] 
+    
+Note: There is no space between the keyword '-p' and your password.
