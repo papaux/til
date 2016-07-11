@@ -13,3 +13,4 @@ Linux
    vnc-server.rst
    user-management-cheatsheet.rst
    hard-disk-management.rst
+   simple-http-server.rst
