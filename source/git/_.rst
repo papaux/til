@@ -11,3 +11,4 @@ Git
    blame-user-friendly-interface.rst
    grep-in-logs.rst
    stash-only-unstage.rst
+   short-hash-from-full.rst
