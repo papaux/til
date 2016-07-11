@@ -9,6 +9,7 @@ Linux
    resource-usage-per-app.rst
    find-delete-files.rst
    disable-touch-pad-while-typing.rst
+   enable-tap-click-touch-pad.rst
    vnc-server.rst
    user-management-cheatsheet.rst
    hard-disk-management.rst
