@@ -1,65 +1,16 @@
 # TIL
 
-My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til 
+My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. 
+TILs are concise write-ups about everything I find useful and want to remember about these topics. 
 
-There are 24 TILs in this repository! Enjoy! 
+I borrowed the concept from https://github.com/jbranchaud/til 
 
-## Categories
+My TILs are maintained in reStructuredText markup using [Sphinx](http://www.sphinx-doc.org/en/stable/rest.html) which require a build step to be transformed in HTML.
 
-* [Linux General](#linux)
-* [Arch Linux](#archlinux)
-* [Ubuntu/Debian](#ubuntu--debian)
-* [Git](#git)
-* [Markdown](#markdown)
-* [NodeJS](#nodejs)
-* [Docker](#docker)
+There is a Makefile in root directory and a target **html** to build the documentation:
 
-## Linux
+```
+make html
+```
 
-* [vi: write as sudo](linux/vi-write-sudo.md)
-* [tcpdump: filters](linux/tcpdump-filters.md)
-* [System resource usage per application](linux/system-resource-usage-per-application.md)
-* [find: delete files](linux/find-delete-files.md)
-* [Disable touchpad while typing](linux/disable-touch-pad-while-typing.md)
-* [VNC Server](linux/vnc-server.md)
-
-## ArchLinux
-
-* [pacman: clean cache](archlinux/pacman-clean-cache.md)
-* [pacman: find which package installed a file](archlinux/pacman-find-which-package-installed-file.md)
-
-## Ubuntu / Debian
-
-* [Change default text editor](ubuntu/change-default-text-editor.md)
-* [View packages support status](ubuntu/view-packages-support-status.md)
-
-## Git
-
-* [Rebase with conflicts](git/rebase-with-conflicts.md)
-* [Kdiff as mergetool without auto merge](git/kdiff-as-mergetool.md)
-* [Clean including untracked files](git/clean-including-untracked-files.md)
-* [Reset local branch](git/reset-local-branch.md)
-* [Blame with user-friendly interface](git/blame-user-friendly-interface.md)
-* [Grep in logs](git/grep-in-logs.md)
-* [Stash only unstaged](git/stash-only-unstage.md)
-
-## Markdown
-
-* [Local Markdown HTTP server](markdown/local-markdown-http-server.md)
-
-## NodeJS
-
- * [Update globally installed packages](nodejs/update-globally-installed-packages.md)
-
-## Docker
-
- * [Shell from running container](docker/shell-running-container.md)
-
-## C++
-
- * [gdb: commands](cpp/gdb-commands.md)
- * [gdb: pretty print](cpp/gdb-pretty-print.md)
- * [gdb: navigate in threads](cpp/gdb-navigate-in-threads.md)
- 
-## PHP
- * [recursive delete](php/recursive-delete.md)
+Then you can open the index file: build/html/index.html
