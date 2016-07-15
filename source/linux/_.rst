@@ -14,3 +14,4 @@ Linux
    user-management-cheatsheet.rst
    hard-disk-management.rst
    simple-http-server.rst
+   mount-without-root.rst
