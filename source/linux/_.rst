@@ -16,3 +16,4 @@ Linux
    simple-http-server.rst
    mount-without-root.rst
    directories-most-files.rst
+   ssh-remove-hostname.rst
