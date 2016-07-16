@@ -3,7 +3,7 @@ TIL (Today I Learned)
 
 My own TIL (Today I learned) mainly about Linux commands, Linux tools and development. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til
 
-There are 35 TILs in this repository! Enjoy! 
+There are 36 TILs in this repository! Enjoy! 
 
 .. toctree::
    :maxdepth: 1
