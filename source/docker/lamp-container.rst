@@ -15,7 +15,7 @@ Here we use a prebuilt image ``tutum/lamp``
 
   ::
   
-    docker run -d -p 80:80 -p 3306:3306 -v /data/john/workspace/websites/asdf:/app/asdf --name dev-lamp tutum/lamp
+    docker run -d -p 8080:80 -p 3306:3306 -v /data/john/workspace/websites/:/app/ --name dev-lamp tutum/lamp
 
 3. Access mysql
 
