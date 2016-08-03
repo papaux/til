@@ -7,3 +7,4 @@ ArchLinux
 
    pacman-clean-cache.rst  
    pacman-find-which-package-installed-file.rst
+   gnome-autostart-script.rst
