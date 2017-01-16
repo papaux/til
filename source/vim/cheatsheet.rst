@@ -7,13 +7,20 @@ Credits to
 
 - http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
 
-Moves
-~~~~~~
+Moves on line
+~~~~~~~~~~~~~~
 - ``hjkl``: basic moves ←↓↑→
 - ``0``: go to the first column
 - ``^``: go to the first non-blank character of the line
 - ``$``: go to the end of line
 - ``g_``: go to the last non-blank character of line
+- ``fa``: go to next occurrence of the letter ``a`` on the line. ``,`` (resp. ``;``) will find the next (resp. previous) occurrence
+- ``t,``: go to just before the character ``,``
+- ``F`` and ``T``: like ``f`` and ``t`` but backward
+- ``3fa`` → find the 3rd occurrence of ``a`` on this line
+
+Moves on document
+~~~~~~~~~~~~~~~~~~
 - ``NG``: go to line N
 - ``gg``: shortcut for 1G - go to the start of the file
 - ``G``: go to last line
