@@ -17,3 +17,4 @@ Linux
    mount-without-root.rst
    directories-most-files.rst
    ssh-remove-hostname.rst
+   recursive-md5.rst
