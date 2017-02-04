@@ -12,3 +12,4 @@ Git
    grep-in-logs.rst
    stash-only-unstage.rst
    short-hash-from-full.rst
+   create-empty-branch.rst
