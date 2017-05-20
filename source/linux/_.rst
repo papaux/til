@@ -19,3 +19,4 @@ Linux
    ssh-remove-hostname.rst
    recursive-md5.rst
    sudo-timeout.rst
+   systemd-journal-size.rst
