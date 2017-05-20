@@ -10,4 +10,4 @@ ArchLinux
    pacman-aur-packages-list.rst
    pacman-reinstall-with-deps.rst
    gnome-autostart-script.rst
-
+   remove-unused-locales.rst
