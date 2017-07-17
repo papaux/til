@@ -7,4 +7,4 @@ C++
    gdb-commands.rst
    gdb-pretty-print.rst
    gdb-navigate-in-threads.rst
-   
+   benchmark.rst
