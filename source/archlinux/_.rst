@@ -12,3 +12,4 @@ ArchLinux
    pacman-list-packages-by-size.rst
    gnome-autostart-script.rst
    remove-unused-locales.rst
+   yaourt-noconfirm.rst
