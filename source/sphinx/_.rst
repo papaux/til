@@ -43,3 +43,14 @@ Paragraph markup
 .. seealso::
 
     This is a seealso
+
+Code snippets
+~~~~~~~~~~~~~
+
+The first possibility is to inclue code in a paragraph ``like this``.
+
+The second option is to have a dedicated paragraph
+
+::
+
+  some code
