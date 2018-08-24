@@ -1,0 +1,56 @@
+Sphinx
+-------
+
+This page is a show case for what can be embedded in sphinx pages.
+
+Text formatting
+~~~~~~~~~~~~~~~~
+
+Inline markups such as *italics*, **bold**, or ``monotype``.
+
+Lists
+~~~~~~
+
+Bullet point
+
+* item A
+* item B
+* item C
+
+OR
+
+- item A
+- item B
+- item C
+
+Numbered list
+
+#. item A
+#. item B
+#. item C
+
+Paragraph markup
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a note
+
+.. warning::
+
+    This is a warning
+
+.. seealso::
+
+    This is a seealso
+
+Code snippets
+~~~~~~~~~~~~~
+
+The first possibility is to inclue code in a paragraph ``like this``.
+
+The second option is to have a dedicated paragraph
+
+::
+
+  some code

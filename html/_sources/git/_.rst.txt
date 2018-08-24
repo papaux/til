@@ -1,0 +1,16 @@
+Git
+=========
+
+.. toctree::
+   :maxdepth: 1
+
+   rebase-with-conflicts.rst
+   kdiff-as-mergetool.rst
+   clean-including-untracked-files.rst
+   reset-local-branch.rst
+   blame-user-friendly-interface.rst
+   grep-in-logs.rst
+   stash-only-unstage.rst
+   short-hash-from-full.rst
+   create-empty-branch.rst
+   merge-tips.rst

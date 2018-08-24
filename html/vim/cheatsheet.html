@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>vim cheatsheet &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Markdown" href="../markdown/_.html" />
+    <link rel="prev" title="vim" href="_.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Geoffrey's TIL
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">vim</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">vim cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moves-on-line">Moves on line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moves-on-document">Moves on document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modification">Modification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-replace">Search / Replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-paste">Copy/Paste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-redo">Undo/Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macro">Macro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save">Load/Save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combine">Combine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/vi-write-sudo.html">vi: write as sudo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="_.html">vim</a> &raquo;</li>
+        
+      <li>vim cheatsheet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/vim/cheatsheet.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vim-cheatsheet">
+<h1>vim cheatsheet<a class="headerlink" href="#vim-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<p>Another vim cheatsheet based on my needs / feelings / findings.</p>
+<p>Credits to</p>
+<ul class="simple">
+<li><a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/</a></li>
+</ul>
+<div class="section" id="moves-on-line">
+<h2>Moves on line<a class="headerlink" href="#moves-on-line" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">hjkl</span></code>: basic moves ←↓↑→</li>
+<li><code class="docutils literal notranslate"><span class="pre">0</span></code>: go to the first column</li>
+<li><code class="docutils literal notranslate"><span class="pre">^</span></code>: go to the first non-blank character of the line</li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span></code>: go to the end of line</li>
+<li><code class="docutils literal notranslate"><span class="pre">g_</span></code>: go to the last non-blank character of line</li>
+<li><code class="docutils literal notranslate"><span class="pre">fa</span></code>: go to next occurrence of the letter <code class="docutils literal notranslate"><span class="pre">a</span></code> on the line. <code class="docutils literal notranslate"><span class="pre">,</span></code> (resp. <code class="docutils literal notranslate"><span class="pre">;</span></code>) will find the next (resp. previous) occurrence</li>
+<li><code class="docutils literal notranslate"><span class="pre">t,</span></code>: go to just before the character <code class="docutils literal notranslate"><span class="pre">,</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code>: like <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code> but backward</li>
+<li><code class="docutils literal notranslate"><span class="pre">3fa</span></code> → find the 3rd occurrence of <code class="docutils literal notranslate"><span class="pre">a</span></code> on this line</li>
+</ul>
+</div>
+<div class="section" id="moves-on-document">
+<h2>Moves on document<a class="headerlink" href="#moves-on-document" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">NG</span></code>: go to line N</li>
+<li><code class="docutils literal notranslate"><span class="pre">gg</span></code>: shortcut for 1G - go to the start of the file</li>
+<li><code class="docutils literal notranslate"><span class="pre">G</span></code>: go to last line</li>
+<li><code class="docutils literal notranslate"><span class="pre">w</span></code>: go to the start of the following word</li>
+<li><code class="docutils literal notranslate"><span class="pre">e</span></code>: go to the end of this word.</li>
+<li><code class="docutils literal notranslate"><span class="pre">W</span></code>: go to the start of the following word (space separator)</li>
+<li><code class="docutils literal notranslate"><span class="pre">E</span></code>: go to the end of this word (space separator)</li>
+<li><code class="docutils literal notranslate"><span class="pre">%</span></code>: Go to the corresponding (, {, [.</li>
+<li><code class="docutils literal notranslate"><span class="pre">*</span></code>: go to next occurrence of the word under the cursor</li>
+<li><code class="docutils literal notranslate"><span class="pre">#</span></code>: go to previous occurrence of the word under the cursor</li>
+</ul>
+</div>
+<div class="section" id="modification">
+<h2>Modification<a class="headerlink" href="#modification" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code>: insert after the cursor</li>
+<li><code class="docutils literal notranslate"><span class="pre">o</span></code>: insert a new line after the current one</li>
+<li><code class="docutils literal notranslate"><span class="pre">O</span></code>: insert a new line before the current one</li>
+<li><code class="docutils literal notranslate"><span class="pre">cw</span></code>: replace from the cursor to the end of the word</li>
+<li><code class="docutils literal notranslate"><span class="pre">dd</span></code>: delete (and copy) the current line</li>
+</ul>
+</div>
+<div class="section" id="search-replace">
+<h2>Search / Replace<a class="headerlink" href="#search-replace" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">/pattern</span></code>: search for pattern</li>
+<li><code class="docutils literal notranslate"><span class="pre">:%s/foo/bar/g</span></code>: find each occurrence of ‘foo’ (in all lines), and replace it with ‘bar’.</li>
+<li><code class="docutils literal notranslate"><span class="pre">:s/foo/bar/g</span></code>: find each occurrence of ‘foo’ (in the current line only), and replace it with ‘bar’.</li>
+<li><code class="docutils literal notranslate"><span class="pre">:%s/foo/bar/gc</span></code>: change each ‘foo’ to ‘bar’, but ask for confirmation first.</li>
+</ul>
+</div>
+<div class="section" id="copy-paste">
+<h2>Copy/Paste<a class="headerlink" href="#copy-paste" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code>: paste</li>
+<li><code class="docutils literal notranslate"><span class="pre">P</span></code>: paste before</li>
+<li><code class="docutils literal notranslate"><span class="pre">yy</span></code>: copy the current line, easier but equivalent to <code class="docutils literal notranslate"><span class="pre">ddP</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">paste</span></code>: enable special paste mode to turn off autoindent when you paste code</li>
+<li><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">nopaste</span></code>: turn off the paste-mode, so that auto-indenting when you type works correctly again.</li>
+</ul>
+</div>
+<div class="section" id="undo-redo">
+<h2>Undo/Redo<a class="headerlink" href="#undo-redo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code>: undo</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;C-r&gt;</span></code>: redo</li>
+</ul>
+</div>
+<div class="section" id="macro">
+<h2>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h2>
+<p>Macros are recorded in <em>registers</em> (<code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">z</span></code>).</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">qa</span></code>: start recording to register <em>a</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">q</span></code>: stop recording</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;a</span></code>: playback register <em>a</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">qaq</span></code>: delete recording stored in register <em>a</em></li>
+</ul>
+</div>
+<div class="section" id="load-save">
+<h2>Load/Save<a class="headerlink" href="#load-save" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">:e</span> <span class="pre">&lt;path/to/file&gt;</span></code>: open</li>
+<li><code class="docutils literal notranslate"><span class="pre">:w</span></code>: save</li>
+<li><code class="docutils literal notranslate"><span class="pre">:saveas</span> <span class="pre">&lt;path/to/file&gt;</span></code>: save to &lt;path/to/file&gt;</li>
+<li><code class="docutils literal notranslate"><span class="pre">:x,</span> <span class="pre">ZZ</span> <span class="pre">or</span> <span class="pre">:wq</span></code>: save and quit (:x only save if necessary)</li>
+<li><code class="docutils literal notranslate"><span class="pre">:q!</span></code>: quit without saving, also: :qa! to quit even if there are modified hidden buffers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">:bn</span> <span class="pre">(resp.</span> <span class="pre">:bp)</span></code>: show next (resp. previous) file (buffer)</li>
+</ul>
+</div>
+<div class="section" id="combine">
+<h2>Combine<a class="headerlink" href="#combine" title="Permalink to this headline">¶</a></h2>
+<p>One can combine the moves with commands in order to apply an operation from a start point to an end point:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;start</span> <span class="pre">position&gt;&lt;command&gt;&lt;end</span> <span class="pre">position&gt;</span></code></p>
+<p>For example : <code class="docutils literal notranslate"><span class="pre">0y$</span></code> means</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">0</span></code>: go to the beginning of this line</li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: yank from here</li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span></code>: up to the end of this line</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../markdown/_.html" class="btn btn-neutral float-right" title="Markdown" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_.html" class="btn btn-neutral" title="vim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Geoffrey Papaux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
