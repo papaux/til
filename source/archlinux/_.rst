@@ -11,6 +11,7 @@ ArchLinux
    pacman-aur-packages-list.rst
    pacman-reinstall-with-deps.rst
    pacman-list-packages-by-size.rst
+   pacman-maintenance.rst
    remove-unused-locales.rst
    system-installation-date.rst
    yaourt-noconfirm.rst
