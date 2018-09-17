@@ -1,4 +1,4 @@
-db: navigate in threads
+gdb: navigate in threads
 ------------------------
 
 Thread information
