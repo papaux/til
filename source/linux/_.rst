@@ -4,9 +4,9 @@ Linux
 .. toctree::
    :maxdepth: 1
 
+   performance-monitoring.rst
    vi-write-sudo.rst
    tcpdump-filters.rst
-   resource-usage-per-app.rst
    find-delete-files.rst
    disable-touch-pad-while-typing.rst
    enable-tap-click-touch-pad.rst
