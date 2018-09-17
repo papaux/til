@@ -4,19 +4,20 @@ Linux
 .. toctree::
    :maxdepth: 1
 
-   vi-write-sudo.rst
-   tcpdump-filters.rst
-   resource-usage-per-app.rst
-   find-delete-files.rst
+   cgroup.rst
+   directories-most-files.rst
    disable-touch-pad-while-typing.rst
    enable-tap-click-touch-pad.rst
-   vnc-server.rst
-   user-management-cheatsheet.rst
+   find-delete-files.rst
    hard-disk-management.rst
-   simple-http-server.rst
    mount-without-root.rst
-   directories-most-files.rst
-   ssh-remove-hostname.rst
+   performance-monitoring.rst
    recursive-md5.rst
+   simple-http-server.rst
+   ssh-remove-hostname.rst
    sudo-timeout.rst
    systemd-journal-size.rst
+   tcpdump-filters.rst
+   user-management-cheatsheet.rst
+   vi-write-sudo.rst
+   vnc-server.rst
