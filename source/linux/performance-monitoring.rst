@@ -68,6 +68,25 @@ Processes
 
 It is an advanced and interactive top command. Actually it is my advised replacement for htop.
 
+**progress**
+
+Monitoring tool to show the progress of basic coreutils linux commands such as: cp, mv, dd, tar, gzip, ...
+
+The official documentation is located here: https://github.com/Xfennec/progress
+
+A few examples from the official documentation:
+
+Monitor all current and upcoming instances of coreutils commands in a simple window: ::
+
+  watch progress -q
+
+See how your download is progressing: ::
+
+  watch progress -wc firefox
+
+Look at your Web server activity: ::
+
+  progress -c httpd
 
 File system and I/O
 ~~~~~~~~~~~~~~~~~~~
