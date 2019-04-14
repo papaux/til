@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pacman: list packages from AUR" href="pacman-aur-packages-list.html" />
     <link rel="prev" title="Pacman: clean cache" href="pacman-clean-cache.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -181,11 +183,11 @@
 <h1>Pacman: find which package installed a file<a class="headerlink" href="#pacman-find-which-package-installed-a-file" title="Permalink to this headline">¶</a></h1>
 <p>You have a file or an application on your system and you want to know which package installed this file.</p>
 <p>There is a very simple pacman builtin command:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qo</span> <span class="n">syndaemon</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qo</span> <span class="n">syndaemon</span>
 </pre></div>
 </div>
 <p>Sample output:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">syndaemon</span> <span class="ow">is</span> <span class="n">owned</span> <span class="n">by</span> <span class="n">xf86</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="n">synaptics</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">syndaemon</span> <span class="ow">is</span> <span class="n">owned</span> <span class="n">by</span> <span class="n">xf86</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="n">synaptics</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -201,7 +203,7 @@
         <a href="pacman-aur-packages-list.html" class="btn btn-neutral float-right" title="Pacman: list packages from AUR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pacman-clean-cache.html" class="btn btn-neutral" title="Pacman: clean cache" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pacman-clean-cache.html" class="btn btn-neutral float-left" title="Pacman: clean cache" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -210,7 +212,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -227,33 +229,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

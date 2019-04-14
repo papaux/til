@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="C++" href="../cpp/_.html" />
     <link rel="prev" title="Shell from running container" href="shell-running-container.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -175,7 +177,7 @@
 <p>LAMP is the name given to a common software bundle containing everything for serving php web sites with web server and database.</p>
 <p>Here we use a prebuilt image <code class="docutils literal notranslate"><span class="pre">tutum/lamp</span></code></p>
 <ol class="arabic simple">
-<li>Get the image</li>
+<li><p>Get the image</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">tutum</span><span class="o">/</span><span class="n">lamp</span>
@@ -183,7 +185,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Start the image with the link to your webiste</li>
+<li><p>Start the image with the link to your webiste</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span><span class="p">:</span><span class="mi">80</span> <span class="o">-</span><span class="n">p</span> <span class="mi">3306</span><span class="p">:</span><span class="mi">3306</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">workspace</span><span class="o">/</span><span class="n">websites</span><span class="o">/</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span> <span class="o">--</span><span class="n">name</span> <span class="n">dev</span><span class="o">-</span><span class="n">lamp</span> <span class="n">tutum</span><span class="o">/</span><span class="n">lamp</span>
@@ -191,7 +193,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Access mysql</li>
+<li><p>Access mysql</p></li>
 </ol>
 <blockquote>
 <div><p><strong>Get admin password</strong></p>
@@ -217,7 +219,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic" start="4">
-<li><p class="first">Access the website</p>
+<li><p>Access the website</p>
 <blockquote>
 <div><p><a class="reference external" href="http://localhost/asdf">http://localhost/asdf</a></p>
 </div></blockquote>
@@ -236,7 +238,7 @@
         <a href="../cpp/_.html" class="btn btn-neutral float-right" title="C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="shell-running-container.html" class="btn btn-neutral" title="Shell from running container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shell-running-container.html" class="btn btn-neutral float-left" title="Shell from running container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -245,7 +247,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -262,33 +264,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

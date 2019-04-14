@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Kdiff as mergetool without auto merge" href="kdiff-as-mergetool.html" />
     <link rel="prev" title="Git" href="_.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -182,7 +184,7 @@
 <p>You are working on your own feature branch and want to update with the changes from the main development or master branch from remote.</p>
 <p>You need to <strong>rebase</strong>. Maybe there will be some conflicts…</p>
 <ol class="arabic simple">
-<li>First of all, fetch the latest changes from your remote.</li>
+<li><p>First of all, fetch the latest changes from your remote.</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
@@ -190,7 +192,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Invoke rebase, in interactive mode to be able to select which commits you want</li>
+<li><p>Invoke rebase, in interactive mode to be able to select which commits you want</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">-</span><span class="n">i</span> <span class="n">origin</span><span class="o">/</span><span class="n">story</span><span class="o">/</span><span class="mi">695</span><span class="o">-</span><span class="n">event</span><span class="o">-</span><span class="n">counter</span><span class="o">-</span><span class="n">meter</span><span class="o">-</span><span class="n">panel</span>
@@ -198,12 +200,13 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Select the commits</li>
+<li><p>Select the commits</p></li>
 </ol>
 <blockquote>
-<div>Your favorite text editor opens. You can here reorganize your commits. Once done, exit and save.</div></blockquote>
+<div><p>Your favorite text editor opens. You can here reorganize your commits. Once done, exit and save.</p>
+</div></blockquote>
 <ol class="arabic simple" start="4">
-<li>There are some conflicts….</li>
+<li><p>There are some conflicts….</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">apply</span> <span class="mi">93</span><span class="n">dd575</span><span class="o">...</span> <span class="n">implement</span> <span class="n">logic</span> <span class="k">for</span> <span class="n">event</span> <span class="n">counter</span> <span class="ow">and</span> <span class="n">handle</span> <span class="n">enable</span> <span class="o">/</span> <span class="n">disable</span>
@@ -216,7 +219,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="5">
-<li>Open your merge tool to resolve conflict (kdiff3NoAuto is my custom merge command invoking kdiff)</li>
+<li><p>Open your merge tool to resolve conflict (kdiff3NoAuto is my custom merge command invoking kdiff)</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">mergetool</span> <span class="o">-</span><span class="n">t</span> <span class="n">kdiff3NoAuto</span>
@@ -224,7 +227,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="6">
-<li>Once the conflicts are resolved, finalize the rebase</li>
+<li><p>Once the conflicts are resolved, finalize the rebase</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">--</span><span class="k">continue</span>
@@ -244,7 +247,7 @@
         <a href="kdiff-as-mergetool.html" class="btn btn-neutral float-right" title="Kdiff as mergetool without auto merge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_.html" class="btn btn-neutral" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -253,7 +256,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -270,33 +273,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

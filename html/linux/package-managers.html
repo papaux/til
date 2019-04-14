@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vim &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Enable “Tap to click” touch pad &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="vim cheatsheet" href="cheatsheet.html" />
-    <link rel="prev" title="Merge tips" href="../git/merge-tips.html" /> 
+    <link rel="next" title="Recursive md5" href="recursive-md5.html" />
+    <link rel="prev" title="Performance monitoring" href="performance-monitoring.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,16 +85,32 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Enable “Tap to click” touch pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">vim</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">vim cheatsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linux/vi-write-sudo.html">vi: write as sudo</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
@@ -150,13 +166,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>vim</li>
+          <li><a href="_.html">Linux</a> &raquo;</li>
+        
+      <li>Enable “Tap to click” touch pad</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/vim/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/package-managers.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,14 +187,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vim">
-<h1>vim<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cheatsheet.html">vim cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux/vi-write-sudo.html">vi: write as sudo</a></li>
-</ul>
+  <div class="section" id="enable-tap-to-click-touch-pad">
+<h1>Enable “Tap to click” touch pad<a class="headerlink" href="#enable-tap-to-click-touch-pad" title="Permalink to this headline">¶</a></h1>
+<p>If using synaptics, a simple command can be used to enable the Tap to Click function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">synclient</span> <span class="n">TapButton1</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
 </div>
+<p>The tool <code class="docutils literal notranslate"><span class="pre">`synclient`</span></code> can also be used to check the state of all synaptics parameter.</p>
 </div>
 
 
@@ -187,10 +204,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cheatsheet.html" class="btn btn-neutral float-right" title="vim cheatsheet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="recursive-md5.html" class="btn btn-neutral float-right" title="Recursive md5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../git/merge-tips.html" class="btn btn-neutral float-left" title="Merge tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="performance-monitoring.html" class="btn btn-neutral float-left" title="Performance monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

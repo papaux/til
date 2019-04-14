@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Clean including untracked files" href="clean-including-untracked-files.html" />
     <link rel="prev" title="Rebase with conflicts" href="rebase-with-conflicts.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -184,12 +186,13 @@
 BUT Kdiff is not as clever as it thinks and sometimes it does completely wrong conflict resolutions.</p>
 <p>With the following we will create a new mergetool which avoids this broken auto-merge feature of kdiff:</p>
 <ol class="arabic simple">
-<li>Open and configure kdiff</li>
+<li><p>Open and configure kdiff</p></li>
 </ol>
 <blockquote>
-<div>Go to Settings -&gt; Configure kdiff3… -&gt; Merge and untick the “Auto save and quit on merge without conflicts”</div></blockquote>
+<div><p>Go to Settings -&gt; Configure kdiff3… -&gt; Merge and untick the “Auto save and quit on merge without conflicts”</p>
+</div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Configure a new mergetool in your git config:</li>
+<li><p>Configure a new mergetool in your git config:</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">mergetool</span><span class="o">.</span><span class="n">kdiff3NoAuto</span><span class="o">.</span><span class="n">cmd</span> \
@@ -199,7 +202,7 @@ BUT Kdiff is not as clever as it thinks and sometimes it does completely wrong c
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Resolve conflicts using this new mergetool:</li>
+<li><p>Resolve conflicts using this new mergetool:</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git mergetool –t kdiff3NoAuto
@@ -219,7 +222,7 @@ BUT Kdiff is not as clever as it thinks and sometimes it does completely wrong c
         <a href="clean-including-untracked-files.html" class="btn btn-neutral float-right" title="Clean including untracked files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="rebase-with-conflicts.html" class="btn btn-neutral" title="Rebase with conflicts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rebase-with-conflicts.html" class="btn btn-neutral float-left" title="Rebase with conflicts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -228,7 +231,7 @@ BUT Kdiff is not as clever as it thinks and sometimes it does completely wrong c
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -245,33 +248,16 @@ BUT Kdiff is not as clever as it thinks and sometimes it does completely wrong c
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

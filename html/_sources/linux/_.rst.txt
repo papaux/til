@@ -12,6 +12,7 @@ Linux
    hard-disk-management.rst
    mount-without-root.rst
    performance-monitoring.rst
+   package-managers.rst
    recursive-md5.rst
    simple-http-server.rst
    ssh-remove-hostname.rst

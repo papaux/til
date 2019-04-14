@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Systemd journal size" href="systemd-journal-size.html" />
     <link rel="prev" title="SSH Remove hostname" href="ssh-remove-hostname.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -92,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
@@ -189,8 +192,8 @@
 <p>The default timeouts for <code class="docutils literal notranslate"><span class="pre">sudo</span></code> commands are pretty aggressive.</p>
 <p>Here are two parameters to tweek the sudo behavior:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">passwd_timeout</span></code>: Number of minutes before the sudo password prompt expires.</li>
-<li><code class="docutils literal notranslate"><span class="pre">timestamp_timeout</span></code>: Number of minutes before the user needs to re-enter the sudo password.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">passwd_timeout</span></code>: Number of minutes before the sudo password prompt expires.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp_timeout</span></code>: Number of minutes before the user needs to re-enter the sudo password.</p></li>
 </ul>
 <p>You need to apply these changes to the sudoers config file. Usually with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code> command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Defaults</span> <span class="n">env_reset</span><span class="p">,</span><span class="n">passwd_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">timestamp_timeout</span><span class="o">=</span><span class="mi">30</span>
@@ -209,7 +212,7 @@
         <a href="systemd-journal-size.html" class="btn btn-neutral float-right" title="Systemd journal size" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh-remove-hostname.html" class="btn btn-neutral" title="SSH Remove hostname" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ssh-remove-hostname.html" class="btn btn-neutral float-left" title="SSH Remove hostname" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -218,7 +221,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -235,33 +238,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

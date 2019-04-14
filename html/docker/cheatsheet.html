@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Shell from running container" href="shell-running-container.html" />
     <link rel="prev" title="Docker" href="_.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -178,7 +180,7 @@
 <h1>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h1>
 <p>This cheatsheet has been created by using resources from other websites. Thanks to:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://sites.duke.edu/docker/docker-command-cheat-sheet/">http://sites.duke.edu/docker/docker-command-cheat-sheet/</a></li>
+<li><p><a class="reference external" href="http://sites.duke.edu/docker/docker-command-cheat-sheet/">http://sites.duke.edu/docker/docker-command-cheat-sheet/</a></p></li>
 </ul>
 <div class="section" id="container">
 <h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h2>
@@ -196,12 +198,12 @@
 </div>
 <p>Parameters:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive: Keep STDIN open even if not attached.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-t</span></code> allocate a pseudo tty.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-d</span></code> run the container detached, i.e. in background</li>
-<li><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">&lt;host_port&gt;:&lt;cont_port&gt;</span></code> map a host port to a container port</li>
-<li><code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">&lt;host_dir&gt;:&lt;cont_dir&gt;</span></code> map a host directory to a container directory. Useful for persistent storage.</li>
-<li><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">&lt;name&gt;</span></code> give a name to the container</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive: Keep STDIN open even if not attached.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-t</span></code> allocate a pseudo tty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> run the container detached, i.e. in background</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">&lt;host_port&gt;:&lt;cont_port&gt;</span></code> map a host port to a container port</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">&lt;host_dir&gt;:&lt;cont_dir&gt;</span></code> map a host directory to a container directory. Useful for persistent storage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">&lt;name&gt;</span></code> give a name to the container</p></li>
 </ul>
 <p><strong>Connect to a running container</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">attach</span> <span class="mi">2342908</span><span class="n">cs93</span>
@@ -240,7 +242,7 @@
         <a href="shell-running-container.html" class="btn btn-neutral float-right" title="Shell from running container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_.html" class="btn btn-neutral" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -249,7 +251,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Geoffrey Papaux.
+        &copy; Copyright 2018, Geoffrey Papaux
 
     </p>
   </div>
@@ -266,33 +268,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
