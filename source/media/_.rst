@@ -4,5 +4,6 @@ Media
 .. toctree::
    :maxdepth: 1
 
+   image-conversion.rst
    rename-pic-exif-date.rst
    decrease-pdf-file-size.rst
