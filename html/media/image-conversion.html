@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
@@ -184,6 +185,10 @@
 </div></blockquote>
 <p>Multiple JPG into a single PDF</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>convert `ls -v *.JPG` foobar.pdf
+</pre></div>
+</div>
+<p>If you get an error message complaining about security, edit the file <code class="docutils literal notranslate"><span class="pre">/etc/ImageMagick-7/policy.xml</span></code> and add this line before <code class="docutils literal notranslate"><span class="pre">&lt;/policymap&gt;</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">policy</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;coder&quot;</span> <span class="n">rights</span><span class="o">=</span><span class="s2">&quot;read | write&quot;</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;PDF&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>To Greyscale</p>
