@@ -88,3 +88,13 @@ Multiple pages per sheet (here 2 pages per sheet, output in input-nup.pdf
 
     pdfnup --nup 2x1 input.pdf
 
+Rotate PDF file
+
+::
+
+    # clockwise
+    pdftk input.pdf cat 1-endeast output output.pdf
+    
+    # anti-clockwise
+    pdftk input.pdf cat 1-endwest output output.pdf
+
