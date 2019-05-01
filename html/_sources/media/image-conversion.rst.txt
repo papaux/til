@@ -98,3 +98,6 @@ Rotate PDF file
     # anti-clockwise
     pdftk input.pdf cat 1-endwest output output.pdf
 
+    # 180°
+    pdftk input.pdf cat 1-endsouth output output.pdf
+
