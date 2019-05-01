@@ -13,6 +13,12 @@ Multiple JPG into a single PDF
 
     convert `ls -v *.JPG` foobar.pdf
 
+If you get an error message complaining about security, edit the file ``/etc/ImageMagick-7/policy.xml`` and add this line before ``</policymap>``
+
+::
+
+    <policy domain="coder" rights="read | write" pattern="PDF" />
+
 To Greyscale
 
 ::
