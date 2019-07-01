@@ -1,0 +1,9 @@
+Ansible
+=======
+
+
+.. toctree::
+   :maxdepth: 3
+
+   ad-hoc-commands.rst
+   
