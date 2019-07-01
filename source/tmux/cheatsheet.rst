@@ -26,7 +26,9 @@ Panes
 - ``tmux split-window -h (prefix + %)``: splits the window into two horizontal panes
 - ``tmux swap-pane -[UDLR] (prefix + { or })``: swaps pane with another in the specified direction
 - ``tmux select-pane -[UDLR]``: selects the next pane in the specified direction
-- ``tmux select-pane -t :.+``: selects the next pane in numerical order 
+- ``tmux select-pane -t :.+``: selects the next pane in numerical order
+- ``tmux select-layout even-vertical (prefix + Alt+2)``: split panes evenly, vertical
+- ``tmux select-layout even-horizontal (prefix + Alt+1)``: split panes evenly, horizontal
 
 Misc
 ~~~~~~~~~~~~~~~~
