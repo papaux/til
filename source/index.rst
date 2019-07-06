@@ -23,6 +23,7 @@ There are 61 TILs in this repository! Enjoy!
    mysql/_.rst
    nodejs/_.rst
    php/_.rst
+   python/_.rst
    sphinx/_.rst
    tmux/_.rst
    ubuntu-debian/_.rst
