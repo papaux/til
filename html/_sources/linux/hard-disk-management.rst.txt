@@ -4,7 +4,7 @@ Hard Disk Management
 This page is not exactly a single small TIL but a collection of useful commands for managing disk and partitions as well as getting state information.
 
 Partition
-==========
+~~~~~~~~~~
 
 **View partition information**
 
