@@ -4,6 +4,7 @@ Docker
 .. toctree::
    :maxdepth: 1
 
+   centos-based.rst
    cheatsheet.rst
    shell-running-container.rst
    lamp-container.rst

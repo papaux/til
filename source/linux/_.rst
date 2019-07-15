@@ -8,8 +8,10 @@ Linux
    directories-most-files.rst
    disable-touch-pad-while-typing.rst
    enable-tap-click-touch-pad.rst
+   file-permissions.rst
    find-delete-files.rst
    hard-disk-management.rst
+   install-date.rst
    mount-without-root.rst
    performance-monitoring.rst
    package-managers.rst

@@ -225,6 +225,7 @@ Tcpdump could have its own dedicated TIL because it has so many options. But her
 
 Netstat can monitor open ports and incoming and outgoing traffic. Below some useful commands:
 
+* ``netstat -plunt``: list listening applications
 * ``netstat -a``: list all TCP and UDP ports
 * ``netstat -s``: statistics by protocol, ca be combined with ``u`` (UDP) and ``t`` (TCP). Can show bad segments, retransmissions, failures, ...
 * ``netstat -at``: only TCP connections
