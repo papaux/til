@@ -17,6 +17,7 @@ There are 66 TILs in this repository! Enjoy!
    dev-env/_.rst
    docker/_.rst
    git/_.rst
+   java/_.rst
    kvm/_.rst
    linux/_.rst
    markdown/_.rst

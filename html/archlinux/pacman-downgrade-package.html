@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tmux &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Pacman: Downgrade package &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="tmux cheatsheet" href="cheatsheet.html" />
-    <link rel="prev" title="Sphinx" href="../sphinx/_.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,9 +82,9 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_.html">ArchLinux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
@@ -102,10 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">tmux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">tmux cheatsheet</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
@@ -154,13 +149,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>tmux</li>
+      <li>Pacman: Downgrade package</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tmux/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/archlinux/pacman-downgrade-package.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,12 +168,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tmux">
-<h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cheatsheet.html">tmux cheatsheet</a></li>
-</ul>
+  <div class="section" id="pacman-downgrade-package">
+<h1>Pacman: Downgrade package<a class="headerlink" href="#pacman-downgrade-package" title="Permalink to this headline">¶</a></h1>
+<p>If you want to downgrade a package but you don’t have it in your local cache anymore, you can still
+find it in the archive server and install from there.</p>
+<p>First locate your package there:
+<a class="reference external" href="https://archive.archlinux.org/packages/">https://archive.archlinux.org/packages/</a></p>
+<p>And then install it with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">archive</span><span class="o">.</span><span class="n">archlinux</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">packages</span><span class="o">/.../</span><span class="n">packagename</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span>
+</pre></div>
 </div>
 </div>
 
@@ -187,15 +185,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cheatsheet.html" class="btn btn-neutral float-right" title="tmux cheatsheet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../sphinx/_.html" class="btn btn-neutral float-left" title="Sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

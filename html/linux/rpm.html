@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tmux &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>RPM Files &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="tmux cheatsheet" href="cheatsheet.html" />
-    <link rel="prev" title="Sphinx" href="../sphinx/_.html" /> 
+    <link rel="next" title="Simple HTTP Server" href="simple-http-server.html" />
+    <link rel="prev" title="Recursive md5" href="recursive-md5.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,7 +94,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RPM Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extract-content">Extract content</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
@@ -102,10 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">tmux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">tmux cheatsheet</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
@@ -154,13 +177,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>tmux</li>
+          <li><a href="_.html">Linux</a> &raquo;</li>
+        
+      <li>RPM Files</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tmux/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/rpm.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,12 +198,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tmux">
-<h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cheatsheet.html">tmux cheatsheet</a></li>
-</ul>
+  <div class="section" id="rpm-files">
+<h1>RPM Files<a class="headerlink" href="#rpm-files" title="Permalink to this headline">¶</a></h1>
+<p>Some useful commands to manage and handle RPM files.</p>
+<div class="section" id="extract-content">
+<h2>Extract content<a class="headerlink" href="#extract-content" title="Permalink to this headline">¶</a></h2>
+<p>Use this command to extract the content of an RPM package</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm2cpio</span> <span class="n">rpm</span><span class="o">-</span><span class="n">archive</span><span class="o">.</span><span class="n">rpm</span> <span class="o">|</span> <span class="n">cpio</span> <span class="o">-</span><span class="n">idmv</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -190,10 +218,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cheatsheet.html" class="btn btn-neutral float-right" title="tmux cheatsheet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="simple-http-server.html" class="btn btn-neutral float-right" title="Simple HTTP Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../sphinx/_.html" class="btn btn-neutral float-left" title="Sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="recursive-md5.html" class="btn btn-neutral float-left" title="Recursive md5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
