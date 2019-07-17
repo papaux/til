@@ -6,5 +6,6 @@ Docker
 
    centos-based.rst
    cheatsheet.rst
+   docker-compose.rst
    shell-running-container.rst
    lamp-container.rst
