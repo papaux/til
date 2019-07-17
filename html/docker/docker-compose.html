@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pacman: Downgrade package &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>docker-compose &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pacman: find which package installed a file" href="pacman-find-which-package-installed-file.html" />
-    <link rel="prev" title="Pacman: clean cache" href="pacman-clean-cache.html" /> 
+    <link rel="next" title="Shell from running container" href="shell-running-container.html" />
+    <link rel="prev" title="Cheatsheet" href="cheatsheet.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,24 +86,21 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">ArchLinux</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gnome-autostart-script.html">Gnome: autostart script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-aur-packages-list.html">Pacman: list packages from AUR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-clean-cache.html">Pacman: clean cache</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pacman: Downgrade package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-find-which-package-installed-file.html">Pacman: find which package installed a file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-list-packages-by-size.html">Pacman: list packages by size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-maintenance.html">Pacman: maintenance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pacman-reinstall-with-deps.html">Pacman: reinstall packages and their dependencies from update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="remove-unused-locales.html">Remove unused locales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="system-installation-date.html">System installation date</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaourt-noconfirm.html">Yaourt: noconfirm</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="centos-based.html">CentOS based</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Cheatsheet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">docker-compose</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-compose-from-cron">docker-compose from cron</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="shell-running-container.html">Shell from running container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamp-container.html">LAMP container</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
@@ -164,15 +161,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="_.html">ArchLinux</a> &raquo;</li>
+          <li><a href="_.html">Docker</a> &raquo;</li>
         
-      <li>Pacman: Downgrade package</li>
+      <li>docker-compose</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/archlinux/pacman-downgrade-package.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docker/docker-compose.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -185,15 +182,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pacman-downgrade-package">
-<h1>Pacman: Downgrade package<a class="headerlink" href="#pacman-downgrade-package" title="Permalink to this headline">¶</a></h1>
-<p>If you want to downgrade a package but you don’t have it in your local cache anymore, you can still
-find it in the archive server and install from there.</p>
-<p>First locate your package there:
-<a class="reference external" href="https://archive.archlinux.org/packages/">https://archive.archlinux.org/packages/</a></p>
-<p>And then install it with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">archive</span><span class="o">.</span><span class="n">archlinux</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">packages</span><span class="o">/.../</span><span class="n">packagename</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span>
-</pre></div>
+  <div class="section" id="docker-compose">
+<h1>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h1>
+<p>This page is about docker-compose</p>
+<div class="section" id="docker-compose-from-cron">
+<h2>docker-compose from cron<a class="headerlink" href="#docker-compose-from-cron" title="Permalink to this headline">¶</a></h2>
+<p>If you want to use a <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span></code> command from a cron task, you have to specify the <code class="docutils literal notranslate"><span class="pre">-T</span></code> option, to disable pseudo-tty allocation.</p>
 </div>
 </div>
 
@@ -205,10 +199,10 @@ find it in the archive server and install from there.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pacman-find-which-package-installed-file.html" class="btn btn-neutral float-right" title="Pacman: find which package installed a file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="shell-running-container.html" class="btn btn-neutral float-right" title="Shell from running container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pacman-clean-cache.html" class="btn btn-neutral float-left" title="Pacman: clean cache" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cheatsheet.html" class="btn btn-neutral float-left" title="Cheatsheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

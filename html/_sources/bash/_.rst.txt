@@ -4,4 +4,5 @@ Bash
 .. toctree::
    :maxdepth: 1
 
+   true-color-test.rst
    run-command-file-changed.rst

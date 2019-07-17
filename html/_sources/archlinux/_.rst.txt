@@ -6,12 +6,13 @@ ArchLinux
    :maxdepth: 3
 
    gnome-autostart-script.rst
-   pacman-clean-cache.rst  
-   pacman-find-which-package-installed-file.rst
    pacman-aur-packages-list.rst
-   pacman-reinstall-with-deps.rst
+   pacman-clean-cache.rst
+   pacman-downgrade-package.rst
+   pacman-find-which-package-installed-file.rst
    pacman-list-packages-by-size.rst
    pacman-maintenance.rst
+   pacman-reinstall-with-deps.rst
    remove-unused-locales.rst
    system-installation-date.rst
    yaourt-noconfirm.rst
