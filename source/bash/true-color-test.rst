@@ -1,7 +1,7 @@
-Check console colors
----------------------
+True color test
+---------------
 
-This is a small but nice script that you can use to check if your terminal supports full colors.
+This is a small but nice script that you can use to check if your terminal supports true colors.
 
 Can be useful to debug wrong colors in VIM for example.
 

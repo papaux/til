@@ -4,5 +4,5 @@ Bash
 .. toctree::
    :maxdepth: 1
 
-   check-console-colors.rst
+   true-color-test.rst
    run-command-file-changed.rst
