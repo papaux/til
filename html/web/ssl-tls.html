@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linux &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>SSL - TLS &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cgroup" href="cgroup.html" />
-    <link rel="prev" title="KVM: Manage snapshots" href="../kvm/snapshot.html" /> 
+    <link rel="next" title="Wine" href="../wine/_.html" />
+    <link rel="prev" title="Web" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,30 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
-<li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rpm.html">RPM Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
@@ -128,7 +105,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Web</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SSL - TLS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#certificate-chain">Certificate chain</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
 </ul>
 
@@ -175,13 +158,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Linux</li>
+          <li><a href="_.html">Web</a> &raquo;</li>
+        
+      <li>SSL - TLS</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/web/ssl-tls.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,32 +179,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linux">
-<h1>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cgroup.html">cgroup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-date.html">Installation date</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
-<li class="toctree-l1"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpm.html">RPM Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
-</ul>
+  <div class="section" id="ssl-tls">
+<h1>SSL - TLS<a class="headerlink" href="#ssl-tls" title="Permalink to this headline">¶</a></h1>
+<p>This page gives insight on how to manage and check HTTPS certificates for SSL/TLS connections.</p>
+<div class="section" id="certificate-chain">
+<h2>Certificate chain<a class="headerlink" href="#certificate-chain" title="Permalink to this headline">¶</a></h2>
+<p>Web servers must be sending the full certificate chain if we want the clients to be able to validate the certificates.</p>
+<p>The <cite>openssl</cite> tool can be used to verify this chain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">verisign</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span>
+</pre></div>
+</div>
+<p>This will show all details about the certificates and the chain.</p>
+<p>To print only a summary of the chain, this command will give the required information:</p>
+<dl class="simple">
+<dt>::</dt><dd><p>openssl s_client -showcerts -connect google.com:443 2&gt;/dev/null | grep “[s]:”</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -231,10 +206,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cgroup.html" class="btn btn-neutral float-right" title="cgroup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../wine/_.html" class="btn btn-neutral float-right" title="Wine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../kvm/snapshot.html" class="btn btn-neutral float-left" title="KVM: Manage snapshots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Web" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
