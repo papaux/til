@@ -7,5 +7,6 @@ Docker
    centos-based.rst
    cheatsheet.rst
    docker-compose.rst
-   shell-running-container.rst
+   cron.rst
    lamp-container.rst
+   shell-running-container.rst

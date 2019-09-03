@@ -30,5 +30,4 @@ There are 73 TILs in this repository! Enjoy!
    tmux/_.rst
    ubuntu-debian/_.rst
    vim/_.rst
-   web/_.rst
    wine/_.rst

@@ -8,7 +8,7 @@ CentOS / Fedora
 
 ::
   
-  rpm -qi basesystem | grep Install 
+  rpm -qi basesystem | grep Install sudo tune2fs -l /dev/sda2
 
 Be careful: if you upgraded your system from a previous version, this will give you the upgrade time and not first installation date.
 

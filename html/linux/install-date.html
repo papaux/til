@@ -133,7 +133,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
 </ul>
 
@@ -206,7 +205,7 @@
 <p>Knowing the installation date from the machine you are logged into can be a not so easy task. This page shows how to do it for several Linux distributions.</p>
 <div class="section" id="centos-fedora">
 <h2>CentOS / Fedora<a class="headerlink" href="#centos-fedora" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">qi</span> <span class="n">basesystem</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Install</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">qi</span> <span class="n">basesystem</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Install</span> <span class="n">sudo</span> <span class="n">tune2fs</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
 </pre></div>
 </div>
 <p>Be careful: if you upgraded your system from a previous version, this will give you the upgrade time and not first installation date.</p>
