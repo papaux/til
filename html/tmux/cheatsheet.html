@@ -106,14 +106,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tmux cheatsheet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#session">Session</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#panes">Panes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#panes-actions">Panes: Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#panes-select">Panes: Select</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#misc">Misc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-mode">Copy Mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
 </ul>
 
@@ -183,7 +186,7 @@
             
   <div class="section" id="tmux-cheatsheet">
 <h1>tmux cheatsheet<a class="headerlink" href="#tmux-cheatsheet" title="Permalink to this headline">¶</a></h1>
-<p>A tmux cheatsheet based on my needs / findings.</p>
+<p>A tmux cheatsheet based on my needs / findings and based on my config.</p>
 <div class="section" id="session">
 <h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -202,22 +205,45 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">rename-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">,)</span></code>: rename the current window</p></li>
 </ul>
 </div>
-<div class="section" id="panes">
-<h2>Panes<a class="headerlink" href="#panes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="panes-actions">
+<h2>Panes: Actions<a class="headerlink" href="#panes-actions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">&quot;)</span></code>: splits the window into two vertical panes</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">-h</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">%)</span></code>: splits the window into two horizontal panes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">|)</span></code>: splits the window into two vertical panes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">-h</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">-)</span></code>: splits the window into two horizontal panes</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">swap-pane</span> <span class="pre">-[UDLR]</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">{</span> <span class="pre">or</span> <span class="pre">})</span></code>: swaps pane with another in the specified direction</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-[UDLR]</span></code>: selects the next pane in the specified direction</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-t</span> <span class="pre">:.+</span></code>: selects the next pane in numerical order</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-layout</span> <span class="pre">even-vertical</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">Alt+2)</span></code>: split panes evenly, vertical</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-layout</span> <span class="pre">even-horizontal</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">Alt+1)</span></code>: split panes evenly, horizontal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">resize-pane</span> <span class="pre">-Z</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">z)</span></code>: toggle pane zoom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">!)</span></code>: convert pane into a window</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">S)</span></code>: synchronize panes</p></li>
+</ul>
+</div>
+<div class="section" id="panes-select">
+<h2>Panes: Select<a class="headerlink" href="#panes-select" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-[UDLR]</span></code>: selects the next pane in the specified direction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-t</span> <span class="pre">:.+</span></code>: selects the next pane in numerical order</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">q)</span></code>: show pane numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">q</span> <span class="pre">0..9)</span></code>: switch/select pane by number</p></li>
 </ul>
 </div>
 <div class="section" id="misc">
 <h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span></code>: keyboard input is sent to all panes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">S)</span></code>: keyboard input is sent to all panes</p></li>
+</ul>
+</div>
+<div class="section" id="copy-mode">
+<h2>Copy Mode<a class="headerlink" href="#copy-mode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">[)</span></code>: enter copy mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>: search forward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code>: search backward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: next keyword occurance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>: previous keyword occurance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spacebar</span></code>: start selection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>: clear selection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enter</span></code>: copy selection</p></li>
 </ul>
 </div>
 </div>
