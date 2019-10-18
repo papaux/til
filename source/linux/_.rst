@@ -21,6 +21,7 @@ Linux
    ssh-remove-hostname.rst
    sudo-timeout.rst
    systemd-journal-size.rst
+   netstat.rst
    tcpdump-filters.rst
    user-management-cheatsheet.rst
    vi-write-sudo.rst
