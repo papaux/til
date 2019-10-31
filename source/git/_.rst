@@ -6,12 +6,19 @@ Git
 
    blame-user-friendly-interface.rst
    branches.rst
-   clean-including-untracked-files.rst
+   clean.rst
+   config.rst
    create-empty-branch.rst
+   gitignore.rst
    grep-in-logs.rst
    kdiff-as-mergetool.rst
+   log.rst
    merge-tips.rst
    rebase-with-conflicts.rst
-   reset-local-branch.rst
+   remote.rst
+   reset.rst
+   revert.rst
    short-hash-from-full.rst
    stash-only-unstage.rst
+   status.rst
+   tag.rst
