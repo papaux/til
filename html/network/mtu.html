@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Git &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>MTU &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Blame with user-friendly interface" href="blame-user-friendly-interface.html" />
-    <link rel="prev" title="Shell from running container" href="../docker/shell-running-container.html" /> 
+    <link rel="next" title="NodeJS" href="../nodejs/_.html" />
+    <link rel="prev" title="Network" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,34 +91,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="blame-user-friendly-interface.html">Blame with user-friendly interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="branches.html">Git branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Git config management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Git grep in logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="log.html">Log commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="remote.html">Git Remote Repositories Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
-<li class="toctree-l2"><a class="reference internal" href="status.html">Git status commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tag.html">Git tag commands</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Network</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MTU</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
@@ -173,13 +159,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Git</li>
+          <li><a href="_.html">Network</a> &raquo;</li>
+        
+      <li>MTU</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/git/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/network/mtu.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,29 +180,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="git">
-<h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="blame-user-friendly-interface.html">Blame with user-friendly interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Git branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clean.html">Clean commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Git config management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grep-in-logs.html">Git grep in logs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="log.html">Log commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote.html">Git Remote Repositories Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reset.html">Reset commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="revert.html">Revert commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html">Git status commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tag.html">Git tag commands</a></li>
-</ul>
+  <div class="section" id="mtu">
+<h1>MTU<a class="headerlink" href="#mtu" title="Permalink to this headline">¶</a></h1>
+<p>Debugging network issues related to MTU can be tricky.</p>
+<p>When encountering weird connectivity issues through VPN, the probability is high that it’s a MTU issue.</p>
+<p>Send these ping commands to check the MTU size by changing the packet size (<cite>-s</cite> parameter)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1300</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1400</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1500</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>In case it’s a MTU issue, you’ll see:
+1. First ping commands with small values are working</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1300 example.com
+PING example.com (93.184.216.34) 1300(1328) bytes of data.
+1308 bytes from 93.184.216.34 (93.184.216.34): icmp_seq=1 ttl=55 time=361 ms
+1308 bytes from 93.184.216.34 (93.184.216.34): icmp_seq=2 ttl=55 time=180 ms
+^C
+--- example.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 179.919/270.407/360.896/90.489 ms
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Then pings are failing with no answer: this is the window where we are in the MTU issue</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1380 example.com
+PING example.com (93.184.216.34) 1380(1408) bytes of data.
+^C
+--- example.com ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 129ms
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Finally when the size gets bigger, we see MTU error messages.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1420 example.com
+PING example.com (93.184.216.34) 1420(1448) bytes of data.
+ping: local error: Message too long, mtu=1412
+^C
+--- example.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+</pre></div>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p><cite>iptables</cite> can be used to setup a workaround, by automatically sending a lower MTU on TCP connection estalishment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">mangle</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">tcp</span><span class="o">-</span><span class="n">flags</span> <span class="n">SYN</span><span class="p">,</span><span class="n">RST</span> <span class="n">SYN</span> <span class="o">-</span><span class="n">o</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">j</span> <span class="n">TCPMSS</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1300</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -226,10 +240,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="blame-user-friendly-interface.html" class="btn btn-neutral float-right" title="Blame with user-friendly interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../nodejs/_.html" class="btn btn-neutral float-right" title="NodeJS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../docker/shell-running-container.html" class="btn btn-neutral float-left" title="Shell from running container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

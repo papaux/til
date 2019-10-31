@@ -18,3 +18,14 @@ From the help:
 
   With -m, changes made to the working tree file can be discarded to re-create the original
            conflicted merge result.
+
+Merge commit
+~~~~~~~~~~~~~
+
+If you want to check if a commit is a merge commit or a squashed commit, you can check if it has one or more parents.
+
+::
+
+  git cat-file -p COMMIT_ID
+
+If it has several parents, it's a merge commit.
