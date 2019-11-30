@@ -49,6 +49,12 @@ Resize, change to grayscale and convert to pdf
 
     convert source.jpg -monochrome -resize 1300 converted.pdf
 
+Create PDF from multiple images
+
+::
+
+   convert *.jpg output.pdf
+
 Reduce size of pdf file
 
 ::
