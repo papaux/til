@@ -53,6 +53,12 @@ Parameters:
   
   docker ps -q -a | xargs docker rm
 
+**Show resource usage**
+
+::
+
+  docker stats --all
+
 Images
 ~~~~~~~
 
