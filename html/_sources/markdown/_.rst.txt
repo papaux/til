@@ -4,4 +4,5 @@ Markdown
 .. toctree::
    :maxdepth: 1
    
+   convert.rst
    local-http-server.rst

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Local HTTP server &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Convert Markdown &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Media" href="../media/_.html" />
-    <link rel="prev" title="Convert Markdown" href="convert.html" /> 
+    <link rel="next" title="Local HTTP server" href="local-http-server.html" />
+    <link rel="prev" title="Markdown" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,20 +96,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Markdown</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="convert.html">Convert Markdown</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Local HTTP server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grip">grip</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#install">Install</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#serve">Serve</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#harp">harp</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Install</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Serve</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Convert Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local-http-server.html">Local HTTP server</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
@@ -172,13 +160,13 @@
         
           <li><a href="_.html">Markdown</a> &raquo;</li>
         
-      <li>Local HTTP server</li>
+      <li>Convert Markdown</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/markdown/local-http-server.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/markdown/convert.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -191,49 +179,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="local-http-server">
-<h1>Local HTTP server<a class="headerlink" href="#local-http-server" title="Permalink to this headline">¶</a></h1>
-<p>When editing markdown files, you have some editing tools which provides preview mode (e.g. Brackets) but you don’t have everything like links between pages, anchors, etc.</p>
-<p>We have here two tools:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#grip">grip</a> (preferred)</p></li>
-<li><p><a class="reference internal" href="#harp">harp</a></p></li>
-</ul>
-<div class="section" id="grip">
-<h2>grip<a class="headerlink" href="#grip" title="Permalink to this headline">¶</a></h2>
-<p>Grip has more features and serves directly .md files. It is using GitHub markdown API.
-It even redirects to README by default and auto refreshes when files are changed on the disk.</p>
-<div class="section" id="install">
-<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">grip</span>
+  <div class="section" id="convert-markdown">
+<h1>Convert Markdown<a class="headerlink" href="#convert-markdown" title="Permalink to this headline">¶</a></h1>
+<p><cite>pandoc</cite> can be used to convert a markdown file to a lot of format. It is smart enough to detect the format based on the file extension.</p>
+<p>Simply run that sample command to convert to Word:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pandoc</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">doc</span><span class="o">.</span><span class="n">docx</span> <span class="n">doc</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="serve">
-<h3>Serve<a class="headerlink" href="#serve" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grip</span> <span class="mi">9000</span>
+<p>It can also merge multiple markdown files into a single document, for instance PDF:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pandoc</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">doc</span><span class="o">.</span><span class="n">pdf</span> <span class="n">part01</span><span class="o">.</span><span class="n">md</span> <span class="n">part02</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<p>&lt;<a class="reference external" href="http://localhost:9000">http://localhost:9000</a>&gt;</p>
-</div>
-</div>
-<div class="section" id="harp">
-<h2>harp<a class="headerlink" href="#harp" title="Permalink to this headline">¶</a></h2>
-<p>Harp is simpler than grip, can be used to make static versions of websites written with markdown but maps the .md files to .html. So no links possible between files.</p>
-<p>It is a node module named <strong>harp</strong>.</p>
-<div class="section" id="id1">
-<h3>Install<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">harp</span>
+<p>For PDF, we can twick the formating to reduce the normally big margins:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pandoc</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">V</span> <span class="n">geometry</span><span class="p">:</span><span class="n">margin</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span> <span class="o">-</span><span class="n">o</span> <span class="n">doc</span><span class="o">.</span><span class="n">pdf</span> <span class="n">part01</span><span class="o">.</span><span class="n">md</span> <span class="n">part02</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="id2">
-<h3>Serve<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">harp</span> <span class="n">server</span>
-</pre></div>
-</div>
-<p>&lt;<a class="reference external" href="http://localhost:9000">http://localhost:9000</a>&gt;</p>
-</div>
 </div>
 </div>
 
@@ -245,10 +204,10 @@ It even redirects to README by default and auto refreshes when files are changed
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../media/_.html" class="btn btn-neutral float-right" title="Media" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="local-http-server.html" class="btn btn-neutral float-right" title="Local HTTP server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="convert.html" class="btn btn-neutral float-left" title="Convert Markdown" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Markdown" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
