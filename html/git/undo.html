@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Merge tips &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Undo in git &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Rebase with conflicts" href="rebase-with-conflicts.html" />
-    <link rel="prev" title="Log commands" href="log.html" /> 
+    <link rel="next" title="Java" href="../java/_.html" />
+    <link rel="prev" title="Git tag commands" href="tag.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,11 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Git grep in logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="log.html">Log commands</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Merge tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#replay-merge-for-a-single-file">Replay merge for a single file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#merge-commit">Merge commit</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote.html">Git Remote Repositories Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
@@ -114,7 +110,12 @@
 <li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
 <li class="toctree-l2"><a class="reference internal" href="status.html">Git status commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tag.html">Git tag commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undo.html">Undo in git</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Undo in git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#undo-committed-changes">Undo committed changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-staged-changes">Undo staged changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-unstaged-changes">Undo unstaged changes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
@@ -181,13 +182,13 @@
         
           <li><a href="_.html">Git</a> &raquo;</li>
         
-      <li>Merge tips</li>
+      <li>Undo in git</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/git/merge-tips.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/undo.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -200,28 +201,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="merge-tips">
-<h1>Merge tips<a class="headerlink" href="#merge-tips" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="replay-merge-for-a-single-file">
-<h2>Replay merge for a single file<a class="headerlink" href="#replay-merge-for-a-single-file" title="Permalink to this headline">¶</a></h2>
-<p>You are in the middle of a merge (before concluding the merge) and suddenly you realised that you didn’t solve one conflicting file correctly.</p>
-<p>You can replay the file merge by using the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">m</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
-</pre></div>
-</div>
-<p>From the help:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">With</span> <span class="o">-</span><span class="n">m</span><span class="p">,</span> <span class="n">changes</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">file</span> <span class="n">can</span> <span class="n">be</span> <span class="n">discarded</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">create</span> <span class="n">the</span> <span class="n">original</span>
-         <span class="n">conflicted</span> <span class="n">merge</span> <span class="n">result</span><span class="o">.</span>
+  <div class="section" id="undo-in-git">
+<h1>Undo in git<a class="headerlink" href="#undo-in-git" title="Permalink to this headline">¶</a></h1>
+<p>Collection of useful commands to undo whatever you did wrong in git.</p>
+<div class="section" id="undo-committed-changes">
+<h2>Undo committed changes<a class="headerlink" href="#undo-committed-changes" title="Permalink to this headline">¶</a></h2>
+<p>Undo the last commit (but keep the changes)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">~</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="merge-commit">
-<h2>Merge commit<a class="headerlink" href="#merge-commit" title="Permalink to this headline">¶</a></h2>
-<p>If you want to check if a commit is a merge commit or a squashed commit, you can check if it has one or more parents.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">COMMIT_ID</span>
+<div class="section" id="undo-staged-changes">
+<h2>Undo staged changes<a class="headerlink" href="#undo-staged-changes" title="Permalink to this headline">¶</a></h2>
+<p>Unstage everything but keep changes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span>
 </pre></div>
 </div>
-<p>If it has several parents, it’s a merge commit.</p>
+</div>
+<div class="section" id="undo-unstaged-changes">
+<h2>Undo unstaged changes<a class="headerlink" href="#undo-unstaged-changes" title="Permalink to this headline">¶</a></h2>
+<p>Permanently discard local changes to a file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Permanently discard <strong>all</strong> local changes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -233,10 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rebase-with-conflicts.html" class="btn btn-neutral float-right" title="Rebase with conflicts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../java/_.html" class="btn btn-neutral float-right" title="Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="log.html" class="btn btn-neutral float-left" title="Log commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tag.html" class="btn btn-neutral float-left" title="Git tag commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
