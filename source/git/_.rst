@@ -22,3 +22,4 @@ Git
    stash-only-unstage.rst
    status.rst
    tag.rst
+   undo.rst
