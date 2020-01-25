@@ -1,0 +1,19 @@
+journalctl
+----------
+
+This TIL gives some usage examples of journalctl for concrete use cases.
+
+Filtering
+~~~~~~~~~
+
+**Get Kernel Messages only**
+
+::
+
+  journalctl -k
+
+**Get logs from previous boot**
+
+::
+
+  journalctl -b -1
