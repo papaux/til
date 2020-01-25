@@ -12,6 +12,7 @@ Linux
    find-delete-files.rst
    hard-disk-management.rst
    install-date.rst
+   journalctl.rst
    mount-without-root.rst
    performance-monitoring.rst
    package-managers.rst
