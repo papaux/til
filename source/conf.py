@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Geoffrey\'s TIL'
-copyright = '2019, Geoffrey Papaux'
+copyright = '2020, Geoffrey Papaux'
 author = 'Geoffrey Papaux'
 
 # The version info for the project you're documenting, acts as replacement for
