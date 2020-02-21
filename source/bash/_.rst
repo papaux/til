@@ -4,6 +4,7 @@ Bash
 .. toctree::
    :maxdepth: 1
 
+   scripts-boilerplate.rst
    one-liners.rst
    run-command-file-changed.rst
    true-color-test.rst
