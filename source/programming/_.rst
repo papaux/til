@@ -1,0 +1,10 @@
+Programming
+===========
+
+Some general programming tricks.
+
+.. toctree::
+   :maxdepth: 3
+
+   text-sanitizer.rst
+

@@ -5,7 +5,7 @@ My own TIL (Today I learned) mainly about Linux commands, Linux tools and develo
 
 Some entries are not *concise write-ups* but long true articles or *cheatsheets*, with a lot of commands / option for specific applications.
 
-There are 90 TILs in this repository! Enjoy!
+There are 91 TILs in this repository! Enjoy!
 
 .. toctree::
    :maxdepth: 1
@@ -27,6 +27,7 @@ There are 90 TILs in this repository! Enjoy!
    nodejs/_.rst
    php/_.rst
    postgres/_.rst
+   programming/_.rst
    python/_.rst
    sphinx/_.rst
    scala/_.rst
