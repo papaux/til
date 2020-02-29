@@ -17,3 +17,9 @@ Filtering
 ::
 
   journalctl -b -1
+
+** Get logs from a given service for the last our**
+
+::
+
+  journalctl -u my.service --since "1 hour ago"
