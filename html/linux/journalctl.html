@@ -129,6 +129,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
@@ -216,6 +218,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
+<p>** Get logs from a given service for the last our**</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="o">.</span><span class="n">service</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;1 hour ago&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -239,7 +245,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Geoffrey Papaux
+        &copy; Copyright 2020, Geoffrey Papaux
 
     </p>
   </div>
