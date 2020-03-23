@@ -5,6 +5,7 @@ Linux
    :maxdepth: 1
 
    cgroup.rst
+   dd.rst
    directories-most-files.rst
    disable-touch-pad-while-typing.rst
    enable-tap-click-touch-pad.rst
