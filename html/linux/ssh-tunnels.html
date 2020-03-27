@@ -213,19 +213,19 @@
 <div class="section" id="local-forwarding">
 <h2>Local forwarding<a class="headerlink" href="#local-forwarding" title="Permalink to this headline">¶</a></h2>
 <p>Forward a port from the client machine to the server machine, using the <cite>-L</cite> option.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">80</span><span class="p">:</span><span class="n">intra</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">gw</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumpost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 <p>This opens a connection to the gw.example.com jump server, and forwards any connection to port 80 on the local machine to port 80 on intra.example.com.</p>
 <p>By default, this opens the local port to any host in the local network. Specify a <em>bind address</em> to restrict it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">intra</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">gw</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="remote-forwarding">
 <h2>Remote forwarding<a class="headerlink" href="#remote-forwarding" title="Permalink to this headline">¶</a></h2>
 <p>Tunnel a connection from the remote server to the local client.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">public</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 <p>Connections made to port 8080 on the remote server will be forwarded to the port 80 of the client machine.</p>
