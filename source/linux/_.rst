@@ -21,6 +21,7 @@ Linux
    rpm.rst
    simple-http-server.rst
    ssh-remove-hostname.rst
+   ssh-tunnels.rst
    sudo-timeout.rst
    systemd-journal-size.rst
    netstat.rst
