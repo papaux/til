@@ -4,6 +4,7 @@ Linux
 .. toctree::
    :maxdepth: 1
 
+   bluetooth.rst
    cgroup.rst
    dd.rst
    directories-most-files.rst
