@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Cheatsheet</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">docker-compose</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#docker-compose-from-cron">docker-compose from cron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-images">Update images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#resource-limits">Resource limits</a></li>
 </ul>
 </li>
@@ -195,6 +196,15 @@
 <div class="section" id="docker-compose-from-cron">
 <h2>docker-compose from cron<a class="headerlink" href="#docker-compose-from-cron" title="Permalink to this headline">¶</a></h2>
 <p>If you want to use a <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span></code> command from a cron task, you have to specify the <code class="docutils literal notranslate"><span class="pre">-T</span></code> option, to disable pseudo-tty allocation.</p>
+</div>
+<div class="section" id="update-images">
+<h2>Update images<a class="headerlink" href="#update-images" title="Permalink to this headline">¶</a></h2>
+<p>To update docker images that are using “latest” tag in compose files, in order to limit the downtime first pull the new image version, and then take the stack down and up.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">docker-compose</span> <span class="pre">pull</span>
+<span class="pre">docker-compose</span> <span class="pre">down</span>
+<span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span>
+<span class="pre">`</span></code></p>
 </div>
 <div class="section" id="resource-limits">
 <h2>Resource limits<a class="headerlink" href="#resource-limits" title="Permalink to this headline">¶</a></h2>
