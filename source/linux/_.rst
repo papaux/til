@@ -30,3 +30,4 @@ Linux
    user-management-cheatsheet.rst
    vi-write-sudo.rst
    vnc-server.rst
+   yum.rst
