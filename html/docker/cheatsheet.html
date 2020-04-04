@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -197,15 +197,15 @@
 </ul>
 <div class="section" id="container">
 <h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h2>
-<p><strong>List running containers</strong></p>
+<p><strong>List running containers</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span>
 </pre></div>
 </div>
-<p><strong>List all containers</strong></p>
+<p><strong>List all containers</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<p><strong>Run container</strong></p>
+<p><strong>Run container</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span><span class="p">:</span><span class="mi">80</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">workspace</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span> <span class="o">--</span><span class="n">name</span> <span class="n">dev</span><span class="o">-</span><span class="n">lamp</span> <span class="n">tutum</span><span class="o">/</span><span class="n">lamp</span>
 </pre></div>
 </div>
@@ -218,30 +218,34 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">&lt;host_dir&gt;:&lt;cont_dir&gt;</span></code> map a host directory to a container directory. Useful for persistent storage.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">&lt;name&gt;</span></code> give a name to the container</p></li>
 </ul>
-<p><strong>Connect to a running container</strong></p>
+<p><strong>Connect to a running container</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">attach</span> <span class="mi">2342908</span><span class="n">cs93</span>
 </pre></div>
 </div>
-<p><strong>Remove Stopped Containers</strong></p>
+<p><strong>Remove Stopped Containers</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">a</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;/Exit/ {print $1}&#39;</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">docker</span> <span class="n">rm</span>
 </pre></div>
 </div>
-<p><strong>Remove all containers (including running containers)</strong></p>
+<p><strong>Remove all containers (including running containers)</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">a</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">docker</span> <span class="n">rm</span>
 </pre></div>
 </div>
-<p><strong>Show resource usage</strong></p>
+<p><strong>Show resource usage</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">stats</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="images">
 <h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
-<p><strong>List available images</strong></p>
+<p><strong>List available images</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span>
 </pre></div>
 </div>
-<p><strong>Remove all images</strong></p>
+<p><strong>Remove unused images</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">image</span> <span class="n">prune</span>
+</pre></div>
+</div>
+<p><strong>Remove all images</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">q</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">docker</span> <span class="n">rmi</span>
 </pre></div>
 </div>
