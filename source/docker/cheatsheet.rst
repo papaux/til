@@ -8,21 +8,15 @@ This cheatsheet has been created by using resources from other websites. Thanks 
 Container
 ~~~~~~~~~
 
-**List running containers**
-
-::
+**List running containers**::
   
   docker ps
   
-**List all containers**
-
-::
+**List all containers**::
 
   docker ps -a
   
-**Run container**
-
-::
+**Run container**::
 
   docker run -it -d -p 8080:80 -v /workspace/web/:/var/www --name dev-lamp tutum/lamp
   
@@ -35,41 +29,33 @@ Parameters:
 - ``-v <host_dir>:<cont_dir>`` map a host directory to a container directory. Useful for persistent storage.
 - ``--name <name>`` give a name to the container
 
-**Connect to a running container**
-
-::
+**Connect to a running container**::
   
   docker attach 2342908cs93
 
-**Remove Stopped Containers**
-
-::
+**Remove Stopped Containers**::
 
   docker ps -a | awk '/Exit/ {print $1}' | xargs docker rm
 
-**Remove all containers (including running containers)**
-
-::
+**Remove all containers (including running containers)**::
   
   docker ps -q -a | xargs docker rm
 
-**Show resource usage**
-
-::
+**Show resource usage**::
 
   docker stats --all
 
 Images
 ~~~~~~~
 
-**List available images**
-
-::
+**List available images**::
 
   docker images
 
-**Remove all images**
+**Remove unused images**::
 
-::
+  docker image prune
+
+**Remove all images**::
 
   docker images -a -q | xargs docker rmi
