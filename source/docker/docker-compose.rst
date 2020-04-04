@@ -3,6 +3,13 @@ docker-compose
 
 This page is about docker-compose
 
+Network mode
+~~~~~~~~~~~~
+
+Set the network mode to `host`::
+
+  network: host
+
 docker-compose from cron
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
