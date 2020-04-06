@@ -105,11 +105,13 @@
 <li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hard Disk Management</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#partition">Partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disk">Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#benchmark">Benchmark</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="journalctl.html">journalctl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mount-without-root.html">Mount without root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
@@ -215,8 +217,27 @@
 <div class="section" id="partition">
 <h2>Partition<a class="headerlink" href="#partition" title="Permalink to this headline">¶</a></h2>
 <p><strong>View partition information</strong></p>
-<p>View information like: creation time, features, block info, mount count,</p>
+<p>View information like: creation time, features, block info, mount count, etc:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">tune2fs</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disk">
+<h2>Disk<a class="headerlink" href="#disk" title="Permalink to this headline">¶</a></h2>
+<p><strong>GPT to MS-DOS</strong></p>
+<p>Transform a disk that has been previously set to GPT partitioning back to MS DOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parted</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
+<span class="n">mklabel</span> <span class="n">msdos</span>
+<span class="n">quit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="benchmark">
+<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline">¶</a></h2>
+<p><strong>Using dd</strong></p>
+<p><strong>Using hdparm</strong></p>
+<p>Test read speed with <cite>hdparm</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">Tt</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
 </pre></div>
 </div>
 </div>

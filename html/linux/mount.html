@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>yum &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Mount &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Markdown" href="../markdown/_.html" />
-    <link rel="prev" title="VNC Server" href="vnc-server.html" /> 
+    <link rel="next" title="Performance monitoring" href="performance-monitoring.html" />
+    <link rel="prev" title="journalctl" href="journalctl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,7 +106,11 @@
 <li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="journalctl.html">journalctl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mount</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mount-point-read-only">Mount point read only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mount-without-root">Mount without root</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
@@ -121,7 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">yum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yum.html">yum</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
@@ -187,13 +191,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>yum</li>
+      <li>Mount</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/yum.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/mount.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -206,20 +210,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="yum">
-<h1>yum<a class="headerlink" href="#yum" title="Permalink to this headline">¶</a></h1>
-<p>Cheat sheet about useful yum commands.</p>
-<p><strong>Which package installed a given file?</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">whatprovides</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
+  <div class="section" id="mount">
+<h1>Mount<a class="headerlink" href="#mount" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mount-point-read-only">
+<h2>Mount point read only<a class="headerlink" href="#mount-point-read-only" title="Permalink to this headline">¶</a></h2>
+<p>Protect the moint point by setting the folder as read only. In case of mount failure, nothing can be written to the folder.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chattr</span> <span class="o">+</span><span class="n">i</span> <span class="o">/</span><span class="n">mountpoint</span>
 </pre></div>
 </div>
-<p><strong>Update cache</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="o">-</span><span class="n">t</span> <span class="o">-</span><span class="n">y</span> <span class="n">makecache</span>
+</div>
+<div class="section" id="mount-without-root">
+<h2>Mount without root<a class="headerlink" href="#mount-without-root" title="Permalink to this headline">¶</a></h2>
+<p>When mounting shared folders such as samba shares, we don’t want them to be mounted when we don’t need them or when the server is not available, that is we don’t want to mount automatically at startup.</p>
+<p>It’s still possible to use the mount command, but then root access is required.</p>
+<p>There is a solution to have both advantages: mount pre-defined folders “on demand” without root access.</p>
+<p>This is achieved by putting a corresponding entry in <code class="docutils literal notranslate"><span class="pre">fstab</span></code> and adding the option <code class="docutils literal notranslate"><span class="pre">noauto</span></code>.</p>
+<p>Example of such an a fstab entry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">server</span><span class="o">/</span><span class="n">share</span> <span class="o">/</span><span class="n">mount</span><span class="o">/</span><span class="n">point</span> <span class="n">cifs</span> <span class="n">noauto</span><span class="p">,</span><span class="n">user</span> <span class="mi">0</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<p><strong>List files in a rpm</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">ql</span> <span class="n">tmux</span>
-</pre></div>
 </div>
 </div>
 
@@ -231,10 +240,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../markdown/_.html" class="btn btn-neutral float-right" title="Markdown" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="performance-monitoring.html" class="btn btn-neutral float-right" title="Performance monitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vnc-server.html" class="btn btn-neutral float-left" title="VNC Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="journalctl.html" class="btn btn-neutral float-left" title="journalctl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

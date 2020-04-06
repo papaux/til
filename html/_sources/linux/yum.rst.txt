@@ -7,3 +7,10 @@ Cheat sheet about useful yum commands.
 
   yum whatprovides /path/to/file
 
+**Update cache**::
+
+  yum -t -y makecache
+
+**List files in a rpm**::
+
+  rpm -ql tmux
