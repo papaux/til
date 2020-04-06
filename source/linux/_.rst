@@ -15,7 +15,7 @@ Linux
    hard-disk-management.rst
    install-date.rst
    journalctl.rst
-   mount-without-root.rst
+   mount.rst
    performance-monitoring.rst
    package-managers.rst
    recursive-md5.rst
