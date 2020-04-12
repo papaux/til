@@ -25,3 +25,9 @@ Create a nice looking histogram based on the number of elements found when count
   2019  75  ==========================
   2020  14  =====
 
+Install if needed
+~~~~~~~~~~~~~~~~~
+
+Test if a command is available and if not, install it.::
+
+  [ ! -x "$(command -v docker)" ] && apt install docker

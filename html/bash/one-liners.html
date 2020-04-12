@@ -91,6 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="scripts-boilerplate.html">Scripts boilerplate</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bash One-Liners</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#histogram-in-bash">Histogram in bash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-if-needed">Install if needed</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -207,6 +208,13 @@
 2018  91  ===============================
 2019  75  ==========================
 2020  14  =====
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-if-needed">
+<h2>Install if needed<a class="headerlink" href="#install-if-needed" title="Permalink to this headline">¶</a></h2>
+<p>Test if a command is available and if not, install it.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ ! -x &quot;$(command -v docker)&quot; ] &amp;&amp; apt install docker
 </pre></div>
 </div>
 </div>
