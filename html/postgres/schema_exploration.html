@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Recursive md5 &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Schema exploration in Postgres &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="RPM Files" href="rpm.html" />
-    <link rel="prev" title="Enable “Tap to click” touch pad" href="package-managers.html" /> 
+    <link rel="next" title="Programming" href="../programming/_.html" />
+    <link rel="prev" title="PSQL Housekeeping" href="housekeeping.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,43 +94,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">Linux</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="bluetooth.html">bluetooth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dd.html">dd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
-<li class="toctree-l2"><a class="reference internal" href="journalctl.html">journalctl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Recursive md5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rpm.html">RPM Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netstat.html">netstat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yum.html">yum</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Postgres</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="housekeeping.html">PSQL Housekeeping</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Schema exploration in Postgres</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
@@ -185,15 +160,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="_.html">Linux</a> &raquo;</li>
+          <li><a href="_.html">Postgres</a> &raquo;</li>
         
-      <li>Recursive md5</li>
+      <li>Schema exploration in Postgres</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/recursive-md5.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/postgres/schema_exploration.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -206,17 +181,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="recursive-md5">
-<h1>Recursive md5<a class="headerlink" href="#recursive-md5" title="Permalink to this headline">¶</a></h1>
-<p>This simple command can be used to dump the MD5 hashes of a whole directory structure.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="n">md5sum</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">checkusm</span><span class="o">.</span><span class="n">md5</span>
+  <div class="section" id="schema-exploration-in-postgres">
+<h1>Schema exploration in Postgres<a class="headerlink" href="#schema-exploration-in-postgres" title="Permalink to this headline">¶</a></h1>
+<p><strong>Connect to the database</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">my_db</span>
 </pre></div>
 </div>
-<p>This results in a file with this structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="n">a59c3d4bcfcc53e054106f561e1d4d3</span>  <span class="o">./</span><span class="n">check</span><span class="o">-</span><span class="n">abi</span><span class="o">-</span><span class="n">arch</span><span class="o">.</span><span class="n">sh</span>
-<span class="mi">9</span><span class="n">a967b2dda9ae01c9bd9a0c6b9620f8f</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_nmcli_dev</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">ad776494897d7eaf80957a83502af678</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_journalctl</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">dd25bdd21d278e80fcb3d68e71313404</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_rfkill_list</span><span class="o">.</span><span class="n">txt</span>
+<p><strong>Show tables</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dt</span>
 </pre></div>
 </div>
 </div>
@@ -229,10 +201,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rpm.html" class="btn btn-neutral float-right" title="RPM Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../programming/_.html" class="btn btn-neutral float-right" title="Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="package-managers.html" class="btn btn-neutral float-left" title="Enable “Tap to click” touch pad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="housekeeping.html" class="btn btn-neutral float-left" title="PSQL Housekeeping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
