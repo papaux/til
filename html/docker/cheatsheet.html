@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="docker-compose" href="docker-compose.html" />
+    <link rel="next" title="Cron" href="cron.html" />
     <link rel="prev" title="CentOS based" href="centos-based.html" /> 
 </head>
 
@@ -94,13 +94,14 @@
 <li class="toctree-l2"><a class="reference internal" href="centos-based.html">CentOS based</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Cheatsheet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#container">Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#images">Images</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="docker-compose.html">docker-compose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-compose.html">docker-compose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Docker images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lamp-container.html">LAMP container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell-running-container.html">Shell from running container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats.html">Docker stats and information</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
@@ -191,10 +192,6 @@
             
   <div class="section" id="cheatsheet">
 <h1>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h1>
-<p>This cheatsheet has been created by using resources from other websites. Thanks to:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://sites.duke.edu/docker/docker-command-cheat-sheet/">http://sites.duke.edu/docker/docker-command-cheat-sheet/</a></p></li>
-</ul>
 <div class="section" id="container">
 <h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h2>
 <p><strong>List running containers</strong>:</p>
@@ -235,21 +232,6 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="images">
-<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
-<p><strong>List available images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span>
-</pre></div>
-</div>
-<p><strong>Remove unused images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">image</span> <span class="n">prune</span>
-</pre></div>
-</div>
-<p><strong>Remove all images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">q</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">docker</span> <span class="n">rmi</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -260,7 +242,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="docker-compose.html" class="btn btn-neutral float-right" title="docker-compose" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cron.html" class="btn btn-neutral float-right" title="Cron" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="centos-based.html" class="btn btn-neutral float-left" title="CentOS based" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

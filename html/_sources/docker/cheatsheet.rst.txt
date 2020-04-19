@@ -1,10 +1,6 @@
 Cheatsheet
 ----------
 
-This cheatsheet has been created by using resources from other websites. Thanks to:
-
-- http://sites.duke.edu/docker/docker-command-cheat-sheet/
-
 Container
 ~~~~~~~~~
 
@@ -45,17 +41,3 @@ Parameters:
 
   docker stats --all
 
-Images
-~~~~~~~
-
-**List available images**::
-
-  docker images
-
-**Remove unused images**::
-
-  docker image prune
-
-**Remove all images**::
-
-  docker images -a -q | xargs docker rmi

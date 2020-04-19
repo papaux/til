@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -209,8 +209,12 @@
   <div class="section" id="netstat">
 <h1>netstat<a class="headerlink" href="#netstat" title="Permalink to this headline">¶</a></h1>
 <p>This page contains some useful netstat command to perform specific tasks or answer specific questions.</p>
+<p><strong>List interfaces</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netstat</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
 <p><strong>Remote IPs with open connections</strong></p>
-<p>Show the list of remote IPs having open connections to the machine. In this example it is for the port 8086 (influxdb)</p>
+<p>Show the list of remote IPs having open connections to the machine. In this example it is for the port 8086 (influxdb):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">netstat</span> <span class="o">-</span><span class="n">tunp</span> <span class="o">|</span> <span class="n">grep</span> <span class="mi">8086</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;{print $5}&#39;</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">f1</span> <span class="o">-</span><span class="n">d</span><span class="s2">&quot;:&quot;</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">|</span> <span class="n">uniq</span> <span class="o">-</span><span class="n">c</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nr</span>
 </pre></div>
 </div>
