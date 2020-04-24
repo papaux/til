@@ -31,3 +31,11 @@ Install if needed
 Test if a command is available and if not, install it.::
 
   [ ! -x "$(command -v docker)" ] && apt install docker
+
+Check ping result
+~~~~~~~~~~~~~~~~~
+
+Execute command if host / down according to ping result::
+
+  ping -c 1 192.168.1.1 &> /dev/null && echo "up" || echo "down"
+

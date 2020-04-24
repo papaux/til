@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -92,6 +92,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bash One-Liners</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#histogram-in-bash">Histogram in bash</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-if-needed">Install if needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-ping-result">Check ping result</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -215,6 +216,13 @@
 <h2>Install if needed<a class="headerlink" href="#install-if-needed" title="Permalink to this headline">¶</a></h2>
 <p>Test if a command is available and if not, install it.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ ! -x &quot;$(command -v docker)&quot; ] &amp;&amp; apt install docker
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-ping-result">
+<h2>Check ping result<a class="headerlink" href="#check-ping-result" title="Permalink to this headline">¶</a></h2>
+<p>Execute command if host / down according to ping result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">c</span> <span class="mi">1</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">&quot;up&quot;</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">&quot;down&quot;</span>
 </pre></div>
 </div>
 </div>
