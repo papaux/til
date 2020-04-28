@@ -100,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dd.html">dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">E-Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
@@ -108,7 +109,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">journalctl</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#persistent">Persistent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#status">Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#filtering">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-basics">Filtering: Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-boot">Filtering: Boot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-kernel">Filtering: Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-time-range">Filtering: Time Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-service">Filtering: Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filering-priority">Filering: priority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-combine">Filtering: combine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-docker-container">Filtering: docker container</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
@@ -231,18 +239,89 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="filtering">
-<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h2>
-<p><strong>Get Kernel Messages only</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">k</span>
+<div class="section" id="filtering-basics">
+<h2>Filtering: Basics<a class="headerlink" href="#filtering-basics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Tail-like</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p><strong>Limit the number of entries</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">50</span>
+</pre></div>
+</div>
+<p><strong>Latest messages first</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-boot">
+<h2>Filtering: Boot<a class="headerlink" href="#filtering-boot" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get logs from current boot</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">b</span>
 </pre></div>
 </div>
 <p><strong>Get logs from previous boot</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>** Get logs from a given service for the last our**:</p>
+<p><strong>List available boots</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">boots</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-kernel">
+<h2>Filtering: Kernel<a class="headerlink" href="#filtering-kernel" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get Kernel Messages only</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-time-range">
+<h2>Filtering: Time Range<a class="headerlink" href="#filtering-time-range" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">--since</span></code> and <code class="docutils literal notranslate"><span class="pre">--until</span></code> options for time based filtering.</p>
+<p><strong>Get logs from the last hour</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;1 hour ago&quot;</span>
+</pre></div>
+</div>
+<p><strong>Get logs from the last two days</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;2 days ago&quot;</span>
+</pre></div>
+</div>
+<p><strong>Get logs between two datetimes</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;2020-04-26 22:00:00&quot;</span> <span class="o">--</span><span class="n">until</span> <span class="s2">&quot;2020-04-26 23:00:00&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-service">
+<h2>Filtering: Service<a class="headerlink" href="#filtering-service" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get logs from a given unit</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="o">.</span><span class="n">service</span> <span class="o">-</span><span class="n">u</span> <span class="n">second</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filering-priority">
+<h2>Filering: priority<a class="headerlink" href="#filering-priority" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get logs starting with a priority value</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;crit&quot;</span>
+</pre></div>
+</div>
+<p><strong>Get logs from a priority range</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;emerg&quot;</span><span class="o">..</span><span class="s2">&quot;crit&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-combine">
+<h2>Filtering: combine<a class="headerlink" href="#filtering-combine" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get logs from a given service for the last our</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="o">.</span><span class="n">service</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;1 hour ago&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-docker-container">
+<h2>Filtering: docker container<a class="headerlink" href="#filtering-docker-container" title="Permalink to this headline">¶</a></h2>
+<p>When sending the logs to journalctl (from the docker log driver), additional filtering capability is available.</p>
+<p><strong>Get logs for a given container</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="n">CONTAINER_NAME</span><span class="o">=</span><span class="n">mycontainer</span>
 </pre></div>
 </div>
 </div>
