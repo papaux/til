@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multi-line in Bash &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bash One-Liners" href="one-liners.html" />
+    <link rel="prev" title="Bash" href="_.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Geoffrey's TIL
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multi-line in Bash</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#to-file">To file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts-boilerplate.html">Scripts boilerplate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="true-color-test.html">True color test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="_.html">Bash</a> &raquo;</li>
+        
+      <li>Multi-line in Bash</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/bash/multiline.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multi-line-in-bash">
+<h1>Multi-line in Bash<a class="headerlink" href="#multi-line-in-bash" title="Permalink to this headline">¶</a></h1>
+<p>This TIL shows how to handle multi line strings in bash scripts.</p>
+<div class="section" id="to-file">
+<h2>To file<a class="headerlink" href="#to-file" title="Permalink to this headline">¶</a></h2>
+<p>Write multiple lines into a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat &gt; file.txt &lt;&lt;EOF
+echo \$PWD
+echo $PWD
+EOF
+</pre></div>
+</div>
+<p>The file then contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $PWD
+echo /home/user
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="one-liners.html" class="btn btn-neutral float-right" title="Bash One-Liners" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_.html" class="btn btn-neutral float-left" title="Bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Geoffrey Papaux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
