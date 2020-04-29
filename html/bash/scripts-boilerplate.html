@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bash One-Liners" href="one-liners.html" />
-    <link rel="prev" title="Bash" href="_.html" /> 
+    <link rel="next" title="True color test" href="true-color-test.html" />
+    <link rel="prev" title="Run command on file change" href="run-command-file-changed.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,12 +88,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="color-output.html">Color Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scripts boilerplate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#if-grep">if grep</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
 <li class="toctree-l2"><a class="reference internal" href="true-color-test.html">True color test</a></li>
 </ul>
 </li>
@@ -189,6 +192,16 @@
   <div class="section" id="scripts-boilerplate">
 <h1>Scripts boilerplate<a class="headerlink" href="#scripts-boilerplate" title="Permalink to this headline">¶</a></h1>
 <p>Common operations that we usually want to perform in bash scripts.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">echo</span> <span class="s2">&quot;Hello $1&quot;</span>
+<span class="p">}</span>
+
+<span class="n">hello</span> <span class="s2">&quot;sir&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="if-grep">
 <h2>if grep<a class="headerlink" href="#if-grep" title="Permalink to this headline">¶</a></h2>
 <p>Want to combine <cite>grep</cite> and <cite>if</cite> to do something in case a string is find or not ?</p>
@@ -210,10 +223,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="one-liners.html" class="btn btn-neutral float-right" title="Bash One-Liners" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="true-color-test.html" class="btn btn-neutral float-right" title="True color test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_.html" class="btn btn-neutral float-left" title="Bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="run-command-file-changed.html" class="btn btn-neutral float-left" title="Run command on file change" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

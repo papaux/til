@@ -3,6 +3,18 @@ Scripts boilerplate
 
 Common operations that we usually want to perform in bash scripts.
 
+Functions
+~~~~~~~~~
+
+::
+
+  print_hello () {
+    echo "Hello $1"
+  }
+
+  hello "sir"
+
+
 if grep
 ~~~~~~~~
 
