@@ -4,6 +4,7 @@ Bash
 .. toctree::
    :maxdepth: 1
 
+   color-output.rst
    multiline.rst
    one-liners.rst
    run-command-file-changed.rst
