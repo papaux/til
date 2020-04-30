@@ -21,6 +21,14 @@ Then you can open the index file: build/html/index.html
 
 To publish on github pages, I opted for the `gh-pages` branch option.
 
+### Auto update using github Action
+
+This repository is configured with a github Action to automatically build and publish the TILs to the `gh-pages` branch after each push on master.
+
+The only requirement is to create and configure a github access token and add it to the secrets of this repository, named `ACCESS_TOKEN`.
+
+### Manual
+
 First check out the repository and the `gh-pages` branch in another directory, for example `../til-gh-pages`. Clean the branch from its history (check my TILs for a howto) and run the following command:
 
 ```
