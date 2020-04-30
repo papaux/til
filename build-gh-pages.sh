@@ -14,3 +14,4 @@ fi
 
 make html -e BUILDDIR=$GH_PAGES
 
+cp index.html $GH_PAGES/index.html
