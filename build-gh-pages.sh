@@ -5,7 +5,7 @@
 # This assumes you have a folder ../til-gh-pages which tracks the gh-pages branch
 ##
 
-GH_PAGES=../til-gh-pages
+GH_PAGES=./build
 
 if [ ! -d "$GH_PAGES" ]; then
     echo "ERROR: Cannot proceed becaus the target directory $GH_PAGES does not exist."

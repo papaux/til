@@ -6,6 +6,7 @@ Docker
 
    centos-based.rst
    cheatsheet.rst
+   clean.rst
    cron.rst
    docker-compose.rst
    images.rst
