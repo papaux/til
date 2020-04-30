@@ -1,5 +1,5 @@
-Git branches
---------------
+Branches
+--------
 
 List all branches
 
