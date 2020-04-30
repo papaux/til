@@ -1,4 +1,4 @@
-Git grep in logs
+Grep in git logs
 ----------------
 
 If you want to look for a specific pattern in the files in your

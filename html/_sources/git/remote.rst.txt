@@ -1,5 +1,5 @@
-Git Remote Repositories Commands
----------------------------------
+Remote Repositories Commands
+----------------------------
 
 List remote branches
 

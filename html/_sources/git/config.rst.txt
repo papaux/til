@@ -1,5 +1,5 @@
-Git config management
------------------------
+Config management
+------------------
 
 List all active git config parameters on your system
 

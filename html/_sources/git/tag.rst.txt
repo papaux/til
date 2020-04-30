@@ -1,5 +1,5 @@
-Git tag commands
------------------
+Tag commands
+-------------
 
 Annotated tags ``-a``, in addition to lightweight tag contains some metadata:
 - committer name

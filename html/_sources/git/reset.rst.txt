@@ -1,5 +1,5 @@
 Reset commands
--------------------
+--------------
 
 Reset local branch
 ~~~~~~~~~~~~~~~~~~~

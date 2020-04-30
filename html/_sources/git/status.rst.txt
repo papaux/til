@@ -1,5 +1,5 @@
-Git status commands
---------------------
+Status commands
+-----------------
 
 Show all untracked files in untracked directories
 
