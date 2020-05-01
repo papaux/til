@@ -12,11 +12,12 @@ The `openssl` tool can be used to verify this chain:
 
 ::
 
-  openssl s_client -showcerts -connect verisign.com:443
+  openssl s_client -showcerts -connect google.com:443
 
 This will show all details about the certificates and the chain.
 
 To print only a summary of the chain, this command will give the required information:
 
 ::
+
   openssl s_client -showcerts -connect google.com:443 2>/dev/null | grep "[s]:"

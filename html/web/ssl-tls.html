@@ -190,15 +190,14 @@
 <h2>Certificate chain<a class="headerlink" href="#certificate-chain" title="Permalink to this headline">¶</a></h2>
 <p>Web servers must be sending the full certificate chain if we want the clients to be able to validate the certificates.</p>
 <p>The <cite>openssl</cite> tool can be used to verify this chain:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">verisign</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span>
 </pre></div>
 </div>
 <p>This will show all details about the certificates and the chain.</p>
 <p>To print only a summary of the chain, this command will give the required information:</p>
-<dl class="simple">
-<dt>::</dt><dd><p>openssl s_client -showcerts -connect google.com:443 2&gt;/dev/null | grep “[s]:”</p>
-</dd>
-</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;[s]:&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
