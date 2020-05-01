@@ -12,6 +12,11 @@ if [ ! -d "$GH_PAGES" ]; then
     exit 1
 fi
 
+# Set the TIL counter
+TILCOUNT=$(./til-count.sh)
+sed -i "s/XXX/$TILCOUNT/" source/index.rst
+
+
 make html -e BUILDDIR=$GH_PAGES
 
 cp index.html $GH_PAGES/index.html
