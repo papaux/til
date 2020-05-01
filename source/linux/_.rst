@@ -32,3 +32,4 @@ Linux
    vi-write-sudo.rst
    vnc-server.rst
    yum.rst
+   zfs.rst
