@@ -1,11 +1,11 @@
 # Geoffrey's TIL
 
-My own TIL (*Today I learned*) mainly about Linux commands, tools and programming. 
-TILs are concise write-ups about everything I find useful and want to remember about these topics. 
+My own TIL (*Today I learned*) mainly about Linux commands, tools and programming.
+TILs are concise write-ups about everything I find useful and want to remember about these topics.
 
 Web version is hosted directly here: https://papaux.github.io/til
 
-I borrowed the concept from https://github.com/jbranchaud/til 
+I borrowed the concept from https://github.com/jbranchaud/til
 
 My TILs are maintained in reStructuredText markup using [Sphinx](http://www.sphinx-doc.org/en/stable/rest.html) which require a build step to be transformed in HTML.
 
