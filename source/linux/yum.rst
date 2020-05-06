@@ -14,3 +14,7 @@ Cheat sheet about useful yum commands.
 **List files in a rpm**::
 
   rpm -ql tmux
+
+**Check which repo provides a package**::
+
+  repoquery -i something
