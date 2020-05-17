@@ -4,6 +4,7 @@ Linux
 .. toctree::
    :maxdepth: 1
 
+   arp.rst
    bluetooth.rst
    cgroup.rst
    dd.rst

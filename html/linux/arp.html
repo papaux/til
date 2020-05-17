@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bluetooth &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>arp &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cgroup" href="cgroup.html" />
-    <link rel="prev" title="arp" href="arp.html" /> 
+    <link rel="next" title="bluetooth" href="bluetooth.html" />
+    <link rel="prev" title="Linux" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,11 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Linux</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="arp.html">arp</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">bluetooth</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#manage-connections">Manage connections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">arp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#show-cache">Show cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-cache">Clear cache</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="bluetooth.html">bluetooth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dd.html">dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
@@ -193,13 +194,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>bluetooth</li>
+      <li>arp</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/bluetooth.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/arp.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -212,29 +213,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bluetooth">
-<h1>bluetooth<a class="headerlink" href="#bluetooth" title="Permalink to this headline">¶</a></h1>
-<p>This page contains useful information and commands to manage bluetooth connections under Linux.</p>
-<div class="section" id="manage-connections">
-<h2>Manage connections<a class="headerlink" href="#manage-connections" title="Permalink to this headline">¶</a></h2>
-<p>The connection manager utility is <cite>bluetoothctl</cite>. It’s an interactive-cli application so start it first:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bluetoothctl</span>
+  <div class="section" id="arp">
+<h1>arp<a class="headerlink" href="#arp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="show-cache">
+<h2>Show cache<a class="headerlink" href="#show-cache" title="Permalink to this headline">¶</a></h2>
+<p>Show arp cache:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="n">neigh</span>
 </pre></div>
 </div>
-<p>Start scanning (the tool will report found device in this window):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scan</span> <span class="n">on</span>
-</pre></div>
 </div>
-<p>Pair with device:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span> <span class="n">AB</span><span class="p">:</span><span class="n">CD</span><span class="p">:</span><span class="n">EF</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">03</span>
-</pre></div>
-</div>
-<p>List paired devices:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paired</span><span class="o">-</span><span class="n">devices</span>
-</pre></div>
-</div>
-<p>Forget device:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remove</span> <span class="n">AB</span><span class="p">:</span><span class="n">CD</span><span class="p">:</span><span class="n">EF</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">03</span>
+<div class="section" id="clear-cache">
+<h2>Clear cache<a class="headerlink" href="#clear-cache" title="Permalink to this headline">¶</a></h2>
+<p>Flush arp cache:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">s</span> <span class="n">neigh</span> <span class="n">flush</span> <span class="nb">all</span>
 </pre></div>
 </div>
 </div>
@@ -248,10 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cgroup.html" class="btn btn-neutral float-right" title="cgroup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bluetooth.html" class="btn btn-neutral float-right" title="bluetooth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arp.html" class="btn btn-neutral float-left" title="arp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
