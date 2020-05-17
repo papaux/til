@@ -105,8 +105,11 @@
 <li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="find-delete-files.html">find: delete files</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hard Disk Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-information">Global information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diagnostic">Diagnostic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-mode">Power mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#partition">Partition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#disk">Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partition-table">Partition table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#benchmark">Benchmark</a></li>
 </ul>
 </li>
@@ -216,6 +219,39 @@
   <div class="section" id="hard-disk-management">
 <h1>Hard Disk Management<a class="headerlink" href="#hard-disk-management" title="Permalink to this headline">¶</a></h1>
 <p>This page is not exactly a single small TIL but a collection of useful commands for managing disk and partitions as well as getting state information.</p>
+<div class="section" id="global-information">
+<h2>Global information<a class="headerlink" href="#global-information" title="Permalink to this headline">¶</a></h2>
+<p>Get all information about a disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">I</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="diagnostic">
+<h2>Diagnostic<a class="headerlink" href="#diagnostic" title="Permalink to this headline">¶</a></h2>
+<p>Get number of running hours:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">--</span><span class="nb">all</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Power_On_Hours</span>
+</pre></div>
+</div>
+<p>Get SATA version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">n</span> <span class="n">standby</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">SATA</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="power-mode">
+<h2>Power mode<a class="headerlink" href="#power-mode" title="Permalink to this headline">¶</a></h2>
+<p>Get drive power state (might wake up the drive):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
+</pre></div>
+</div>
+<p>Get current power mode of a hard drive, without waking it up:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">n</span> <span class="n">standby</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sds</span>
+</pre></div>
+</div>
+<p>Put drive into stand by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">y</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="partition">
 <h2>Partition<a class="headerlink" href="#partition" title="Permalink to this headline">¶</a></h2>
 <p><strong>View partition information</strong></p>
@@ -224,8 +260,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="disk">
-<h2>Disk<a class="headerlink" href="#disk" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="partition-table">
+<h2>Partition table<a class="headerlink" href="#partition-table" title="Permalink to this headline">¶</a></h2>
 <p><strong>GPT to MS-DOS</strong></p>
 <p>Transform a disk that has been previously set to GPT partitioning back to MS DOS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parted</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
