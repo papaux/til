@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bash &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Copy to clipboard &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Color Output" href="color-output.html" />
-    <link rel="prev" title="Yaourt: noconfirm" href="../archlinux/yaourt-noconfirm.html" /> 
+    <link rel="next" title="Multi-line in Bash" href="multiline.html" />
+    <link rel="prev" title="Color Output" href="color-output.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,9 +87,9 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Bash</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="color-output.html">Color Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="copy-to-clipboard.html">Copy to clipboard</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Copy to clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -165,13 +165,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Bash</li>
+          <li><a href="_.html">Bash</a> &raquo;</li>
+        
+      <li>Copy to clipboard</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/bash/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/bash/copy-to-clipboard.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -184,18 +186,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bash">
-<h1>Bash<a class="headerlink" href="#bash" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="color-output.html">Color Output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="copy-to-clipboard.html">Copy to clipboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts-boilerplate.html">Scripts boilerplate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="true-color-test.html">True color test</a></li>
-</ul>
+  <div class="section" id="copy-to-clipboard">
+<h1>Copy to clipboard<a class="headerlink" href="#copy-to-clipboard" title="Permalink to this headline">¶</a></h1>
+<p>Copy a command output to the “global” clipboard, available outside of the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;something&quot;</span> <span class="o">|</span> <span class="n">xclip</span> <span class="o">-</span><span class="n">selection</span> <span class="n">clipboard</span>
+</pre></div>
+</div>
+<p>Copy to the ‘X’ clipboard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;something&quot;</span> <span class="o">|</span> <span class="n">xclip</span>
+</pre></div>
+</div>
+<p>Paste something from the ‘X’ clipboard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xclip</span> <span class="o">-</span><span class="n">o</span>
+</pre></div>
 </div>
 </div>
 
@@ -207,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="color-output.html" class="btn btn-neutral float-right" title="Color Output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="multiline.html" class="btn btn-neutral float-right" title="Multi-line in Bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../archlinux/yaourt-noconfirm.html" class="btn btn-neutral float-left" title="Yaourt: noconfirm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="color-output.html" class="btn btn-neutral float-left" title="Color Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

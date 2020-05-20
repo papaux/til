@@ -5,6 +5,7 @@ Bash
    :maxdepth: 1
 
    color-output.rst
+   copy-to-clipboard.rst
    multiline.rst
    one-liners.rst
    run-command-file-changed.rst
