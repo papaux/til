@@ -17,6 +17,7 @@ There are XXX TILs in this repository! Enjoy!
    dev-env/_.rst
    docker/_.rst
    git/_.rst
+   influxdb/._rst
    java/_.rst
    kvm/_.rst
    linux/_.rst

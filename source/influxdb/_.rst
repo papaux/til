@@ -1,0 +1,10 @@
+InfluxDB
+=========
+
+
+.. toctree::
+   :maxdepth: 3
+
+   client.rst
+   housekeeping.rst
+
