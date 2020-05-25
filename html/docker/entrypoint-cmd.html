@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Shell from running container &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Docker ENTRYPOINT and CMD &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Docker stats and information" href="stats.html" />
-    <link rel="prev" title="LAMP container" href="lamp-container.html" /> 
+    <link rel="next" title="Docker images" href="images.html" />
+    <link rel="prev" title="docker-compose" href="docker-compose.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,10 +96,14 @@
 <li class="toctree-l2"><a class="reference internal" href="clean.html">Clean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docker-compose.html">docker-compose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entrypoint-cmd.html">Docker ENTRYPOINT and CMD</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docker ENTRYPOINT and CMD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cmd-vs-entrypoint">CMD vs ENTRYPOINT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell-vs-exec">Shell vs. Exec</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Docker images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lamp-container.html">LAMP container</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Shell from running container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-running-container.html">Shell from running container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stats.html">Docker stats and information</a></li>
 </ul>
 </li>
@@ -170,13 +174,13 @@
         
           <li><a href="_.html">Docker</a> &raquo;</li>
         
-      <li>Shell from running container</li>
+      <li>Docker ENTRYPOINT and CMD</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/docker/shell-running-container.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docker/entrypoint-cmd.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,11 +193,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="shell-from-running-container">
-<h1>Shell from running container<a class="headerlink" href="#shell-from-running-container" title="Permalink to this headline">¶</a></h1>
-<p>THe following command allows you to start a shell inside the container <cite>mycont</cite></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">ti</span> <span class="n">mycont</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+  <div class="section" id="docker-entrypoint-and-cmd">
+<h1>Docker ENTRYPOINT and CMD<a class="headerlink" href="#docker-entrypoint-and-cmd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cmd-vs-entrypoint">
+<h2>CMD vs ENTRYPOINT<a class="headerlink" href="#cmd-vs-entrypoint" title="Permalink to this headline">¶</a></h2>
+<p><strong>CMD</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
 </pre></div>
+</div>
+<ul class="simple">
+<li><p>Easy to override: use for general purpose images</p></li>
+</ul>
+<p><strong>ENTRYPOINT</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Not made to be overridden: use for specific applications</p></li>
+</ul>
+<p><strong>CMD and ENTRYPOINT</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+<span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>CMD is appended to ENTRYPOINT</p></li>
+<li><p>Specifies the executable with ENTRYPOINT and the arguments with CMD</p></li>
+<li><p>The CMD arguments can be overridden by the user of your container</p></li>
+<li><p>Always use the <strong>exec form</strong> when combining both</p></li>
+</ul>
+</div>
+<div class="section" id="shell-vs-exec">
+<h2>Shell vs. Exec<a class="headerlink" href="#shell-vs-exec" title="Permalink to this headline">¶</a></h2>
+<p>With the <strong>shell form</strong>, docker will invoke a shell and pass the specified commands to it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="n">ping</span> <span class="n">localhost</span>
+</pre></div>
+</div>
+<p>This will be executed as <cite>/bin/sh -c ‘ping localhost’</cite> by docker.</p>
+<p>Consequences of the shell form:
+- the process with PID 1 is the shell and not your application
+- POSIX signals will be sent to the shell and not forwarded to your application
+- the container needs to provide a shell at <cite>/bin/sh</cite>
+- variable expansion will happen as you would expect</p>
+<p>With the <strong>exec form</strong>, docker executes your commands directly in the container, without starting a shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Consequences of the exec form:
+- your process is the PID 1, receiving all signals
+- no shell needed in the container
+- your command is interpreted as is, and there is <strong>no variable expansion</strong> (since there is no shell)</p>
 </div>
 </div>
 
@@ -205,10 +254,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="stats.html" class="btn btn-neutral float-right" title="Docker stats and information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="images.html" class="btn btn-neutral float-right" title="Docker images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lamp-container.html" class="btn btn-neutral float-left" title="LAMP container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="docker-compose.html" class="btn btn-neutral float-left" title="docker-compose" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
