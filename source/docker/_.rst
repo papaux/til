@@ -9,6 +9,7 @@ Docker
    clean.rst
    cron.rst
    docker-compose.rst
+   entrypoint-cmd.rst
    images.rst
    lamp-container.rst
    shell-running-container.rst
