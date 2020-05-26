@@ -218,17 +218,17 @@
 <p>Select the source image.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>FROM &lt;image&gt;</cite></p></li>
-<li><p><cite>FROM &lt;image&gt;:&lt;tag&gt;</cite></p></li>
-<li><p><cite>FROM &lt;image&gt;&#64;&lt;digest&gt;</cite></p></li>
-<li><p><cite>FROM &lt;image&gt; as &lt;name&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">&lt;image&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">&lt;image&gt;:&lt;tag&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">&lt;image&gt;&#64;&lt;digest&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">&lt;image&gt;</span> <span class="pre">as</span> <span class="pre">&lt;name&gt;</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p><cite>FROM</cite> must be the <strong>first non-comment instruction</strong> in the Dockerfile.</p></li>
-<li><p><cite>FROM</cite> can appear multiple times in order to create multiple images.</p></li>
-<li><p>The <cite>tag</cite> or <cite>digest</cite> values are optional. If omitted latest is assumed by default.</p></li>
-<li><p>The <cite>as &lt;name&gt;</cite> directive is used in case of multi-stage build.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code> must be the <strong>first non-comment instruction</strong> in the Dockerfile.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code> can appear multiple times in order to create multiple images.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">tag</span></code> or <code class="docutils literal notranslate"><span class="pre">digest</span></code> values are optional. If omitted latest is assumed by default.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">&lt;name&gt;</span></code> directive is used in case of multi-stage build.</p></li>
 </ul>
 </div>
 <div class="section" id="maintainer">
@@ -236,40 +236,40 @@
 <p>Set the Author field of the generated images.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>MAINTAINER &lt;name&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAINTAINER</span> <span class="pre">&lt;name&gt;</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="run">
 <h2>RUN<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>RUN &lt;command&gt;</cite> (shell form, the command is run in a shell, by default <cite>/bin/sh -c</cite>)</p></li>
-<li><p><cite>RUN [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite> (exec form)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">&lt;command&gt;</span></code> (shell form, the command is run in a shell, by default <code class="docutils literal notranslate"><span class="pre">/bin/sh</span> <span class="pre">-c</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">[&quot;&lt;executable&gt;&quot;,</span> <span class="pre">&quot;&lt;param1&gt;&quot;,</span> <span class="pre">&quot;&lt;param2&gt;&quot;]</span></code> (exec form)</p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>The exec form avoids shell string munging.</p></li>
 <li><p>The exec form allows a base image to not contain a shell executable.</p></li>
-<li><p>The default shell for the shell form can be changed using the <cite>SHELL</cite> command.</p></li>
-<li><p>Normal shell processing does not occur when using the exec form. For example, RUN [“echo”, “$HOME”] will not do variable substitution on $HOME.</p></li>
+<li><p>The default shell for the shell form can be changed using the <code class="docutils literal notranslate"><span class="pre">SHELL</span></code> command.</p></li>
+<li><p>Normal shell processing does not occur when using the exec form. For example, <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">[&quot;echo&quot;,</span> <span class="pre">&quot;$HOME&quot;]</span></code> will not do variable substitution on <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="cmd">
 <h2>CMD<a class="headerlink" href="#cmd" title="Permalink to this headline">¶</a></h2>
-<p><cite>CMD</cite> aims to provide defaults for an executing container.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CMD</span></code> aims to provide defaults for an executing container.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>CMD [“&lt;executable&gt;”,”&lt;param1&gt;”,”&lt;param2&gt;”]</cite> (exec form, this is the preferred form)</p></li>
-<li><p><cite>CMD [“&lt;param1&gt;”,”&lt;param2&gt;”]</cite> (as default parameters to ENTRYPOINT)</p></li>
-<li><p><cite>CMD &lt;command&gt; &lt;param1&gt; &lt;param2&gt;</cite> (shell form)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">[&quot;&lt;executable&gt;&quot;,&quot;&lt;param1&gt;&quot;,&quot;&lt;param2&gt;&quot;]</span></code> (exec form, this is the preferred form)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">[&quot;&lt;param1&gt;&quot;,&quot;&lt;param2&gt;&quot;]</span></code> (as default parameters to ENTRYPOINT)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">&lt;command&gt;</span> <span class="pre">&lt;param1&gt;</span> <span class="pre">&lt;param2&gt;</span></code> (shell form)</p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p>It may include an executable. If omitted, an <cite>ENTRYPOINT</cite> instruction must be specified.</p></li>
-<li><p>There can only be one <cite>CMD</cite> instruction in a Dockerfile. Only the last <cite>CMD</cite> will take effect.</p></li>
-<li><p>If <cite>CMD</cite> is used to provide default arguments for the <cite>ENTRYPOINT</cite> instruction, both instructions should be specified with the JSON array format.</p></li>
-<li><p>If the user specifies arguments to docker run, this overrides the defaults specified in <cite>CMD</cite>.</p></li>
-<li><p>Normal shell processing does not occur when using the exec form. For example, <cite>CMD [“echo”, “$HOME”]</cite> will not do variable substitution on <cite>$HOME</cite>.</p></li>
+<li><p>It may include an executable. If omitted, an <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> instruction must be specified.</p></li>
+<li><p>There can only be one <code class="docutils literal notranslate"><span class="pre">CMD</span></code> instruction in a Dockerfile. Only the last <code class="docutils literal notranslate"><span class="pre">CMD</span></code> will take effect.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">CMD</span></code> is used to provide default arguments for the <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> instruction, both instructions should be specified with the JSON array format.</p></li>
+<li><p>If the user specifies arguments to docker run, this overrides the defaults specified in <code class="docutils literal notranslate"><span class="pre">CMD</span></code>.</p></li>
+<li><p>Normal shell processing does not occur when using the exec form. For example, <code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">[&quot;echo&quot;,</span> <span class="pre">&quot;$HOME&quot;]</span></code> will not do variable substitution on <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="label">
@@ -277,12 +277,12 @@
 <p>The LABEL instruction adds metadata to an image.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>LABEL &lt;key&gt;=&lt;value&gt; [&lt;key&gt;=&lt;value&gt; …]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LABEL</span> <span class="pre">&lt;key&gt;=&lt;value&gt;</span> <span class="pre">[&lt;key&gt;=&lt;value&gt;</span> <span class="pre">...]</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p>To include spaces within a <cite>LABEL</cite> value, use quotes and backslashes as you would in command-line parsing.</p></li>
-<li><p>Labels are additive including <cite>LABEL`s in `FROM</cite> images.</p></li>
+<li><p>To include spaces within a <code class="docutils literal notranslate"><span class="pre">LABEL</span></code> value, use quotes and backslashes as you would in command-line parsing.</p></li>
+<li><p>Labels are additive including <code class="docutils literal notranslate"><span class="pre">LABEL``s</span> <span class="pre">in</span> <span class="pre">``FROM</span></code> images.</p></li>
 <li><p>If Docker encounters a label/key that already exists, the new value overrides any previous labels with identical keys.</p></li>
 <li><p>To view an image’s labels, use the docker inspect command. They will be under the “Labels” JSON attribute.</p></li>
 </ul>
@@ -292,57 +292,57 @@
 <p>Informs Docker that the container listens on the specified network port(s) at runtime.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>EXPOSE &lt;port&gt; [&lt;port&gt; …]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPOSE</span> <span class="pre">&lt;port&gt;</span> <span class="pre">[&lt;port&gt;</span> <span class="pre">...]</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p><cite>EXPOSE</cite> does not make the ports of the container accessible to the host.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code> does not make the ports of the container accessible to the host.</p></li>
 </ul>
 </div>
 <div class="section" id="env">
 <h2>ENV<a class="headerlink" href="#env" title="Permalink to this headline">¶</a></h2>
-<p>Sets environment variable <cite>&lt;key&gt;</cite> to the value <cite>&lt;value&gt;</cite>.</p>
+<p>Sets environment variable <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> to the value <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>ENV &lt;key&gt; &lt;value&gt;</cite></p></li>
-<li><p><cite>ENV &lt;key&gt;=&lt;value&gt; [&lt;key&gt;=&lt;value&gt; …]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENV</span> <span class="pre">&lt;key&gt;</span> <span class="pre">&lt;value&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENV</span> <span class="pre">&lt;key&gt;=&lt;value&gt;</span> <span class="pre">[&lt;key&gt;=&lt;value&gt;</span> <span class="pre">...]</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>The value will be in the environment of all “descendant” Dockerfile commands and can be replaced inline as well.</p></li>
-<li><p>The environment variables set using <cite>ENV</cite> will persist when a container is run from the resulting image.</p></li>
+<li><p>The environment variables set using <code class="docutils literal notranslate"><span class="pre">ENV</span></code> will persist when a container is run from the resulting image.</p></li>
 <li><p>The first form will set a single variable to a value with the entire string after the first space being treated as the &lt;value&gt; - including characters such as spaces and quotes.</p></li>
 </ul>
 </div>
 <div class="section" id="add">
 <h2>ADD<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h2>
-<p>Copies new files, directories, or remote file URLs from <cite>&lt;src&gt;</cite> and adds them to the filesystem of the image at the path <cite>&lt;dest&gt;</cite>.</p>
+<p>Copies new files, directories, or remote file URLs from <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> and adds them to the filesystem of the image at the path <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>ADD &lt;src&gt; [&lt;src&gt; …] &lt;dest&gt;</cite></p></li>
-<li><p><cite>ADD [“&lt;src&gt;”, … “&lt;dest&gt;”]</cite> (this form is required for paths containing whitespace)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">&lt;src&gt;</span> <span class="pre">[&lt;src&gt;</span> <span class="pre">...]</span> <span class="pre">&lt;dest&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">[&quot;&lt;src&gt;&quot;,</span> <span class="pre">...</span> <span class="pre">&quot;&lt;dest&gt;&quot;]</span></code> (this form is required for paths containing whitespace)</p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p><cite>&lt;src&gt;</cite> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
-<li><p>If <cite>&lt;src&gt;</cite> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).</p></li>
-<li><p><cite>&lt;dest&gt;</cite> is an absolute path, or a path relative to <cite>WORKDIR</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code> is an absolute path, or a path relative to <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="copy">
 <h2>COPY<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
-<p>Copies new files or directories from <cite>&lt;src&gt;</cite> and adds them to the filesystem of the image at the path <cite>&lt;dest&gt;</cite>.</p>
+<p>Copies new files or directories from <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> and adds them to the filesystem of the image at the path <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>COPY &lt;src&gt; [&lt;src&gt; …] &lt;dest&gt;</cite></p></li>
-<li><p><cite>COPY [“&lt;src&gt;”, … “&lt;dest&gt;”]</cite> (this form is required for paths containing whitespace)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COPY</span> <span class="pre">&lt;src&gt;</span> <span class="pre">[&lt;src&gt;</span> <span class="pre">...]</span> <span class="pre">&lt;dest&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COPY</span> <span class="pre">[&quot;&lt;src&gt;&quot;,</span> <span class="pre">...</span> <span class="pre">&quot;&lt;dest&gt;&quot;]</span></code> (this form is required for paths containing whitespace)</p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p><cite>&lt;src&gt;</cite> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
-<li><p><cite>&lt;src&gt;</cite> must be relative to the source directory that is being built (the context of the build).</p></li>
-<li><p><cite>&lt;dest&gt;</cite> is an absolute path, or a path relative to <cite>WORKDIR</cite>.</p></li>
-<li><p>If <cite>&lt;dest&gt;</cite> doesn’t exist, it is created along with all missing directories in its path.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> must be relative to the source directory that is being built (the context of the build).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code> is an absolute path, or a path relative to <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code> doesn’t exist, it is created along with all missing directories in its path.</p></li>
 </ul>
 </div>
 <div class="section" id="entrypoint">
@@ -350,14 +350,14 @@
 <p>Configure a container that will run as an executable.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>ENTRYPOINT [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite> (exec form, preferred)</p></li>
-<li><p><cite>ENTRYPOINT &lt;command&gt; &lt;param1&gt; &lt;param2&gt;</cite> (shell form)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span> <span class="pre">[&quot;&lt;executable&gt;&quot;,</span> <span class="pre">&quot;&lt;param1&gt;&quot;,</span> <span class="pre">&quot;&lt;param2&gt;&quot;]</span></code> (exec form, preferred)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span> <span class="pre">&lt;command&gt;</span> <span class="pre">&lt;param1&gt;</span> <span class="pre">&lt;param2&gt;</span></code> (shell form)</p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p>Command line arguments to docker run <cite>&lt;image&gt;</cite> will be appended after all elements in an exec form <cite>ENTRYPOINT</cite> and will override all elements specified using <cite>CMD</cite>.</p></li>
-<li><p>If using the shell form, <cite>CMD</cite> or run command line arguments are ignored, but the <cite>ENTRYPOINT</cite> will start via the shell. This means the executable will not be PID 1 nor will it receive <cite>UNIX</cite> signals. Prepend <cite>exec</cite> to get around this drawback.</p></li>
-<li><p>Only the last <cite>ENTRYPOINT</cite> instruction in the Dockerfile will have an effect.</p></li>
+<li><p>Command line arguments to docker run <code class="docutils literal notranslate"><span class="pre">&lt;image&gt;</span></code> will be appended after all elements in an exec form <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> and will override all elements specified using <code class="docutils literal notranslate"><span class="pre">CMD</span></code>.</p></li>
+<li><p>If using the shell form, <code class="docutils literal notranslate"><span class="pre">CMD</span></code> or run command line arguments are ignored, but the <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> will start via the shell. This means the executable will not be PID 1 nor will it receive <code class="docutils literal notranslate"><span class="pre">UNIX</span></code> signals. Prepend <code class="docutils literal notranslate"><span class="pre">exec</span></code> to get around this drawback.</p></li>
+<li><p>Only the last <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> instruction in the Dockerfile will have an effect.</p></li>
 </ul>
 </div>
 <div class="section" id="volume">
@@ -365,62 +365,62 @@
 <p>Creates a mount point with the specified name, holding externally mounted volumes from native host or other containers.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>VOLUME [“&lt;path&gt;”, …]</cite></p></li>
-<li><p><cite>VOLUME &lt;path&gt; [&lt;path&gt; …]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME</span> <span class="pre">[&quot;&lt;path&gt;&quot;,</span> <span class="pre">...]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME</span> <span class="pre">&lt;path&gt;</span> <span class="pre">[&lt;path&gt;</span> <span class="pre">...]</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="user">
 <h2>USER<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
-<p>Sets the user name or <cite>UID</cite> to use for any <cite>RUN</cite>, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.</p>
+<p>Sets the user name or <code class="docutils literal notranslate"><span class="pre">UID</span></code> to use for any <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>USER &lt;username | UID&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USER</span> <span class="pre">&lt;username</span> <span class="pre">|</span> <span class="pre">UID&gt;</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="workdir">
 <h2>WORKDIR<a class="headerlink" href="#workdir" title="Permalink to this headline">¶</a></h2>
-<p>Sets the working directory for any <cite>RUN</cite>, <cite>CMD</cite>, <cite>ENTRYPOINT</cite>, <cite>COPY</cite>, and <cite>ADD</cite> instructions that follow it.</p>
+<p>Sets the working directory for any <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, <code class="docutils literal notranslate"><span class="pre">CMD</span></code>, <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code>, <code class="docutils literal notranslate"><span class="pre">COPY</span></code>, and <code class="docutils literal notranslate"><span class="pre">ADD</span></code> instructions that follow it.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>WORKDIR &lt;/path/to/workdir&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WORKDIR</span> <span class="pre">&lt;/path/to/workdir&gt;</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>It can be used multiple times in the one Dockerfile.</p></li>
-<li><p>If a relative path is provided, it will be relative to the path of the previous <cite>WORKDIR</cite> instruction.</p></li>
+<li><p>If a relative path is provided, it will be relative to the path of the previous <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code> instruction.</p></li>
 </ul>
 </div>
 <div class="section" id="arg">
 <h2>ARG<a class="headerlink" href="#arg" title="Permalink to this headline">¶</a></h2>
-<p>Defines a <strong>build-time</strong> variable that can be passed using the <cite>–build-arg &lt;varname&gt;=&lt;value&gt;</cite> flag of the <cite>docker build</cite> command.</p>
+<p>Defines a <strong>build-time</strong> variable that can be passed using the <code class="docutils literal notranslate"><span class="pre">--build-arg</span> <span class="pre">&lt;varname&gt;=&lt;value&gt;</span></code> flag of the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> command.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>ARG &lt;name&gt;[=&lt;default value&gt;]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;name&gt;[=&lt;default</span> <span class="pre">value&gt;]</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>Multiple variables may be defined by specifying ARG multiple times.</p></li>
 <li><p>Build-time variable values are visible to any user of the image with the docker history command =&gt; do not use for secrets.</p></li>
-<li><p>Environment variables defined using the <cite>ENV</cite> instruction always override an <cite>ARG</cite> instruction of the same name.</p></li>
+<li><p>Environment variables defined using the <code class="docutils literal notranslate"><span class="pre">ENV</span></code> instruction always override an <code class="docutils literal notranslate"><span class="pre">ARG</span></code> instruction of the same name.</p></li>
 <li><p>Docker has a set of predefined ARG variables that you can use without a corresponding ARG instruction in the Dockerfile.
-- <cite>HTTP_PROXY</cite> and http_proxy
-- <cite>HTTPS_PROXY</cite> and https_proxy
-- <cite>FTP_PROXY</cite> and ftp_proxy
-- <cite>NO_PROXY</cite> and no_proxy</p></li>
+- <code class="docutils literal notranslate"><span class="pre">HTTP_PROXY</span></code> and http_proxy
+- <code class="docutils literal notranslate"><span class="pre">HTTPS_PROXY</span></code> and https_proxy
+- <code class="docutils literal notranslate"><span class="pre">FTP_PROXY</span></code> and ftp_proxy
+- <code class="docutils literal notranslate"><span class="pre">NO_PROXY</span></code> and no_proxy</p></li>
 </ul>
 </div>
 <div class="section" id="onbuild">
 <h2>ONBUILD<a class="headerlink" href="#onbuild" title="Permalink to this headline">¶</a></h2>
-<p>Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the <cite>FROM</cite> instruction in the downstream <cite>Dockerfile</cite>.</p>
+<p>Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the <code class="docutils literal notranslate"><span class="pre">FROM</span></code> instruction in the downstream <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>ONBUILD &lt;Dockerfile INSTRUCTION&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ONBUILD</span> <span class="pre">&lt;Dockerfile</span> <span class="pre">INSTRUCTION&gt;</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>Any build instruction can be registered as a trigger.</p></li>
 <li><p>Triggers are inherited by the “child” build only. In other words, they are not inherited by “grand-children” builds.</p></li>
-<li><p>The <cite>ONBUILD</cite> instruction may not trigger <cite>FROM</cite>, <cite>MAINTAINER</cite>, or <cite>ONBUILD</cite> instructions.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ONBUILD</span></code> instruction may not trigger <code class="docutils literal notranslate"><span class="pre">FROM</span></code>, <code class="docutils literal notranslate"><span class="pre">MAINTAINER</span></code>, or <code class="docutils literal notranslate"><span class="pre">ONBUILD</span></code> instructions.</p></li>
 </ul>
 </div>
 <div class="section" id="stopsignal">
@@ -428,11 +428,11 @@
 <p>Sets the system call signal that will be sent to the container to exit.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>STOPSIGNAL &lt;signal&gt;</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STOPSIGNAL</span> <span class="pre">&lt;signal&gt;</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p>The signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format <cite>SIGNAME</cite>, for instance <cite>SIGKILL</cite>.</p></li>
+<li><p>The signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format <code class="docutils literal notranslate"><span class="pre">SIGNAME</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="healthcheck">
@@ -440,25 +440,25 @@
 <p>Tells Docker how to test a container to check that it is still working.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>HEALTHCHECK [&lt;options&gt;] CMD &lt;command&gt; (check container health by running a command inside the container)</cite></p></li>
-<li><p><cite>HEALTHCHECK NONE (disable any healthcheck inherited from the base image)</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEALTHCHECK</span> <span class="pre">[&lt;options&gt;]</span> <span class="pre">CMD</span> <span class="pre">&lt;command&gt;</span> <span class="pre">(check</span> <span class="pre">container</span> <span class="pre">health</span> <span class="pre">by</span> <span class="pre">running</span> <span class="pre">a</span> <span class="pre">command</span> <span class="pre">inside</span> <span class="pre">the</span> <span class="pre">container)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEALTHCHECK</span> <span class="pre">NONE</span> <span class="pre">(disable</span> <span class="pre">any</span> <span class="pre">healthcheck</span> <span class="pre">inherited</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">image)</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
 <li><p>Whenever a health check passes, it becomes healthy. After a certain number of consecutive failures, it becomes unhealthy.</p></li>
-<li><p>The possible <cite>&lt;options&gt;</cite> values are:
-- <cite>–interval=&lt;duration&gt;</cite> (default: 30s)
-- <cite>–timeout=&lt;duration&gt;</cite> (default: 30s)
-- <cite>–retries=&lt;number&gt;</cite> (default: 3)</p></li>
-<li><p>The health check will first run <cite>interval</cite> seconds after the container is started, and then again <cite>interval</cite> seconds after each previous check completes. If a single run of the check takes longer than <cite>timeout</cite> seconds then the check is considered to have failed. It takes <cite>retries</cite> consecutive failures of the health check for the container to be considered unhealthy.</p></li>
-<li><p>There can only be one <cite>HEALTHCHECK</cite> instruction in a <cite>Dockerfile</cite>. Only the last <cite>HEALTHCHECK</cite> will take effect.</p></li>
+<li><p>The possible <code class="docutils literal notranslate"><span class="pre">&lt;options&gt;</span></code> values are:
+- <code class="docutils literal notranslate"><span class="pre">--interval=&lt;duration&gt;</span></code> (default: 30s)
+- <code class="docutils literal notranslate"><span class="pre">--timeout=&lt;duration&gt;</span></code> (default: 30s)
+- <code class="docutils literal notranslate"><span class="pre">--retries=&lt;number&gt;</span></code> (default: 3)</p></li>
+<li><p>The health check will first run <code class="docutils literal notranslate"><span class="pre">interval</span></code> seconds after the container is started, and then again <code class="docutils literal notranslate"><span class="pre">interval</span></code> seconds after each previous check completes. If a single run of the check takes longer than <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds then the check is considered to have failed. It takes <code class="docutils literal notranslate"><span class="pre">retries</span></code> consecutive failures of the health check for the container to be considered unhealthy.</p></li>
+<li><p>There can only be one <code class="docutils literal notranslate"><span class="pre">HEALTHCHECK</span></code> instruction in a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>. Only the last <code class="docutils literal notranslate"><span class="pre">HEALTHCHECK</span></code> will take effect.</p></li>
 <li><p>&lt;command&gt; can be either a shell command or an exec JSON array.</p></li>
 <li><p>The command’s exit status indicates the health status of the container.
-- <cite>0: success</cite> - the container is healthy and ready for use
-- <cite>1: unhealthy</cite> - the container is not working correctly
-- <cite>2: reserved</cite> - do not use this exit code</p></li>
-<li><p>The first 4096 bytes of stdout and stderr from the <cite>&lt;command&gt;</cite> are stored and can be queried with docker inspect.</p></li>
-<li><p>When the health status of a container changes, a <cite>health_status</cite> event is generated with the new status.</p></li>
+- <code class="docutils literal notranslate"><span class="pre">0:</span> <span class="pre">success</span></code> - the container is healthy and ready for use
+- <code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">unhealthy</span></code> - the container is not working correctly
+- <code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">reserved</span></code> - do not use this exit code</p></li>
+<li><p>The first 4096 bytes of stdout and stderr from the <code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> are stored and can be queried with docker inspect.</p></li>
+<li><p>When the health status of a container changes, a <code class="docutils literal notranslate"><span class="pre">health_status</span></code> event is generated with the new status.</p></li>
 </ul>
 </div>
 <div class="section" id="shell">
@@ -466,12 +466,12 @@
 <p>Set the default shell to be used for the shell form of commands.</p>
 <p>Usage:</p>
 <ul class="simple">
-<li><p><cite>SHELL [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHELL</span> <span class="pre">[&quot;&lt;executable&gt;&quot;,</span> <span class="pre">&quot;&lt;param1&gt;&quot;,</span> <span class="pre">&quot;&lt;param2&gt;&quot;]</span></code></p></li>
 </ul>
 <p>Information:</p>
 <ul class="simple">
-<li><p>Each <cite>SHELL</cite> instruction overrides all previous <cite>SHELL</cite> instructions, and affects all subsequent instructions.</p></li>
-<li><p>Allows an alternate shell be used such as <cite>zsh</cite>, <cite>csh</cite>, <cite>tcsh</cite>, <cite>powershell</cite>, and others.</p></li>
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">SHELL</span></code> instruction overrides all previous <code class="docutils literal notranslate"><span class="pre">SHELL</span></code> instructions, and affects all subsequent instructions.</p></li>
+<li><p>Allows an alternate shell be used such as <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, <code class="docutils literal notranslate"><span class="pre">csh</span></code>, <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>, <code class="docutils literal notranslate"><span class="pre">powershell</span></code>, and others.</p></li>
 </ul>
 </div>
 </div>
