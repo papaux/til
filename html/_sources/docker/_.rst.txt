@@ -5,10 +5,11 @@ Docker
    :maxdepth: 1
 
    centos-based.rst
-   cheatsheet.rst
    clean.rst
+   container.rst
    cron.rst
    docker-compose.rst
+   dockerfile.rst
    entrypoint-cmd.rst
    images.rst
    lamp-container.rst

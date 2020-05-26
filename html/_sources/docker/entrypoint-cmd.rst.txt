@@ -1,5 +1,5 @@
-Docker ENTRYPOINT and CMD
--------------------------
+ENTRYPOINT and CMD
+-------------------
 
 CMD vs ENTRYPOINT
 ~~~~~~~~~~~~~~~~~

@@ -1,5 +1,5 @@
-Docker images
--------------
+Images
+------
 
 **List available images**::
 

@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dockerfile Best Practices &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ENTRYPOINT and CMD" href="entrypoint-cmd.html" />
+    <link rel="prev" title="docker-compose" href="docker-compose.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Geoffrey's TIL
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="centos-based.html">CentOS based</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean.html">Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-compose.html">docker-compose</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dockerfile Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from">FROM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maintainer">MAINTAINER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run">RUN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmd">CMD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label">LABEL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expose">EXPOSE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#env">ENV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add">ADD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy">COPY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#entrypoint">ENTRYPOINT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volume">VOLUME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user">USER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workdir">WORKDIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arg">ARG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#onbuild">ONBUILD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stopsignal">STOPSIGNAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#healthcheck">HEALTHCHECK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">SHELL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="entrypoint-cmd.html">ENTRYPOINT and CMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamp-container.html">LAMP container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-running-container.html">Shell from running container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats.html">Stats and information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="_.html">Docker</a> &raquo;</li>
+        
+      <li>Dockerfile Best Practices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docker/dockerfile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dockerfile-best-practices">
+<h1>Dockerfile Best Practices<a class="headerlink" href="#dockerfile-best-practices" title="Permalink to this headline">¶</a></h1>
+<p>Source: <a class="reference external" href="https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index">https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index</a></p>
+<div class="section" id="from">
+<h2>FROM<a class="headerlink" href="#from" title="Permalink to this headline">¶</a></h2>
+<p>Select the source image.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>FROM &lt;image&gt;</cite></p></li>
+<li><p><cite>FROM &lt;image&gt;:&lt;tag&gt;</cite></p></li>
+<li><p><cite>FROM &lt;image&gt;&#64;&lt;digest&gt;</cite></p></li>
+<li><p><cite>FROM &lt;image&gt; as &lt;name&gt;</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p><cite>FROM</cite> must be the <strong>first non-comment instruction</strong> in the Dockerfile.</p></li>
+<li><p><cite>FROM</cite> can appear multiple times in order to create multiple images.</p></li>
+<li><p>The <cite>tag</cite> or <cite>digest</cite> values are optional. If omitted latest is assumed by default.</p></li>
+<li><p>The <cite>as &lt;name&gt;</cite> directive is used in case of multi-stage build.</p></li>
+</ul>
+</div>
+<div class="section" id="maintainer">
+<h2>MAINTAINER<a class="headerlink" href="#maintainer" title="Permalink to this headline">¶</a></h2>
+<p>Set the Author field of the generated images.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>MAINTAINER &lt;name&gt;</cite></p></li>
+</ul>
+</div>
+<div class="section" id="run">
+<h2>RUN<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>RUN &lt;command&gt;</cite> (shell form, the command is run in a shell, by default <cite>/bin/sh -c</cite>)</p></li>
+<li><p><cite>RUN [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite> (exec form)</p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>The exec form avoids shell string munging.</p></li>
+<li><p>The exec form allows a base image to not contain a shell executable.</p></li>
+<li><p>The default shell for the shell form can be changed using the <cite>SHELL</cite> command.</p></li>
+<li><p>Normal shell processing does not occur when using the exec form. For example, RUN [“echo”, “$HOME”] will not do variable substitution on $HOME.</p></li>
+</ul>
+</div>
+<div class="section" id="cmd">
+<h2>CMD<a class="headerlink" href="#cmd" title="Permalink to this headline">¶</a></h2>
+<p><cite>CMD</cite> aims to provide defaults for an executing container.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>CMD [“&lt;executable&gt;”,”&lt;param1&gt;”,”&lt;param2&gt;”]</cite> (exec form, this is the preferred form)</p></li>
+<li><p><cite>CMD [“&lt;param1&gt;”,”&lt;param2&gt;”]</cite> (as default parameters to ENTRYPOINT)</p></li>
+<li><p><cite>CMD &lt;command&gt; &lt;param1&gt; &lt;param2&gt;</cite> (shell form)</p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>It may include an executable. If omitted, an <cite>ENTRYPOINT</cite> instruction must be specified.</p></li>
+<li><p>There can only be one <cite>CMD</cite> instruction in a Dockerfile. Only the last <cite>CMD</cite> will take effect.</p></li>
+<li><p>If <cite>CMD</cite> is used to provide default arguments for the <cite>ENTRYPOINT</cite> instruction, both instructions should be specified with the JSON array format.</p></li>
+<li><p>If the user specifies arguments to docker run, this overrides the defaults specified in <cite>CMD</cite>.</p></li>
+<li><p>Normal shell processing does not occur when using the exec form. For example, <cite>CMD [“echo”, “$HOME”]</cite> will not do variable substitution on <cite>$HOME</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="label">
+<h2>LABEL<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<p>The LABEL instruction adds metadata to an image.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>LABEL &lt;key&gt;=&lt;value&gt; [&lt;key&gt;=&lt;value&gt; …]</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>To include spaces within a <cite>LABEL</cite> value, use quotes and backslashes as you would in command-line parsing.</p></li>
+<li><p>Labels are additive including <cite>LABEL`s in `FROM</cite> images.</p></li>
+<li><p>If Docker encounters a label/key that already exists, the new value overrides any previous labels with identical keys.</p></li>
+<li><p>To view an image’s labels, use the docker inspect command. They will be under the “Labels” JSON attribute.</p></li>
+</ul>
+</div>
+<div class="section" id="expose">
+<h2>EXPOSE<a class="headerlink" href="#expose" title="Permalink to this headline">¶</a></h2>
+<p>Informs Docker that the container listens on the specified network port(s) at runtime.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>EXPOSE &lt;port&gt; [&lt;port&gt; …]</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p><cite>EXPOSE</cite> does not make the ports of the container accessible to the host.</p></li>
+</ul>
+</div>
+<div class="section" id="env">
+<h2>ENV<a class="headerlink" href="#env" title="Permalink to this headline">¶</a></h2>
+<p>Sets environment variable <cite>&lt;key&gt;</cite> to the value <cite>&lt;value&gt;</cite>.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>ENV &lt;key&gt; &lt;value&gt;</cite></p></li>
+<li><p><cite>ENV &lt;key&gt;=&lt;value&gt; [&lt;key&gt;=&lt;value&gt; …]</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>The value will be in the environment of all “descendant” Dockerfile commands and can be replaced inline as well.</p></li>
+<li><p>The environment variables set using <cite>ENV</cite> will persist when a container is run from the resulting image.</p></li>
+<li><p>The first form will set a single variable to a value with the entire string after the first space being treated as the &lt;value&gt; - including characters such as spaces and quotes.</p></li>
+</ul>
+</div>
+<div class="section" id="add">
+<h2>ADD<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h2>
+<p>Copies new files, directories, or remote file URLs from <cite>&lt;src&gt;</cite> and adds them to the filesystem of the image at the path <cite>&lt;dest&gt;</cite>.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>ADD &lt;src&gt; [&lt;src&gt; …] &lt;dest&gt;</cite></p></li>
+<li><p><cite>ADD [“&lt;src&gt;”, … “&lt;dest&gt;”]</cite> (this form is required for paths containing whitespace)</p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p><cite>&lt;src&gt;</cite> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
+<li><p>If <cite>&lt;src&gt;</cite> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).</p></li>
+<li><p><cite>&lt;dest&gt;</cite> is an absolute path, or a path relative to <cite>WORKDIR</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="copy">
+<h2>COPY<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
+<p>Copies new files or directories from <cite>&lt;src&gt;</cite> and adds them to the filesystem of the image at the path <cite>&lt;dest&gt;</cite>.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>COPY &lt;src&gt; [&lt;src&gt; …] &lt;dest&gt;</cite></p></li>
+<li><p><cite>COPY [“&lt;src&gt;”, … “&lt;dest&gt;”]</cite> (this form is required for paths containing whitespace)</p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p><cite>&lt;src&gt;</cite> may contain wildcards and matching will be done using Go’s filepath.Match rules.</p></li>
+<li><p><cite>&lt;src&gt;</cite> must be relative to the source directory that is being built (the context of the build).</p></li>
+<li><p><cite>&lt;dest&gt;</cite> is an absolute path, or a path relative to <cite>WORKDIR</cite>.</p></li>
+<li><p>If <cite>&lt;dest&gt;</cite> doesn’t exist, it is created along with all missing directories in its path.</p></li>
+</ul>
+</div>
+<div class="section" id="entrypoint">
+<h2>ENTRYPOINT<a class="headerlink" href="#entrypoint" title="Permalink to this headline">¶</a></h2>
+<p>Configure a container that will run as an executable.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>ENTRYPOINT [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite> (exec form, preferred)</p></li>
+<li><p><cite>ENTRYPOINT &lt;command&gt; &lt;param1&gt; &lt;param2&gt;</cite> (shell form)</p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>Command line arguments to docker run <cite>&lt;image&gt;</cite> will be appended after all elements in an exec form <cite>ENTRYPOINT</cite> and will override all elements specified using <cite>CMD</cite>.</p></li>
+<li><p>If using the shell form, <cite>CMD</cite> or run command line arguments are ignored, but the <cite>ENTRYPOINT</cite> will start via the shell. This means the executable will not be PID 1 nor will it receive <cite>UNIX</cite> signals. Prepend <cite>exec</cite> to get around this drawback.</p></li>
+<li><p>Only the last <cite>ENTRYPOINT</cite> instruction in the Dockerfile will have an effect.</p></li>
+</ul>
+</div>
+<div class="section" id="volume">
+<h2>VOLUME<a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h2>
+<p>Creates a mount point with the specified name, holding externally mounted volumes from native host or other containers.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>VOLUME [“&lt;path&gt;”, …]</cite></p></li>
+<li><p><cite>VOLUME &lt;path&gt; [&lt;path&gt; …]</cite></p></li>
+</ul>
+</div>
+<div class="section" id="user">
+<h2>USER<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
+<p>Sets the user name or <cite>UID</cite> to use for any <cite>RUN</cite>, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>USER &lt;username | UID&gt;</cite></p></li>
+</ul>
+</div>
+<div class="section" id="workdir">
+<h2>WORKDIR<a class="headerlink" href="#workdir" title="Permalink to this headline">¶</a></h2>
+<p>Sets the working directory for any <cite>RUN</cite>, <cite>CMD</cite>, <cite>ENTRYPOINT</cite>, <cite>COPY</cite>, and <cite>ADD</cite> instructions that follow it.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>WORKDIR &lt;/path/to/workdir&gt;</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>It can be used multiple times in the one Dockerfile.</p></li>
+<li><p>If a relative path is provided, it will be relative to the path of the previous <cite>WORKDIR</cite> instruction.</p></li>
+</ul>
+</div>
+<div class="section" id="arg">
+<h2>ARG<a class="headerlink" href="#arg" title="Permalink to this headline">¶</a></h2>
+<p>Defines a <strong>build-time</strong> variable that can be passed using the <cite>–build-arg &lt;varname&gt;=&lt;value&gt;</cite> flag of the <cite>docker build</cite> command.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>ARG &lt;name&gt;[=&lt;default value&gt;]</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>Multiple variables may be defined by specifying ARG multiple times.</p></li>
+<li><p>Build-time variable values are visible to any user of the image with the docker history command =&gt; do not use for secrets.</p></li>
+<li><p>Environment variables defined using the <cite>ENV</cite> instruction always override an <cite>ARG</cite> instruction of the same name.</p></li>
+<li><p>Docker has a set of predefined ARG variables that you can use without a corresponding ARG instruction in the Dockerfile.
+- <cite>HTTP_PROXY</cite> and http_proxy
+- <cite>HTTPS_PROXY</cite> and https_proxy
+- <cite>FTP_PROXY</cite> and ftp_proxy
+- <cite>NO_PROXY</cite> and no_proxy</p></li>
+</ul>
+</div>
+<div class="section" id="onbuild">
+<h2>ONBUILD<a class="headerlink" href="#onbuild" title="Permalink to this headline">¶</a></h2>
+<p>Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the <cite>FROM</cite> instruction in the downstream <cite>Dockerfile</cite>.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>ONBUILD &lt;Dockerfile INSTRUCTION&gt;</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>Any build instruction can be registered as a trigger.</p></li>
+<li><p>Triggers are inherited by the “child” build only. In other words, they are not inherited by “grand-children” builds.</p></li>
+<li><p>The <cite>ONBUILD</cite> instruction may not trigger <cite>FROM</cite>, <cite>MAINTAINER</cite>, or <cite>ONBUILD</cite> instructions.</p></li>
+</ul>
+</div>
+<div class="section" id="stopsignal">
+<h2>STOPSIGNAL<a class="headerlink" href="#stopsignal" title="Permalink to this headline">¶</a></h2>
+<p>Sets the system call signal that will be sent to the container to exit.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>STOPSIGNAL &lt;signal&gt;</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>The signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format <cite>SIGNAME</cite>, for instance <cite>SIGKILL</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="healthcheck">
+<h2>HEALTHCHECK<a class="headerlink" href="#healthcheck" title="Permalink to this headline">¶</a></h2>
+<p>Tells Docker how to test a container to check that it is still working.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>HEALTHCHECK [&lt;options&gt;] CMD &lt;command&gt; (check container health by running a command inside the container)</cite></p></li>
+<li><p><cite>HEALTHCHECK NONE (disable any healthcheck inherited from the base image)</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>Whenever a health check passes, it becomes healthy. After a certain number of consecutive failures, it becomes unhealthy.</p></li>
+<li><p>The possible <cite>&lt;options&gt;</cite> values are:
+- <cite>–interval=&lt;duration&gt;</cite> (default: 30s)
+- <cite>–timeout=&lt;duration&gt;</cite> (default: 30s)
+- <cite>–retries=&lt;number&gt;</cite> (default: 3)</p></li>
+<li><p>The health check will first run <cite>interval</cite> seconds after the container is started, and then again <cite>interval</cite> seconds after each previous check completes. If a single run of the check takes longer than <cite>timeout</cite> seconds then the check is considered to have failed. It takes <cite>retries</cite> consecutive failures of the health check for the container to be considered unhealthy.</p></li>
+<li><p>There can only be one <cite>HEALTHCHECK</cite> instruction in a <cite>Dockerfile</cite>. Only the last <cite>HEALTHCHECK</cite> will take effect.</p></li>
+<li><p>&lt;command&gt; can be either a shell command or an exec JSON array.</p></li>
+<li><p>The command’s exit status indicates the health status of the container.
+- <cite>0: success</cite> - the container is healthy and ready for use
+- <cite>1: unhealthy</cite> - the container is not working correctly
+- <cite>2: reserved</cite> - do not use this exit code</p></li>
+<li><p>The first 4096 bytes of stdout and stderr from the <cite>&lt;command&gt;</cite> are stored and can be queried with docker inspect.</p></li>
+<li><p>When the health status of a container changes, a <cite>health_status</cite> event is generated with the new status.</p></li>
+</ul>
+</div>
+<div class="section" id="shell">
+<h2>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<p>Set the default shell to be used for the shell form of commands.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p><cite>SHELL [“&lt;executable&gt;”, “&lt;param1&gt;”, “&lt;param2&gt;”]</cite></p></li>
+</ul>
+<p>Information:</p>
+<ul class="simple">
+<li><p>Each <cite>SHELL</cite> instruction overrides all previous <cite>SHELL</cite> instructions, and affects all subsequent instructions.</p></li>
+<li><p>Allows an alternate shell be used such as <cite>zsh</cite>, <cite>csh</cite>, <cite>tcsh</cite>, <cite>powershell</cite>, and others.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="entrypoint-cmd.html" class="btn btn-neutral float-right" title="ENTRYPOINT and CMD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docker-compose.html" class="btn btn-neutral float-left" title="docker-compose" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Geoffrey Papaux
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

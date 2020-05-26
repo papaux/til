@@ -1,5 +1,5 @@
-Docker stats and information
------------------------------
+Stats and information
+----------------------
 
 Logs
 ~~~~
