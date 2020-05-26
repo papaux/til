@@ -34,12 +34,12 @@ With the **shell form**, docker will invoke a shell and pass the specified comma
 
   CMD ping localhost
 
-This will be executed as `/bin/sh -c 'ping localhost'` by docker.
+This will be executed as ``/bin/sh -c 'ping localhost'`` by docker.
 
 Consequences of the shell form:
 - the process with PID 1 is the shell and not your application
 - POSIX signals will be sent to the shell and not forwarded to your application
-- the container needs to provide a shell at `/bin/sh`
+- the container needs to provide a shell at ``/bin/sh``
 - variable expansion will happen as you would expect
 
 With the **exec form**, docker executes your commands directly in the container, without starting a shell::
@@ -50,3 +50,21 @@ Consequences of the exec form:
 - your process is the PID 1, receiving all signals
 - no shell needed in the container
 - your command is interpreted as is, and there is **no variable expansion** (since there is no shell)
+
+Forward signals
+~~~~~~~~~~~~~~~
+
+If using the shell form or a startup script, we can handle signals correctly by using the ``exec gosu`` combo command while starting the application.
+
+This is the official ``Dockerfile`` example using this technique::
+
+  #!/usr/bin/env bash
+  set -e
+  
+  if [ "$1" = 'custom-app' ]; then
+      # do something
+      exec gosu custom-app "$@"
+  fi
+  
+  exec "$@"
+

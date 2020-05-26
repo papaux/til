@@ -100,6 +100,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ENTRYPOINT and CMD</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cmd-vs-entrypoint">CMD vs ENTRYPOINT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#shell-vs-exec">Shell vs. Exec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forward-signals">Forward signals</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
@@ -230,11 +231,11 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="n">ping</span> <span class="n">localhost</span>
 </pre></div>
 </div>
-<p>This will be executed as <cite>/bin/sh -c ‘ping localhost’</cite> by docker.</p>
+<p>This will be executed as <code class="docutils literal notranslate"><span class="pre">/bin/sh</span> <span class="pre">-c</span> <span class="pre">'ping</span> <span class="pre">localhost'</span></code> by docker.</p>
 <p>Consequences of the shell form:
 - the process with PID 1 is the shell and not your application
 - POSIX signals will be sent to the shell and not forwarded to your application
-- the container needs to provide a shell at <cite>/bin/sh</cite>
+- the container needs to provide a shell at <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>
 - variable expansion will happen as you would expect</p>
 <p>With the <strong>exec form</strong>, docker executes your commands directly in the container, without starting a shell:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
@@ -244,6 +245,22 @@
 - your process is the PID 1, receiving all signals
 - no shell needed in the container
 - your command is interpreted as is, and there is <strong>no variable expansion</strong> (since there is no shell)</p>
+</div>
+<div class="section" id="forward-signals">
+<h2>Forward signals<a class="headerlink" href="#forward-signals" title="Permalink to this headline">¶</a></h2>
+<p>If using the shell form or a startup script, we can handle signals correctly by using the <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">gosu</span></code> combo command while starting the application.</p>
+<p>This is the official <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> example using this technique:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="nb">set</span> <span class="o">-</span><span class="n">e</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">=</span> <span class="s1">&#39;custom-app&#39;</span> <span class="p">];</span> <span class="n">then</span>
+    <span class="c1"># do something</span>
+    <span class="n">exec</span> <span class="n">gosu</span> <span class="n">custom</span><span class="o">-</span><span class="n">app</span> <span class="s2">&quot;$@&quot;</span>
+<span class="n">fi</span>
+
+<span class="n">exec</span> <span class="s2">&quot;$@&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
