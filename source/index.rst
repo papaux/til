@@ -19,6 +19,7 @@ There are XXX TILs in this repository! Enjoy!
    git/_.rst
    influxdb/._rst
    java/_.rst
+   kubernetes/_.rst
    kvm/_.rst
    linux/_.rst
    markdown/_.rst
