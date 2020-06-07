@@ -32,6 +32,13 @@ Test if a command is available and if not, install it.::
 
   [ ! -x "$(command -v docker)" ] && apt install docker
 
+Check if file exists
+~~~~~~~~~~~~~~~~~~~~
+
+Check if a given file exists, printing a message and exiting if not:
+
+  [ ! -f $FILE ] && echo "$FILE does not exist." && exit
+
 Check ping result
 ~~~~~~~~~~~~~~~~~
 
