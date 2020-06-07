@@ -94,6 +94,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bash One-Liners</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#histogram-in-bash">Histogram in bash</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-if-needed">Install if needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-if-file-exists">Check if file exists</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-ping-result">Check ping result</a></li>
 </ul>
 </li>
@@ -222,6 +223,13 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ ! -x &quot;$(command -v docker)&quot; ] &amp;&amp; apt install docker
 </pre></div>
 </div>
+</div>
+<div class="section" id="check-if-file-exists">
+<h2>Check if file exists<a class="headerlink" href="#check-if-file-exists" title="Permalink to this headline">¶</a></h2>
+<p>Check if a given file exists, printing a message and exiting if not:</p>
+<blockquote>
+<div><p>[ ! -f $FILE ] &amp;&amp; echo “$FILE does not exist.” &amp;&amp; exit</p>
+</div></blockquote>
 </div>
 <div class="section" id="check-ping-result">
 <h2>Check ping result<a class="headerlink" href="#check-ping-result" title="Permalink to this headline">¶</a></h2>
