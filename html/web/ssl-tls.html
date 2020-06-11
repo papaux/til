@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Web</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SSL - TLS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#self-signed-certificate">Self signed certificate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#certificate-chain">Certificate chain</a></li>
 </ul>
 </li>
@@ -187,6 +188,13 @@
   <div class="section" id="ssl-tls">
 <h1>SSL - TLS<a class="headerlink" href="#ssl-tls" title="Permalink to this headline">¶</a></h1>
 <p>This page gives insight on how to manage and check HTTPS certificates for SSL/TLS connections.</p>
+<div class="section" id="self-signed-certificate">
+<h2>Self signed certificate<a class="headerlink" href="#self-signed-certificate" title="Permalink to this headline">¶</a></h2>
+<p>This is a one-liner to generate a self signed certificate. Answer the questions and you are done:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">sha256</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> <span class="o">-</span><span class="n">newkey</span> <span class="n">rsa</span><span class="p">:</span><span class="mi">2048</span> <span class="o">-</span><span class="n">keyout</span> <span class="n">private</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">out</span> <span class="n">certificate</span><span class="o">.</span><span class="n">crt</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="certificate-chain">
 <h2>Certificate chain<a class="headerlink" href="#certificate-chain" title="Permalink to this headline">¶</a></h2>
 <p>Web servers must be sending the full certificate chain if we want the clients to be able to validate the certificates.</p>
