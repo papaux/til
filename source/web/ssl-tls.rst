@@ -10,6 +10,10 @@ This is a one-liner to generate a self signed certificate. Answer the questions 
 
   openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate.crt
 
+And if you don't want to manually answer the questions for creating the certificate, add the `-subj` option::
+
+  openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate.crt -subj "/C=CH/ST=FR/L=Local/O=Home/CN=localhost"
+
 Certificate chain
 ~~~~~~~~~~~~~~~~~~
 
