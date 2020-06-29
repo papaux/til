@@ -8,9 +8,9 @@ Forward a port from the client machine to the server machine, using the `-L` opt
 
 ::
 
-    ssh -L 80:server.example.com:80 jumpost.company.com
+    ssh -L 8080:server.company.com:80 jumpost.company.com
 
-This opens a connection to the gw.example.com jump server, and forwards any connection to port 80 on the local machine to port 80 on intra.example.com.
+This opens a connection to the jumpost.company.com jump server, and forwards any connection to port 8080 made on your local machine to port 80 on server.company.com.
 
 By default, this opens the local port to any host in the local network. Specify a *bind address* to restrict it:
 
