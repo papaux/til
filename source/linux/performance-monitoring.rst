@@ -23,14 +23,14 @@ The first tool to execute, to inspect te running process on a system interactive
   Tasks: 220 total,   1 running, 219 sleeping,   0 stopped,   0 zombie
   %Cpu(s):  2.9 us,  0.7 sy,  0.0 ni, 95.9 id,  0.0 wa,  0.3 hi,  0.1 si,  0.0 st
   MiB Mem :   7879.9 total,    814.6 free,   2198.2 used,   4867.1 buff/cache
-  MiB Swap:   2294.0 total,   2271.5 free,     22.5 used.   5041.8 avail Mem 
+  MiB Swap:   2294.0 total,   2271.5 free,     22.5 used.   5041.8 avail Mem
 
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                             
-   1034 john      20   0 4007988 373052 120692 S   8.6   4.6   6:07.41 gnome-shell                         
-  10943 john      20   0 9240860 653416 143408 S   3.3   8.1   3:39.64 firefox                             
-   1352 john      20   0  503356  43776  32716 S   1.0   0.5   0:06.27 gnome-terminal-                     
-      1 root      20   0  220192   8968   6852 S   0.3   0.1   0:03.90 systemd                             
-    563 root      20   0   57172   6336   5500 S   0.3   0.1   0:00.64 systemd-logind 
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1034 john      20   0 4007988 373052 120692 S   8.6   4.6   6:07.41 gnome-shell
+  10943 john      20   0 9240860 653416 143408 S   3.3   8.1   3:39.64 firefox
+   1352 john      20   0  503356  43776  32716 S   1.0   0.5   0:06.27 gnome-terminal-
+      1 root      20   0  220192   8968   6852 S   0.3   0.1   0:03.90 systemd
+    563 root      20   0   57172   6336   5500 S   0.3   0.1   0:00.64 systemd-logind
 
 **vmstat**
 
@@ -102,7 +102,7 @@ It is a live and real time monitoring of disk I/O operations per process. It sho
   $ iotop
   Total DISK READ :       0.00 B/s | Total DISK WRITE :       0.00 B/s
   Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s
-    TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO>    COMMAND                                              
+    TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO>    COMMAND
       1 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % init
       2 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kthreadd]
       3 be/0 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [rcu_gp]
@@ -148,7 +148,7 @@ The ``iostat`` tool reports global CPU and input / output statistics for each pa
 
   avg-cpu:  %user   %nice %system %iowait  %steal   %idle
             21.87    0.45    5.60    0.15    0.00   71.93
-  
+
   Device             tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
   sda               0.88        27.86        43.78    8422261   13232504
   dm-0              0.72        23.94        40.29    7236249   12177052
@@ -182,10 +182,10 @@ This tool can give the size of a single files or directories. It will scan the d
 ::
 
   $ du -hs source                                                            │127.0.0.1 - - [14/Sep/2018 19:34:54] "GE
-  396K    source 
+  396K    source
 
-Network
-~~~~~~~~
+Network stats
+~~~~~~~~~~~~~~
 
 The best tool to show which application is sending which amount of data is `nethogs`
 
@@ -209,6 +209,25 @@ The result is self-describing:
       ? root     unknown TCP                                 0.000       0.000 KB/sec
 
   TOTAL                                                      4.173      42.838 KB/sec
+
+**iftop**
+
+Live and real time network bandwidth vizualization tool. Can be useful to check network speed, see through which interface the traffic is going and to which endpoint.
+
+An example use case to get the network traffic on interface `eth0`::
+
+  iftop -i eth0 -u bytes
+
+**nload**
+
+`nload` is yet another traffic stats reporting connection speed. It shows current, peak and average speed with a funky animation.
+
+A typical usage example for getting the network traffic on interface `eth0` and speed in MBytes/s::
+
+  nload -u M eth0
+
+Network traffic analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **tcpdump**
 
@@ -239,10 +258,6 @@ Netstat can monitor open ports and incoming and outgoing traffic. Below some use
 * ``netstat -c 10``: print continuously, every 10 seconds
 * ``netstat --statistics --raw``: display a lot of network statistics like number of packets received, errors, ...
 
-**iftop**
-
-Live and real time network bandwidth vizualization tool. Can be useful to check network speed, see through which interface the traffic is going and to which endpoint.
-
 **iptraf**
 
 More advanced iftop tool, which collects in additional and more advanced informaiton.
@@ -263,6 +278,6 @@ The numbers define the load average for the last 1 minute (1.05), the last 5 min
 The number defines the number of processes which are in running, waiting or uninterruptible sleep states (e.g. waiting for I/O). The number have to be compared to the number of CPU on the system.
 
 So if the example above is a system with 2 CPUs, it means that the system is fully loaded when the value is equal 2:
-* over the last minute, the system was mostly idle 
+* over the last minute, the system was mostly idle
 * over the last 5 minutes, it was half used
 * over the last 15 minutes, it was overloaded: there were many processes waiting for the CPU
