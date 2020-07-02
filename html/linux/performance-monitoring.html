@@ -114,7 +114,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#general">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#processes">Processes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#file-system-and-i-o">File system and I/O</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-stats">Network stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-traffic-analysis">Network traffic analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-average">Load average</a></li>
 </ul>
 </li>
@@ -362,8 +363,8 @@ tmpfs                  788M  2.6M  786M   1% /run/user/1000
 </pre></div>
 </div>
 </div>
-<div class="section" id="network">
-<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="network-stats">
+<h2>Network stats<a class="headerlink" href="#network-stats" title="Permalink to this headline">¶</a></h2>
 <p>The best tool to show which application is sending which amount of data is <cite>nethogs</cite></p>
 <p><strong>nethogs</strong></p>
 <p>The result is self-describing:</p>
@@ -382,6 +383,21 @@ tmpfs                  788M  2.6M  786M   1% /run/user/1000
 TOTAL                                                      4.173      42.838 KB/sec
 </pre></div>
 </div>
+<p><strong>iftop</strong></p>
+<p>Live and real time network bandwidth vizualization tool. Can be useful to check network speed, see through which interface the traffic is going and to which endpoint.</p>
+<p>An example use case to get the network traffic on interface <cite>eth0</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iftop</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">u</span> <span class="nb">bytes</span>
+</pre></div>
+</div>
+<p><strong>nload</strong></p>
+<p><cite>nload</cite> is yet another traffic stats reporting connection speed. It shows current, peak and average speed with a funky animation.</p>
+<p>A typical usage example for getting the network traffic on interface <cite>eth0</cite> and speed in MBytes/s:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nload</span> <span class="o">-</span><span class="n">u</span> <span class="n">M</span> <span class="n">eth0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="network-traffic-analysis">
+<h2>Network traffic analysis<a class="headerlink" href="#network-traffic-analysis" title="Permalink to this headline">¶</a></h2>
 <p><strong>tcpdump</strong></p>
 <p>Tcpdump could have its own dedicated TIL because it has so many options. But here are some useful simple commands:</p>
 <ul class="simple">
@@ -409,8 +425,6 @@ TOTAL                                                      4.173      42.838 KB/
 <li><p><code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-c</span> <span class="pre">10</span></code>: print continuously, every 10 seconds</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">--statistics</span> <span class="pre">--raw</span></code>: display a lot of network statistics like number of packets received, errors, …</p></li>
 </ul>
-<p><strong>iftop</strong></p>
-<p>Live and real time network bandwidth vizualization tool. Can be useful to check network speed, see through which interface the traffic is going and to which endpoint.</p>
 <p><strong>iptraf</strong></p>
 <p>More advanced iftop tool, which collects in additional and more advanced informaiton.</p>
 <p><strong>arpwatch</strong></p>
