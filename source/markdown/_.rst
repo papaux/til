@@ -5,4 +5,5 @@ Markdown
    :maxdepth: 1
    
    convert.rst
+   formatting.rst
    local-http-server.rst

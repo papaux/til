@@ -181,7 +181,7 @@ This tool can give the size of a single files or directories. It will scan the d
 
 ::
 
-  $ du -hs source                                                            │127.0.0.1 - - [14/Sep/2018 19:34:54] "GE
+  $ du -hs source
   396K    source
 
 Network stats
@@ -216,7 +216,7 @@ Live and real time network bandwidth vizualization tool. Can be useful to check 
 
 An example use case to get the network traffic on interface `eth0`::
 
-  iftop -i eth0 -u bytes
+  iftop -i eth0 -B
 
 **nload**
 
