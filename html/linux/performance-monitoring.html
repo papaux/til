@@ -358,7 +358,7 @@ tmpfs                  788M  2.6M  786M   1% /run/user/1000
 </div>
 <p><strong>du</strong></p>
 <p>This tool can give the size of a single files or directories. It will scan the disk to compute the size, so it might be slow. My best use case is <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-hs</span> <span class="pre">folder</span></code> to get the size of folder. Note that it will start to scan mounted device.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ du -hs source                                                            │127.0.0.1 - - [14/Sep/2018 19:34:54] &quot;GE
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ du -hs source
 396K    source
 </pre></div>
 </div>
@@ -386,7 +386,7 @@ TOTAL                                                      4.173      42.838 KB/
 <p><strong>iftop</strong></p>
 <p>Live and real time network bandwidth vizualization tool. Can be useful to check network speed, see through which interface the traffic is going and to which endpoint.</p>
 <p>An example use case to get the network traffic on interface <cite>eth0</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iftop</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">u</span> <span class="nb">bytes</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iftop</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">B</span>
 </pre></div>
 </div>
 <p><strong>nload</strong></p>
