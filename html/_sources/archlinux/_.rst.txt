@@ -16,3 +16,4 @@ ArchLinux
    remove-unused-locales.rst
    system-installation-date.rst
    yaourt-noconfirm.rst
+   yay.rst
