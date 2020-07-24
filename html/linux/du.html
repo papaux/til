@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SSH Tunnels &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>du: Disk Usage &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="sudo timeouts" href="sudo-timeout.html" />
-    <link rel="prev" title="SSH Remove hostname" href="ssh-remove-hostname.html" /> 
+    <link rel="next" title="E-Mail" href="email.html" />
+    <link rel="prev" title="Disable touchpad while typing" href="disable-touch-pad-while-typing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,7 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dd.html">dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="du.html">du: Disk Usage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">du: Disk Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">E-Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
@@ -117,11 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="rpm.html">RPM Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">SSH Tunnels</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#local-forwarding">Local forwarding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remote-forwarding">Remote forwarding</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemd-journal-size.html">Systemd journal size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netstat.html">netstat</a></li>
@@ -196,13 +192,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>SSH Tunnels</li>
+      <li>du: Disk Usage</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/ssh-tunnels.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/du.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -215,28 +211,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ssh-tunnels">
-<h1>SSH Tunnels<a class="headerlink" href="#ssh-tunnels" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="local-forwarding">
-<h2>Local forwarding<a class="headerlink" href="#local-forwarding" title="Permalink to this headline">¶</a></h2>
-<p>Forward a port from the client machine to the server machine, using the <cite>-L</cite> option.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8080</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumpost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
+  <div class="section" id="du-disk-usage">
+<h1>du: Disk Usage<a class="headerlink" href="#du-disk-usage" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">du</span></code> is a handy tool for checking the disk space used by some folders on your computer.</p>
+<p><strong>Exclude mounted folders</strong></p>
+<p>This command will show root-level disk usage, excluding mounted folders:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in /*; do grep &quot; $f &quot; /proc/mounts &gt; /dev/null || du -sh $f; done
 </pre></div>
-</div>
-<p>This opens a connection to the jumpost.company.com jump server, and forwards any connection to port 8080 made on your local machine to port 80 on server.company.com.</p>
-<p>By default, this opens the local port to any host in the local network. Specify a <em>bind address</em> to restrict it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="remote-forwarding">
-<h2>Remote forwarding<a class="headerlink" href="#remote-forwarding" title="Permalink to this headline">¶</a></h2>
-<p>Tunnel a connection from the remote server to the local client.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
-</pre></div>
-</div>
-<p>Connections made to port 8080 on the remote server will be forwarded to the port 80 of the client machine.</p>
-<p><cite>localhost</cite> can be replaced by any IP or hostname to forward to another machnie. This requires the <cite>GatewayPorts</cite> SSH parameters to be be set to <cite>no</cite>.</p>
 </div>
 </div>
 
@@ -248,10 +229,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sudo-timeout.html" class="btn btn-neutral float-right" title="sudo timeouts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="email.html" class="btn btn-neutral float-right" title="E-Mail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh-remove-hostname.html" class="btn btn-neutral float-left" title="SSH Remove hostname" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="disable-touch-pad-while-typing.html" class="btn btn-neutral float-left" title="Disable touchpad while typing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
