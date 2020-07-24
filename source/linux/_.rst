@@ -10,6 +10,7 @@ Linux
    dd.rst
    directories-most-files.rst
    disable-touch-pad-while-typing.rst
+   du.rst
    email.rst
    enable-tap-click-touch-pad.rst
    file-permissions.rst
