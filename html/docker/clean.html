@@ -197,6 +197,31 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">prune</span> <span class="o">-</span><span class="n">a</span> <span class="o">--</span><span class="n">volumes</span>
 </pre></div>
 </div>
+<p>Analyse space usage of docker system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># docker system df</span>
+<span class="n">TYPE</span>                <span class="n">TOTAL</span>               <span class="n">ACTIVE</span>              <span class="n">SIZE</span>                <span class="n">RECLAIMABLE</span>
+<span class="n">Images</span>              <span class="mi">9</span>                   <span class="mi">9</span>                   <span class="mf">1.5</span><span class="n">GB</span>               <span class="mf">109.8</span><span class="n">MB</span> <span class="p">(</span><span class="mi">7</span><span class="o">%</span><span class="p">)</span>
+<span class="n">Containers</span>          <span class="mi">9</span>                   <span class="mi">9</span>                   <span class="mf">40.36</span><span class="n">MB</span>             <span class="mi">0</span><span class="n">B</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)</span>
+<span class="n">Local</span> <span class="n">Volumes</span>       <span class="mi">4</span>                   <span class="mi">4</span>                   <span class="mf">1.803</span><span class="n">MB</span>             <span class="mi">0</span><span class="n">B</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)</span>
+<span class="n">Build</span> <span class="n">Cache</span>         <span class="mi">0</span>                   <span class="mi">0</span>                   <span class="mi">0</span><span class="n">B</span>                  <span class="mi">0</span><span class="n">B</span>
+</pre></div>
+</div>
+<p>Per image size:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">--</span><span class="n">size</span>
+</pre></div>
+</div>
+<p>Limit docker log file sizes (existing containers won’t be affected! Only new containers):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">daemon</span><span class="o">.</span><span class="n">json</span>
+<span class="p">{</span>
+  <span class="s2">&quot;log-driver&quot;</span><span class="p">:</span> <span class="s2">&quot;json-file&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;log-opts&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max-size&quot;</span><span class="p">:</span> <span class="s2">&quot;50m&quot;</span><span class="p">,</span> <span class="s2">&quot;max-file&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hack to delete log files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>truncate -s 0 $(docker inspect --format=&#39;{{.LogPath}}&#39; &lt;container_name_or_id&gt;)
+</pre></div>
+</div>
 </div>
 
 
