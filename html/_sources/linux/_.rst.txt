@@ -22,6 +22,7 @@ Linux
    performance-monitoring.rst
    package-managers.rst
    recursive-md5.rst
+   reset-root-password.rst
    rpm.rst
    simple-http-server.rst
    ssh-remove-hostname.rst
