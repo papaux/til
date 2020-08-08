@@ -54,3 +54,18 @@ Execute command if host / down according to ping result::
 
   ping -c 1 192.168.1.1 &> /dev/null && echo "up" || echo "down"
 
+Operations on diectories
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Compute md5sum of directory content::
+
+  find . -type f -exec md5sum {} \; | tee md5res.txt
+
+Move every file in the current folder to a new folder having the same name, without extension::
+
+  for f in $(find . -type f); do mkdir "${f%.*}"; mv "$f" "${f%.*}"; done
+
+Replace spaces in file name by .::
+
+  for f in $(find . -type f); do mv "$f" "${f// /.}"; done
+
