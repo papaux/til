@@ -32,12 +32,20 @@ Test if a command is available and if not, install it.::
 
   [ ! -x "$(command -v docker)" ] && apt install docker
 
+Exit if command not found
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Check if a given command is available in the path, otherwise exit::
+
+  command -v mybin >/dev/null 2>&1 || echo "mybin is not available in your PATH." && exit 1
+
+
 Check if file exists
 ~~~~~~~~~~~~~~~~~~~~
 
-Check if a given file exists, printing a message and exiting if not:
+Check if a given file exists, printing a message and exiting if not::
 
-  [ ! -f $FILE ] && echo "$FILE does not exist." && exit
+  [ ! -f $FILE ] && echo "$FILE does not exist." && exit 1
 
 Check ping result
 ~~~~~~~~~~~~~~~~~
