@@ -97,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#exit-if-command-not-found">Exit if command not found</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-if-file-exists">Check if file exists</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-ping-result">Check ping result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations-on-diectories">Operations on diectories</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -243,6 +244,21 @@
 <h2>Check ping result<a class="headerlink" href="#check-ping-result" title="Permalink to this headline">¶</a></h2>
 <p>Execute command if host / down according to ping result:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">c</span> <span class="mi">1</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">&quot;up&quot;</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">&quot;down&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operations-on-diectories">
+<h2>Operations on diectories<a class="headerlink" href="#operations-on-diectories" title="Permalink to this headline">¶</a></h2>
+<p>Compute md5sum of directory content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">exec</span> <span class="n">md5sum</span> <span class="p">{}</span> \<span class="p">;</span> <span class="o">|</span> <span class="n">tee</span> <span class="n">md5res</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Move every file in the current folder to a new folder having the same name, without extension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $(find . -type f); do mkdir &quot;${f%.*}&quot;; mv &quot;$f&quot; &quot;${f%.*}&quot;; done
+</pre></div>
+</div>
+<p>Replace spaces in file name by .:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $(find . -type f); do mv &quot;$f&quot; &quot;${f// /.}&quot;; done
 </pre></div>
 </div>
 </div>

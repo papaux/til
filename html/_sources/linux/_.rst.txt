@@ -24,6 +24,7 @@ Linux
    recursive-md5.rst
    reset-root-password.rst
    rpm.rst
+   rsync.rst
    simple-http-server.rst
    ssh-remove-hostname.rst
    ssh-tunnels.rst
