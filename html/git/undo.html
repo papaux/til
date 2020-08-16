@@ -114,6 +114,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#undo-committed-changes">Undo committed changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#undo-staged-changes">Undo staged changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#undo-unstaged-changes">Undo unstaged changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amend-last-commit">Amend last commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#branch">Branch</a></li>
 </ul>
 </li>
 </ul>
@@ -206,29 +208,52 @@
             
   <div class="section" id="undo-in-git">
 <h1>Undo in git<a class="headerlink" href="#undo-in-git" title="Permalink to this headline">¶</a></h1>
-<p>Collection of useful commands to undo whatever you did wrong in git.</p>
+<p>Collection of useful commands to undo or change whatever you did wrong in git.</p>
 <div class="section" id="undo-committed-changes">
 <h2>Undo committed changes<a class="headerlink" href="#undo-committed-changes" title="Permalink to this headline">¶</a></h2>
-<p>Undo the last commit (but keep the changes)</p>
+<p>Undo the last commit (but keep the changes):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">~</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Undo changes to only one specific file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="nb">hash</span><span class="o">&gt;</span> <span class="o">--</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="undo-staged-changes">
 <h2>Undo staged changes<a class="headerlink" href="#undo-staged-changes" title="Permalink to this headline">¶</a></h2>
-<p>Unstage everything but keep changes</p>
+<p>Unstage everything but keep changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="undo-unstaged-changes">
 <h2>Undo unstaged changes<a class="headerlink" href="#undo-unstaged-changes" title="Permalink to this headline">¶</a></h2>
-<p>Permanently discard local changes to a file</p>
+<p>Permanently discard local changes to a file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Permanently discard <strong>all</strong> local changes</p>
+<p>Permanently discard <strong>all</strong> local changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="amend-last-commit">
+<h2>Amend last commit<a class="headerlink" href="#amend-last-commit" title="Permalink to this headline">¶</a></h2>
+<p>Add file to last commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">edit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="branch">
+<h2>Branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h2>
+<p>You committed to master instead of a new branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new branch with your latest commit</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="n">feature</span>
+<span class="c1"># remove the last commit from the master branch</span>
+<span class="n">git</span> <span class="n">reset</span> <span class="n">HEAD</span><span class="o">~</span> <span class="o">--</span><span class="n">hard</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">feature</span>
 </pre></div>
 </div>
 </div>
