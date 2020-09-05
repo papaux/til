@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Recursive md5 &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Disk Usage &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reset Root Password" href="reset-root-password.html" />
-    <link rel="prev" title="Enable “Tap to click” touch pad" href="package-managers.html" /> 
+    <link rel="next" title="E-Mail" href="email.html" />
+    <link rel="prev" title="Disable touchpad while typing" href="disable-touch-pad-while-typing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,7 +102,11 @@
 <li class="toctree-l2"><a class="reference internal" href="dd.html">dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directories-most-files.html">Directories with most files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="disable-touch-pad-while-typing.html">Disable touchpad while typing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="disk-usage.html">Disk Usage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Disk Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#du">du</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ncdu">ncdu</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">E-Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enable-tap-click-touch-pad.html">Enable “Tap to click” touch pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file-permissions.html">File Permissions</a></li>
@@ -113,7 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Recursive md5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset-root-password.html">Reset Root Password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rpm.html">RPM Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rsync.html">rsync</a></li>
@@ -194,13 +198,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>Recursive md5</li>
+      <li>Disk Usage</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/recursive-md5.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/disk-usage.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,18 +217,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="recursive-md5">
-<h1>Recursive md5<a class="headerlink" href="#recursive-md5" title="Permalink to this headline">¶</a></h1>
-<p>This simple command can be used to dump the MD5 hashes of a whole directory structure.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="n">md5sum</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">checkusm</span><span class="o">.</span><span class="n">md5</span>
+  <div class="section" id="disk-usage">
+<h1>Disk Usage<a class="headerlink" href="#disk-usage" title="Permalink to this headline">¶</a></h1>
+<p>Disk usage analysis tools.</p>
+<div class="section" id="du">
+<h2>du<a class="headerlink" href="#du" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">du</span></code> is a handy tool for checking the disk space used by some folders on your computer.</p>
+<p><strong>Exclude mounted folders</strong></p>
+<p>This command will show root-level disk usage, excluding mounted folders:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in /*; do grep &quot; $f &quot; /proc/mounts &gt; /dev/null || du -sh $f; done
 </pre></div>
 </div>
-<p>This results in a file with this structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="n">a59c3d4bcfcc53e054106f561e1d4d3</span>  <span class="o">./</span><span class="n">check</span><span class="o">-</span><span class="n">abi</span><span class="o">-</span><span class="n">arch</span><span class="o">.</span><span class="n">sh</span>
-<span class="mi">9</span><span class="n">a967b2dda9ae01c9bd9a0c6b9620f8f</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_nmcli_dev</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">ad776494897d7eaf80957a83502af678</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_journalctl</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">dd25bdd21d278e80fcb3d68e71313404</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_rfkill_list</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
+</div>
+<div class="section" id="ncdu">
+<h2>ncdu<a class="headerlink" href="#ncdu" title="Permalink to this headline">¶</a></h2>
+<p>Interactive disk usage analysis tool.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">ncdu</span> <span class="pre">-x</span>
+<span class="pre">`</span></code></p>
+<p>The <cite>-x</cite> option is used to only analyse the main disk and not the mounted folders.</p>
 </div>
 </div>
 
@@ -236,10 +247,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reset-root-password.html" class="btn btn-neutral float-right" title="Reset Root Password" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="email.html" class="btn btn-neutral float-right" title="E-Mail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="package-managers.html" class="btn btn-neutral float-left" title="Enable “Tap to click” touch pad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="disable-touch-pad-while-typing.html" class="btn btn-neutral float-left" title="Disable touchpad while typing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
