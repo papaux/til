@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Clean including untracked files &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>SNMP &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create empty branch" href="create-empty-branch.html" />
-    <link rel="prev" title="Git branches" href="branches.html" /> 
+    <link rel="next" title="NodeJS" href="../nodejs/_.html" />
+    <link rel="prev" title="MTU" href="mtu.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,33 +91,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">Git</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="blame-user-friendly-interface.html">Blame with user-friendly interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="branches.html">Git branches</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Clean including untracked files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Git grep in logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reset-local-branch.html">Reset local branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Network</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mtu.html">MTU</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SNMP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#oid-datatypes">OID DataTypes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
 </ul>
 
@@ -164,15 +165,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="_.html">Git</a> &raquo;</li>
+          <li><a href="_.html">Network</a> &raquo;</li>
         
-      <li>Clean including untracked files</li>
+      <li>SNMP</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/git/clean-including-untracked-files.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/network/snmp.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -185,21 +186,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="clean-including-untracked-files">
-<h1>Clean including untracked files<a class="headerlink" href="#clean-including-untracked-files" title="Permalink to this headline">¶</a></h1>
-<p>Sometimes it is useful to reset the local working copy of git repository as if it was a fresh clone, thus removing also files that are in <cite>.gitignore</cite>.</p>
-<p>Be careful if you have some specific configurations which are not checked in because everything will be deleted.</p>
-<p>Simply run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">fdx</span>
-</pre></div>
-</div>
-<p>The options:</p>
+  <div class="section" id="snmp">
+<h1>SNMP<a class="headerlink" href="#snmp" title="Permalink to this headline">¶</a></h1>
+<p>Some definitions:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code> for forcing</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> for including directories</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-e</span></code> for removing untracked files</p></li>
+<li><p><strong>MIB</strong> (Management Information Base): hierarchical structure of the information exposed by a SNMP agent.</p></li>
+<li><p><strong>SMI</strong> (Structure of Management Information): defines the standard rules and format for describing a MIB.</p></li>
 </ul>
-<p>You can also make a dry run (just show the list of files that will be deleted, but do not delete) with the <cite>-n</cite> option</p>
+<div class="section" id="oid-datatypes">
+<h2>OID DataTypes<a class="headerlink" href="#oid-datatypes" title="Permalink to this headline">¶</a></h2>
+<p>Data types defined as part of SMI:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Integer</span></code>: Signed 32bit Integer.
+<code class="docutils literal notranslate"><span class="pre">Integer32</span></code>: Same as Integer.
+<code class="docutils literal notranslate"><span class="pre">UInteger32</span></code>: Unsigned 32bit Integer.
+<code class="docutils literal notranslate"><span class="pre">Octet</span> <span class="pre">String</span></code>: Arbitrary binary or textual data (typically max 255 characters).
+<code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">Identifier</span></code>: An OID.
+<code class="docutils literal notranslate"><span class="pre">Bit</span> <span class="pre">String</span></code>: Enumeration of named bits. Unsigned datatype.
+<code class="docutils literal notranslate"><span class="pre">IpAddress</span></code>: An IP address.
+<code class="docutils literal notranslate"><span class="pre">Counter32</span></code>: Monotonically increasing non-negative integer (max value = 32bits-1). Restart at zero when max value is reached.
+<code class="docutils literal notranslate"><span class="pre">Counter64</span></code>: Same as Counter32 but max value = 64bits-1.
+<code class="docutils literal notranslate"><span class="pre">Gauge32</span></code>: Unsigned integer, which may increase or decrease, but shall never exceed a maximum value.
+<code class="docutils literal notranslate"><span class="pre">TimeTicks</span></code>: Unsigned integer which represents the time, modulo 232 (4294967296 dec), in hundredths of a second between two epochs.</p>
+</div>
 </div>
 
 
@@ -210,10 +218,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="create-empty-branch.html" class="btn btn-neutral float-right" title="Create empty branch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../nodejs/_.html" class="btn btn-neutral float-right" title="NodeJS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="branches.html" class="btn btn-neutral float-left" title="Git branches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mtu.html" class="btn btn-neutral float-left" title="MTU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -222,7 +230,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Geoffrey Papaux
+        &copy; Copyright 2020, Geoffrey Papaux
 
     </p>
   </div>

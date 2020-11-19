@@ -7,4 +7,5 @@ Network
 
    dns.rst
    mtu.rst
-   
+   snmp.rst
+

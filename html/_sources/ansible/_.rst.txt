@@ -6,4 +6,4 @@ Ansible
    :maxdepth: 3
 
    ad-hoc-commands.rst
-   
+   vault.rst
