@@ -3,7 +3,7 @@ Java
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    jar-files.rst
 
