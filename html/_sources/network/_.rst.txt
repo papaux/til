@@ -3,7 +3,7 @@ Network
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    dns.rst
    mtu.rst
