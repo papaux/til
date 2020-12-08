@@ -1,4 +1,4 @@
-pipven
+pipenv
 ------
 
 Pipenv is an advanced dependency management tool for python.
