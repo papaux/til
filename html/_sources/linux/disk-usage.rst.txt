@@ -17,10 +17,8 @@ This command will show root-level disk usage, excluding mounted folders::
 ncdu
 ~~~~
 
-Interactive disk usage analysis tool.
+Interactive disk usage analysis tool::
 
-```
-ncdu -x
-```
+  ncdu -x
 
 The `-x` option is used to only analyse the main disk and not the mounted folders.
