@@ -18,6 +18,7 @@ Linux
    hard-disk-management.rst
    install-date.rst
    journalctl.rst
+   journalctl-size.rst
    mount.rst
    performance-monitoring.rst
    package-managers.rst
@@ -29,7 +30,6 @@ Linux
    ssh-remove-hostname.rst
    ssh-tunnels.rst
    sudo-timeout.rst
-   systemd-journal-size.rst
    netstat.rst
    tcpdump-filters.rst
    user-management-cheatsheet.rst

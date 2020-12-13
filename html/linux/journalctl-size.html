@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Systemd journal size &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>journalctl size &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="netstat" href="netstat.html" />
-    <link rel="prev" title="sudo timeouts" href="sudo-timeout.html" /> 
+    <link rel="next" title="Mount" href="mount.html" />
+    <link rel="prev" title="journalctl" href="journalctl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hard-disk-management.html">Hard Disk Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="journalctl.html">journalctl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">journalctl size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package-managers.html">Enable “Tap to click” touch pad</a></li>
@@ -121,7 +122,6 @@
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Systemd journal size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netstat.html">netstat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
@@ -194,13 +194,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>Systemd journal size</li>
+      <li>journalctl size</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/systemd-journal-size.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/journalctl-size.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,9 +213,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="systemd-journal-size">
-<h1>Systemd journal size<a class="headerlink" href="#systemd-journal-size" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="journalctl-size">
+<h1>journalctl size<a class="headerlink" href="#journalctl-size" title="Permalink to this headline">¶</a></h1>
 <p>Systemd journal defaults to a limit of 10% of the underlaying filesystem, maxing out at 4Gb.</p>
+<p>Check the current size with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">disk</span><span class="o">-</span><span class="n">usage</span>
+</pre></div>
+</div>
 <p>It is however possible to reduce the max size per configuration or also to clean the journal at run time.</p>
 <p>For limiting by configuration, just create a new config file and add the content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">journald</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">00</span><span class="o">-</span><span class="n">journal</span><span class="o">-</span><span class="n">size</span><span class="o">.</span><span class="n">conf</span>
@@ -231,6 +235,10 @@
 <span class="n">journalctl</span> <span class="o">--</span><span class="n">vacuum</span><span class="o">-</span><span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="n">weeks</span>
 </pre></div>
 </div>
+<p>Validate the journal files health:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">verify</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -241,10 +249,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="netstat.html" class="btn btn-neutral float-right" title="netstat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mount.html" class="btn btn-neutral float-right" title="Mount" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sudo-timeout.html" class="btn btn-neutral float-left" title="sudo timeouts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="journalctl.html" class="btn btn-neutral float-left" title="journalctl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
