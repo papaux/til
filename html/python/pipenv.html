@@ -194,21 +194,31 @@
 It manages virtual envs and packages, tracking the exact version of all installed dependencies.</p>
 <div class="section" id="setup-new-project">
 <h2>Setup new project<a class="headerlink" href="#setup-new-project" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> globally and create an alias:</p>
-<p>pip install –user pipenv
-alias pipenv=$HOME/.local/bin/pipenv</p>
-</li>
-<li><p>Install a package to get the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> files created:</p>
-<p>pipenv install requests</p>
-</li>
-<li><p>Activate the created virtual env:</p>
-<p>pipenv shell</p>
-</li>
-<li><p>Run a command inside the virtualenv:</p>
-<p>pipenv run &lt;command&gt;</p>
-</li>
+<ol class="arabic simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> globally and create an alias:</p></li>
 </ol>
+<blockquote>
+<div><p>pip install –user pipenv
+alias pipenv=$HOME/.local/bin/pipenv</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Install a package to get the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> files created:</p></li>
+</ol>
+<blockquote>
+<div><p>pipenv install requests</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Activate the created virtual env:</p></li>
+</ol>
+<blockquote>
+<div><p>pipenv shell</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Run a command inside the virtualenv:</p></li>
+</ol>
+<blockquote>
+<div><p>pipenv run &lt;command&gt;</p>
+</div></blockquote>
 </div>
 <div class="section" id="install-from-pipefile">
 <h2>Install from <code class="docutils literal notranslate"><span class="pre">Pipefile</span></code><a class="headerlink" href="#install-from-pipefile" title="Permalink to this headline">¶</a></h2>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Picture exif manipulation &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>ffmpeg &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mysql" href="../mysql/_.html" />
-    <link rel="prev" title="Decrease PDF file size" href="decrease-pdf-file-size.html" /> 
+    <link rel="next" title="Image conversion" href="image-conversion.html" />
+    <link rel="prev" title="Media" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,14 +98,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Media</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ffmpeg.html">ffmpeg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="image-conversion.html">Image conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="decrease-pdf-file-size.html">Decrease PDF file size</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Picture exif manipulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rename-file-according-to-exif">Rename file according to exif</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modify-exif-data">Modify exif data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ffmpeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rotate">Rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert">Convert</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="image-conversion.html">Image conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decrease-pdf-file-size.html">Decrease PDF file size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture-exif.html">Picture exif manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
@@ -169,13 +169,13 @@
         
           <li><a href="_.html">Media</a> &raquo;</li>
         
-      <li>Picture exif manipulation</li>
+      <li>ffmpeg</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/media/picture-exif.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/media/ffmpeg.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,23 +188,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="picture-exif-manipulation">
-<h1>Picture exif manipulation<a class="headerlink" href="#picture-exif-manipulation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="rename-file-according-to-exif">
-<h2>Rename file according to exif<a class="headerlink" href="#rename-file-according-to-exif" title="Permalink to this headline">¶</a></h2>
-<p>Renames the picture file according to its exif date, for instance <em>2014_0514_183702.jpg</em>.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exiv2 -r %Y_%m%d_%H%M%S $file
+  <div class="section" id="ffmpeg">
+<h1>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline">¶</a></h1>
+<p><cite>ffmpeg</cite> command usage example.</p>
+<div class="section" id="rotate">
+<h2>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Rotate video 90° clockwise</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="s2">&quot;transpose=1&quot;</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
-<p>To do it recursively in the current directoy, following command can be used.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s2">&quot;*jpg*&quot;</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;exiv2 -r %Y_%m</span><span class="si">%d</span><span class="s1">_%H%M%S &quot;$0&quot;&#39;</span>
+<p><strong>Rotate video 270° clockwise</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="s2">&quot;transpose=3&quot;</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="modify-exif-data">
-<h2>Modify exif data<a class="headerlink" href="#modify-exif-data" title="Permalink to this headline">¶</a></h2>
-<p>Shift exif times from eight hous (year:month:day hour:minute:second):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exiftool</span> <span class="s2">&quot;-AllDates+=0:0:0 8:0:0&quot;</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="n">DSC03</span><span class="o">*</span>
+<div class="section" id="convert">
+<h2>Convert<a class="headerlink" href="#convert" title="Permalink to this headline">¶</a></h2>
+<p><strong>Convert to 24fps</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span>  <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="o">=</span><span class="mi">24</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
 </div>
@@ -218,10 +219,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mysql/_.html" class="btn btn-neutral float-right" title="Mysql" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="image-conversion.html" class="btn btn-neutral float-right" title="Image conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="decrease-pdf-file-size.html" class="btn btn-neutral float-left" title="Decrease PDF file size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Media" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
