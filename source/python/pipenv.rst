@@ -7,22 +7,30 @@ It manages virtual envs and packages, tracking the exact version of all installe
 Setup new project
 ~~~~~~~~~~~~~~~~~
 
-1. Install ``pipenv`` globally and create an alias::
+1. Install ``pipenv`` globally and create an alias
 
- pip install --user pipenv
- alias pipenv=$HOME/.local/bin/pipenv
+::
 
-2. Install a package to get the ``Pipfile`` and ``Pipfile.lock`` files created::
+  pip install --user pipenv
+  alias pipenv=$HOME/.local/bin/pipenv
 
- pipenv install requests
+2. Install a package to get the ``Pipfile`` and ``Pipfile.lock`` files created
 
-3. Activate the created virtual env::
+::
 
- pipenv shell
+  pipenv install requests
 
-4. Run a command inside the virtualenv::
+3. Activate the created virtual env
 
- pipenv run <command>
+::
+
+  pipenv shell
+
+4. Run a command inside the virtualenv
+
+::
+
+  pipenv run <command>
 
 Install from ``Pipefile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~

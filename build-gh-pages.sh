@@ -2,7 +2,6 @@
 
 ##
 # Build into html file format for github pages.
-# This assumes you have a folder ../til-gh-pages which tracks the gh-pages branch
 ##
 
 GH_PAGES=./build
@@ -16,7 +15,8 @@ fi
 TILCOUNT=$(./til-count.sh)
 sed -i "s/XXX/$TILCOUNT/" source/index.rst
 
-
+# Build HTML pages
 make html -e BUILDDIR=$GH_PAGES
 
+# Copy custom index.html
 cp index.html $GH_PAGES/index.html
