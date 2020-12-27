@@ -92,6 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
@@ -195,30 +196,30 @@ It manages virtual envs and packages, tracking the exact version of all installe
 <div class="section" id="setup-new-project">
 <h2>Setup new project<a class="headerlink" href="#setup-new-project" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> globally and create an alias:</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> globally and create an alias</p></li>
 </ol>
-<blockquote>
-<div><p>pip install –user pipenv
-alias pipenv=$HOME/.local/bin/pipenv</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pip install --user pipenv
+alias pipenv=$HOME/.local/bin/pipenv
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
-<li><p>Install a package to get the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> files created:</p></li>
+<li><p>Install a package to get the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> files created</p></li>
 </ol>
-<blockquote>
-<div><p>pipenv install requests</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">install</span> <span class="n">requests</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="3">
-<li><p>Activate the created virtual env:</p></li>
+<li><p>Activate the created virtual env</p></li>
 </ol>
-<blockquote>
-<div><p>pipenv shell</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">shell</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="4">
-<li><p>Run a command inside the virtualenv:</p></li>
+<li><p>Run a command inside the virtualenv</p></li>
 </ol>
-<blockquote>
-<div><p>pipenv run &lt;command&gt;</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">run</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="install-from-pipefile">
 <h2>Install from <code class="docutils literal notranslate"><span class="pre">Pipefile</span></code><a class="headerlink" href="#install-from-pipefile" title="Permalink to this headline">¶</a></h2>
