@@ -1,4 +1,4 @@
-Pacman: Downgrade package
+Pacman: downgrade package
 --------------------------
 
 If you want to downgrade a package but you don't have it in your local cache anymore, you can still
