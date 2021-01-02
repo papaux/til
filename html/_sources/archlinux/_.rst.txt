@@ -9,6 +9,7 @@ ArchLinux
    pacman-aur-packages-list.rst
    pacman-clean-cache.rst
    pacman-downgrade-package.rst
+   pacman-exclude-package.rst
    pacman-find-which-package-installed-file.rst
    pacman-list-packages-by-size.rst
    pacman-maintenance.rst
