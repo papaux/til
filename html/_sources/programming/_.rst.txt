@@ -6,5 +6,6 @@ Some general programming tricks.
 .. toctree::
    :maxdepth: 1
 
+   json.rst
    text-sanitizer.rst
 

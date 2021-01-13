@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programming &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>json &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="json" href="json.html" />
-    <link rel="prev" title="Schema exploration in Postgres" href="../postgres/schema_exploration.html" /> 
+    <link rel="next" title="Text sanitizing" href="text-sanitizer.html" />
+    <link rel="prev" title="Programming" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,8 +104,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="json.html">json</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Programming</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text-sanitizer.html">Text sanitizing</a></li>
 </ul>
 </li>
@@ -162,13 +162,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Programming</li>
+          <li><a href="_.html">Programming</a> &raquo;</li>
+        
+      <li>json</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/programming/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/programming/json.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,14 +183,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="programming">
-<h1>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h1>
-<p>Some general programming tricks.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="json.html">json</a></li>
-<li class="toctree-l1"><a class="reference internal" href="text-sanitizer.html">Text sanitizing</a></li>
-</ul>
+  <div class="section" id="json">
+<h1>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h1>
+<p>Everything that might be interesting about JSON.</p>
+<p><strong>Validation</strong></p>
+<p>Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span> <span class="n">somefile</span><span class="o">.</span><span class="n">json</span>
+<span class="c1"># or</span>
+<span class="n">echo</span> <span class="s1">&#39;{ &quot;field&quot;: &quot;value&quot; }&#39;</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
 </div>
 </div>
 
@@ -200,10 +203,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="json.html" class="btn btn-neutral float-right" title="json" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="text-sanitizer.html" class="btn btn-neutral float-right" title="Text sanitizing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../postgres/schema_exploration.html" class="btn btn-neutral float-left" title="Schema exploration in Postgres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
