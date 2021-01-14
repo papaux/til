@@ -1,0 +1,7 @@
+zsh
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   shortcuts.rst
