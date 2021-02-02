@@ -4,4 +4,6 @@ Kubernetes
 .. toctree::
    :maxdepth: 1
 
+   configmap.rst
+   imperative.rst
    kubectl.rst
