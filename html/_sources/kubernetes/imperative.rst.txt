@@ -1,0 +1,26 @@
+Imperative commands
+-------------------
+
+Create pod::
+
+  kubectl run redis --image redis:alpine --labels="tier=db"
+
+Expose as service::
+
+  kubectl expose pod redis --port=6379 --name redis-service --type ClusterIP
+
+Create deployment with replicas::
+
+  kubectl create deployment webapp --image company/webapp-server --replicas=3
+
+Run a pod and expose port::
+
+  kubectl run my-nginx --image nginx --port 8080
+
+Create namespace::
+
+  kubectl create namespace dev-ns
+
+Taint a node::
+
+  kubectl taint node node01 spray=mortein:NoSchedule

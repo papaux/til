@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Kubernetes &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Imperative commands &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ConfigMap" href="configmap.html" />
-    <link rel="prev" title="JAR files" href="../java/jar-files.html" /> 
+    <link rel="next" title="kubectl" href="kubectl.html" />
+    <link rel="prev" title="ConfigMap" href="configmap.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,9 +94,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Kubernetes</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Imperative commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 </ul>
 </li>
@@ -164,13 +164,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Kubernetes</li>
+          <li><a href="_.html">Kubernetes</a> &raquo;</li>
+        
+      <li>Imperative commands</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/kubernetes/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/kubernetes/imperative.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,14 +185,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kubernetes">
-<h1>Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kubectl.html">kubectl</a></li>
-</ul>
+  <div class="section" id="imperative-commands">
+<h1>Imperative commands<a class="headerlink" href="#imperative-commands" title="Permalink to this headline">¶</a></h1>
+<p>Create pod:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">redis</span> <span class="o">--</span><span class="n">image</span> <span class="n">redis</span><span class="p">:</span><span class="n">alpine</span> <span class="o">--</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;tier=db&quot;</span>
+</pre></div>
+</div>
+<p>Expose as service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">expose</span> <span class="n">pod</span> <span class="n">redis</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">6379</span> <span class="o">--</span><span class="n">name</span> <span class="n">redis</span><span class="o">-</span><span class="n">service</span> <span class="o">--</span><span class="nb">type</span> <span class="n">ClusterIP</span>
+</pre></div>
+</div>
+<p>Create deployment with replicas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">deployment</span> <span class="n">webapp</span> <span class="o">--</span><span class="n">image</span> <span class="n">company</span><span class="o">/</span><span class="n">webapp</span><span class="o">-</span><span class="n">server</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Run a pod and expose port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">my</span><span class="o">-</span><span class="n">nginx</span> <span class="o">--</span><span class="n">image</span> <span class="n">nginx</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8080</span>
+</pre></div>
+</div>
+<p>Create namespace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">namespace</span> <span class="n">dev</span><span class="o">-</span><span class="n">ns</span>
+</pre></div>
+</div>
+<p>Taint a node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">taint</span> <span class="n">node</span> <span class="n">node01</span> <span class="n">spray</span><span class="o">=</span><span class="n">mortein</span><span class="p">:</span><span class="n">NoSchedule</span>
+</pre></div>
 </div>
 </div>
 
@@ -202,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="configmap.html" class="btn btn-neutral float-right" title="ConfigMap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="kubectl.html" class="btn btn-neutral float-right" title="kubectl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../java/jar-files.html" class="btn btn-neutral float-left" title="JAR files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="configmap.html" class="btn btn-neutral float-left" title="ConfigMap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

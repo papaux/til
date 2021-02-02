@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="KVM" href="../kvm/_.html" />
-    <link rel="prev" title="Kubernetes" href="_.html" /> 
+    <link rel="prev" title="Imperative commands" href="imperative.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,7 +95,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">kubectl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">kubectl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#explore-a-kubernetes-environment">Explore a Kubernetes environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-resources">Change resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-help">Get help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspect-pods">Inspect pods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#templates">Templates</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
@@ -185,11 +194,9 @@
             
   <div class="section" id="kubectl">
 <h1>kubectl<a class="headerlink" href="#kubectl" title="Permalink to this headline">¶</a></h1>
-<p>List of most useful <cite>kubectl</cite> commands.</p>
-<p>Start running 1 or more instances of a container image in the cluster:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">hello</span><span class="o">-</span><span class="n">minikube</span>
-</pre></div>
-</div>
+<p>List of most useful <cite>kubectl</cite> commands or global settings.</p>
+<div class="section" id="explore-a-kubernetes-environment">
+<h2>Explore a Kubernetes environment<a class="headerlink" href="#explore-a-kubernetes-environment" title="Permalink to this headline">¶</a></h2>
 <p>Print the address of the master and cluster services:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">cluster</span><span class="o">-</span><span class="n">info</span>
 </pre></div>
@@ -197,6 +204,71 @@
 <p>List all nodes of the cluster:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">nodes</span>
 </pre></div>
+</div>
+<p>List all resources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>Display more information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="nb">all</span> <span class="o">-</span><span class="n">o</span> <span class="n">wide</span>
+</pre></div>
+</div>
+<p>Get details about a resource:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">pod</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span>
+</pre></div>
+</div>
+<p>Get definition as a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Select namespace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="o">--</span><span class="n">namespace</span><span class="o">=</span><span class="n">dev</span><span class="o">-</span><span class="n">ns</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-resources">
+<h2>Change resources<a class="headerlink" href="#change-resources" title="Permalink to this headline">¶</a></h2>
+<p>Live edit a resource:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">pod</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span>
+</pre></div>
+</div>
+<p>Dry run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span><span class="o">=</span><span class="n">client</span>
+</pre></div>
+</div>
+<p>Start running 1 or more instances of a container image in the cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">hello</span><span class="o">-</span><span class="n">minikube</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-help">
+<h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this headline">¶</a></h2>
+<p>Command help:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>Resource overall information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">explain</span> <span class="n">pods</span>
+</pre></div>
+</div>
+<p>Resource definition structure help:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">explain</span> <span class="n">pods</span> <span class="o">--</span><span class="n">recursive</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">envFrom</span> <span class="o">-</span><span class="n">A3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inspect-pods">
+<h2>Inspect pods<a class="headerlink" href="#inspect-pods" title="Permalink to this headline">¶</a></h2>
+<p>Exec command in a pod (in that case, checking the user running in the container):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">exec</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span> <span class="o">--</span> <span class="n">whoami</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>Simply create a template yaml file using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">bee</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span> <span class="o">&gt;</span> <span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -211,7 +283,7 @@
         <a href="../kvm/_.html" class="btn btn-neutral float-right" title="KVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="imperative.html" class="btn btn-neutral float-left" title="Imperative commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
