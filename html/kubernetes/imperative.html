@@ -211,6 +211,19 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">taint</span> <span class="n">node</span> <span class="n">node01</span> <span class="n">spray</span><span class="o">=</span><span class="n">mortein</span><span class="p">:</span><span class="n">NoSchedule</span>
 </pre></div>
 </div>
+<p>Untaint a node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">taint</span> <span class="n">node</span> <span class="n">node01</span> <span class="n">spray</span><span class="o">=</span><span class="n">mortein</span><span class="p">:</span><span class="n">NoSchedule</span><span class="o">-</span>
+</pre></div>
+</div>
+<p>Label a node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">label</span> <span class="n">nodes</span> <span class="n">node01</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span>
+</pre></div>
+</div>
+<p>Create a deployment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">deployment</span> <span class="n">blue</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">blue</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">6</span>
+</pre></div>
+</div>
 </div>
 
 
