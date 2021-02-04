@@ -24,3 +24,16 @@ Create namespace::
 Taint a node::
 
   kubectl taint node node01 spray=mortein:NoSchedule
+
+Untaint a node::
+
+  kubectl taint node node01 spray=mortein:NoSchedule-
+
+Label a node::
+
+  kubectl label nodes node01 color=blue
+
+Create a deployment::
+
+  kubectl create deployment blue --image=nginx
+  kubectl scale deployment blue --replicas=6
