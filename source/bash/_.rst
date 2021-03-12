@@ -10,4 +10,5 @@ Bash
    one-liners.rst
    run-command-file-changed.rst
    scripts-boilerplate.rst
+   script-template.rst
    true-color-test.rst
