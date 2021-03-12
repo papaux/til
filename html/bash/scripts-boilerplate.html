@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="True color test" href="true-color-test.html" />
+    <link rel="next" title="Script template" href="script-template.html" />
     <link rel="prev" title="Run command on file change" href="run-command-file-changed.html" /> 
 </head>
 
@@ -96,8 +96,11 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scripts boilerplate</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#if-grep">if grep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-arguments">Check arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-script-directory">Get script directory</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="script-template.html">Script template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="true-color-test.html">True color test</a></li>
 </ul>
 </li>
@@ -217,6 +220,22 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="check-arguments">
+<h2>Check arguments<a class="headerlink" href="#check-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Check if an argument has been set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="s2">&quot;$1&quot;</span> <span class="p">]</span>
+  <span class="n">then</span>
+    <span class="n">echo</span> <span class="s2">&quot;No argument supplied&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-script-directory">
+<h2>Get script directory<a class="headerlink" href="#get-script-directory" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>script_dir=$(cd &quot;$(dirname &quot;${BASH_SOURCE[0]}&quot;)&quot; &amp;&gt;/dev/null &amp;&amp; pwd -P)
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -227,7 +246,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="true-color-test.html" class="btn btn-neutral float-right" title="True color test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="script-template.html" class="btn btn-neutral float-right" title="Script template" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="run-command-file-changed.html" class="btn btn-neutral float-left" title="Run command on file change" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

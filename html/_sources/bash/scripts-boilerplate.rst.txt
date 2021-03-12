@@ -28,3 +28,21 @@ Want to combine `grep` and `if` to do something in case a string is find or not 
     echo "Text not Found"
   fi
 
+Check arguments
+~~~~~~~~~~~~~~~
+
+Check if an argument has been set::
+
+  if [ -z "$1" ]
+    then
+      echo "No argument supplied"
+  fi
+
+Get script directory
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+
+
