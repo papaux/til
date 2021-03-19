@@ -55,11 +55,16 @@ Copy/Paste
 - ``:set paste``: enable special paste mode to turn off autoindent when you paste code
 - ``:set nopaste``: turn off the paste-mode, so that auto-indenting when you type works correctly again.
 
-
 Undo/Redo
 ~~~~~~~~~
 - ``u``: undo
 - ``<C-r>``: redo
+
+Tab/space handling
+~~~~~~~~~~~~~~~~~~
+- ``:set tabstop=2 shiftwidth=2 expandtab``: configure and enable expand tab
+- ``:set retab``: replace tab to spaces when ``expandtab`` is already enabled
+- ``:set et|retab``: replace tab to spaces (first enable option ``expandtab`` with ``et``)
 
 Macro
 ~~~~~
