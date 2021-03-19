@@ -34,6 +34,26 @@ Select namespace::
 
   kubectl --namespace=dev-ns
 
+Get list of pods and services::
+
+  kubectl get pod,svc
+
+Get all resources matching a label::
+
+  kubectl get all --selector label=value
+
+Deploy a resource::
+
+  kubectl create -f <filename.yaml>
+
+Deploy all resources from current folder::
+
+  kubectl create -f .
+
+Show without header (to pipe with other commnands)::
+
+  kubectl get pods --no-headers | wc
+
 Change resources
 ~~~~~~~~~~~~~~~~
 
@@ -71,9 +91,14 @@ Exec command in a pod (in that case, checking the user running in the container)
 
   kubectl exec my-pod -- whoami
 
+Get logs::
+
+  kubectl logs -f my-pod <my-container>
+
 Templates
 ~~~~~~~~~
 
 Simply create a template yaml file using::
 
   kubectl run bee --image=nginx --dry-run -o yaml > pod.yaml
+
