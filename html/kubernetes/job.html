@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ConfigMap &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>job and cronjob &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Manage Deployment" href="deployment.html" />
-    <link rel="prev" title="Kubernetes" href="_.html" /> 
+    <link rel="next" title="kubectl" href="kubectl.html" />
+    <link rel="prev" title="Imperative commands" href="imperative.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,10 +95,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ConfigMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">job and cronjob</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#job">job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cronjob">cronjob</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 </ul>
 </li>
@@ -168,13 +172,13 @@
         
           <li><a href="_.html">Kubernetes</a> &raquo;</li>
         
-      <li>ConfigMap</li>
+      <li>job and cronjob</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/kubernetes/configmap.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/kubernetes/job.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -187,15 +191,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="configmap">
-<h1>ConfigMap<a class="headerlink" href="#configmap" title="Permalink to this headline">¶</a></h1>
-<p>Get all configmaps:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cm</span>
+  <div class="section" id="job-and-cronjob">
+<h1>job and cronjob<a class="headerlink" href="#job-and-cronjob" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="job">
+<h2>job<a class="headerlink" href="#job" title="Permalink to this headline">¶</a></h2>
+<p>Create:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">job</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span> <span class="o">--</span><span class="n">image</span> <span class="n">some</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">image</span>
 </pre></div>
 </div>
-<p>Create from command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">cm</span> <span class="n">webapp</span><span class="o">-</span><span class="n">config</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">literal</span><span class="o">=</span><span class="n">APP_COLOR</span><span class="o">=</span><span class="n">darkblue</span>
+<p>List:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">job</span>
 </pre></div>
+</div>
+<p>Details:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">job</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cronjob">
+<h2>cronjob<a class="headerlink" href="#cronjob" title="Permalink to this headline">¶</a></h2>
+<p>Create:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">cronjob</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span> <span class="o">--</span><span class="n">image</span> <span class="n">some</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">image</span> <span class="o">--</span><span class="n">schedule</span> <span class="s2">&quot;45 12 * * *&quot;</span>
+</pre></div>
+</div>
+<p>List:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cronjob</span>
+</pre></div>
+</div>
+<p>Details:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cronjob</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -207,10 +233,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deployment.html" class="btn btn-neutral float-right" title="Manage Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="kubectl.html" class="btn btn-neutral float-right" title="kubectl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="imperative.html" class="btn btn-neutral float-left" title="Imperative commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

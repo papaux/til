@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="kubectl" href="kubectl.html" />
-    <link rel="prev" title="ConfigMap" href="configmap.html" /> 
+    <link rel="next" title="job and cronjob" href="job.html" />
+    <link rel="prev" title="Manage Deployment" href="deployment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Imperative commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 </ul>
 </li>
@@ -187,6 +189,10 @@
             
   <div class="section" id="imperative-commands">
 <h1>Imperative commands<a class="headerlink" href="#imperative-commands" title="Permalink to this headline">¶</a></h1>
+<p>Export a command to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span><span class="o">=</span><span class="n">client</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span> <span class="o">&gt;</span> <span class="n">resource</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
 <p>Create pod:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">redis</span> <span class="o">--</span><span class="n">image</span> <span class="n">redis</span><span class="p">:</span><span class="n">alpine</span> <span class="o">--</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;tier=db&quot;</span>
 </pre></div>
@@ -224,6 +230,10 @@
 <span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">blue</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">6</span>
 </pre></div>
 </div>
+<p>Create a service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">expose</span> <span class="n">deployment</span> <span class="n">blue</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">blue</span><span class="o">-</span><span class="n">service</span> <span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span> <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="n">NodePort</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -234,10 +244,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kubectl.html" class="btn btn-neutral float-right" title="kubectl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="job.html" class="btn btn-neutral float-right" title="job and cronjob" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="configmap.html" class="btn btn-neutral float-left" title="ConfigMap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="deployment.html" class="btn btn-neutral float-left" title="Manage Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

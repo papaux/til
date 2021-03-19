@@ -1,6 +1,10 @@
 Imperative commands
 -------------------
 
+Export a command to a file::
+
+  ... --dry-run=client -o yaml > resource.yaml
+
 Create pod::
 
   kubectl run redis --image redis:alpine --labels="tier=db"
@@ -37,3 +41,7 @@ Create a deployment::
 
   kubectl create deployment blue --image=nginx
   kubectl scale deployment blue --replicas=6
+
+Create a service::
+
+  kubectl expose deployment blue --name=blue-service --target-port=8080 --type=NodePort --port=8080
