@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Undo in git &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -208,10 +209,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="undo-in-git">
+  <section id="undo-in-git">
 <h1>Undo in git<a class="headerlink" href="#undo-in-git" title="Permalink to this headline">¶</a></h1>
 <p>Collection of useful commands to undo or change whatever you did wrong in git.</p>
-<div class="section" id="undo-committed-changes">
+<section id="undo-committed-changes">
 <h2>Undo committed changes<a class="headerlink" href="#undo-committed-changes" title="Permalink to this headline">¶</a></h2>
 <p>Undo the last commit (but keep the changes):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">~</span><span class="mi">1</span>
@@ -221,15 +222,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="nb">hash</span><span class="o">&gt;</span> <span class="o">--</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="undo-staged-changes">
+</section>
+<section id="undo-staged-changes">
 <h2>Undo staged changes<a class="headerlink" href="#undo-staged-changes" title="Permalink to this headline">¶</a></h2>
 <p>Unstage everything but keep changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="undo-unstaged-changes">
+</section>
+<section id="undo-unstaged-changes">
 <h2>Undo unstaged changes<a class="headerlink" href="#undo-unstaged-changes" title="Permalink to this headline">¶</a></h2>
 <p>Permanently discard local changes to a file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
@@ -239,16 +240,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="amend-last-commit">
+</section>
+<section id="amend-last-commit">
 <h2>Amend last commit<a class="headerlink" href="#amend-last-commit" title="Permalink to this headline">¶</a></h2>
 <p>Add file to last commit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">edit</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="branch">
+</section>
+<section id="branch">
 <h2>Branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h2>
 <p>You committed to master instead of a new branch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new branch with your latest commit</span>
@@ -258,8 +259,8 @@
 <span class="n">git</span> <span class="n">checkout</span> <span class="n">feature</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

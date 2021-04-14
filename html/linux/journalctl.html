@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>journalctl &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -227,10 +228,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="journalctl">
+  <section id="journalctl">
 <h1>journalctl<a class="headerlink" href="#journalctl" title="Permalink to this headline">¶</a></h1>
 <p>This TIL gives some usage examples of journalctl for concrete use cases.</p>
-<div class="section" id="persistent">
+<section id="persistent">
 <h2>Persistent<a class="headerlink" href="#persistent" title="Permalink to this headline">¶</a></h2>
 <p>The journal storage configuration is set to <cite>auto</cite> but is actually volatile, because the <cite>/var/log/journal</cite> folder is not existing. In order to fix it, we need to create the folder and restart the service.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">journal</span>
@@ -239,15 +240,15 @@
 <span class="n">systemctl</span> <span class="n">status</span> <span class="n">systemd</span><span class="o">-</span><span class="n">journal</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="status">
+</section>
+<section id="status">
 <h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
 <p>Check the storage status:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">status</span> <span class="n">systemd</span><span class="o">-</span><span class="n">journald</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-basics">
+</section>
+<section id="filtering-basics">
 <h2>Filtering: Basics<a class="headerlink" href="#filtering-basics" title="Permalink to this headline">¶</a></h2>
 <p><strong>Tail-like</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">f</span>
@@ -261,8 +262,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">r</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-boot">
+</section>
+<section id="filtering-boot">
 <h2>Filtering: Boot<a class="headerlink" href="#filtering-boot" title="Permalink to this headline">¶</a></h2>
 <p><strong>Get logs from current boot</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">b</span>
@@ -276,15 +277,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">boots</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-kernel">
+</section>
+<section id="filtering-kernel">
 <h2>Filtering: Kernel<a class="headerlink" href="#filtering-kernel" title="Permalink to this headline">¶</a></h2>
 <p><strong>Get Kernel Messages only</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">k</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-time-range">
+</section>
+<section id="filtering-time-range">
 <h2>Filtering: Time Range<a class="headerlink" href="#filtering-time-range" title="Permalink to this headline">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">--since</span></code> and <code class="docutils literal notranslate"><span class="pre">--until</span></code> options for time based filtering.</p>
 <p><strong>Get logs from the last hour</strong>:</p>
@@ -299,15 +300,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;2020-04-26 22:00:00&quot;</span> <span class="o">--</span><span class="n">until</span> <span class="s2">&quot;2020-04-26 23:00:00&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-service">
+</section>
+<section id="filtering-service">
 <h2>Filtering: Service<a class="headerlink" href="#filtering-service" title="Permalink to this headline">¶</a></h2>
 <p><strong>Get logs from a given unit</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="o">.</span><span class="n">service</span> <span class="o">-</span><span class="n">u</span> <span class="n">second</span><span class="o">.</span><span class="n">service</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filering-priority">
+</section>
+<section id="filering-priority">
 <h2>Filering: priority<a class="headerlink" href="#filering-priority" title="Permalink to this headline">¶</a></h2>
 <p><strong>Get logs starting with a priority value</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;crit&quot;</span>
@@ -317,23 +318,23 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;emerg&quot;</span><span class="o">..</span><span class="s2">&quot;crit&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-combine">
+</section>
+<section id="filtering-combine">
 <h2>Filtering: combine<a class="headerlink" href="#filtering-combine" title="Permalink to this headline">¶</a></h2>
 <p><strong>Get logs from a given service for the last our</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">u</span> <span class="n">my</span><span class="o">.</span><span class="n">service</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;1 hour ago&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="filtering-docker-container">
+</section>
+<section id="filtering-docker-container">
 <h2>Filtering: docker container<a class="headerlink" href="#filtering-docker-container" title="Permalink to this headline">¶</a></h2>
 <p>When sending the logs to journalctl (from the docker log driver), additional filtering capability is available.</p>
 <p><strong>Get logs for a given container</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="n">CONTAINER_NAME</span><span class="o">=</span><span class="n">mycontainer</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

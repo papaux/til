@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>VNC Server &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -218,7 +219,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vnc-server">
+  <section id="vnc-server">
 <h1>VNC Server<a class="headerlink" href="#vnc-server" title="Permalink to this headline">¶</a></h1>
 <p>The easiest and flexiblest way to remotely connect to your Linux station is by using VNC. And I find especially convenient to have a dedicated X instance for your remote connection: you  can have multiple sessions, setup custom resolution, etc.</p>
 <p>There are several vnc server available out there. I was always satisfied with  <code class="docutils literal notranslate"><span class="pre">tightvncserver</span></code> (or tigervnc fork).</p>
@@ -229,7 +230,7 @@
 </div>
 <p>The first time you will be asked to enter a password.</p>
 <p>Then it will tell you the desktop id and you can connect with your favorite vnc viewer.</p>
-<div class="section" id="manage-vnc-sessions">
+<section id="manage-vnc-sessions">
 <h2>Manage VNC sessions<a class="headerlink" href="#manage-vnc-sessions" title="Permalink to this headline">¶</a></h2>
 <p>List sessions</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vncserver</span> <span class="o">-</span><span class="nb">list</span>
@@ -240,8 +241,8 @@
 </pre></div>
 </div>
 <p>Note that I encourage setting up a ssh tunnel to encapsulate your VNC session.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

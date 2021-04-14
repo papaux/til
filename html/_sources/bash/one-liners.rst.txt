@@ -69,3 +69,10 @@ Replace spaces in file name by .::
 
   for f in $(find . -type f); do mv "$f" "${f// /.}"; done
 
+Find all files modified after a a date::
+
+  find . -newermt '2021-04-05' -print
+
+Find all files modified after another file::
+
+  find . -newer /var/reference-file -print

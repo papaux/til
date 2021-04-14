@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pacman: list packages by size &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -194,13 +195,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pacman-list-packages-by-size">
+  <section id="pacman-list-packages-by-size">
 <h1>Pacman: list packages by size<a class="headerlink" href="#pacman-list-packages-by-size" title="Permalink to this headline">¶</a></h1>
 <p>With this command found in the arch forums (<a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=112038">https://bbs.archlinux.org/viewtopic.php?id=112038</a>) it is possible to list the packages by size in MB, with the biggest package being listed first. Very useful to locate unused packages to free up some hard disk space.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qi</span> <span class="o">|</span> <span class="n">egrep</span> <span class="s1">&#39;^(Name|Installed)&#39;</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">f2</span> <span class="o">-</span><span class="n">d</span><span class="s1">&#39;:&#39;</span> <span class="o">|</span> <span class="n">paste</span> <span class="o">-</span> <span class="o">-</span> <span class="o">|</span> <span class="n">column</span> <span class="o">-</span><span class="n">t</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nrk</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">MiB</span> <span class="o">|</span> <span class="n">less</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>gdb pretty print &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -190,7 +191,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gdb-pretty-print">
+  <section id="gdb-pretty-print">
 <h1>gdb pretty print<a class="headerlink" href="#gdb-pretty-print" title="Permalink to this headline">¶</a></h1>
 <p>gdb allows to customize the way variable are printed. If you are using
 gdb version 7+ and your gdb has been compiled with python support, you
@@ -198,7 +199,7 @@ can use the python pretty-printers.</p>
 <p>If you have an older gdb or one which doesn’t support python pretty
 printers, there is still a possibility to integrate the functions in
 your .gdbinit directly.</p>
-<div class="section" id="with-python">
+<section id="with-python">
 <h2>With python<a class="headerlink" href="#with-python" title="Permalink to this headline">¶</a></h2>
 <p>You can checkout the scripts at:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">gdb_printers</span><span class="o">/</span>
@@ -214,8 +215,8 @@ your .gdbinit directly.</p>
 <span class="n">end</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="without-python">
+</section>
+<section id="without-python">
 <h2>Without python<a class="headerlink" href="#without-python" title="Permalink to this headline">¶</a></h2>
 <p>Here is a sample .gdbinit with some predefined pretty printers for the
 stl: <a class="reference external" href="https://gist.github.com/skyscribe/3978082">https://gist.github.com/skyscribe/3978082</a></p>
@@ -919,8 +920,8 @@ set follow-fork-mode child
 set detach-on-fork off
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

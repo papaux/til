@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>vim cheatsheet &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -196,14 +197,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vim-cheatsheet">
+  <section id="vim-cheatsheet">
 <h1>vim cheatsheet<a class="headerlink" href="#vim-cheatsheet" title="Permalink to this headline">¶</a></h1>
 <p>Another vim cheatsheet based on my needs / feelings / findings.</p>
 <p>Credits to</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/</a></p></li>
 </ul>
-<div class="section" id="moves-on-line">
+<section id="moves-on-line">
 <h2>Moves on line<a class="headerlink" href="#moves-on-line" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hjkl</span></code>: basic moves ←↓↑→</p></li>
@@ -216,8 +217,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code>: like <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code> but backward</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">3fa</span></code> → find the 3rd occurrence of <code class="docutils literal notranslate"><span class="pre">a</span></code> on this line</p></li>
 </ul>
-</div>
-<div class="section" id="moves-on-document">
+</section>
+<section id="moves-on-document">
 <h2>Moves on document<a class="headerlink" href="#moves-on-document" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NG</span></code>: go to line N</p></li>
@@ -231,8 +232,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: go to next occurrence of the word under the cursor</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span></code>: go to previous occurrence of the word under the cursor</p></li>
 </ul>
-</div>
-<div class="section" id="modification">
+</section>
+<section id="modification">
 <h2>Modification<a class="headerlink" href="#modification" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: insert after the cursor</p></li>
@@ -241,8 +242,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">cw</span></code>: replace from the cursor to the end of the word</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dd</span></code>: delete (and copy) the current line</p></li>
 </ul>
-</div>
-<div class="section" id="search-replace">
+</section>
+<section id="search-replace">
 <h2>Search / Replace<a class="headerlink" href="#search-replace" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/pattern</span></code>: search for pattern</p></li>
@@ -250,8 +251,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:s/foo/bar/g</span></code>: find each occurrence of ‘foo’ (in the current line only), and replace it with ‘bar’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:%s/foo/bar/gc</span></code>: change each ‘foo’ to ‘bar’, but ask for confirmation first.</p></li>
 </ul>
-</div>
-<div class="section" id="copy-paste">
+</section>
+<section id="copy-paste">
 <h2>Copy/Paste<a class="headerlink" href="#copy-paste" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: paste</p></li>
@@ -260,23 +261,23 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">paste</span></code>: enable special paste mode to turn off autoindent when you paste code</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">nopaste</span></code>: turn off the paste-mode, so that auto-indenting when you type works correctly again.</p></li>
 </ul>
-</div>
-<div class="section" id="undo-redo">
+</section>
+<section id="undo-redo">
 <h2>Undo/Redo<a class="headerlink" href="#undo-redo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">u</span></code>: undo</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-r&gt;</span></code>: redo</p></li>
 </ul>
-</div>
-<div class="section" id="tab-space-handling">
+</section>
+<section id="tab-space-handling">
 <h2>Tab/space handling<a class="headerlink" href="#tab-space-handling" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">tabstop=2</span> <span class="pre">shiftwidth=2</span> <span class="pre">expandtab</span></code>: configure and enable expand tab</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">retab</span></code>: replace tab to spaces when <code class="docutils literal notranslate"><span class="pre">expandtab</span></code> is already enabled</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">et|retab</span></code>: replace tab to spaces (first enable option <code class="docutils literal notranslate"><span class="pre">expandtab</span></code> with <code class="docutils literal notranslate"><span class="pre">et</span></code>)</p></li>
 </ul>
-</div>
-<div class="section" id="macro">
+</section>
+<section id="macro">
 <h2>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h2>
 <p>Macros are recorded in <em>registers</em> (<code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">z</span></code>).</p>
 <ul class="simple">
@@ -285,8 +286,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">&#64;a</span></code>: playback register <em>a</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qaq</span></code>: delete recording stored in register <em>a</em></p></li>
 </ul>
-</div>
-<div class="section" id="load-save">
+</section>
+<section id="load-save">
 <h2>Load/Save<a class="headerlink" href="#load-save" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:e</span> <span class="pre">&lt;path/to/file&gt;</span></code>: open</p></li>
@@ -296,8 +297,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:q!</span></code>: quit without saving, also: :qa! to quit even if there are modified hidden buffers.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:bn</span> <span class="pre">(resp.</span> <span class="pre">:bp)</span></code>: show next (resp. previous) file (buffer)</p></li>
 </ul>
-</div>
-<div class="section" id="combine">
+</section>
+<section id="combine">
 <h2>Combine<a class="headerlink" href="#combine" title="Permalink to this headline">¶</a></h2>
 <p>One can combine the moves with commands in order to apply an operation from a start point to an end point:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;start</span> <span class="pre">position&gt;&lt;command&gt;&lt;end</span> <span class="pre">position&gt;</span></code></p>
@@ -307,8 +308,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: yank from here</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$</span></code>: up to the end of this line</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

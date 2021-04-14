@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Color Output &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -193,10 +194,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="color-output">
+  <section id="color-output">
 <h1>Color Output<a class="headerlink" href="#color-output" title="Permalink to this headline">¶</a></h1>
 <p>There are several possibilities to color the output of a bash script / command.</p>
-<div class="section" id="tput">
+<section id="tput">
 <h2><cite>tput</cite><a class="headerlink" href="#tput" title="Permalink to this headline">¶</a></h2>
 <p>Define shell variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>red=`tput setaf 1`
@@ -210,8 +211,8 @@ echo &quot;${red}red text ${green}green text${reset}&quot;
 </pre></div>
 </div>
 <p>Do not forget to clear the color with the <cite>tput sgr0</cite> at the end.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

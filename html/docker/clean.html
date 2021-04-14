@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Clean &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -193,7 +194,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="clean">
+  <section id="clean">
 <h1>Clean<a class="headerlink" href="#clean" title="Permalink to this headline">¶</a></h1>
 <p>Remove all unused containers, networks, images (both dangling and unreferenced), and volumes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">prune</span> <span class="o">-</span><span class="n">a</span> <span class="o">--</span><span class="n">volumes</span>
@@ -224,7 +225,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>truncate -s 0 $(docker inspect --format=&#39;{{.LogPath}}&#39; &lt;container_name_or_id&gt;)
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

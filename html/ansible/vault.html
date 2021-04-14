@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Ansible Vault &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -187,9 +188,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ansible-vault">
+  <section id="ansible-vault">
 <h1>Ansible Vault<a class="headerlink" href="#ansible-vault" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="string-encrypt">
+<section id="string-encrypt">
 <h2>String encrypt<a class="headerlink" href="#string-encrypt" title="Permalink to this headline">¶</a></h2>
 <p>Encrypt string values to be embedded directly in the plain text var file.</p>
 <p>Encrypt with a password specific for a vault id, asking for the value in stdin:</p>
@@ -204,8 +205,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">m</span> <span class="n">debug</span> <span class="o">-</span><span class="n">a</span> <span class="n">var</span><span class="o">=</span><span class="s2">&quot;new_user_password&quot;</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;@vars.yml&quot;</span> <span class="o">--</span><span class="n">ask</span><span class="o">-</span><span class="n">vault</span><span class="o">-</span><span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>kubectl &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -194,10 +195,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kubectl">
+  <section id="kubectl">
 <h1>kubectl<a class="headerlink" href="#kubectl" title="Permalink to this headline">¶</a></h1>
 <p>List of most useful <cite>kubectl</cite> commands or global settings.</p>
-<div class="section" id="explore-a-kubernetes-environment">
+<section id="explore-a-kubernetes-environment">
 <h2>Explore a Kubernetes environment<a class="headerlink" href="#explore-a-kubernetes-environment" title="Permalink to this headline">¶</a></h2>
 <p>Print the address of the master and cluster services:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">cluster</span><span class="o">-</span><span class="n">info</span>
@@ -247,8 +248,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pods</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">headers</span> <span class="o">|</span> <span class="n">wc</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="change-resources">
+</section>
+<section id="change-resources">
 <h2>Change resources<a class="headerlink" href="#change-resources" title="Permalink to this headline">¶</a></h2>
 <p>Live edit a resource:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">pod</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span>
@@ -262,8 +263,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">hello</span><span class="o">-</span><span class="n">minikube</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="get-help">
+</section>
+<section id="get-help">
 <h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this headline">¶</a></h2>
 <p>Command help:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="o">--</span><span class="n">help</span>
@@ -277,8 +278,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">explain</span> <span class="n">pods</span> <span class="o">--</span><span class="n">recursive</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">envFrom</span> <span class="o">-</span><span class="n">A3</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="inspect-pods">
+</section>
+<section id="inspect-pods">
 <h2>Inspect pods<a class="headerlink" href="#inspect-pods" title="Permalink to this headline">¶</a></h2>
 <p>Exec command in a pod (in that case, checking the user running in the container):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">exec</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span> <span class="o">--</span> <span class="n">whoami</span>
@@ -288,15 +289,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">logs</span> <span class="o">-</span><span class="n">f</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span> <span class="o">&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">container</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="templates">
+</section>
+<section id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
 <p>Simply create a template yaml file using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">bee</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span> <span class="o">&gt;</span> <span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

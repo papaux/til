@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Bash One-Liners &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -198,9 +199,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bash-one-liners">
+  <section id="bash-one-liners">
 <h1>Bash One-Liners<a class="headerlink" href="#bash-one-liners" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="histogram-in-bash">
+<section id="histogram-in-bash">
 <h2>Histogram in bash<a class="headerlink" href="#histogram-in-bash" title="Permalink to this headline">¶</a></h2>
 <p>Create a nice looking histogram based on the number of elements found when counting with <code class="docutils literal notranslate"><span class="pre">uniq</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat somefile | sort | uniq -c | perl -lane &#39;print $F[1], &quot;\t&quot;, $F[0], &quot;\t&quot;, &quot;=&quot; x ($F[0] / 3 + 1)&#39;
@@ -221,36 +222,36 @@
 2020  14  =====
 </pre></div>
 </div>
-</div>
-<div class="section" id="install-if-needed">
+</section>
+<section id="install-if-needed">
 <h2>Install if needed<a class="headerlink" href="#install-if-needed" title="Permalink to this headline">¶</a></h2>
 <p>Test if a command is available and if not, install it.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ ! -x &quot;$(command -v docker)&quot; ] &amp;&amp; apt install docker
 </pre></div>
 </div>
-</div>
-<div class="section" id="exit-if-command-not-found">
+</section>
+<section id="exit-if-command-not-found">
 <h2>Exit if command not found<a class="headerlink" href="#exit-if-command-not-found" title="Permalink to this headline">¶</a></h2>
 <p>Check if a given command is available in the path, otherwise exit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">command</span> <span class="o">-</span><span class="n">v</span> <span class="n">mybin</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">&quot;mybin is not available in your PATH.&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">exit</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="check-if-file-exists">
+</section>
+<section id="check-if-file-exists">
 <h2>Check if file exists<a class="headerlink" href="#check-if-file-exists" title="Permalink to this headline">¶</a></h2>
 <p>Check if a given file exists, printing a message and exiting if not:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ ! -f $FILE ] &amp;&amp; echo &quot;$FILE does not exist.&quot; &amp;&amp; exit 1
 </pre></div>
 </div>
-</div>
-<div class="section" id="check-ping-result">
+</section>
+<section id="check-ping-result">
 <h2>Check ping result<a class="headerlink" href="#check-ping-result" title="Permalink to this headline">¶</a></h2>
 <p>Execute command if host / down according to ping result:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">c</span> <span class="mi">1</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">&quot;up&quot;</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">&quot;down&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="operations-on-diectories">
+</section>
+<section id="operations-on-diectories">
 <h2>Operations on diectories<a class="headerlink" href="#operations-on-diectories" title="Permalink to this headline">¶</a></h2>
 <p>Compute md5sum of directory content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">exec</span> <span class="n">md5sum</span> <span class="p">{}</span> \<span class="p">;</span> <span class="o">|</span> <span class="n">tee</span> <span class="n">md5res</span><span class="o">.</span><span class="n">txt</span>
@@ -264,8 +265,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $(find . -type f); do mv &quot;$f&quot; &quot;${f// /.}&quot;; done
 </pre></div>
 </div>
+<p>Find all files modified after a a date:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">newermt</span> <span class="s1">&#39;2021-04-05&#39;</span> <span class="o">-</span><span class="nb">print</span>
+</pre></div>
 </div>
+<p>Find all files modified after another file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">newer</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">reference</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="nb">print</span>
+</pre></div>
 </div>
+</section>
+</section>
 
 
            </div>

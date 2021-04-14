@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cheatsheet &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -188,9 +189,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cheatsheet">
+  <section id="cheatsheet">
 <h1>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="get-information-about-db-users">
+<section id="get-information-about-db-users">
 <h2>Get information about DB / users<a class="headerlink" href="#get-information-about-db-users" title="Permalink to this headline">¶</a></h2>
 <p><strong>List databases</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">DATABASES</span><span class="p">;</span>
@@ -204,8 +205,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SHOW</span> <span class="n">GRANTS</span> <span class="n">FOR</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="manage-users">
+</section>
+<section id="manage-users">
 <h2>Manage users<a class="headerlink" href="#manage-users" title="Permalink to this headline">¶</a></h2>
 <p><strong>Grant all privileges on DB</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">PRIVILEGES</span> <span class="n">ON</span> <span class="n">testdb</span> <span class="o">.</span> <span class="o">*</span> <span class="n">TO</span> <span class="s1">&#39;testuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
@@ -219,8 +220,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REVOKE</span> <span class="n">ALL</span> <span class="n">PRIVILEGES</span> <span class="n">ON</span> <span class="n">testdb</span> <span class="o">.</span> <span class="o">*</span> <span class="n">FROM</span> <span class="s1">&#39;testuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="manage-databases">
+</section>
+<section id="manage-databases">
 <h2>Manage databases<a class="headerlink" href="#manage-databases" title="Permalink to this headline">¶</a></h2>
 <p><strong>Export</strong></p>
 <p>Using mysqldump tool</p>
@@ -234,8 +235,8 @@
 </dd>
 </dl>
 <p>Note: There is no space between the keyword ‘-p’ and your password.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

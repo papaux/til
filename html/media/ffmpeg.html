@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ffmpeg &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -190,10 +191,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ffmpeg">
+  <section id="ffmpeg">
 <h1>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline">¶</a></h1>
 <p><cite>ffmpeg</cite> command usage example.</p>
-<div class="section" id="rotate">
+<section id="rotate">
 <h2>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h2>
 <p><strong>Rotate video 90° clockwise</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="s2">&quot;transpose=1&quot;</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
@@ -203,15 +204,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="s2">&quot;transpose=3&quot;</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="convert">
+</section>
+<section id="convert">
 <h2>Convert<a class="headerlink" href="#convert" title="Permalink to this headline">¶</a></h2>
 <p><strong>Convert to 24fps</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span>  <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="o">=</span><span class="mi">24</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

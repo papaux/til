@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SSL - TLS &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -187,10 +188,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ssl-tls">
+  <section id="ssl-tls">
 <h1>SSL - TLS<a class="headerlink" href="#ssl-tls" title="Permalink to this headline">¶</a></h1>
 <p>This page gives insight on how to manage and check HTTPS certificates for SSL/TLS connections.</p>
-<div class="section" id="self-signed-certificate">
+<section id="self-signed-certificate">
 <h2>Self signed certificate<a class="headerlink" href="#self-signed-certificate" title="Permalink to this headline">¶</a></h2>
 <p>This is a one-liner to generate a self signed certificate. Answer the questions and you are done:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">sha256</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> <span class="o">-</span><span class="n">newkey</span> <span class="n">rsa</span><span class="p">:</span><span class="mi">2048</span> <span class="o">-</span><span class="n">keyout</span> <span class="n">private</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">out</span> <span class="n">certificate</span><span class="o">.</span><span class="n">crt</span>
@@ -200,8 +201,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">sha256</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> <span class="o">-</span><span class="n">newkey</span> <span class="n">rsa</span><span class="p">:</span><span class="mi">2048</span> <span class="o">-</span><span class="n">keyout</span> <span class="n">private</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">out</span> <span class="n">certificate</span><span class="o">.</span><span class="n">crt</span> <span class="o">-</span><span class="n">subj</span> <span class="s2">&quot;/C=CH/ST=FR/L=Local/O=Home/CN=localhost&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="certificate-chain">
+</section>
+<section id="certificate-chain">
 <h2>Certificate chain<a class="headerlink" href="#certificate-chain" title="Permalink to this headline">¶</a></h2>
 <p>Web servers must be sending the full certificate chain if we want the clients to be able to validate the certificates.</p>
 <p>The <cite>openssl</cite> tool can be used to verify this chain:</p>
@@ -213,8 +214,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;[s]:&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

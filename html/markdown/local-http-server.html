@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Local HTTP server &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -197,7 +198,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="local-http-server">
+  <section id="local-http-server">
 <h1>Local HTTP server<a class="headerlink" href="#local-http-server" title="Permalink to this headline">¶</a></h1>
 <p>When editing markdown files, you have some editing tools which provides preview mode (e.g. Brackets) but you don’t have everything like links between pages, anchors, etc.</p>
 <p>We have here two tools:</p>
@@ -205,43 +206,43 @@
 <li><p><a class="reference internal" href="#grip">grip</a> (preferred)</p></li>
 <li><p><a class="reference internal" href="#harp">harp</a></p></li>
 </ul>
-<div class="section" id="grip">
+<section id="grip">
 <h2>grip<a class="headerlink" href="#grip" title="Permalink to this headline">¶</a></h2>
 <p>Grip has more features and serves directly .md files. It is using GitHub markdown API.
 It even redirects to README by default and auto refreshes when files are changed on the disk.</p>
-<div class="section" id="install">
+<section id="install">
 <h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">grip</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="serve">
+</section>
+<section id="serve">
 <h3>Serve<a class="headerlink" href="#serve" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grip</span> <span class="mi">9000</span>
 </pre></div>
 </div>
 <p>&lt;<a class="reference external" href="http://localhost:9000">http://localhost:9000</a>&gt;</p>
-</div>
-</div>
-<div class="section" id="harp">
+</section>
+</section>
+<section id="harp">
 <h2>harp<a class="headerlink" href="#harp" title="Permalink to this headline">¶</a></h2>
 <p>Harp is simpler than grip, can be used to make static versions of websites written with markdown but maps the .md files to .html. So no links possible between files.</p>
 <p>It is a node module named <strong>harp</strong>.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Install<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">harp</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>Serve<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">harp</span> <span class="n">server</span>
 </pre></div>
 </div>
 <p>&lt;<a class="reference external" href="http://localhost:9000">http://localhost:9000</a>&gt;</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

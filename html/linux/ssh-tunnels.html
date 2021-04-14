@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SSH Tunnels &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -220,9 +221,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ssh-tunnels">
+  <section id="ssh-tunnels">
 <h1>SSH Tunnels<a class="headerlink" href="#ssh-tunnels" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="local-forwarding">
+<section id="local-forwarding">
 <h2>Local forwarding<a class="headerlink" href="#local-forwarding" title="Permalink to this headline">¶</a></h2>
 <p>Forward a port from the client machine to the server machine, using the <cite>-L</cite> option.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8080</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumpost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
@@ -233,8 +234,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="remote-forwarding">
+</section>
+<section id="remote-forwarding">
 <h2>Remote forwarding<a class="headerlink" href="#remote-forwarding" title="Permalink to this headline">¶</a></h2>
 <p>Tunnel a connection from the remote server to the local client.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
@@ -242,8 +243,8 @@
 </div>
 <p>Connections made to port 8080 on the remote server will be forwarded to the port 80 of the client machine.</p>
 <p><cite>localhost</cite> can be replaced by any IP or hostname to forward to another machnie. This requires the <cite>GatewayPorts</cite> SSH parameters to be be set to <cite>no</cite>.</p>
-</div>
-<div class="section" id="socks5-proxy">
+</section>
+<section id="socks5-proxy">
 <h2>socks5 proxy<a class="headerlink" href="#socks5-proxy" title="Permalink to this headline">¶</a></h2>
 <p>SOCKS is a layer 5 protocol for proxying TCP connections between networks.</p>
 <p><strong>Remote proxying</strong>: for sharing your network connection with some remote isolated machine, use SSH remote forwarding:</p>
@@ -260,8 +261,8 @@
 <span class="n">hpts</span> <span class="o">-</span><span class="n">s</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">9999</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

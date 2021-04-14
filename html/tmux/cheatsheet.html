@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>tmux cheatsheet &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -191,10 +192,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tmux-cheatsheet">
+  <section id="tmux-cheatsheet">
 <h1>tmux cheatsheet<a class="headerlink" href="#tmux-cheatsheet" title="Permalink to this headline">¶</a></h1>
 <p>A tmux cheatsheet based on my needs / findings and based on my config.</p>
-<div class="section" id="session">
+<section id="session">
 <h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new</span> <span class="pre">-s</span> <span class="pre">session_name</span></code>: creates a new tmux session named session_name</p></li>
@@ -203,16 +204,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">list-sessions</span></code>: lists existing tmux sessions</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">detach</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">d)</span></code>: detach the currently attached session</p></li>
 </ul>
-</div>
-<div class="section" id="windows">
+</section>
+<section id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">c)</span></code>: create a new window</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-window</span> <span class="pre">-t</span> <span class="pre">:0-9</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">0-9)</span></code>: move to the window based on index</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">rename-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">,)</span></code>: rename the current window</p></li>
 </ul>
-</div>
-<div class="section" id="panes-actions">
+</section>
+<section id="panes-actions">
 <h2>Panes: Actions<a class="headerlink" href="#panes-actions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">|)</span></code>: splits the window into two vertical panes</p></li>
@@ -224,8 +225,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">!)</span></code>: convert pane into a window</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">S)</span></code>: synchronize panes</p></li>
 </ul>
-</div>
-<div class="section" id="panes-select">
+</section>
+<section id="panes-select">
 <h2>Panes: Select<a class="headerlink" href="#panes-select" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-[UDLR]</span></code>: selects the next pane in the specified direction</p></li>
@@ -233,14 +234,14 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">q)</span></code>: show pane numbers</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">q</span> <span class="pre">0..9)</span></code>: switch/select pane by number</p></li>
 </ul>
-</div>
-<div class="section" id="misc">
+</section>
+<section id="misc">
 <h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">S)</span></code>: keyboard input is sent to all panes</p></li>
 </ul>
-</div>
-<div class="section" id="copy-mode">
+</section>
+<section id="copy-mode">
 <h2>Copy Mode<a class="headerlink" href="#copy-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">[)</span></code>: enter copy mode</p></li>
@@ -252,8 +253,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>: clear selection</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Enter</span></code>: copy selection</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

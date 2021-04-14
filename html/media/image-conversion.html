@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Image conversion &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -189,7 +190,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="image-conversion">
+  <section id="image-conversion">
 <h1>Image conversion<a class="headerlink" href="#image-conversion" title="Permalink to this headline">¶</a></h1>
 <p>This page contains all kind of image conversion commands.</p>
 <p>The first tool we cover is <code class="docutils literal notranslate"><span class="pre">convert</span></code>, member of the <em>ImageMagick</em> tool suite.</p>
@@ -236,7 +237,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s2">&quot;*.jpg&quot;</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span>  <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;convert -resize 1024x1024 &quot;$0&quot; &quot;$0&quot;&#39;</span>
 </pre></div>
 </div>
-<div class="section" id="pdf">
+<section id="pdf">
 <h2>PDF<a class="headerlink" href="#pdf" title="Permalink to this headline">¶</a></h2>
 <p>Reduce size of pdf file</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">convert</span> <span class="o">-</span><span class="n">density</span> <span class="mi">200</span><span class="n">x200</span> <span class="o">-</span><span class="n">quality</span> <span class="mi">60</span> <span class="o">-</span><span class="n">compress</span> <span class="n">jpeg</span> <span class="nb">input</span><span class="o">.</span><span class="n">pdf</span> <span class="n">output</span><span class="o">.</span><span class="n">pdf</span>
@@ -265,8 +266,8 @@
 <span class="n">pdftk</span> <span class="nb">input</span><span class="o">.</span><span class="n">pdf</span> <span class="n">cat</span> <span class="mi">1</span><span class="o">-</span><span class="n">endsouth</span> <span class="n">output</span> <span class="n">output</span><span class="o">.</span><span class="n">pdf</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

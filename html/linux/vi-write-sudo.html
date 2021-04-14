@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>vi: write as sudo &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -184,14 +185,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vi-write-as-sudo">
+  <section id="vi-write-as-sudo">
 <h1>vi: write as sudo<a class="headerlink" href="#vi-write-as-sudo" title="Permalink to this headline">¶</a></h1>
 <p>I’m sure it already happened to you: you open a file for editing, start modifying and when you want to quit and save…. Baam, the file is write-protected for non root users and you forgot to sudo before opening.</p>
 <p>The solution is simple. Just run the following command in vi:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:w !sudo tee %
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Ansible: Ad-hoc commands &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -184,7 +185,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ansible-ad-hoc-commands">
+  <section id="ansible-ad-hoc-commands">
 <h1>Ansible: Ad-hoc commands<a class="headerlink" href="#ansible-ad-hoc-commands" title="Permalink to this headline">¶</a></h1>
 <p>You need to run a single command on multiple machines? This can be achieved with ad-hoc commands by using the <code class="docutils literal notranslate"><span class="pre">raw</span></code> module.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span> <span class="nb">all</span> <span class="o">-</span><span class="n">i</span> <span class="n">hosts</span><span class="o">-</span><span class="n">inventory</span> <span class="o">-</span><span class="n">m</span> <span class="n">raw</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;yum install package-abc&quot;</span> <span class="o">--</span><span class="n">become</span>
@@ -197,7 +198,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">-a</span> <span class="pre">CMD</span></code> argument: the command that will be run, given as parameter to the module</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--become</span></code>: run the command as a different user, in this case run with <code class="docutils literal notranslate"><span class="pre">sudo</span></code></p></li>
 </ul>
-</div>
+</section>
 
 
            </div>

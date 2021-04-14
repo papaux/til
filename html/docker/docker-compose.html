@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>docker-compose &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -199,21 +200,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="docker-compose">
+  <section id="docker-compose">
 <h1>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h1>
 <p>This page is about docker-compose</p>
-<div class="section" id="network-mode">
+<section id="network-mode">
 <h2>Network mode<a class="headerlink" href="#network-mode" title="Permalink to this headline">¶</a></h2>
 <p>Set the network mode to <cite>host</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="p">:</span> <span class="n">host</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="docker-compose-from-cron">
+</section>
+<section id="docker-compose-from-cron">
 <h2>docker-compose from cron<a class="headerlink" href="#docker-compose-from-cron" title="Permalink to this headline">¶</a></h2>
 <p>If you want to use a <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span></code> command from a cron task, you have to specify the <code class="docutils literal notranslate"><span class="pre">-T</span></code> option, to disable pseudo-tty allocation.</p>
-</div>
-<div class="section" id="update-images">
+</section>
+<section id="update-images">
 <h2>Update images<a class="headerlink" href="#update-images" title="Permalink to this headline">¶</a></h2>
 <p>To update docker images that are using “latest” tag in compose files, in order to limit the downtime first pull the new image version, and then take the stack down and up.</p>
 <p><code class="docutils literal notranslate"><span class="pre">`</span>
@@ -221,8 +222,8 @@
 <span class="pre">docker-compose</span> <span class="pre">down</span>
 <span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span>
 <span class="pre">`</span></code></p>
-</div>
-<div class="section" id="resource-limits">
+</section>
+<section id="resource-limits">
 <h2>Resource limits<a class="headerlink" href="#resource-limits" title="Permalink to this headline">¶</a></h2>
 <p>It’s possible to limit the memory assigned to a given container in a docker-compose stack.</p>
 <p><strong>Version 2</strong></p>
@@ -244,8 +245,8 @@
           <span class="n">memory</span><span class="p">:</span> <span class="mi">300</span><span class="n">m</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

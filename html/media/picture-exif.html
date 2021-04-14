@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Picture exif manipulation &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -190,9 +191,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="picture-exif-manipulation">
+  <section id="picture-exif-manipulation">
 <h1>Picture exif manipulation<a class="headerlink" href="#picture-exif-manipulation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="rename-file-according-to-exif">
+<section id="rename-file-according-to-exif">
 <h2>Rename file according to exif<a class="headerlink" href="#rename-file-according-to-exif" title="Permalink to this headline">¶</a></h2>
 <p>Renames the picture file according to its exif date, for instance <em>2014_0514_183702.jpg</em>.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exiv2 -r %Y_%m%d_%H%M%S $file
@@ -202,15 +203,15 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s2">&quot;*jpg*&quot;</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;exiv2 -r %Y_%m</span><span class="si">%d</span><span class="s1">_%H%M%S &quot;$0&quot;&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="modify-exif-data">
+</section>
+<section id="modify-exif-data">
 <h2>Modify exif data<a class="headerlink" href="#modify-exif-data" title="Permalink to this headline">¶</a></h2>
 <p>Shift exif times from eight hous (year:month:day hour:minute:second):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exiftool</span> <span class="s2">&quot;-AllDates+=0:0:0 8:0:0&quot;</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="n">DSC03</span><span class="o">*</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

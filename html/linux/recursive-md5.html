@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Recursive md5 &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -215,7 +216,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="recursive-md5">
+  <section id="recursive-md5">
 <h1>Recursive md5<a class="headerlink" href="#recursive-md5" title="Permalink to this headline">¶</a></h1>
 <p>This simple command can be used to dump the MD5 hashes of a whole directory structure.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="n">md5sum</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">checkusm</span><span class="o">.</span><span class="n">md5</span>
@@ -228,7 +229,7 @@
 <span class="n">dd25bdd21d278e80fcb3d68e71313404</span>  <span class="o">./</span><span class="n">debug_bluetooth</span><span class="o">/</span><span class="n">working_rfkill_list</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

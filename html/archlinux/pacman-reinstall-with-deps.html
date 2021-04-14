@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pacman: reinstall packages and their dependencies from update &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -194,7 +195,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pacman-reinstall-packages-and-their-dependencies-from-update">
+  <section id="pacman-reinstall-packages-and-their-dependencies-from-update">
 <h1>Pacman: reinstall packages and their dependencies from update<a class="headerlink" href="#pacman-reinstall-packages-and-their-dependencies-from-update" title="Permalink to this headline">¶</a></h1>
 <p>In case something went wrong with your last update (disk full while updating, some lost dependencies, update aborted, computer crashed…) you can use the following commands to reinstall all packages with their dependencies.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>UPGRADE_DATE=2017-04-24
@@ -211,7 +212,7 @@ grep -a $PATTERN /var/log/pacman.log | sed -e &#39;s/.*upgraded //&#39; \
 <li><p><code class="docutils literal notranslate"><span class="pre">pactree</span></code> is used to get the list of dependencies from a package (might take some time depending on the update size)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sort</span></code> and <code class="docutils literal notranslate"><span class="pre">uniq</span></code> because we get the dependencies of all packages, so we filter</p></li>
 </ul>
-</div>
+</section>
 
 
            </div>

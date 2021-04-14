@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>gdb: navigate in threads &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -190,9 +191,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gdb-navigate-in-threads">
+  <section id="gdb-navigate-in-threads">
 <h1>gdb: navigate in threads<a class="headerlink" href="#gdb-navigate-in-threads" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="thread-information">
+<section id="thread-information">
 <h2>Thread information<a class="headerlink" href="#thread-information" title="Permalink to this headline">¶</a></h2>
 <p>Information about threads can be obtbained with the command
 <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">threads</span></code>.</p>
@@ -207,8 +208,8 @@
   <span class="mi">1</span> <span class="n">Thread</span> <span class="mi">27194</span>  <span class="mh">0x0ffaac7c</span> <span class="ow">in</span> <span class="n">__pthread_cond_timedwait</span> <span class="p">(</span><span class="n">cond</span><span class="o">=</span><span class="mh">0xbf9a3f58</span><span class="p">,</span> <span class="n">mutex</span><span class="o">=</span><span class="mh">0xbf9a3f88</span><span class="p">,</span> <span class="n">abstime</span><span class="o">=</span><span class="mh">0xbf9a3ef8</span><span class="p">)</span> <span class="n">at</span> <span class="n">pthread_cond_timedwait</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">159</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="select-a-thread">
+</section>
+<section id="select-a-thread">
 <h2>Select a thread<a class="headerlink" href="#select-a-thread" title="Permalink to this headline">¶</a></h2>
 <p>For selecting another thread we use the command <code class="docutils literal notranslate"><span class="pre">thread</span> <span class="pre">3</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">thread</span> <span class="mi">3</span>
@@ -217,8 +218,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Switching</span> <span class="n">to</span> <span class="n">thread</span> <span class="mi">3</span> <span class="p">(</span><span class="n">Thread</span> <span class="mi">27198</span><span class="p">)]</span><span class="c1">#0  0x0ffaecd4 in nanosleep () from /opt/elinos-5.1/cdk/ppc/60x/glibc-2.11/powerpc-unknown-linux-gnu//lib/libpthread.so.0</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

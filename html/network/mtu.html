@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>MTU &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -188,7 +189,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mtu">
+  <section id="mtu">
 <h1>MTU<a class="headerlink" href="#mtu" title="Permalink to this headline">¶</a></h1>
 <p>Debugging network issues related to MTU can be tricky.</p>
 <p>When encountering weird connectivity issues through VPN, the probability is high that it’s a MTU issue.</p>
@@ -231,14 +232,14 @@ ping: local error: Message too long, mtu=1412
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 </pre></div>
 </div>
-<div class="section" id="solution">
+<section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
 <p><cite>iptables</cite> can be used to setup a workaround, by automatically sending a lower MTU on TCP connection estalishment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">mangle</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">tcp</span><span class="o">-</span><span class="n">flags</span> <span class="n">SYN</span><span class="p">,</span><span class="n">RST</span> <span class="n">SYN</span> <span class="o">-</span><span class="n">o</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">j</span> <span class="n">TCPMSS</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1300</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

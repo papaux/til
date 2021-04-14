@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>tcpdump: filters &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -219,24 +220,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tcpdump-filters">
+  <section id="tcpdump-filters">
 <h1>tcpdump: filters<a class="headerlink" href="#tcpdump-filters" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">tcpdump</span></code> is a really powerful tool, but event to grap a simple frame you need to pass several options. This TIL will be a collection of several tcpdump commands to capture various kind of network traffic.</p>
-<div class="section" id="ping">
+<section id="ping">
 <h2>Ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h2>
 <p>Capture ping traffic on eth0 from all hosts</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tcpdump</span> <span class="o">-</span><span class="n">nnti</span> <span class="n">eth0</span> <span class="n">icmp</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="arp">
+</section>
+<section id="arp">
 <h2>ARP<a class="headerlink" href="#arp" title="Permalink to this headline">¶</a></h2>
 <p>Show all ARP trafic:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tcpdump</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="n">arp</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

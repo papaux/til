@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Disk Usage &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -219,10 +220,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="disk-usage">
+  <section id="disk-usage">
 <h1>Disk Usage<a class="headerlink" href="#disk-usage" title="Permalink to this headline">¶</a></h1>
 <p>Disk usage analysis tools.</p>
-<div class="section" id="du">
+<section id="du">
 <h2>du<a class="headerlink" href="#du" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">du</span></code> is a handy tool for checking the disk space used by some folders on your computer.</p>
 <p><strong>Exclude mounted folders</strong></p>
@@ -230,16 +231,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in /*; do grep &quot; $f &quot; /proc/mounts &gt; /dev/null || du -sh $f; done
 </pre></div>
 </div>
-</div>
-<div class="section" id="ncdu">
+</section>
+<section id="ncdu">
 <h2>ncdu<a class="headerlink" href="#ncdu" title="Permalink to this headline">¶</a></h2>
 <p>Interactive disk usage analysis tool:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdu</span> <span class="o">-</span><span class="n">x</span>
 </pre></div>
 </div>
 <p>The <cite>-x</cite> option is used to only analyse the main disk and not the mounted folders.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

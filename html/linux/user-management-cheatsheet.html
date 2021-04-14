@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>User Management Cheatsheet &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -219,10 +220,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="user-management-cheatsheet">
+  <section id="user-management-cheatsheet">
 <h1>User Management Cheatsheet<a class="headerlink" href="#user-management-cheatsheet" title="Permalink to this headline">¶</a></h1>
 <p>As other TILs, this one is a cheatsheet regrouping typical Linux commands for managing the users.</p>
-<div class="section" id="user">
+<section id="user">
 <h2>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
 <p><strong>Create User</strong></p>
 <p>There are two utilities to add user. The first one, <code class="docutils literal notranslate"><span class="pre">adduser</span></code> is the default builtin command. The recommended tool is <code class="docutils literal notranslate"><span class="pre">useradd</span></code> is a perl script using adduser in the background but doing some additional initializations for the newly created user. Therefore the recommended way is to user <strong>useradd</strong>.</p>
@@ -234,16 +235,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">passwd</span> <span class="n">leopold</span> <span class="o">-</span><span class="n">l</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="groups">
+</section>
+<section id="groups">
 <h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
 <p><strong>Add existing user to existing group</strong></p>
 <p>This is for me the most common use case.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">G</span> <span class="n">wireshark</span> <span class="n">leopold</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

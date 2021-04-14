@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Rebuild Wine Menus &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -183,13 +184,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="rebuild-wine-menus">
+  <section id="rebuild-wine-menus">
 <h1>Rebuild Wine Menus<a class="headerlink" href="#rebuild-wine-menus" title="Permalink to this headline">¶</a></h1>
 <p>Following command will regenerate Wine menus according to all .lnk found in the wine working directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export WINEPREFIX=~/.wine; find $WINEPREFIX/drive_c/ -name &quot;*.lnk&quot; -exec wine winemenubuilder &#39;{}&#39; \;
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Hard Disk Management &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -223,17 +224,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="hard-disk-management">
+  <section id="hard-disk-management">
 <h1>Hard Disk Management<a class="headerlink" href="#hard-disk-management" title="Permalink to this headline">¶</a></h1>
 <p>This page is not exactly a single small TIL but a collection of useful commands for managing disk and partitions as well as getting state information.</p>
-<div class="section" id="global-information">
+<section id="global-information">
 <h2>Global information<a class="headerlink" href="#global-information" title="Permalink to this headline">¶</a></h2>
 <p>Get all information about a disk:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">I</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="diagnostic">
+</section>
+<section id="diagnostic">
 <h2>Diagnostic<a class="headerlink" href="#diagnostic" title="Permalink to this headline">¶</a></h2>
 <p>Get number of running hours:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">--</span><span class="nb">all</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Power_On_Hours</span>
@@ -243,8 +244,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">n</span> <span class="n">standby</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">SATA</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="power-mode">
+</section>
+<section id="power-mode">
 <h2>Power mode<a class="headerlink" href="#power-mode" title="Permalink to this headline">¶</a></h2>
 <p>Get drive power state (might wake up the drive):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
@@ -258,16 +259,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">y</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="partition">
+</section>
+<section id="partition">
 <h2>Partition<a class="headerlink" href="#partition" title="Permalink to this headline">¶</a></h2>
 <p><strong>View partition information</strong></p>
 <p>View information like: creation time, features, block info, mount count, etc:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">tune2fs</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="partition-table">
+</section>
+<section id="partition-table">
 <h2>Partition table<a class="headerlink" href="#partition-table" title="Permalink to this headline">¶</a></h2>
 <p><strong>GPT to MS-DOS</strong></p>
 <p>Transform a disk that has been previously set to GPT partitioning back to MS DOS:</p>
@@ -276,8 +277,8 @@
 <span class="n">quit</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="benchmark">
+</section>
+<section id="benchmark">
 <h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline">¶</a></h2>
 <p><strong>Using dd</strong></p>
 <p><strong>Using hdparm</strong></p>
@@ -285,8 +286,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">Tt</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

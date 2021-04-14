@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Merge tips &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -205,9 +206,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="merge-tips">
+  <section id="merge-tips">
 <h1>Merge tips<a class="headerlink" href="#merge-tips" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="replay-merge-for-a-single-file">
+<section id="replay-merge-for-a-single-file">
 <h2>Replay merge for a single file<a class="headerlink" href="#replay-merge-for-a-single-file" title="Permalink to this headline">¶</a></h2>
 <p>You are in the middle of a merge (before concluding the merge) and suddenly you realised that you didn’t solve one conflicting file correctly.</p>
 <p>You can replay the file merge by using the following command:</p>
@@ -219,16 +220,16 @@
          <span class="n">conflicted</span> <span class="n">merge</span> <span class="n">result</span><span class="o">.</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="merge-commit">
+</section>
+<section id="merge-commit">
 <h2>Merge commit<a class="headerlink" href="#merge-commit" title="Permalink to this headline">¶</a></h2>
 <p>If you want to check if a commit is a merge commit or a squashed commit, you can check if it has one or more parents.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">COMMIT_ID</span>
 </pre></div>
 </div>
 <p>If it has several parents, it’s a merge commit.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

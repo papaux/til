@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pacman: exclude package &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -194,7 +195,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pacman-exclude-package">
+  <section id="pacman-exclude-package">
 <h1>Pacman: exclude package<a class="headerlink" href="#pacman-exclude-package" title="Permalink to this headline">¶</a></h1>
 <p>Exclude packages while updating your system (e.g. for excluding kernel updates) can be achieved with two options.</p>
 <p>To permanently ignore packages, add this line to your <code class="docutils literal notranslate"><span class="pre">pacman.conf.conf</span></code>:</p>
@@ -205,7 +206,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">Syu</span> <span class="o">--</span><span class="n">ignore</span><span class="o">=</span><span class="n">linux</span><span class="p">,</span><span class="n">linux</span><span class="o">-</span><span class="n">headers</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

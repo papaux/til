@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Performance monitoring &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -223,12 +224,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="performance-monitoring">
+  <section id="performance-monitoring">
 <h1>Performance monitoring<a class="headerlink" href="#performance-monitoring" title="Permalink to this headline">¶</a></h1>
 <p>This TIL will be a bit longer because it aims to list some of the most useful and most important performance monitoring tools available on Linux. Some are usually installed by default and some must be installed manually.</p>
 <p>The tools are split into several categories.</p>
 <p>The base of this page has been constructed by selecting information from: <a class="reference external" href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/</a>. It has then been enhanced based on my personal preference and uses.</p>
-<div class="section" id="general">
+<section id="general">
 <h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <p>This section shows tools displaying general information about the system state and usage.
 When troubleshooting a Linux machine, these are the tools to be inspected first.</p>
@@ -270,8 +271,8 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NMON</span><span class="o">=</span><span class="n">cmdnk</span> <span class="n">nmon</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="processes">
+</section>
+<section id="processes">
 <h2>Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h2>
 <p><strong>htop</strong></p>
 <p>It is an advanced and interactive top command. Actually it is my advised replacement for htop.</p>
@@ -291,8 +292,8 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">progress</span> <span class="o">-</span><span class="n">c</span> <span class="n">httpd</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="file-system-and-i-o">
+</section>
+<section id="file-system-and-i-o">
 <h2>File system and I/O<a class="headerlink" href="#file-system-and-i-o" title="Permalink to this headline">¶</a></h2>
 <p>Some of the most useful tools for debugging file system and disk IO issues.</p>
 <p><strong>iotop</strong></p>
@@ -367,8 +368,8 @@ tmpfs                  788M  2.6M  786M   1% /run/user/1000
 396K    source
 </pre></div>
 </div>
-</div>
-<div class="section" id="network-stats">
+</section>
+<section id="network-stats">
 <h2>Network stats<a class="headerlink" href="#network-stats" title="Permalink to this headline">¶</a></h2>
 <p>The best tool to show which application is sending which amount of data is <cite>nethogs</cite></p>
 <p><strong>nethogs</strong></p>
@@ -400,8 +401,8 @@ TOTAL                                                      4.173      42.838 KB/
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nload</span> <span class="o">-</span><span class="n">u</span> <span class="n">M</span> <span class="n">eth0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="network-traffic-analysis">
+</section>
+<section id="network-traffic-analysis">
 <h2>Network traffic analysis<a class="headerlink" href="#network-traffic-analysis" title="Permalink to this headline">¶</a></h2>
 <p><strong>tcpdump</strong></p>
 <p>Tcpdump could have its own dedicated TIL because it has so many options. But here are some useful simple commands:</p>
@@ -434,8 +435,8 @@ TOTAL                                                      4.173      42.838 KB/
 <p>More advanced iftop tool, which collects in additional and more advanced informaiton.</p>
 <p><strong>arpwatch</strong></p>
 <p>Monitors ARP address resolution happening on the network. Useful to debug ARP resolution on the network and ARP spoofing. It can even send e-mail alerts when addresses change.</p>
-</div>
-<div class="section" id="load-average">
+</section>
+<section id="load-average">
 <h2>Load average<a class="headerlink" href="#load-average" title="Permalink to this headline">¶</a></h2>
 <p>Linux makes use of three “magic” numbers that get used in several of these tools to describe the load average of the system. They could be quite confusing for beginners, but actually there are easy to understand. This is one example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span> <span class="n">average</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">5.09</span>
@@ -447,8 +448,8 @@ TOTAL                                                      4.173      42.838 KB/
 * over the last minute, the system was mostly idle
 * over the last 5 minutes, it was half used
 * over the last 15 minutes, it was overloaded: there were many processes waiting for the CPU</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

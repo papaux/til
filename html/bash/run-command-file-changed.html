@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Run command on file change &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -190,7 +191,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="run-command-on-file-change">
+  <section id="run-command-on-file-change">
 <h1>Run command on file change<a class="headerlink" href="#run-command-on-file-change" title="Permalink to this headline">¶</a></h1>
 <p>Tools from the <code class="docutils literal notranslate"><span class="pre">inotify</span></code> family allow to watch for events on file system.</p>
 <p>For instance the <code class="docutils literal notranslate"><span class="pre">inotifywait</span></code> tool allows to be notified as soon as a file is modified.</p>
@@ -202,7 +203,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">inotifywait</span> <span class="o">-</span><span class="n">e</span> <span class="n">close_write</span> <span class="n">main</span><span class="p">;</span> <span class="n">do</span> <span class="n">sleep</span> <span class="mi">1</span><span class="p">;</span> <span class="o">./</span><span class="n">main</span> <span class="p">;</span> <span class="n">done</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

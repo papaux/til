@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>job and cronjob &mdash; Geoffrey&#39;s TIL 0 documentation</title>
@@ -191,9 +192,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="job-and-cronjob">
+  <section id="job-and-cronjob">
 <h1>job and cronjob<a class="headerlink" href="#job-and-cronjob" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="job">
+<section id="job">
 <h2>job<a class="headerlink" href="#job" title="Permalink to this headline">¶</a></h2>
 <p>Create:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">job</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span> <span class="o">--</span><span class="n">image</span> <span class="n">some</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">image</span>
@@ -207,8 +208,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">job</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="cronjob">
+</section>
+<section id="cronjob">
 <h2>cronjob<a class="headerlink" href="#cronjob" title="Permalink to this headline">¶</a></h2>
 <p>Create:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">cronjob</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span> <span class="o">--</span><span class="n">image</span> <span class="n">some</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">image</span> <span class="o">--</span><span class="n">schedule</span> <span class="s2">&quot;45 12 * * *&quot;</span>
@@ -222,8 +223,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cronjob</span> <span class="n">my</span><span class="o">-</span><span class="n">job</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
