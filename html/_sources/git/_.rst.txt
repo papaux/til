@@ -14,6 +14,7 @@ Git
    kdiff-as-mergetool.rst
    log.rst
    merge-tips.rst
+   mirror-repository.rst
    rebase-with-conflicts.rst
    remote.rst
    reset.rst

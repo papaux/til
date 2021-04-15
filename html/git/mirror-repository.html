@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grep in git logs &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Replicate a repository (branches+tags) &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Kdiff as mergetool without auto merge" href="kdiff-as-mergetool.html" />
-    <link rel="prev" title="Gitignore syntax" href="gitignore.html" /> 
+    <link rel="next" title="Rebase with conflicts" href="rebase-with-conflicts.html" />
+    <link rel="prev" title="Merge tips" href="merge-tips.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,11 +99,14 @@
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Grep in git logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Grep in git logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="log.html">Log commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mirror-repository.html">Replicate a repository (branches+tags)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Replicate a repository (branches+tags)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mirror">Mirror</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
@@ -184,13 +187,13 @@
         
           <li><a href="_.html">Git</a> &raquo;</li>
         
-      <li>Grep in git logs</li>
+      <li>Replicate a repository (branches+tags)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/git/grep-in-logs.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/mirror-repository.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,35 +206,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="grep-in-git-logs">
-<h1>Grep in git logs<a class="headerlink" href="#grep-in-git-logs" title="Permalink to this headline">¶</a></h1>
-<p>If you want to look for a specific pattern in the files in your
-repository, you can use the git grep command, with several options
-depending on your needs.</p>
-<ol class="arabic simple">
-<li><p>The standard grep command ignoring case, listing all files:</p></li>
-</ol>
+  <section id="replicate-a-repository-branches-tags">
+<h1>Replicate a repository (branches+tags)<a class="headerlink" href="#replicate-a-repository-branches-tags" title="Permalink to this headline">¶</a></h1>
+<p>For creating a backup or migrating an entire repository, e.g. from github to gitlab, including all branches and tags (not talking about issues nor PR), there are several options but the easiest is probably the concept of mirror.</p>
+<section id="mirror">
+<h2>Mirror<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">http</span>
-</pre></div>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This doesn’t create a regular “clone” of the repository that can be used for development. It is really a backup of the entire repository.</p>
 </div>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Just get the file names list:</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">grep</span> <span class="o">-</span><span class="n">l</span> <span class="n">http</span>
+<p>Create a clone of the repository with the <cite>–mirror</cite> option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">mirror</span> <span class="n">git</span><span class="nd">@gitub</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">some</span><span class="o">/</span><span class="n">repository</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Get the same output as 1. but with line numbers</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git grep -in http
+<p>Add the new remote:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">gitlab</span> <span class="n">git</span><span class="nd">@gitlab</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">some</span><span class="o">/</span><span class="n">repository</span>
 </pre></div>
 </div>
-</div></blockquote>
+<p>Push all branches and tags with the <cite>–mirror</cite> option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">gitlab</span> <span class="o">--</span><span class="n">mirror</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -242,10 +240,10 @@ depending on your needs.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kdiff-as-mergetool.html" class="btn btn-neutral float-right" title="Kdiff as mergetool without auto merge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rebase-with-conflicts.html" class="btn btn-neutral float-right" title="Rebase with conflicts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gitignore.html" class="btn btn-neutral float-left" title="Gitignore syntax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="merge-tips.html" class="btn btn-neutral float-left" title="Merge tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
