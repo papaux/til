@@ -54,3 +54,8 @@ The second option is to have a dedicated paragraph
 ::
 
   some code
+
+Links
+~~~~~
+
+`github <https://github.com>`_

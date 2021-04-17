@@ -1,9 +1,11 @@
 TIL (Today I Learned)
 =====================
 
-My own TIL (Today I learned) mainly about Linux commands, Linux tools and development. TILs are concise write-ups about everything I find useful and want to remember about these topies. I borrowed the concept from https://github.com/jbranchaud/til
+My own TIL (Today I learned) mainly about Linux commands, Linux tools and development. TILs are concise write-ups about everything I find useful and want to remember about these topics.
 
 Some entries are not *concise write-ups* but long true articles or *cheatsheets*, with a lot of commands / option for specific applications.
+
+The source code is hosted on `github <https://github.com/papaux/til>`_.
 
 There are 122 TILs in this repository! Enjoy!
 
