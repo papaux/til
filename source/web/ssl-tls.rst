@@ -32,3 +32,14 @@ To print only a summary of the chain, this command will give the required inform
 ::
 
   openssl s_client -showcerts -connect google.com:443 2>/dev/null | grep "[s]:"
+
+Inspect Certificate File
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Check a certificate file (individual certificate .crt or fullchain .pem)::
+
+  openssl x509 -in certificate.crt -text -noout
+
+Check a private key file::
+
+  openssl rsa -in privkey.pem -check
