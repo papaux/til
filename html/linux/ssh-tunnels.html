@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -231,7 +231,7 @@
 </div>
 <p>This opens a connection to the jumpost.company.com jump server, and forwards any connection to port 8080 made on your local machine to port 80 on server.company.com.</p>
 <p>By default, this opens the local port to any host in the local network. Specify a <em>bind address</em> to restrict it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 </section>
@@ -258,7 +258,7 @@
 <p>This will only work for application supporting directly socks5 proxy.</p>
 <p><strong>socks5 to http proxy</strong>: for applications that don’t natively support socks5:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">http</span><span class="o">-</span><span class="n">proxy</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">socks</span>
-<span class="n">hpts</span> <span class="o">-</span><span class="n">s</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">9999</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span>
+<span class="n">hpts</span> <span class="o">-</span><span class="n">s</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9999</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span>
 </pre></div>
 </div>
 </section>

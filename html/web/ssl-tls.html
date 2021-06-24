@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -116,6 +116,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SSL - TLS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#self-signed-certificate">Self signed certificate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#certificate-chain">Certificate chain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspect-certificate-file">Inspect Certificate File</a></li>
 </ul>
 </li>
 </ul>
@@ -212,6 +213,17 @@
 <p>This will show all details about the certificates and the chain.</p>
 <p>To print only a summary of the chain, this command will give the required information:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">showcerts</span> <span class="o">-</span><span class="n">connect</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;[s]:&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="inspect-certificate-file">
+<h2>Inspect Certificate File<a class="headerlink" href="#inspect-certificate-file" title="Permalink to this headline">¶</a></h2>
+<p>Check a certificate file (individual certificate .crt or fullchain .pem):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">x509</span> <span class="o">-</span><span class="ow">in</span> <span class="n">certificate</span><span class="o">.</span><span class="n">crt</span> <span class="o">-</span><span class="n">text</span> <span class="o">-</span><span class="n">noout</span>
+</pre></div>
+</div>
+<p>Check a private key file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">rsa</span> <span class="o">-</span><span class="ow">in</span> <span class="n">privkey</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">check</span>
 </pre></div>
 </div>
 </section>
