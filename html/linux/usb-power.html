@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>sudo timeouts &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>USB Power Management &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="netstat" href="netstat.html" />
-    <link rel="prev" title="SSH Tunnels" href="ssh-tunnels.html" /> 
+    <link rel="next" title="User Management Cheatsheet" href="user-management-cheatsheet.html" />
+    <link rel="prev" title="tcpdump: filters" href="tcpdump-filters.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -123,10 +123,15 @@
 <li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sudo timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netstat.html">netstat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usb-power.html">USB Power Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">USB Power Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-usb-devices">Get USB Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wake-up-status">Wake-up status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-wake-up">Enable wake-up</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="user-management-cheatsheet.html">User Management Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vi-write-sudo.html">vi: write as sudo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vnc-server.html">VNC Server</a></li>
@@ -198,13 +203,13 @@
         
           <li><a href="_.html">Linux</a> &raquo;</li>
         
-      <li>sudo timeouts</li>
+      <li>USB Power Management</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/linux/sudo-timeout.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/usb-power.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -217,18 +222,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="sudo-timeouts">
-<h1>sudo timeouts<a class="headerlink" href="#sudo-timeouts" title="Permalink to this headline">¶</a></h1>
-<p>The default timeouts for <code class="docutils literal notranslate"><span class="pre">sudo</span></code> commands are pretty aggressive.</p>
-<p>Here are two parameters to tweek the sudo behavior:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">passwd_timeout</span></code>: Number of minutes before the sudo password prompt expires.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">timestamp_timeout</span></code>: Number of minutes before the user needs to re-enter the sudo password.</p></li>
-</ul>
-<p>You need to apply these changes to the sudoers config file. Usually with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code> command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Defaults</span> <span class="n">env_reset</span><span class="p">,</span><span class="n">passwd_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">timestamp_timeout</span><span class="o">=</span><span class="mi">30</span>
+  <section id="usb-power-management">
+<h1>USB Power Management<a class="headerlink" href="#usb-power-management" title="Permalink to this headline">¶</a></h1>
+<p>This TIL contains all sorts of information about how to deal with USB power management.</p>
+<section id="get-usb-devices">
+<h2>Get USB Devices<a class="headerlink" href="#get-usb-devices" title="Permalink to this headline">¶</a></h2>
+<p>There are a lot of options to get USB Devices.</p>
+<p><em>lsusb</em> will show device ids with a description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lsusb
+Bus 004 Device 001: ID 1d11:0213 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 0411:b21b Chicony Electronics Co., Ltd Integrated Camera
+Bus 003 Device 005: ID 8011:0216 Intel Corp. AX201 Bluetooth
+Bus 003 Device 009: ID 0411:c21b Logitech, Inc. Unifying Receiver
+...
 </pre></div>
 </div>
+<p>In addition, <em>sysfs</em> can be used to query information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep . /sys/bus/usb/devices/*/product
+/sys/bus/usb/devices/3-1.1/product:USB Receiver
+/sys/bus/usb/devices/3-1.3/product:BillBoard Device
+/sys/bus/usb/devices/3-1.4.1/product:USB Receiver
+...
+</pre></div>
+</div>
+</section>
+<section id="wake-up-status">
+<h2>Wake-up status<a class="headerlink" href="#wake-up-status" title="Permalink to this headline">¶</a></h2>
+<p>I had an issue where my external keyboard wouldn’t wake up my computer after sleep.</p>
+<p>After identifying the device from both previous commands, we can query its wake-up status:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep . /sys/bus/usb/devices/*/power/wakeup
+/sys/bus/usb/devices/3-10/power/wakeup:disabled
+/sys/bus/usb/devices/3-1.1/power/wakeup:enabled
+/sys/bus/usb/devices/3-1.4.1/power/wakeup:enabled
+...
+</pre></div>
+</div>
+</section>
+<section id="enable-wake-up">
+<h2>Enable wake-up<a class="headerlink" href="#enable-wake-up" title="Permalink to this headline">¶</a></h2>
+<p>A non persistent fix is to write _enabled_ in sysfs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">enabled</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">usb</span><span class="o">/</span><span class="n">devices</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mf">1.2</span><span class="o">/</span><span class="n">power</span><span class="o">/</span><span class="n">wakeup</span>
+</pre></div>
+</div>
+<p>For a Logitec receiver, it seems that installing <code class="docutils literal notranslate"><span class="pre">solaar</span></code> tool might solve the issue.</p>
+</section>
 </section>
 
 
@@ -239,10 +276,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="netstat.html" class="btn btn-neutral float-right" title="netstat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="user-management-cheatsheet.html" class="btn btn-neutral float-right" title="User Management Cheatsheet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh-tunnels.html" class="btn btn-neutral float-left" title="SSH Tunnels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tcpdump-filters.html" class="btn btn-neutral float-left" title="tcpdump: filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
