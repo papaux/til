@@ -38,4 +38,11 @@ After identifying the device from both previous commands, we can query its wake-
   /sys/bus/usb/devices/3-1.4.1/power/wakeup:enabled
   ...
 
+Enable wake-up
+~~~~~~~~~~~~~~
 
+A non persistent fix is to write _enabled_ in sysfs::
+
+  echo enabled | sudo tee /sys/bus/usb/devices/3-1.2/power/wakeup
+
+For a Logitec receiver, it seems that installing ``solaar`` tool might solve the issue.
