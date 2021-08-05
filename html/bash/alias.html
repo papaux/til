@@ -221,16 +221,30 @@
 <span class="n">alias</span> <span class="n">pscpu</span><span class="o">=</span><span class="s1">&#39;ps aux | sort -nr -k 3 | head -10&#39;</span>
 </pre></div>
 </div>
-<dl>
-<dt>iptables::</dt><dd><p># shorter command
-alias ipt=’sudo /sbin/iptables’</p>
-<p># show rules
-alias iptlist=’sudo /sbin/iptables -L -n -v –line-numbers’
-alias iptlistin=’sudo /sbin/iptables -L INPUT -n -v –line-numbers’
-alias iptlistout=’sudo /sbin/iptables -L OUTPUT -n -v –line-numbers’
-alias iptlistfw=’sudo /sbin/iptables -L FORWARD -n -v –line-numbers’</p>
-</dd>
-</dl>
+<p>iptables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#####</span>
+<span class="c1"># iptables</span>
+<span class="c1">#####</span>
+
+<span class="c1"># shorter command</span>
+<span class="n">alias</span> <span class="n">ipt</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables&#39;</span>
+
+<span class="c1"># show rules</span>
+<span class="n">alias</span> <span class="n">iptlist</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L -n -v --line-numbers&#39;</span>
+<span class="n">alias</span> <span class="n">iptlistin</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L INPUT -n -v --line-numbers&#39;</span>
+<span class="n">alias</span> <span class="n">iptlistout</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L OUTPUT -n -v --line-numbers&#39;</span>
+<span class="n">alias</span> <span class="n">iptlistfw</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L FORWARD -n -v --line-numbers&#39;</span>
+</pre></div>
+</div>
+<p>python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#####</span>
+<span class="c1"># python</span>
+<span class="c1">#####</span>
+
+<span class="n">alias</span> <span class="n">venv</span><span class="o">=</span><span class="s1">&#39;[ -d venv ] || python3 -m venv venv &amp;&amp; source ./venv/bin/activate&#39;</span>
+<span class="n">alias</span> <span class="n">rmvenv</span><span class="o">=</span><span class="s1">&#39;deactivate; rm -rf ./venv&#39;</span>
+</pre></div>
+</div>
 </section>
 
 

@@ -28,6 +28,7 @@ All sort of useful bash aliases::
   alias pscpu='ps aux | sort -nr -k 3 | head -10'
 
 iptables::
+
   #####
   # iptables
   #####
@@ -40,3 +41,12 @@ iptables::
   alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
   alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
   alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+
+python::
+
+  #####
+  # python
+  #####
+
+  alias venv='[ -d venv ] || python3 -m venv venv && source ./venv/bin/activate'
+  alias rmvenv='deactivate; rm -rf ./venv'
