@@ -9,6 +9,8 @@ Git
    clean.rst
    config.rst
    create-empty-branch.rst
+   diff.rst
+   fork.rst
    gitignore.rst
    grep-in-logs.rst
    kdiff-as-mergetool.rst

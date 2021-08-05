@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Status commands &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Diff &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tag commands" href="tag.html" />
-    <link rel="prev" title="Stash only unstaged" href="stash-only-unstage.html" /> 
+    <link rel="next" title="Gitignore syntax" href="gitignore.html" />
+    <link rel="prev" title="Create empty branch" href="create-empty-branch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diff.html">Diff</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Diff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Grep in git logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
@@ -111,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Status commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">Status commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tag.html">Tag commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="undo.html">Undo in git</a></li>
 </ul>
@@ -186,13 +186,13 @@
         
           <li><a href="_.html">Git</a> &raquo;</li>
         
-      <li>Status commands</li>
+      <li>Diff</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/git/status.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/diff.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -205,10 +205,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="status-commands">
-<h1>Status commands<a class="headerlink" href="#status-commands" title="Permalink to this headline">¶</a></h1>
-<p>Show all untracked files in untracked directories</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span> <span class="o">-</span><span class="n">u</span>
+  <section id="diff">
+<h1>Diff<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h1>
+<p>Git diff showing only filenames:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="o">&lt;</span><span class="n">sha</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">name</span><span class="o">-</span><span class="n">only</span>
 </pre></div>
 </div>
 </section>
@@ -221,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tag.html" class="btn btn-neutral float-right" title="Tag commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gitignore.html" class="btn btn-neutral float-right" title="Gitignore syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="stash-only-unstage.html" class="btn btn-neutral float-left" title="Stash only unstaged" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="create-empty-branch.html" class="btn btn-neutral float-left" title="Create empty branch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
