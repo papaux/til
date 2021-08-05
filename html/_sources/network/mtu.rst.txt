@@ -5,6 +5,12 @@ Debugging network issues related to MTU can be tricky.
 
 When encountering weird connectivity issues through VPN, the probability is high that it's a MTU issue.
 
+Check configured MTU size::
+
+  ifconfig | grep eth0 | grep -o "mtu.*"
+  # or 
+  ip addr | grep "mtu [0-9]*"
+
 Send these ping commands to check the MTU size by changing the packet size (`-s` parameter)
 
 :: 

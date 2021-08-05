@@ -4,6 +4,7 @@ Bash
 .. toctree::
    :maxdepth: 1
 
+   alias.rst
    color-output.rst
    copy-to-clipboard.rst
    multiline.rst

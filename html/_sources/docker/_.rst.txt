@@ -13,5 +13,6 @@ Docker
    entrypoint-cmd.rst
    images.rst
    lamp-container.rst
+   logs.rst
    shell-running-container.rst
    stats.rst

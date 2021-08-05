@@ -8,7 +8,7 @@ To file
 
 Write multiple lines into a file::
 
-  cat > file.txt <<EOF
+  cat <<EOF > file.txt 
   echo \$PWD
   echo $PWD
   EOF
@@ -17,3 +17,9 @@ The file then contains::
 
   echo $PWD
   echo /home/user
+
+Without variable substitution::
+
+  cat <<'EOF' > file.txt 
+  echo $PWD
+  'EOF'

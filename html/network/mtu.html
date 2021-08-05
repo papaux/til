@@ -193,6 +193,12 @@
 <h1>MTU<a class="headerlink" href="#mtu" title="Permalink to this headline">¶</a></h1>
 <p>Debugging network issues related to MTU can be tricky.</p>
 <p>When encountering weird connectivity issues through VPN, the probability is high that it’s a MTU issue.</p>
+<p>Check configured MTU size:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">eth0</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;mtu.*&quot;</span>
+<span class="c1"># or</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;mtu [0-9]*&quot;</span>
+</pre></div>
+</div>
 <p>Send these ping commands to check the MTU size by changing the packet size (<cite>-s</cite> parameter)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1300</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1400</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>

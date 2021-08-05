@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Images &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Logs &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LAMP container" href="lamp-container.html" />
-    <link rel="prev" title="ENTRYPOINT and CMD" href="entrypoint-cmd.html" /> 
+    <link rel="next" title="Shell from running container" href="shell-running-container.html" />
+    <link rel="prev" title="LAMP container" href="lamp-container.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,9 +99,9 @@
 <li class="toctree-l2"><a class="reference internal" href="docker-compose.html">docker-compose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dockerfile.html">Dockerfile Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="entrypoint-cmd.html">ENTRYPOINT and CMD</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lamp-container.html">LAMP container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logs.html">Logs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell-running-container.html">Shell from running container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stats.html">Stats and information</a></li>
 </ul>
@@ -176,13 +176,13 @@
         
           <li><a href="_.html">Docker</a> &raquo;</li>
         
-      <li>Images</li>
+      <li>Logs</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/docker/images.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docker/logs.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -195,18 +195,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="images">
-<h1>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h1>
-<p><strong>List available images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span>
-</pre></div>
-</div>
-<p><strong>Remove unused images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">image</span> <span class="n">prune</span>
-</pre></div>
-</div>
-<p><strong>Remove all images</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">images</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">q</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">docker</span> <span class="n">rmi</span>
+  <section id="logs">
+<h1>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h1>
+<p>Grep in logs from all running containers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">q</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="n">L</span> <span class="mi">1</span> <span class="n">docker</span> <span class="n">logs</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;error&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -219,10 +211,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lamp-container.html" class="btn btn-neutral float-right" title="LAMP container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="shell-running-container.html" class="btn btn-neutral float-right" title="Shell from running container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="entrypoint-cmd.html" class="btn btn-neutral float-left" title="ENTRYPOINT and CMD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lamp-container.html" class="btn btn-neutral float-left" title="LAMP container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
