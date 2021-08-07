@@ -50,3 +50,18 @@ python::
 
   alias venv='[ -d venv ] || python3 -m venv venv && source ./venv/bin/activate'
   alias rmvenv='deactivate; rm -rf ./venv'
+
+tmux::
+
+  #####
+  # tmux
+  #####
+
+  # create a new named window: tw name
+  alias tw='tmux new-window -n'
+
+  alias tsh='tmux split-window -h'
+  alias tsv='tmux split-window -v'
+
+  # create a new named session: ts name
+  alias ts=' tmux new-session -d -s'
