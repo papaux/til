@@ -19,6 +19,7 @@ There are 122 TILs in this repository! Enjoy!
    dev-env/_.rst
    docker/_.rst
    git/_.rst
+   go/_.rst
    influxdb/_.rst
    java/_.rst
    kubernetes/_.rst
