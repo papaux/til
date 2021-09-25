@@ -6,8 +6,8 @@ Summary of the Go tooling around module and dependencies handling.
 Project Files
 ~~~~~~~~~~~~~
 
-* **go.mod**: lists dependencies of a module
-* **go.sum**: contains hash of module dependencies that will be verified
+* ``go.mod``: lists dependencies of a module
+* ``go.sum``: contains hash of module dependencies that will be verified
 
 Dependencies
 ~~~~~~~~~~~~
