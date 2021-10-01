@@ -1,9 +1,7 @@
 GIL
 ----
 
-A summary about the GIL (**Global Interpreter Lock**) in Python.
-
-`From this article <https://tenthousandmeters.com/blog/python-behind-the-scenes-13-the-gil-and-its-effects-on-python-multithreading/>`
+A summary about the GIL (**Global Interpreter Lock**) in Python. Based on information `from this very nice article <https://tenthousandmeters.com/blog/python-behind-the-scenes-13-the-gil-and-its-effects-on-python-multithreading/>`_.
 
 What is it ?
 ~~~~~~~~~~~~~

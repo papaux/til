@@ -1,74 +1,38 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENTRYPOINT and CMD &mdash; Geoffrey&#39;s TIL 0 documentation</title>
-  
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Images" href="images.html" />
     <link rel="prev" title="Dockerfile Best Practices" href="dockerfile.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Geoffrey's TIL
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 2
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,17 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
@@ -140,74 +94,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Geoffrey's TIL</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Docker</a> &raquo;</li>
-        
       <li>ENTRYPOINT and CMD</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/docker/entrypoint-cmd.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="entrypoint-and-cmd">
-<h1>ENTRYPOINT and CMD<a class="headerlink" href="#entrypoint-and-cmd" title="Permalink to this headline">¶</a></h1>
+<h1>ENTRYPOINT and CMD<a class="headerlink" href="#entrypoint-and-cmd" title="Permalink to this headline"></a></h1>
 <section id="cmd-vs-entrypoint">
-<h2>CMD vs ENTRYPOINT<a class="headerlink" href="#cmd-vs-entrypoint" title="Permalink to this headline">¶</a></h2>
+<h2>CMD vs ENTRYPOINT<a class="headerlink" href="#cmd-vs-entrypoint" title="Permalink to this headline"></a></h2>
 <p><strong>CMD</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
 </pre></div>
@@ -235,7 +150,7 @@
 </ul>
 </section>
 <section id="shell-vs-exec">
-<h2>Shell vs. Exec<a class="headerlink" href="#shell-vs-exec" title="Permalink to this headline">¶</a></h2>
+<h2>Shell vs. Exec<a class="headerlink" href="#shell-vs-exec" title="Permalink to this headline"></a></h2>
 <p>With the <strong>shell form</strong>, docker will invoke a shell and pass the specified commands to it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="n">ping</span> <span class="n">localhost</span>
 </pre></div>
@@ -256,7 +171,7 @@
 - your command is interpreted as is, and there is <strong>no variable expansion</strong> (since there is no shell)</p>
 </section>
 <section id="forward-signals">
-<h2>Forward signals<a class="headerlink" href="#forward-signals" title="Permalink to this headline">¶</a></h2>
+<h2>Forward signals<a class="headerlink" href="#forward-signals" title="Permalink to this headline"></a></h2>
 <p>If using the shell form or a startup script, we can handle signals correctly by using the <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">gosu</span></code> combo command while starting the application.</p>
 <p>This is the official <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> example using this technique:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
@@ -275,51 +190,33 @@
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="images.html" class="btn btn-neutral float-right" title="Images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="dockerfile.html" class="btn btn-neutral float-left" title="Dockerfile Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dockerfile.html" class="btn btn-neutral float-left" title="Dockerfile Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="images.html" class="btn btn-neutral float-right" title="Images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Geoffrey Papaux
-
-    </p>
+    <p>&#169; Copyright 2021, Geoffrey Papaux.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
