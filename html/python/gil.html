@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>GIL &mdash; Geoffrey&#39;s TIL 0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GIL" href="gil.html" />
-    <link rel="prev" title="Text sanitizing" href="../programming/text-sanitizer.html" /> 
+    <link rel="next" title="pipenv" href="pipenv.html" />
+    <link rel="prev" title="Python" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,8 +109,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gil.html">GIL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GIL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-it">What is it ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-threads">Python Threads ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-not-running-in-the-gil">What is not running in the GIL ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evaluation-loop">Evaluation loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-interval">Switch interval</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pipenv.html">pipenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pylint.html">pylint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtual-env.html">Python: Virtual envs</a></li>
@@ -170,13 +177,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Python</li>
+          <li><a href="_.html">Python</a> &raquo;</li>
+        
+      <li>GIL</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/python/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/python/gil.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,36 +198,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="gil.html">GIL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gil.html#what-is-it">What is it ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gil.html#python-threads">Python Threads ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gil.html#what-is-not-running-in-the-gil">What is not running in the GIL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gil.html#evaluation-loop">Evaluation loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gil.html#switch-interval">Switch interval</a></li>
+  <section id="gil">
+<h1>GIL<a class="headerlink" href="#gil" title="Permalink to this headline">¶</a></h1>
+<p>A summary about the GIL (<strong>Global Interpreter Lock</strong>) in Python.</p>
+<p><cite>From this article &lt;https://tenthousandmeters.com/blog/python-behind-the-scenes-13-the-gil-and-its-effects-on-python-multithreading/&gt;</cite></p>
+<section id="what-is-it">
+<h2>What is it ?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A lock inside the main evaluation loop which makes Python code thread-safe by nature</p></li>
+<li><p>Allow only one OS thread to execute Python bytecode at any given time</p></li>
+<li><p>Protects mutable data sructures in user code but also from Python: e.g. reference counting</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pipenv.html">pipenv</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pipenv.html#setup-new-project">Setup new project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pipenv.html#install-from-pipefile">Install from <code class="docutils literal notranslate"><span class="pre">Pipefile</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="pipenv.html#get-information">Get information</a></li>
+</section>
+<section id="python-threads">
+<h2>Python Threads ?<a class="headerlink" href="#python-threads" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python has support for threads, but due to the GIL, it won’t speed up your application</p></li>
+<li><p>I/O operations do not hold the GIL
+1. Release the GIL
+2. Do the I/O operation (write, recv, accept, …)
+3. Acquire the GIL</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pylint.html">pylint</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pylint.html#configuration">Configuration</a></li>
+</section>
+<section id="what-is-not-running-in-the-gil">
+<h2>What is not running in the GIL ?<a class="headerlink" href="#what-is-not-running-in-the-gil" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I/O Operations</p></li>
+<li><p>C code or extension</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="virtual-env.html">Python: Virtual envs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="virtual-env.html#python-2">Python 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtual-env.html#python-3">Python 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtual-env.html#generic">Generic</a></li>
-</ul>
-</li>
-</ul>
+</section>
+<section id="evaluation-loop">
+<h2>Evaluation loop<a class="headerlink" href="#evaluation-loop" title="Permalink to this headline">¶</a></h2>
+<p>This is a high level view of the Python evaluation loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span>
+  <span class="n">check</span> <span class="k">if</span> <span class="n">other</span> <span class="n">threads</span> <span class="n">requested</span> <span class="n">the</span> <span class="n">GIL</span> <span class="p">(</span><span class="n">eval_breaker</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">yes</span><span class="p">,</span> <span class="n">release</span> <span class="n">the</span> <span class="n">GIL</span> <span class="ow">and</span> <span class="n">waits</span> <span class="n">again</span>
+  <span class="n">get</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">bytecode</span> <span class="n">instruction</span>
+  <span class="n">run</span> <span class="n">the</span> <span class="n">instruction</span>
+</pre></div>
 </div>
+</section>
+<section id="switch-interval">
+<h2>Switch interval<a class="headerlink" href="#switch-interval" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Before entering the instruction loop, the thread will try to acquire the GIL</p></li>
+<li><p>If it’s available, the thread continues and runs</p></li>
+<li><p>If it is not, it waits until it is released</p></li>
+<li><p>By default, it waits for 5ms (switch interval)</p></li>
+<li><p>If the GIL is not released during that time, it sets the eval_breaker</p></li>
+<li><p>The thread holding the GIL will suspend execution</p></li>
+<li><p>The waiting thread can now acquire the GIL and run</p></li>
+</ul>
+<p>This means for I/O threads, if there is another CPU-bound thread running, it might take 5ms to run again after each I/O call!</p>
+</section>
 </section>
 
 
@@ -229,10 +261,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gil.html" class="btn btn-neutral float-right" title="GIL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pipenv.html" class="btn btn-neutral float-right" title="pipenv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../programming/text-sanitizer.html" class="btn btn-neutral float-left" title="Text sanitizing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
