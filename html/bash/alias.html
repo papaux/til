@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Color Output" href="color-output.html" />
+    <link rel="next" title="Chaos generators" href="chaos.html" />
     <link rel="prev" title="Bash" href="_.html" /> 
 </head>
 
@@ -46,8 +46,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaos.html">Chaos generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="color-output.html">Color Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copy-to-clipboard.html">Copy to clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compression.html">Compression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -62,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
@@ -164,18 +167,18 @@
 </pre></div>
 </div>
 <p>tmux:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#####</span>
-<span class="c1"># tmux</span>
-<span class="c1">#####</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#####
+# tmux
+#####
 
-<span class="c1"># create a new named window: tw name</span>
-<span class="n">alias</span> <span class="n">tw</span><span class="o">=</span><span class="s1">&#39;tmux new-window -n&#39;</span>
+# create a new named window: tw name
+alias tw=&#39;tmux new-window -n&#39;
 
-<span class="n">alias</span> <span class="n">tsh</span><span class="o">=</span><span class="s1">&#39;tmux split-window -h&#39;</span>
-<span class="n">alias</span> <span class="n">tsv</span><span class="o">=</span><span class="s1">&#39;tmux split-window -v&#39;</span>
+alias tsh=&#39;tmux split-window -h&#39;
+alias tsv=&#39;tmux split-window -v&#39;
 
-<span class="c1"># create a new named session: ts name</span>
-<span class="n">alias</span> <span class="n">ts</span><span class="o">=</span><span class="s1">&#39; tmux new-session -d -s&#39;</span>
+# create a new named session: ts name
+ts() { tmux new-session -d -s $1 }
 </pre></div>
 </div>
 </section>
@@ -185,7 +188,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="_.html" class="btn btn-neutral float-left" title="Bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="color-output.html" class="btn btn-neutral float-right" title="Color Output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="chaos.html" class="btn btn-neutral float-right" title="Chaos generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

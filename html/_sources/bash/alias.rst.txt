@@ -64,4 +64,4 @@ tmux::
   alias tsv='tmux split-window -v'
 
   # create a new named session: ts name
-  alias ts=' tmux new-session -d -s'
+  ts() { tmux new-session -d -s $1 }
