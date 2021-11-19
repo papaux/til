@@ -13,6 +13,7 @@ Git
    fork.rst
    gitignore.rst
    grep-in-logs.rst
+   housekeeping.rst
    kdiff-as-mergetool.rst
    log.rst
    merge-tips.rst
