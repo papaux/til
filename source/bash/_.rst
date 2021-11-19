@@ -5,6 +5,7 @@ Bash
    :maxdepth: 1
 
    alias.rst
+   chaos.rst
    color-output.rst
    copy-to-clipboard.rst
    multiline.rst
