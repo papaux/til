@@ -43,4 +43,5 @@ There are 122 TILs in this repository! Enjoy!
    vim/_.rst
    web/_.rst
    wine/_.rst
+   yum/_.rst
    zsh/_.rst
