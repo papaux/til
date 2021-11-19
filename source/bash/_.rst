@@ -8,6 +8,7 @@ Bash
    chaos.rst
    color-output.rst
    copy-to-clipboard.rst
+   compression.rst
    multiline.rst
    one-liners.rst
    run-command-file-changed.rst
