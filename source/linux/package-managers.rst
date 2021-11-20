@@ -1,10 +1,11 @@
-Enable "Tap to click" touch pad
----------------------------------
+Package manager commands
+-------------------------
 
-If using synaptics, a simple command can be used to enable the Tap to Click function:
+Equivalent commands from several linux package managers.
 
-::
 
-  synclient TapButton1=1
-  
-The tool ```synclient``` can also be used to check the state of all synaptics parameter.
+=======================================     =======================   ==========================    ========================
+   Action                                   pacman                    yum                           apt
+---------------------------------------     -----------------------   --------------------------    ------------------------
+Which package provides an existing file     pacman -Qo /bin/file      yum whatprovides /bin/file    dpkg -S /bin/file
+=======================================     =======================   ==========================    ========================
