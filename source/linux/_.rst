@@ -7,6 +7,7 @@ Linux
    arp.rst
    bluetooth.rst
    cgroup.rst
+   cpu-supervision.rst
    dd.rst
    directories-most-files.rst
    disable-touch-pad-while-typing.rst
