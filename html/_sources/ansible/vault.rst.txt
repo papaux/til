@@ -21,3 +21,7 @@ Read the value back from a file vars.yml::
 Encrypt the content of a file as variable::
 
   cat file | ansible-vault encrypt_string
+
+Alternative solution to encrypt the content of a file, encoded as base64 (useful for binary content)::
+
+  ansible-vault encrypt_string '$(base64 somesecret.bin)' --name  secret

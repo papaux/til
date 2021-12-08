@@ -131,6 +131,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">file</span> <span class="o">|</span> <span class="n">ansible</span><span class="o">-</span><span class="n">vault</span> <span class="n">encrypt_string</span>
 </pre></div>
 </div>
+<p>Alternative solution to encrypt the content of a file, encoded as base64 (useful for binary content):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">vault</span> <span class="n">encrypt_string</span> <span class="s1">&#39;$(base64 somesecret.bin)&#39;</span> <span class="o">--</span><span class="n">name</span>  <span class="n">secret</span>
+</pre></div>
+</div>
 </section>
 </section>
 
