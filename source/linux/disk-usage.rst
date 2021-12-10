@@ -14,6 +14,12 @@ This command will show root-level disk usage, excluding mounted folders::
 
   for f in /*; do grep " $f " /proc/mounts > /dev/null || du -sh $f; done
 
+**Hidden folders**
+
+This command will show hidden folders::
+
+  du -hs .[^.]*
+
 ncdu
 ~~~~
 
