@@ -9,6 +9,7 @@ Linux
    cgroup.rst
    cpu-supervision.rst
    dd.rst
+   dig.rst
    directories-most-files.rst
    disable-touch-pad-while-typing.rst
    disk-usage.rst
