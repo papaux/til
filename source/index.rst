@@ -15,6 +15,7 @@ There are 122 TILs in this repository! Enjoy!
    ansible/_.rst
    archlinux/_.rst
    bash/_.rst
+   cassandra/_.rst
    cpp/_.rst
    dev-env/_.rst
    docker/_.rst
