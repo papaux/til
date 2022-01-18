@@ -13,7 +13,7 @@ Mirror
 
 Create a clone of the repository with the `--mirror` option::
 
-  git clone --mirror git@gitub.com:some/repository
+  git clone --mirror git@github.com:some/repository
 
 Add the new remote::
 
