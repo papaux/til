@@ -66,7 +66,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Postgres</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="housekeeping.html">PSQL Housekeeping</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Schema exploration in Postgres</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Schema exploration in Postgres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-databases">List databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-tables">List tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-other-items">List other items</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
@@ -110,10 +118,15 @@
              
   <section id="schema-exploration-in-postgres">
 <h1>Schema exploration in Postgres<a class="headerlink" href="#schema-exploration-in-postgres" title="Permalink to this headline"></a></h1>
-<p>List databases:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">l</span>
+<section id="help">
+<h2>Help<a class="headerlink" href="#help" title="Permalink to this headline"></a></h2>
+<p>Help on some statements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">h</span> <span class="n">ALTER</span> <span class="n">TABLE</span>
 </pre></div>
 </div>
+</section>
+<section id="connect">
+<h2>Connect<a class="headerlink" href="#connect" title="Permalink to this headline"></a></h2>
 <p>Connect to the database:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">my_db</span>
 
@@ -122,10 +135,75 @@
 \<span class="n">c</span> <span class="n">my_db</span>
 </pre></div>
 </div>
+</section>
+<section id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline"></a></h2>
+<p>Enable query time reporting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">timing</span>
+</pre></div>
+</div>
+<p>Nice formatting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">x</span>
+</pre></div>
+</div>
+<p>Command history:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">s</span>
+</pre></div>
+</div>
+</section>
+<section id="list-databases">
+<h2>List databases<a class="headerlink" href="#list-databases" title="Permalink to this headline"></a></h2>
+<p>List databases:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">l</span>
+</pre></div>
+</div>
+<p>List databases with details:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">l</span><span class="o">+</span>
+</pre></div>
+</div>
+</section>
+<section id="list-tables">
+<h2>List tables<a class="headerlink" href="#list-tables" title="Permalink to this headline"></a></h2>
 <p>Show tables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dt</span>
 </pre></div>
 </div>
+<p>Show tables from another schema:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dt</span> <span class="n">sales</span><span class="o">.*</span>
+</pre></div>
+</div>
+<p>Describe a table, including columns and data types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">d</span> <span class="n">saltes</span><span class="o">.</span><span class="n">address</span>
+</pre></div>
+</div>
+</section>
+<section id="list-other-items">
+<h2>List other items<a class="headerlink" href="#list-other-items" title="Permalink to this headline"></a></h2>
+<p>List schemas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dn</span>
+</pre></div>
+</div>
+<p>List index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">di</span> <span class="n">sales</span><span class="o">.*</span>
+</pre></div>
+</div>
+<p>List views:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dv</span> <span class="n">views</span>
+</pre></div>
+</div>
+<p>List functions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">df</span> <span class="n">functions</span>
+</pre></div>
+</div>
+<p>List users:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">du</span> <span class="n">users</span>
+</pre></div>
+</div>
+<p>List groups:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">dg</span> <span class="n">groups</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

@@ -41,3 +41,7 @@ Parameters:
 
   docker stats --all
 
+**Restart all containers using an image**::
+
+  sudo docker ps --filter ancestor=image:1.1.0  -aq | xargs sudo docker restart
+

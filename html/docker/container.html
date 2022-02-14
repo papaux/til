@@ -162,6 +162,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">stats</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
+<p><strong>Restart all containers using an image</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">ps</span> <span class="o">--</span><span class="nb">filter</span> <span class="n">ancestor</span><span class="o">=</span><span class="n">image</span><span class="p">:</span><span class="mf">1.1.0</span>  <span class="o">-</span><span class="n">aq</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">sudo</span> <span class="n">docker</span> <span class="n">restart</span>
+</pre></div>
+</div>
 </section>
 </section>
 
