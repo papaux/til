@@ -226,3 +226,21 @@ A collection of new set oriented functions:
 - ``all_of(It first, It last, UnaryPredicate p)``: check if predicate returns true for all elements
 - ``any_of(It first, It last, UnaryPredicate p)``: check if predicate returns true for at least one element
 - ``none_of(It first, It last, UnaryPredicate p)``: check if predicate returns true for no element
+
+New stdlib features
+--------------------
+
+- ``std::move``: transfer the resources of the object passed (e.g. transfer ``unique_ptr``).
+- ``std::forward``: used to transfer parameters as is to other functions, maintaining value category (lvalue/rvalue) and const qualifier.
+- ``std::thread``: a new threading library for C++.
+- ``std::to_string``: converts numeric arguments to string.
+- ``std::chrono``: set of utility functions to deal with *durations*, *clocks* and *time*. E.g. ``std::chrono::steady_clock::now();``.
+- ``std::unique_ptr``: a non-copyable, single-owner but movable smart pointer.
+- ``std::shared_ptr``: smart pointer to manage shared resources in thread-safe way.
+- ``std::make_shared``: recommended way to build a shared pointer to avoid ``new`` and with exception safety.
+- ``std::async``: run function in async (or lazy) context, returning a future.
+- ``std::array``: a container built on top of traditional C arrays supporting container operations.
+- ``std::tuple``: fixed size collection of heterogeneous values, e.g. ``std::tuple<int, std::string>``.
+- ``type traits``: query properties of types at compile time, e.g. ``std::is_integral``, ``std::is_same``.
+- ``std::begin``: a free function to get an iterator to the first element of a container.
+- ``std::end``: a free function to get an iterator to the last element of a container.
