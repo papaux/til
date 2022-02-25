@@ -4,4 +4,5 @@ zsh
 .. toctree::
    :maxdepth: 1
 
+   oh-my-zsh.rst
    shortcuts.rst
