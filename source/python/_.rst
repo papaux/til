@@ -6,6 +6,7 @@ Python
    :maxdepth: 3
 
    gil.rst
+   pip.rst
    pipenv.rst
    pylint.rst
    virtual-env.rst
