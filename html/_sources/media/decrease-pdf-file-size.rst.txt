@@ -7,7 +7,7 @@ The base command is the following:
 
 ::
 
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 
 The parameter ``-dPDFSETTINGS`` can be changed to other values, depending on the desired output quality:
 

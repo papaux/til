@@ -75,6 +75,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html#section-1-1-title">Section 1.1 Title</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
@@ -114,7 +115,7 @@
 <h1>Decrease PDF file size<a class="headerlink" href="#decrease-pdf-file-size" title="Permalink to this headline"></a></h1>
 <p>This command reduces the file size of a PDF document, using the ghostscript <code class="docutils literal notranslate"><span class="pre">gs</span></code> command.</p>
 <p>The base command is the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gs</span> <span class="o">-</span><span class="n">sDEVICE</span><span class="o">=</span><span class="n">pdfwrite</span> <span class="o">-</span><span class="n">dCompatibilityLevel</span><span class="o">=</span><span class="mf">1.4</span> <span class="o">-</span><span class="n">dPDFSETTINGS</span><span class="o">=/</span><span class="n">screen</span> <span class="o">-</span><span class="n">dNOPAUSE</span> <span class="o">-</span><span class="n">dQUIET</span> <span class="o">-</span><span class="n">dBATCH</span> <span class="o">-</span><span class="n">sOutputFile</span><span class="o">=</span><span class="n">output</span><span class="o">.</span><span class="n">pdf</span> <span class="nb">input</span><span class="o">.</span><span class="n">pdf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gs</span> <span class="o">-</span><span class="n">sDEVICE</span><span class="o">=</span><span class="n">pdfwrite</span> <span class="o">-</span><span class="n">dCompatibilityLevel</span><span class="o">=</span><span class="mf">1.4</span> <span class="o">-</span><span class="n">dPDFSETTINGS</span><span class="o">=/</span><span class="n">ebook</span> <span class="o">-</span><span class="n">dNOPAUSE</span> <span class="o">-</span><span class="n">dQUIET</span> <span class="o">-</span><span class="n">dBATCH</span> <span class="o">-</span><span class="n">sOutputFile</span><span class="o">=</span><span class="n">output</span><span class="o">.</span><span class="n">pdf</span> <span class="nb">input</span><span class="o">.</span><span class="n">pdf</span>
 </pre></div>
 </div>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">-dPDFSETTINGS</span></code> can be changed to other values, depending on the desired output quality:</p>

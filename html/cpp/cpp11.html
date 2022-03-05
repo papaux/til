@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ 11 &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="C++ 14" href="cpp14.html" />
+    <link rel="prev" title="C++ Language Versions" href="language-versions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Geoffrey's TIL
+          </a>
+              <div class="version">
+                2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cassandra/_.html">Cassandra</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gdb-commands.html">gdb commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gdb-pretty-print.html">gdb pretty print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gdb-navigate-in-threads.html">gdb: navigate in threads</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="language-versions.html">C++ Language Versions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">C++ 11</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lambda-expressions">Lambda Expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delegating-constructors">Delegating Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-and-delete">Default and Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uniform-initialization-systems">Uniform Initialization Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nullptr">nullptr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automatic-type-deduction">Automatic Type Deduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decltype">decltype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rvalue-references">Rvalue References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smart-pointers">Smart pointers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#threadding-library">Threadding Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variadic-templates">Variadic templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move-semantics">Move semantics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algorithms">Algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#new-stdlib-features">New stdlib features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp14.html">C++ 14</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp17.html">C++ 17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp20.html">C++ 20</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html#section-1-1-title">Section 1.1 Title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wine/_.html">Wine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yum/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="_.html">C++</a> &raquo;</li>
+          <li><a href="language-versions.html">C++ Language Versions</a> &raquo;</li>
+      <li>C++ 11</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cpp/cpp11.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="c-11">
+<h1><a class="toc-backref" href="#id1">C++ 11</a><a class="headerlink" href="#c-11" title="Permalink to this headline"></a></h1>
+<p>Probably one of the most interesting but biggest evolution of the C++ language.</p>
+<p>There is a lot of new (but exciting!) enhancements in C++11.</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#c-11" id="id1">C++ 11</a></p>
+<ul>
+<li><p><a class="reference internal" href="#lambda-expressions" id="id2">Lambda Expressions</a></p></li>
+<li><p><a class="reference internal" href="#delegating-constructors" id="id3">Delegating Constructors</a></p></li>
+<li><p><a class="reference internal" href="#default-and-delete" id="id4">Default and Delete</a></p></li>
+<li><p><a class="reference internal" href="#uniform-initialization-systems" id="id5">Uniform Initialization Systems</a></p></li>
+<li><p><a class="reference internal" href="#nullptr" id="id6">nullptr</a></p></li>
+<li><p><a class="reference internal" href="#automatic-type-deduction" id="id7">Automatic Type Deduction</a></p></li>
+<li><p><a class="reference internal" href="#decltype" id="id8">decltype</a></p></li>
+<li><p><a class="reference internal" href="#rvalue-references" id="id9">Rvalue References</a></p></li>
+<li><p><a class="reference internal" href="#smart-pointers" id="id10">Smart pointers</a></p></li>
+<li><p><a class="reference internal" href="#threadding-library" id="id11">Threadding Library</a></p></li>
+<li><p><a class="reference internal" href="#variadic-templates" id="id12">Variadic templates</a></p></li>
+<li><p><a class="reference internal" href="#move-semantics" id="id13">Move semantics</a></p></li>
+<li><p><a class="reference internal" href="#algorithms" id="id14">Algorithms</a></p></li>
+<li><p><a class="reference internal" href="#new-stdlib-features" id="id15">New stdlib features</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="lambda-expressions">
+<h2><a class="toc-backref" href="#id2">Lambda Expressions</a><a class="headerlink" href="#lambda-expressions" title="Permalink to this headline"></a></h2>
+<p>Define a function locally, at the place of the call.</p>
+<p>Syntax:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">capture</span><span class="p">](</span><span class="n">parameters</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">return</span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">capture</span></code>: list of zero or more <em>captures</em>, either by reference (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) or by copy (<code class="docutils literal notranslate"><span class="pre">=</span></code>). Optionally beginning with <em>capture-default</em></p>
+<ul>
+<li><p>capture-default <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>: auto captures by reference</p></li>
+<li><p>capture-default <code class="docutils literal notranslate"><span class="pre">=</span></code>: auto captures by copy</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">};</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="n">c</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">remove_if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[</span><span class="n">x</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="delegating-constructors">
+<h2><a class="toc-backref" href="#id3">Delegating Constructors</a><a class="headerlink" href="#delegating-constructors" title="Permalink to this headline"></a></h2>
+<p>One constructor can call another constructor using <code class="docutils literal notranslate"><span class="pre">constructor</span> <span class="pre">(...)</span> <span class="pre">:</span> <span class="pre">constructor</span> <span class="pre">(...)</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="default-and-delete">
+<h2><a class="toc-backref" href="#id4">Default and Delete</a><a class="headerlink" href="#default-and-delete" title="Permalink to this headline"></a></h2>
+<p>Default constructors and destructors can be auto-generated by the compiler with <code class="docutils literal notranslate"><span class="pre">default</span></code> keyword.</p>
+<p>A class can be made non-copiable by removing the copy constructors with <code class="docutils literal notranslate"><span class="pre">delete</span></code> keyword.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">// C++11 default constructor</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">// C++11 default destructor</span>
+
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">// C++ way to prevent copy</span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">// C++ way to prevent copy</span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="uniform-initialization-systems">
+<h2><a class="toc-backref" href="#id5">Uniform Initialization Systems</a><a class="headerlink" href="#uniform-initialization-systems" title="Permalink to this headline"></a></h2>
+<p>C++11 provides simplified and unified way to initialize a variable / object.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">   </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">// C++11. Equivalent to: A a(0,0);</span>
+
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// C++11 Array Initialization</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">B</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// C++11, member array initializer</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">// C++11 Container Initialization</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">days</span><span class="o">=</span><span class="p">{</span><span class="w"> </span><span class="s">&quot;monday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tuesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wednesday&quot;</span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="nullptr">
+<h2><a class="toc-backref" href="#id6">nullptr</a><a class="headerlink" href="#nullptr" title="Permalink to this headline"></a></h2>
+<p>Existing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> macro or <code class="docutils literal notranslate"><span class="pre">0</span></code> for assigning null pointer is both error prone and weakly typed.</p>
+<p>A new keyword <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> is introduced to assign and check nullpointers with type safety.</p>
+</section>
+<section id="automatic-type-deduction">
+<h2><a class="toc-backref" href="#id7">Automatic Type Deduction</a><a class="headerlink" href="#automatic-type-deduction" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">auto</span></code> keyword can be used when the type is deductible:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="c1">// double</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="decltype">
+<h2><a class="toc-backref" href="#id8">decltype</a><a class="headerlink" href="#decltype" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">decltype</span></code> is a new keyword to capture the type of an object or expression.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">decltype</span><span class="w"> </span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span><span class="w"> </span><span class="n">IT</span><span class="p">;</span><span class="w"></span>
+<span class="n">IT</span><span class="w"> </span><span class="n">vec_it</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="rvalue-references">
+<h2><a class="toc-backref" href="#id9">Rvalue References</a><a class="headerlink" href="#rvalue-references" title="Permalink to this headline"></a></h2>
+<p>C++11 introduces the concept of <code class="docutils literal notranslate"><span class="pre">rvalue</span> <span class="pre">references</span></code> in order to facilitate the <em>move semantic</em>.</p>
+<p>Definitions and types of values:
+- <code class="docutils literal notranslate"><span class="pre">lvalue</span></code>: Anything that can be on the left side of equal sign.
+- <code class="docutils literal notranslate"><span class="pre">xvalue</span></code>: An rvalue that about to expire (something being returned from a function, for example). An xvalue can be moved.
+- <code class="docutils literal notranslate"><span class="pre">prvalue</span></code>: An rvalue that is not about to expire, like a literal (12, true) or the result of a non-reference return of a function.</p>
+<p>Example of a movable class taking advantage of rvalues.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Movable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Movable</span><span class="w"> </span><span class="p">(</span><span class="n">Movable</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w"> </span><span class="c1">// move constructor</span>
+<span class="w">  </span><span class="n">Movable</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Movable</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w"> </span><span class="c1">// move assignment</span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="smart-pointers">
+<h2><a class="toc-backref" href="#id10">Smart pointers</a><a class="headerlink" href="#smart-pointers" title="Permalink to this headline"></a></h2>
+<p>Two new smart pointer classes: <code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> (with reference count) and <code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code> (at most one copy).</p>
+<p>Smart pointers encapsulate pointers into a safe container, which will guarantee destruction even in the event of an exception.</p>
+<p><code class="docutils literal notranslate"><span class="pre">auto_ptr</span></code> is deprecated.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ptr</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">T</span><span class="p">);</span><span class="w">                  </span><span class="c1">// Ok</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">noMovePtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myPtr</span><span class="p">;</span><span class="w">           </span><span class="c1">// Error: Can&#39;t copy unique_ptr</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">otherPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span><span class="w">   </span><span class="c1">// Ok, resource moved to otherPtr</span>
+</pre></div>
+</div>
+</section>
+<section id="threadding-library">
+<h2><a class="toc-backref" href="#id11">Threadding Library</a><a class="headerlink" href="#threadding-library" title="Permalink to this headline"></a></h2>
+<p>Introduce standard multi-threading library with <code class="docutils literal notranslate"><span class="pre">std::thread</span></code>, including various threading constructs:
+- <code class="docutils literal notranslate"><span class="pre">std::future</span></code>: an object storing a value that will be assigned in future, with a blocking <code class="docutils literal notranslate"><span class="pre">get()</span></code> accessor.
+- <code class="docutils literal notranslate"><span class="pre">std::promise</span></code>: associated to a future object, to set its value
+- <code class="docutils literal notranslate"><span class="pre">std::thread</span></code>: a class representing a lightweight thread
+- <code class="docutils literal notranslate"><span class="pre">std::this_thread::get()</span></code>: the current thread id
+- <code class="docutils literal notranslate"><span class="pre">std::this_thread::sleep_for()</span></code>: a sleep function
+- <code class="docutils literal notranslate"><span class="pre">std::mutex</span></code>: a standard mutex synchronization primitive</p>
+<p>Promise example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">promise</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">thePromise</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">future</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">theFuture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thePromise</span><span class="p">.</span><span class="n">get_future</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// start another thread which will set the promise</span>
+<span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">initiazer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">thePromise</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// =&gt; thePromise.set_value(48);</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">theFuture</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="variadic-templates">
+<h2><a class="toc-backref" href="#id12">Variadic templates</a><a class="headerlink" href="#variadic-templates" title="Permalink to this headline"></a></h2>
+<p>To create a function / constructor which takes an unlimited number of arguments of any type.</p>
+<p>The parameter expansion happens at compile time - no runtime penalty.</p>
+<p>Variadic class template (from cppreference.com):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Types</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Tuple</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="n">Tuple</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">t0</span><span class="p">;</span><span class="w">           </span><span class="c1">// Types contains no arguments</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">        </span><span class="c1">// Types contains one argument: int</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Types contains two arguments: int and float</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t3</span><span class="p">;</span><span class="w">          </span><span class="c1">// error: 0 is not a type</span>
+</pre></div>
+</div>
+<p>Variadic function template (from cppreference.com):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Types</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Tuple</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="n">Tuple</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">t0</span><span class="p">;</span><span class="w">           </span><span class="c1">// Types contains no arguments</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">        </span><span class="c1">// Types contains one argument: int</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Types contains two arguments: int and float</span>
+<span class="n">Tuple</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t3</span><span class="p">;</span><span class="w">          </span><span class="c1">// error: 0 is not a type</span>
+</pre></div>
+</div>
+</section>
+<section id="move-semantics">
+<h2><a class="toc-backref" href="#id13">Move semantics</a><a class="headerlink" href="#move-semantics" title="Permalink to this headline"></a></h2>
+<p>C++11 introduces a big shift with move semantics, allowing the compiler to move a returned object instead of copying it.</p>
+<p>It has two advantages:
+1. It allows to turn expensive copies into cheap moves, e.g. when returning objects from functions
+2. It allows to implement “move-only” semantic, where some objects cannot be copied but only moved (e.g. <em>unique_ptr</em>)</p>
+</section>
+<section id="algorithms">
+<h2><a class="toc-backref" href="#id14">Algorithms</a><a class="headerlink" href="#algorithms" title="Permalink to this headline"></a></h2>
+<p>A collection of new set oriented functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">all_of(It</span> <span class="pre">first,</span> <span class="pre">It</span> <span class="pre">last,</span> <span class="pre">UnaryPredicate</span> <span class="pre">p)</span></code>: check if predicate returns true for all elements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">any_of(It</span> <span class="pre">first,</span> <span class="pre">It</span> <span class="pre">last,</span> <span class="pre">UnaryPredicate</span> <span class="pre">p)</span></code>: check if predicate returns true for at least one element</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none_of(It</span> <span class="pre">first,</span> <span class="pre">It</span> <span class="pre">last,</span> <span class="pre">UnaryPredicate</span> <span class="pre">p)</span></code>: check if predicate returns true for no element</p></li>
+</ul>
+</section>
+<section id="new-stdlib-features">
+<h2><a class="toc-backref" href="#id15">New stdlib features</a><a class="headerlink" href="#new-stdlib-features" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::move</span></code>: transfer the resources of the object passed (e.g. transfer <code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::forward</span></code>: used to transfer parameters as is to other functions, maintaining value category (lvalue/rvalue) and const qualifier.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::thread</span></code>: a new threading library for C++.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::to_string</span></code>: converts numeric arguments to string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::chrono</span></code>: set of utility functions to deal with <em>durations</em>, <em>clocks</em> and <em>time</em>. E.g. <code class="docutils literal notranslate"><span class="pre">std::chrono::steady_clock::now();</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::unique_ptr</span></code>: a non-copyable, single-owner but movable smart pointer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::shared_ptr</span></code>: smart pointer to manage shared resources in thread-safe way.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::make_shared</span></code>: recommended way to build a shared pointer to avoid <code class="docutils literal notranslate"><span class="pre">new</span></code> and with exception safety.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::async</span></code>: run function in async (or lazy) context, returning a future.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::array</span></code>: a container built on top of traditional C arrays supporting container operations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::tuple</span></code>: fixed size collection of heterogeneous values, e.g. <code class="docutils literal notranslate"><span class="pre">std::tuple&lt;int,</span> <span class="pre">std::string&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">traits</span></code>: query properties of types at compile time, e.g. <code class="docutils literal notranslate"><span class="pre">std::is_integral</span></code>, <code class="docutils literal notranslate"><span class="pre">std::is_same</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::begin</span></code>: a free function to get an iterator to the first element of a container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::end</span></code>: a free function to get an iterator to the last element of a container.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="language-versions.html" class="btn btn-neutral float-left" title="C++ Language Versions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cpp14.html" class="btn btn-neutral float-right" title="C++ 14" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Geoffrey Papaux.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

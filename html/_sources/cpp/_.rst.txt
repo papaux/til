@@ -4,7 +4,8 @@ C++
 .. toctree::
    :maxdepth: 1
 
+   benchmark.rst
    gdb-commands.rst
    gdb-pretty-print.rst
    gdb-navigate-in-threads.rst
-   benchmark.rst
+   language-versions.rst
