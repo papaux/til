@@ -1,7 +1,0 @@
-Wine
-=======
-
-.. toctree::
-   :maxdepth: 1
-
-   rebuild-menus.rst

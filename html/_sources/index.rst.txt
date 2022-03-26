@@ -13,6 +13,7 @@ There are 122 TILs in this repository! Enjoy!
    :maxdepth: 1
 
    ansible/_.rst
+   applications/_.rst
    archlinux/_.rst
    bash/_.rst
    cassandra/_.rst
@@ -43,6 +44,5 @@ There are 122 TILs in this repository! Enjoy!
    ubuntu-debian/_.rst
    vim/_.rst
    web/_.rst
-   wine/_.rst
    yum/_.rst
    zsh/_.rst

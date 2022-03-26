@@ -5,7 +5,7 @@ C++
    :maxdepth: 1
 
    benchmark.rst
+   cpp-versions.rst
    gdb-commands.rst
    gdb-pretty-print.rst
    gdb-navigate-in-threads.rst
-   language-versions.rst
