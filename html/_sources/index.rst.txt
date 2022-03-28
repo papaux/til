@@ -37,6 +37,7 @@ There are 122 TILs in this repository! Enjoy!
    postgres/_.rst
    programming/_.rst
    python/_.rst
+   revealjs/_.rst
    rfc/_.rst
    sphinx/_.rst
    scala/_.rst
