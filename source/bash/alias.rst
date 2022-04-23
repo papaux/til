@@ -4,11 +4,14 @@ Alias
 All sort of useful bash aliases::
 
   #####
-  # Bash power
+  # Bash
   #####
 
   # grep in bash history
   alias gh='history | grep'
+
+  # ls showing full path of files in current directory (friendly for copy/paste)
+  alias lspwd='ls -ld $PWD/*'
 
   #####
   # System stats / info
@@ -57,11 +60,11 @@ tmux::
   # tmux
   #####
 
-  # create a new named window: tw name
-  alias tw='tmux new-window -n'
-
   alias tsh='tmux split-window -h'
   alias tsv='tmux split-window -v'
+
+  # create a new named window: tw name
+  tw () { tmux new-window $1 }
 
   # create a new named session: ts name
   ts() { tmux new-session -d -s $1 }
