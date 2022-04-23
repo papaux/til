@@ -122,11 +122,14 @@
 <h1>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h1>
 <p>All sort of useful bash aliases:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#####</span>
-<span class="c1"># Bash power</span>
+<span class="c1"># Bash</span>
 <span class="c1">#####</span>
 
 <span class="c1"># grep in bash history</span>
 <span class="n">alias</span> <span class="n">gh</span><span class="o">=</span><span class="s1">&#39;history | grep&#39;</span>
+
+<span class="c1"># ls showing full path of files in current directory (friendly for copy/paste)</span>
+<span class="n">alias</span> <span class="n">lspwd</span><span class="o">=</span><span class="s1">&#39;ls -ld $PWD/*&#39;</span>
 
 <span class="c1">#####</span>
 <span class="c1"># System stats / info</span>
@@ -175,11 +178,11 @@
 # tmux
 #####
 
-# create a new named window: tw name
-alias tw=&#39;tmux new-window -n&#39;
-
 alias tsh=&#39;tmux split-window -h&#39;
 alias tsv=&#39;tmux split-window -v&#39;
+
+# create a new named window: tw name
+tw () { tmux new-window $1 }
 
 # create a new named session: ts name
 ts() { tmux new-session -d -s $1 }
