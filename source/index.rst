@@ -22,6 +22,7 @@ There are 122 TILs in this repository! Enjoy!
    docker/_.rst
    git/_.rst
    go/_.rst
+   hadoop/_.rst
    influxdb/_.rst
    iptables/_.rst
    java/_.rst
