@@ -65,7 +65,7 @@ Reduce the size of all images in all subfolders to max 1024x1024, handling space
 
 ::
 
-    find . -name "*.jpg" -print0 | xargs -0  -n 1 sh -c 'convert -resize 1024x1024 "$0" "$0"'
+    find . -iname "*.jpg" -print0 | xargs -0  -n 1 sh -c 'convert -resize 1024x1024 "$0" "$0"'
    
 PDF
 ~~~
