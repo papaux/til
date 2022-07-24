@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Color Output &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Env Vars &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Copy to clipboard" href="copy-to-clipboard.html" />
-    <link rel="prev" title="Chaos generators" href="chaos.html" /> 
+    <link rel="next" title="Multi-line in Bash" href="multiline.html" />
+    <link rel="prev" title="Compression" href="compression.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,13 +49,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="alias.html">Alias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaos.html">Chaos generators</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Color Output</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tput"><cite>tput</cite></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="color-output.html">Color Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copy-to-clipboard.html">Copy to clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compression.html">Compression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="env-vars.html">Env Vars</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Env Vars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
@@ -113,9 +110,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Bash</a> &raquo;</li>
-      <li>Color Output</li>
+      <li>Env Vars</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/bash/color-output.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/bash/env-vars.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -123,32 +120,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="color-output">
-<h1>Color Output<a class="headerlink" href="#color-output" title="Permalink to this headline"></a></h1>
-<p>There are several possibilities to color the output of a bash script / command.</p>
-<section id="tput">
-<h2><cite>tput</cite><a class="headerlink" href="#tput" title="Permalink to this headline"></a></h2>
-<p>Define shell variables:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>red=`tput setaf 1`
-green=`tput setaf 2`
-reset=`tput sgr0`
-echo &quot;${red}red text ${green}green text${reset}&quot;
+  <section id="env-vars">
+<h1>Env Vars<a class="headerlink" href="#env-vars" title="Permalink to this headline"></a></h1>
+<p>Unset all environment variables matching a pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>unset `env | grep OS_ | egrep -o &#39;^[^=]+&#39;`
 </pre></div>
 </div>
-<p>Directly in a command output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;$(tput setaf 1)Red text $(tput setab 7)and white background$(tput sgr 0)&quot;</span>
-</pre></div>
-</div>
-<p>Do not forget to clear the color with the <cite>tput sgr0</cite> at the end.</p>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="chaos.html" class="btn btn-neutral float-left" title="Chaos generators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="copy-to-clipboard.html" class="btn btn-neutral float-right" title="Copy to clipboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="compression.html" class="btn btn-neutral float-left" title="Compression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="multiline.html" class="btn btn-neutral float-right" title="Multi-line in Bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

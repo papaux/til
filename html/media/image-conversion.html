@@ -159,7 +159,7 @@
 </pre></div>
 </div>
 <p>Reduce the size of all images in all subfolders to max 1024x1024, handling spaces</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s2">&quot;*.jpg&quot;</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span>  <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;convert -resize 1024x1024 &quot;$0&quot; &quot;$0&quot;&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">iname</span> <span class="s2">&quot;*.jpg&quot;</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span>  <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;convert -resize 1024x1024 &quot;$0&quot; &quot;$0&quot;&#39;</span>
 </pre></div>
 </div>
 <section id="pdf">
