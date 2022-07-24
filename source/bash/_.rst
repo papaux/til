@@ -9,6 +9,7 @@ Bash
    color-output.rst
    copy-to-clipboard.rst
    compression.rst
+   env-vars.rst
    multiline.rst
    one-liners.rst
    run-command-file-changed.rst
