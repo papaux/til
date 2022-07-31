@@ -6,4 +6,5 @@ Reveal.js
    :maxdepth: 3
 
    git-submodule.rst
+   github-pages.rst
    

@@ -128,12 +128,24 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo pacman -Rsn $(pacman -Qdtq)
 </pre></div>
 </div>
-<p>Clean the package cache by removing old versions but keep the currently installed ones.</p>
+<p>Clean the package cache by removing old versions but keep the currently installed ones:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Sc</span>
 </pre></div>
 </div>
-<p>Remove packages no longer included in any repositories.</p>
+<p>Remove packages no longer included in any repositories (careful if you are using pacman from AUR, these will be removed as well):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qmq</span> <span class="o">|</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">Rs</span> <span class="o">-</span>
+</pre></div>
+</div>
+<p>List packages with missing files form the file system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qk</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="s1">&#39; 0 missing files&#39;</span>
+</pre></div>
+</div>
+<p>List packages that have been modified on the local system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qkk</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;0 altered files&quot;</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;failed to calculate&quot;</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pacman</span><span class="o">-</span><span class="n">packages</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>When you identified a package that has been altered, reinstall it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </section>
