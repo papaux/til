@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -127,10 +128,10 @@
            <div itemprop="articleBody">
              
   <section id="scripts-boilerplate">
-<h1>Scripts boilerplate<a class="headerlink" href="#scripts-boilerplate" title="Permalink to this headline"></a></h1>
+<h1>Scripts boilerplate<a class="headerlink" href="#scripts-boilerplate" title="Permalink to this heading"></a></h1>
 <p>Common operations that we usually want to perform in bash scripts.</p>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello</span> <span class="p">()</span> <span class="p">{</span>
   <span class="n">echo</span> <span class="s2">&quot;Hello $1&quot;</span>
 <span class="p">}</span>
@@ -140,7 +141,7 @@
 </div>
 </section>
 <section id="if-grep">
-<h2>if grep<a class="headerlink" href="#if-grep" title="Permalink to this headline"></a></h2>
+<h2>if grep<a class="headerlink" href="#if-grep" title="Permalink to this heading"></a></h2>
 <p>Want to combine <cite>grep</cite> and <cite>if</cite> to do something in case a string is find or not ?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grep</span> <span class="o">--</span><span class="n">quiet</span> <span class="n">text</span> <span class="n">somefile</span><span class="o">.</span><span class="n">txt</span><span class="p">;</span> <span class="n">then</span>
   <span class="n">echo</span> <span class="s2">&quot;Text Found&quot;</span>
@@ -151,7 +152,7 @@
 </div>
 </section>
 <section id="check-arguments">
-<h2>Check arguments<a class="headerlink" href="#check-arguments" title="Permalink to this headline"></a></h2>
+<h2>Check arguments<a class="headerlink" href="#check-arguments" title="Permalink to this heading"></a></h2>
 <p>Check if an argument has been set:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="s2">&quot;$1&quot;</span> <span class="p">]</span>
   <span class="n">then</span>
@@ -161,7 +162,7 @@
 </div>
 </section>
 <section id="get-script-directory">
-<h2>Get script directory<a class="headerlink" href="#get-script-directory" title="Permalink to this headline"></a></h2>
+<h2>Get script directory<a class="headerlink" href="#get-script-directory" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>script_dir=$(cd &quot;$(dirname &quot;${BASH_SOURCE[0]}&quot;)&quot; &amp;&gt;/dev/null &amp;&amp; pwd -P)
 </pre></div>
 </div>

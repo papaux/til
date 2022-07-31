@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,16 +150,16 @@
            <div itemprop="articleBody">
              
   <section id="mount">
-<h1>Mount<a class="headerlink" href="#mount" title="Permalink to this headline"></a></h1>
+<h1>Mount<a class="headerlink" href="#mount" title="Permalink to this heading"></a></h1>
 <section id="mount-point-read-only">
-<h2>Mount point read only<a class="headerlink" href="#mount-point-read-only" title="Permalink to this headline"></a></h2>
+<h2>Mount point read only<a class="headerlink" href="#mount-point-read-only" title="Permalink to this heading"></a></h2>
 <p>Protect the moint point by setting the folder as read only. In case of mount failure, nothing can be written to the folder.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chattr</span> <span class="o">+</span><span class="n">i</span> <span class="o">/</span><span class="n">mountpoint</span>
 </pre></div>
 </div>
 </section>
 <section id="mount-without-root">
-<h2>Mount without root<a class="headerlink" href="#mount-without-root" title="Permalink to this headline"></a></h2>
+<h2>Mount without root<a class="headerlink" href="#mount-without-root" title="Permalink to this heading"></a></h2>
 <p>When mounting shared folders such as samba shares, we don’t want them to be mounted when we don’t need them or when the server is not available, that is we don’t want to mount automatically at startup.</p>
 <p>It’s still possible to use the mount command, but then root access is required.</p>
 <p>There is a solution to have both advantages: mount pre-defined folders “on demand” without root access.</p>

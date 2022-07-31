@@ -22,3 +22,7 @@ Interactive upgrade::
     $ pip-review --interactive
     astroid==2.10.0 is available (you have 2.6.6)
     Upgrade now? [Y]es, [N]o, [A]ll, [Q]uit
+
+An alternative to list all outdated dependencies::
+
+    pip list --outdated

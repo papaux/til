@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -121,10 +122,10 @@
            <div itemprop="articleBody">
              
   <section id="gil">
-<h1>GIL<a class="headerlink" href="#gil" title="Permalink to this headline"></a></h1>
+<h1>GIL<a class="headerlink" href="#gil" title="Permalink to this heading"></a></h1>
 <p>A summary about the GIL (<strong>Global Interpreter Lock</strong>) in Python. Based on information <a class="reference external" href="https://tenthousandmeters.com/blog/python-behind-the-scenes-13-the-gil-and-its-effects-on-python-multithreading/">from this very nice article</a>.</p>
 <section id="what-is-it">
-<h2>What is it ?<a class="headerlink" href="#what-is-it" title="Permalink to this headline"></a></h2>
+<h2>What is it ?<a class="headerlink" href="#what-is-it" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>A lock inside the main evaluation loop which makes Python code thread-safe by nature</p></li>
 <li><p>Allow only one OS thread to execute Python bytecode at any given time</p></li>
@@ -132,7 +133,7 @@
 </ul>
 </section>
 <section id="python-threads">
-<h2>Python Threads ?<a class="headerlink" href="#python-threads" title="Permalink to this headline"></a></h2>
+<h2>Python Threads ?<a class="headerlink" href="#python-threads" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Python has support for threads, but due to the GIL, it won’t speed up your application</p></li>
 <li><p>I/O operations do not hold the GIL
@@ -142,14 +143,14 @@
 </ul>
 </section>
 <section id="what-is-not-running-in-the-gil">
-<h2>What is not running in the GIL ?<a class="headerlink" href="#what-is-not-running-in-the-gil" title="Permalink to this headline"></a></h2>
+<h2>What is not running in the GIL ?<a class="headerlink" href="#what-is-not-running-in-the-gil" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>I/O Operations</p></li>
 <li><p>C code or extension</p></li>
 </ul>
 </section>
 <section id="evaluation-loop">
-<h2>Evaluation loop<a class="headerlink" href="#evaluation-loop" title="Permalink to this headline"></a></h2>
+<h2>Evaluation loop<a class="headerlink" href="#evaluation-loop" title="Permalink to this heading"></a></h2>
 <p>This is a high level view of the Python evaluation loop:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span>
   <span class="n">check</span> <span class="k">if</span> <span class="n">other</span> <span class="n">threads</span> <span class="n">requested</span> <span class="n">the</span> <span class="n">GIL</span> <span class="p">(</span><span class="n">eval_breaker</span><span class="p">)</span>
@@ -160,7 +161,7 @@
 </div>
 </section>
 <section id="switch-interval">
-<h2>Switch interval<a class="headerlink" href="#switch-interval" title="Permalink to this headline"></a></h2>
+<h2>Switch interval<a class="headerlink" href="#switch-interval" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Before entering the instruction loop, the thread will try to acquire the GIL</p></li>
 <li><p>If it’s available, the thread continues and runs</p></li>

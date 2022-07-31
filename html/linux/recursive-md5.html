@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -145,7 +146,7 @@
            <div itemprop="articleBody">
              
   <section id="recursive-md5">
-<h1>Recursive md5<a class="headerlink" href="#recursive-md5" title="Permalink to this headline"></a></h1>
+<h1>Recursive md5<a class="headerlink" href="#recursive-md5" title="Permalink to this heading"></a></h1>
 <p>This simple command can be used to dump the MD5 hashes of a whole directory structure.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">print0</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="mi">0</span> <span class="n">md5sum</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">checkusm</span><span class="o">.</span><span class="n">md5</span>
 </pre></div>

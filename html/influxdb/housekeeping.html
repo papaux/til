@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -111,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="housekeeping">
-<h1>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline"></a></h1>
+<h1>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this heading"></a></h1>
 <p>Delete all data points older than 30 days (<strong>warning</strong>: this deletes from all measurements!):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">mydb</span>
 <span class="n">DELETE</span> <span class="n">WHERE</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="n">now</span><span class="p">()</span><span class="o">-</span><span class="mi">30</span><span class="n">d</span>

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -118,10 +119,10 @@
            <div itemprop="articleBody">
              
   <section id="tmux-cheatsheet">
-<h1>tmux cheatsheet<a class="headerlink" href="#tmux-cheatsheet" title="Permalink to this headline"></a></h1>
+<h1>tmux cheatsheet<a class="headerlink" href="#tmux-cheatsheet" title="Permalink to this heading"></a></h1>
 <p>A tmux cheatsheet based on my needs / findings and based on my config.</p>
 <section id="session">
-<h2>Session<a class="headerlink" href="#session" title="Permalink to this headline"></a></h2>
+<h2>Session<a class="headerlink" href="#session" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new</span> <span class="pre">-s</span> <span class="pre">session_name</span></code>: creates a new tmux session named session_name</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">attach</span> <span class="pre">-t</span> <span class="pre">session_name</span></code>: attaches to an existing tmux session named session_name</p></li>
@@ -131,7 +132,7 @@
 </ul>
 </section>
 <section id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline"></a></h2>
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">c)</span></code>: create a new window</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-window</span> <span class="pre">-t</span> <span class="pre">:0-9</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">0-9)</span></code>: move to the window based on index</p></li>
@@ -139,7 +140,7 @@
 </ul>
 </section>
 <section id="panes-actions">
-<h2>Panes: Actions<a class="headerlink" href="#panes-actions" title="Permalink to this headline"></a></h2>
+<h2>Panes: Actions<a class="headerlink" href="#panes-actions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">|)</span></code>: splits the window into two vertical panes</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">split-window</span> <span class="pre">-h</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">-)</span></code>: splits the window into two horizontal panes</p></li>
@@ -152,7 +153,7 @@
 </ul>
 </section>
 <section id="panes-select">
-<h2>Panes: Select<a class="headerlink" href="#panes-select" title="Permalink to this headline"></a></h2>
+<h2>Panes: Select<a class="headerlink" href="#panes-select" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-[UDLR]</span></code>: selects the next pane in the specified direction</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">select-pane</span> <span class="pre">-t</span> <span class="pre">:.+</span></code>: selects the next pane in numerical order</p></li>
@@ -161,13 +162,13 @@
 </ul>
 </section>
 <section id="misc">
-<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline"></a></h2>
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:setw</span> <span class="pre">synchronize-panes</span> <span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">S)</span></code>: keyboard input is sent to all panes</p></li>
 </ul>
 </section>
 <section id="copy-mode">
-<h2>Copy Mode<a class="headerlink" href="#copy-mode" title="Permalink to this headline"></a></h2>
+<h2>Copy Mode<a class="headerlink" href="#copy-mode" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">(prefix</span> <span class="pre">+</span> <span class="pre">[)</span></code>: enter copy mode</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>: search forward</p></li>

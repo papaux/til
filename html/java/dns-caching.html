@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -115,7 +116,7 @@
            <div itemprop="articleBody">
              
   <section id="dns-caching">
-<h1>DNS Caching<a class="headerlink" href="#dns-caching" title="Permalink to this headline"></a></h1>
+<h1>DNS Caching<a class="headerlink" href="#dns-caching" title="Permalink to this heading"></a></h1>
 <p>The JVM keeps previous DNS resolution (successful or failed) in a local cache.</p>
 <p>There is no true default value. The cache is _usually_ 30 seconds on Oracle JVM. It may vary with implementations.</p>
 <p>DNS TTL is considered a security settings (to avoid DNS Spoofing) and the default value also changes when a security context is given. Usually, if a security context is given, the DNS TTL changes to infinite!! Which means that any DNS resolution is kept until the JVM restarts!</p>
@@ -124,7 +125,7 @@
 * -1 means “cache forever”
 * 0 means “never cache”</p>
 <section id="security-context">
-<h2>Security Context<a class="headerlink" href="#security-context" title="Permalink to this headline"></a></h2>
+<h2>Security Context<a class="headerlink" href="#security-context" title="Permalink to this heading"></a></h2>
 <p>Configuration to be set in the <cite>java.security</cite> file.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.ttl</span></code>: caching policy for successful resolutions.</p></li>
@@ -132,7 +133,7 @@
 </ul>
 </section>
 <section id="system-property">
-<h2>System Property<a class="headerlink" href="#system-property" title="Permalink to this headline"></a></h2>
+<h2>System Property<a class="headerlink" href="#system-property" title="Permalink to this heading"></a></h2>
 <p>While some sun private system properties do exist, the recommended option is to use security properties.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.ttl</span></code>: a sun private system property for successful resolutions.</p></li>

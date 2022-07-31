@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -145,7 +146,7 @@
            <div itemprop="articleBody">
              
   <section id="cgroup">
-<h1>cgroup<a class="headerlink" href="#cgroup" title="Permalink to this headline"></a></h1>
+<h1>cgroup<a class="headerlink" href="#cgroup" title="Permalink to this heading"></a></h1>
 <p>This TIL regroups all useful commands regarding cgroups.</p>
 <p><strong>Change cgroup of current process</strong></p>
 <p>When a new process is started, it inherits the cgroup of its parent. If you start a command from your shell, it will inherit the same cgroup as your shell. You can change the cgroup of your current shell process with this command to have all commands run in another cgroup (in the example, using the system-group cgroup):</p>

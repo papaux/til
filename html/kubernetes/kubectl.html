@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -121,10 +122,10 @@
            <div itemprop="articleBody">
              
   <section id="kubectl">
-<h1>kubectl<a class="headerlink" href="#kubectl" title="Permalink to this headline"></a></h1>
+<h1>kubectl<a class="headerlink" href="#kubectl" title="Permalink to this heading"></a></h1>
 <p>List of most useful <cite>kubectl</cite> commands or global settings.</p>
 <section id="explore-a-kubernetes-environment">
-<h2>Explore a Kubernetes environment<a class="headerlink" href="#explore-a-kubernetes-environment" title="Permalink to this headline"></a></h2>
+<h2>Explore a Kubernetes environment<a class="headerlink" href="#explore-a-kubernetes-environment" title="Permalink to this heading"></a></h2>
 <p>Print the address of the master and cluster services:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">cluster</span><span class="o">-</span><span class="n">info</span>
 </pre></div>
@@ -175,7 +176,7 @@
 </div>
 </section>
 <section id="change-resources">
-<h2>Change resources<a class="headerlink" href="#change-resources" title="Permalink to this headline"></a></h2>
+<h2>Change resources<a class="headerlink" href="#change-resources" title="Permalink to this heading"></a></h2>
 <p>Live edit a resource:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">pod</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span>
 </pre></div>
@@ -190,7 +191,7 @@
 </div>
 </section>
 <section id="get-help">
-<h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this headline"></a></h2>
+<h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this heading"></a></h2>
 <p>Command help:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
@@ -205,7 +206,7 @@
 </div>
 </section>
 <section id="inspect-pods">
-<h2>Inspect pods<a class="headerlink" href="#inspect-pods" title="Permalink to this headline"></a></h2>
+<h2>Inspect pods<a class="headerlink" href="#inspect-pods" title="Permalink to this heading"></a></h2>
 <p>Exec command in a pod (in that case, checking the user running in the container):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">exec</span> <span class="n">my</span><span class="o">-</span><span class="n">pod</span> <span class="o">--</span> <span class="n">whoami</span>
 </pre></div>
@@ -216,7 +217,7 @@
 </div>
 </section>
 <section id="templates">
-<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline"></a></h2>
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this heading"></a></h2>
 <p>Simply create a template yaml file using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">bee</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span> <span class="o">&gt;</span> <span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,9 +118,9 @@
            <div itemprop="articleBody">
              
   <section id="pip">
-<h1>Pip<a class="headerlink" href="#pip" title="Permalink to this headline"></a></h1>
+<h1>Pip<a class="headerlink" href="#pip" title="Permalink to this heading"></a></h1>
 <section id="update-dependencies">
-<h2>Update dependencies<a class="headerlink" href="#update-dependencies" title="Permalink to this headline"></a></h2>
+<h2>Update dependencies<a class="headerlink" href="#update-dependencies" title="Permalink to this heading"></a></h2>
 <p>Every modern software should keep up with dependency versions, and upgrade regularly. <code class="docutils literal notranslate"><span class="pre">pip-review`</span></code> is one possibility when using pip.</p>
 <p>Install:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pip</span><span class="o">-</span><span class="n">review</span>
@@ -136,6 +137,10 @@ Django==3.2.12 is available (you have 2.2.16)
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip-review --interactive
 astroid==2.10.0 is available (you have 2.6.6)
 Upgrade now? [Y]es, [N]o, [A]ll, [Q]uit
+</pre></div>
+</div>
+<p>An alternative to list all outdated dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span> <span class="o">--</span><span class="n">outdated</span>
 </pre></div>
 </div>
 </section>

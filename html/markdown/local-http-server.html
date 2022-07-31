@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -124,7 +125,7 @@
            <div itemprop="articleBody">
              
   <section id="local-http-server">
-<h1>Local HTTP server<a class="headerlink" href="#local-http-server" title="Permalink to this headline"></a></h1>
+<h1>Local HTTP server<a class="headerlink" href="#local-http-server" title="Permalink to this heading"></a></h1>
 <p>When editing markdown files, you have some editing tools which provides preview mode (e.g. Brackets) but you don’t have everything like links between pages, anchors, etc.</p>
 <p>We have here two tools:</p>
 <ul class="simple">
@@ -132,17 +133,17 @@
 <li><p><a class="reference internal" href="#harp">harp</a></p></li>
 </ul>
 <section id="grip">
-<h2>grip<a class="headerlink" href="#grip" title="Permalink to this headline"></a></h2>
+<h2>grip<a class="headerlink" href="#grip" title="Permalink to this heading"></a></h2>
 <p>Grip has more features and serves directly .md files. It is using GitHub markdown API.
 It even redirects to README by default and auto refreshes when files are changed on the disk.</p>
 <section id="install">
-<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline"></a></h3>
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">grip</span>
 </pre></div>
 </div>
 </section>
 <section id="serve">
-<h3>Serve<a class="headerlink" href="#serve" title="Permalink to this headline"></a></h3>
+<h3>Serve<a class="headerlink" href="#serve" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grip</span> <span class="mi">9000</span>
 </pre></div>
 </div>
@@ -150,17 +151,17 @@ It even redirects to README by default and auto refreshes when files are changed
 </section>
 </section>
 <section id="harp">
-<h2>harp<a class="headerlink" href="#harp" title="Permalink to this headline"></a></h2>
+<h2>harp<a class="headerlink" href="#harp" title="Permalink to this heading"></a></h2>
 <p>Harp is simpler than grip, can be used to make static versions of websites written with markdown but maps the .md files to .html. So no links possible between files.</p>
 <p>It is a node module named <strong>harp</strong>.</p>
 <section id="id1">
-<h3>Install<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>Install<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">harp</span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h3>Serve<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>Serve<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">harp</span> <span class="n">server</span>
 </pre></div>
 </div>

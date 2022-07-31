@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,10 +118,10 @@
            <div itemprop="articleBody">
              
   <section id="ffmpeg">
-<h1>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline"></a></h1>
+<h1>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this heading"></a></h1>
 <p><cite>ffmpeg</cite> command usage example.</p>
 <section id="rotate">
-<h2>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline"></a></h2>
+<h2>Rotate<a class="headerlink" href="#rotate" title="Permalink to this heading"></a></h2>
 <p><strong>Rotate video 90° clockwise</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="s2">&quot;transpose=1&quot;</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
@@ -131,7 +132,7 @@
 </div>
 </section>
 <section id="convert">
-<h2>Convert<a class="headerlink" href="#convert" title="Permalink to this headline"></a></h2>
+<h2>Convert<a class="headerlink" href="#convert" title="Permalink to this heading"></a></h2>
 <p><strong>Convert to 24fps</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span>  <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="o">=</span><span class="mi">24</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>

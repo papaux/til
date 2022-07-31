@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -150,9 +151,9 @@
            <div itemprop="articleBody">
              
   <section id="ssh-tunnels">
-<h1>SSH Tunnels<a class="headerlink" href="#ssh-tunnels" title="Permalink to this headline"></a></h1>
+<h1>SSH Tunnels<a class="headerlink" href="#ssh-tunnels" title="Permalink to this heading"></a></h1>
 <section id="local-forwarding">
-<h2>Local forwarding<a class="headerlink" href="#local-forwarding" title="Permalink to this headline"></a></h2>
+<h2>Local forwarding<a class="headerlink" href="#local-forwarding" title="Permalink to this heading"></a></h2>
 <p>Forward a port from the client machine to the server machine, using the <cite>-L</cite> option.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8080</span><span class="p">:</span><span class="n">server</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumpost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
@@ -164,7 +165,7 @@
 </div>
 </section>
 <section id="remote-forwarding">
-<h2>Remote forwarding<a class="headerlink" href="#remote-forwarding" title="Permalink to this headline"></a></h2>
+<h2>Remote forwarding<a class="headerlink" href="#remote-forwarding" title="Permalink to this heading"></a></h2>
 <p>Tunnel a connection from the remote server to the local client.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">jumphost</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
@@ -173,7 +174,7 @@
 <p><cite>localhost</cite> can be replaced by any IP or hostname to forward to another machnie. This requires the <cite>GatewayPorts</cite> SSH parameters to be be set to <cite>no</cite>.</p>
 </section>
 <section id="socks5-proxy">
-<h2>socks5 proxy<a class="headerlink" href="#socks5-proxy" title="Permalink to this headline"></a></h2>
+<h2>socks5 proxy<a class="headerlink" href="#socks5-proxy" title="Permalink to this heading"></a></h2>
 <p>SOCKS is a layer 5 protocol for proxying TCP connections between networks.</p>
 <p><strong>Remote proxying</strong>: for sharing your network connection with some remote isolated machine, use SSH remote forwarding:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="mi">9999</span> <span class="n">remote</span><span class="o">-</span><span class="n">server</span>

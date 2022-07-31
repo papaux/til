@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -127,21 +128,21 @@
            <div itemprop="articleBody">
              
   <section id="docker-compose">
-<h1>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline"></a></h1>
+<h1>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this heading"></a></h1>
 <p>This page is about docker-compose</p>
 <section id="network-mode">
-<h2>Network mode<a class="headerlink" href="#network-mode" title="Permalink to this headline"></a></h2>
+<h2>Network mode<a class="headerlink" href="#network-mode" title="Permalink to this heading"></a></h2>
 <p>Set the network mode to <cite>host</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="p">:</span> <span class="n">host</span>
 </pre></div>
 </div>
 </section>
 <section id="docker-compose-from-cron">
-<h2>docker-compose from cron<a class="headerlink" href="#docker-compose-from-cron" title="Permalink to this headline"></a></h2>
+<h2>docker-compose from cron<a class="headerlink" href="#docker-compose-from-cron" title="Permalink to this heading"></a></h2>
 <p>If you want to use a <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span></code> command from a cron task, you have to specify the <code class="docutils literal notranslate"><span class="pre">-T</span></code> option, to disable pseudo-tty allocation.</p>
 </section>
 <section id="update-images">
-<h2>Update images<a class="headerlink" href="#update-images" title="Permalink to this headline"></a></h2>
+<h2>Update images<a class="headerlink" href="#update-images" title="Permalink to this heading"></a></h2>
 <p>To update docker images that are using “latest” tag in compose files, in order to limit the downtime first pull the new image version, and then take the stack down and up.</p>
 <p><code class="docutils literal notranslate"><span class="pre">`</span>
 <span class="pre">docker-compose</span> <span class="pre">pull</span>
@@ -150,7 +151,7 @@
 <span class="pre">`</span></code></p>
 </section>
 <section id="resource-limits">
-<h2>Resource limits<a class="headerlink" href="#resource-limits" title="Permalink to this headline"></a></h2>
+<h2>Resource limits<a class="headerlink" href="#resource-limits" title="Permalink to this heading"></a></h2>
 <p>It’s possible to limit the memory assigned to a given container in a docker-compose stack.</p>
 <p><strong>Version 2</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;2.4&#39;</span>

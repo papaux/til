@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,10 +115,10 @@
            <div itemprop="articleBody">
              
   <section id="psql-housekeeping">
-<h1>PSQL Housekeeping<a class="headerlink" href="#psql-housekeeping" title="Permalink to this headline"></a></h1>
+<h1>PSQL Housekeeping<a class="headerlink" href="#psql-housekeeping" title="Permalink to this heading"></a></h1>
 <p>Some useful commands or queries when managing a Postgres database server.</p>
 <section id="vacuum">
-<h2>Vacuum!<a class="headerlink" href="#vacuum" title="Permalink to this headline"></a></h2>
+<h2>Vacuum!<a class="headerlink" href="#vacuum" title="Permalink to this heading"></a></h2>
 <p>Noticing some <cite>SELECT</cite> queries are running slow ? You might need to do some clean up! In my case, it reduced one Django page load from 30s down to 2s. Yes, only by vacuuming!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vacuumdb</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>

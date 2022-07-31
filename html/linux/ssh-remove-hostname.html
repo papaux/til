@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -145,7 +146,7 @@
            <div itemprop="articleBody">
              
   <section id="ssh-remove-hostname">
-<h1>SSH Remove hostname<a class="headerlink" href="#ssh-remove-hostname" title="Permalink to this headline"></a></h1>
+<h1>SSH Remove hostname<a class="headerlink" href="#ssh-remove-hostname" title="Permalink to this heading"></a></h1>
 <p>Your machine behind an IP / DNS name changed ? You will get an error while trying to login using SSH or any service using it, telling that the host may have been hacked and if you want to login you have to remove it from the list of known hosts.</p>
 <p>There is a simple command to do it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">R</span> <span class="n">hostname</span>

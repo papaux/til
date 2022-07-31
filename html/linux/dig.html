@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -150,12 +151,12 @@
            <div itemprop="articleBody">
              
   <section id="dig">
-<h1>dig<a class="headerlink" href="#dig" title="Permalink to this headline"></a></h1>
+<h1>dig<a class="headerlink" href="#dig" title="Permalink to this heading"></a></h1>
 <p>How to use dig ? Welcome to my Cheatsheet!</p>
 <p>Important note: <code class="docutils literal notranslate"><span class="pre">dig</span></code> bypasses the “normal” DNS resolution from the host.
 If you want to mimic application level DNS resolution results, dig might not be a good fit.</p>
 <section id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline"></a></h2>
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
 <p>Main usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dig</span> <span class="nd">@server</span> <span class="nb">type</span> <span class="n">name</span>
 </pre></div>
@@ -169,7 +170,7 @@ If you want to mimic application level DNS resolution results, dig might not be 
 </div>
 </section>
 <section id="response-formatting">
-<h2>Response Formatting<a class="headerlink" href="#response-formatting" title="Permalink to this headline"></a></h2>
+<h2>Response Formatting<a class="headerlink" href="#response-formatting" title="Permalink to this heading"></a></h2>
 <p>Get only the returned IP (script friendly output):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dig +short google.com
 172.217.20.14
@@ -183,7 +184,7 @@ google.com.         66      IN      A       172.217.20.14
 <p>Formatting options can be made persistent by writting them in <code class="docutils literal notranslate"><span class="pre">~/.digrc</span></code> file.</p>
 </section>
 <section id="trace">
-<h2>Trace<a class="headerlink" href="#trace" title="Permalink to this headline"></a></h2>
+<h2>Trace<a class="headerlink" href="#trace" title="Permalink to this heading"></a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">+trace</span></code> option, dig acts like a recursive resolver. It follows the query path, starting from the root servers until the name is resovled.
 All intermediate responses are printed on the console:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dig</span> <span class="o">+</span><span class="n">trace</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span>

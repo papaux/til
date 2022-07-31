@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -150,10 +151,10 @@
            <div itemprop="articleBody">
              
   <section id="cpu-supervision">
-<h1>CPU Supervision<a class="headerlink" href="#cpu-supervision" title="Permalink to this headline"></a></h1>
+<h1>CPU Supervision<a class="headerlink" href="#cpu-supervision" title="Permalink to this heading"></a></h1>
 <p>Tools for monitoring and troubleshooting your CPU performance / temperature / speed.</p>
 <section id="cpu-frequency">
-<h2>CPU Frequency<a class="headerlink" href="#cpu-frequency" title="Permalink to this headline"></a></h2>
+<h2>CPU Frequency<a class="headerlink" href="#cpu-frequency" title="Permalink to this heading"></a></h2>
 <p>Easy (and probably inacurate) way to check frequency from procfs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">watch</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="s1">&#39;cat /proc/cpuinfo | grep MHz&#39;</span>
 
@@ -197,7 +198,7 @@
 </div>
 </section>
 <section id="cpu-temperature">
-<h2>CPU temperature<a class="headerlink" href="#cpu-temperature" title="Permalink to this headline"></a></h2>
+<h2>CPU temperature<a class="headerlink" href="#cpu-temperature" title="Permalink to this heading"></a></h2>
 <p>Check processor (and other components) temperature:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sensors
 
@@ -212,7 +213,7 @@ Core 3:        +41.0°C  (high = +100.0°C, crit = +100.0°C)
 </div>
 </section>
 <section id="all-in-one">
-<h2>All-in-One<a class="headerlink" href="#all-in-one" title="Permalink to this headline"></a></h2>
+<h2>All-in-One<a class="headerlink" href="#all-in-one" title="Permalink to this heading"></a></h2>
 <p>Tools for checking CPU temperature, frequency, usage and performing stress-test:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">tui</span>
 </pre></div>

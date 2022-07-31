@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -115,10 +116,10 @@
            <div itemprop="articleBody">
              
   <section id="hadoop-survivor-guide">
-<h1>Hadoop Survivor Guide<a class="headerlink" href="#hadoop-survivor-guide" title="Permalink to this headline"></a></h1>
+<h1>Hadoop Survivor Guide<a class="headerlink" href="#hadoop-survivor-guide" title="Permalink to this heading"></a></h1>
 <p>An overview of all Hadoop components - or the minimal set of knowledge required to navigate this world!</p>
 <section id="hadoop-architecture-fundamentals">
-<h2>Hadoop Architecture Fundamentals<a class="headerlink" href="#hadoop-architecture-fundamentals" title="Permalink to this headline"></a></h2>
+<h2>Hadoop Architecture Fundamentals<a class="headerlink" href="#hadoop-architecture-fundamentals" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">HDFS</span> <span class="pre">(Hadoop</span> <span class="pre">Distributed</span> <span class="pre">File</span> <span class="pre">System)</span></code>: a distributed file system designed to handle large data sets on commodity hardware. Used by Hadoop applications</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Cluster</span></code>: set of computers consisting of DataNodes and NameNodes</p></li>
@@ -130,7 +131,7 @@
 </ul>
 </section>
 <section id="basics-of-query-and-task-execution">
-<h2>Basics of query and task execution<a class="headerlink" href="#basics-of-query-and-task-execution" title="Permalink to this headline"></a></h2>
+<h2>Basics of query and task execution<a class="headerlink" href="#basics-of-query-and-task-execution" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Mapper</span></code>: A function or task processing input records from file. Runs on the data nodes to process files. MAP part from Map-Reduce. Generate output that is then processed by the reducer.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Reducer</span></code>: Collect the results from each mapper</p></li>
@@ -140,7 +141,7 @@
 </ul>
 </section>
 <section id="icing-on-the-cake-not-fundamental-but-nice-advanced-tooling">
-<h2>Icing on the cake (not fundamental but nice advanced tooling)<a class="headerlink" href="#icing-on-the-cake-not-fundamental-but-nice-advanced-tooling" title="Permalink to this headline"></a></h2>
+<h2>Icing on the cake (not fundamental but nice advanced tooling)<a class="headerlink" href="#icing-on-the-cake-not-fundamental-but-nice-advanced-tooling" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Yarn</span></code>: keep track and allocate resources to run jobs, execute jobs, show log and progress of jobs. It splits the functionality of resource management and job scheduling/monitoring into a ResourceManager (RM) daemon and an ApplicationMaster (AM) daemon.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Oozie</span></code>: workflow scheduler to manage Apache Hadoop jobs (ala cron). You give it a workflow and Ooozie will run it at specific times. It sumibts the job to Yarn</p></li>

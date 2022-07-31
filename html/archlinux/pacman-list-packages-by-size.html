@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -121,7 +122,7 @@
            <div itemprop="articleBody">
              
   <section id="pacman-list-packages-by-size">
-<h1>Pacman: list packages by size<a class="headerlink" href="#pacman-list-packages-by-size" title="Permalink to this headline"></a></h1>
+<h1>Pacman: list packages by size<a class="headerlink" href="#pacman-list-packages-by-size" title="Permalink to this heading"></a></h1>
 <p>With this command found in the arch forums (<a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=112038">https://bbs.archlinux.org/viewtopic.php?id=112038</a>) it is possible to list the packages by size in MB, with the biggest package being listed first. Very useful to locate unused packages to free up some hard disk space.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">Qi</span> <span class="o">|</span> <span class="n">egrep</span> <span class="s1">&#39;^(Name|Installed)&#39;</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">f2</span> <span class="o">-</span><span class="n">d</span><span class="s1">&#39;:&#39;</span> <span class="o">|</span> <span class="n">paste</span> <span class="o">-</span> <span class="o">-</span> <span class="o">|</span> <span class="n">column</span> <span class="o">-</span><span class="n">t</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nrk</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">MiB</span> <span class="o">|</span> <span class="n">less</span>
 </pre></div>

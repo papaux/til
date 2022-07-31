@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -150,23 +151,23 @@
            <div itemprop="articleBody">
              
   <section id="installation-date">
-<h1>Installation date<a class="headerlink" href="#installation-date" title="Permalink to this headline"></a></h1>
+<h1>Installation date<a class="headerlink" href="#installation-date" title="Permalink to this heading"></a></h1>
 <p>Knowing the installation date from the machine you are logged into can be a not so easy task. This page shows how to do it for several Linux distributions.</p>
 <section id="centos-fedora">
-<h2>CentOS / Fedora<a class="headerlink" href="#centos-fedora" title="Permalink to this headline"></a></h2>
+<h2>CentOS / Fedora<a class="headerlink" href="#centos-fedora" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">qi</span> <span class="n">basesystem</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Install</span>
 </pre></div>
 </div>
 <p>Be careful: if you upgraded your system from a previous version, this will give you the upgrade time and not first installation date.</p>
 </section>
 <section id="archlinux">
-<h2>ArchLinux<a class="headerlink" href="#archlinux" title="Permalink to this headline"></a></h2>
+<h2>ArchLinux<a class="headerlink" href="#archlinux" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n1</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">pacman</span><span class="o">.</span><span class="n">log</span>
 </pre></div>
 </div>
 </section>
 <section id="generic">
-<h2>Generic<a class="headerlink" href="#generic" title="Permalink to this headline"></a></h2>
+<h2>Generic<a class="headerlink" href="#generic" title="Permalink to this heading"></a></h2>
 <p>Some other generic ways that should work accross distributions, but require root access:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span>  <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot; / &quot;</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;{ print $1 }&#39;</span> <span class="o">|</span> <span class="n">xargs</span> <span class="o">-</span><span class="n">I</span><span class="p">{}</span>  <span class="n">sudo</span> <span class="n">dumpe2fs</span> <span class="p">{}</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">created</span>
 </pre></div>

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -126,9 +127,9 @@
            <div itemprop="articleBody">
              
   <section id="entrypoint-and-cmd">
-<h1>ENTRYPOINT and CMD<a class="headerlink" href="#entrypoint-and-cmd" title="Permalink to this headline"></a></h1>
+<h1>ENTRYPOINT and CMD<a class="headerlink" href="#entrypoint-and-cmd" title="Permalink to this heading"></a></h1>
 <section id="cmd-vs-entrypoint">
-<h2>CMD vs ENTRYPOINT<a class="headerlink" href="#cmd-vs-entrypoint" title="Permalink to this headline"></a></h2>
+<h2>CMD vs ENTRYPOINT<a class="headerlink" href="#cmd-vs-entrypoint" title="Permalink to this heading"></a></h2>
 <p><strong>CMD</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/ping&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">]</span>
 </pre></div>
@@ -156,7 +157,7 @@
 </ul>
 </section>
 <section id="shell-vs-exec">
-<h2>Shell vs. Exec<a class="headerlink" href="#shell-vs-exec" title="Permalink to this headline"></a></h2>
+<h2>Shell vs. Exec<a class="headerlink" href="#shell-vs-exec" title="Permalink to this heading"></a></h2>
 <p>With the <strong>shell form</strong>, docker will invoke a shell and pass the specified commands to it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="n">ping</span> <span class="n">localhost</span>
 </pre></div>
@@ -177,7 +178,7 @@
 - your command is interpreted as is, and there is <strong>no variable expansion</strong> (since there is no shell)</p>
 </section>
 <section id="forward-signals">
-<h2>Forward signals<a class="headerlink" href="#forward-signals" title="Permalink to this headline"></a></h2>
+<h2>Forward signals<a class="headerlink" href="#forward-signals" title="Permalink to this heading"></a></h2>
 <p>If using the shell form or a startup script, we can handle signals correctly by using the <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">gosu</span></code> combo command while starting the application.</p>
 <p>This is the official <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> example using this technique:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>

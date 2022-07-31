@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -123,14 +124,14 @@
            <div itemprop="articleBody">
              
   <section id="vim-cheatsheet">
-<h1>vim cheatsheet<a class="headerlink" href="#vim-cheatsheet" title="Permalink to this headline"></a></h1>
+<h1>vim cheatsheet<a class="headerlink" href="#vim-cheatsheet" title="Permalink to this heading"></a></h1>
 <p>Another vim cheatsheet based on my needs / feelings / findings.</p>
 <p>Credits to</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/</a></p></li>
 </ul>
 <section id="moves-on-line">
-<h2>Moves on line<a class="headerlink" href="#moves-on-line" title="Permalink to this headline"></a></h2>
+<h2>Moves on line<a class="headerlink" href="#moves-on-line" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hjkl</span></code>: basic moves ←↓↑→</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: go to the first column</p></li>
@@ -144,7 +145,7 @@
 </ul>
 </section>
 <section id="moves-on-document">
-<h2>Moves on document<a class="headerlink" href="#moves-on-document" title="Permalink to this headline"></a></h2>
+<h2>Moves on document<a class="headerlink" href="#moves-on-document" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NG</span></code>: go to line N</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gg</span></code>: shortcut for 1G - go to the start of the file</p></li>
@@ -159,7 +160,7 @@
 </ul>
 </section>
 <section id="modification">
-<h2>Modification<a class="headerlink" href="#modification" title="Permalink to this headline"></a></h2>
+<h2>Modification<a class="headerlink" href="#modification" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: insert after the cursor</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">o</span></code>: insert a new line after the current one</p></li>
@@ -169,7 +170,7 @@
 </ul>
 </section>
 <section id="search-replace">
-<h2>Search / Replace<a class="headerlink" href="#search-replace" title="Permalink to this headline"></a></h2>
+<h2>Search / Replace<a class="headerlink" href="#search-replace" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/pattern</span></code>: search for pattern</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:%s/foo/bar/g</span></code>: find each occurrence of ‘foo’ (in all lines), and replace it with ‘bar’.</p></li>
@@ -178,7 +179,7 @@
 </ul>
 </section>
 <section id="copy-paste">
-<h2>Copy/Paste<a class="headerlink" href="#copy-paste" title="Permalink to this headline"></a></h2>
+<h2>Copy/Paste<a class="headerlink" href="#copy-paste" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: paste</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">P</span></code>: paste before</p></li>
@@ -188,14 +189,14 @@
 </ul>
 </section>
 <section id="undo-redo">
-<h2>Undo/Redo<a class="headerlink" href="#undo-redo" title="Permalink to this headline"></a></h2>
+<h2>Undo/Redo<a class="headerlink" href="#undo-redo" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">u</span></code>: undo</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-r&gt;</span></code>: redo</p></li>
 </ul>
 </section>
 <section id="tab-space-handling">
-<h2>Tab/space handling<a class="headerlink" href="#tab-space-handling" title="Permalink to this headline"></a></h2>
+<h2>Tab/space handling<a class="headerlink" href="#tab-space-handling" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">tabstop=2</span> <span class="pre">shiftwidth=2</span> <span class="pre">expandtab</span></code>: configure and enable expand tab</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:set</span> <span class="pre">retab</span></code>: replace tab to spaces when <code class="docutils literal notranslate"><span class="pre">expandtab</span></code> is already enabled</p></li>
@@ -203,7 +204,7 @@
 </ul>
 </section>
 <section id="macro">
-<h2>Macro<a class="headerlink" href="#macro" title="Permalink to this headline"></a></h2>
+<h2>Macro<a class="headerlink" href="#macro" title="Permalink to this heading"></a></h2>
 <p>Macros are recorded in <em>registers</em> (<code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">z</span></code>).</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">qa</span></code>: start recording to register <em>a</em></p></li>
@@ -213,7 +214,7 @@
 </ul>
 </section>
 <section id="load-save">
-<h2>Load/Save<a class="headerlink" href="#load-save" title="Permalink to this headline"></a></h2>
+<h2>Load/Save<a class="headerlink" href="#load-save" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:e</span> <span class="pre">&lt;path/to/file&gt;</span></code>: open</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:w</span></code>: save</p></li>
@@ -224,7 +225,7 @@
 </ul>
 </section>
 <section id="combine">
-<h2>Combine<a class="headerlink" href="#combine" title="Permalink to this headline"></a></h2>
+<h2>Combine<a class="headerlink" href="#combine" title="Permalink to this heading"></a></h2>
 <p>One can combine the moves with commands in order to apply an operation from a start point to an end point:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;start</span> <span class="pre">position&gt;&lt;command&gt;&lt;end</span> <span class="pre">position&gt;</span></code></p>
 <p>For example : <code class="docutils literal notranslate"><span class="pre">0y$</span></code> means</p>

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -141,10 +142,10 @@
            <div itemprop="articleBody">
              
   <section id="dockerfile-best-practices">
-<h1>Dockerfile Best Practices<a class="headerlink" href="#dockerfile-best-practices" title="Permalink to this headline"></a></h1>
+<h1>Dockerfile Best Practices<a class="headerlink" href="#dockerfile-best-practices" title="Permalink to this heading"></a></h1>
 <p>Source: <a class="reference external" href="https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index">https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index</a></p>
 <section id="from">
-<h2>FROM<a class="headerlink" href="#from" title="Permalink to this headline"></a></h2>
+<h2>FROM<a class="headerlink" href="#from" title="Permalink to this heading"></a></h2>
 <p>Select the source image.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -162,7 +163,7 @@
 </ul>
 </section>
 <section id="maintainer">
-<h2>MAINTAINER<a class="headerlink" href="#maintainer" title="Permalink to this headline"></a></h2>
+<h2>MAINTAINER<a class="headerlink" href="#maintainer" title="Permalink to this heading"></a></h2>
 <p>Set the Author field of the generated images.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -170,7 +171,7 @@
 </ul>
 </section>
 <section id="run">
-<h2>RUN<a class="headerlink" href="#run" title="Permalink to this headline"></a></h2>
+<h2>RUN<a class="headerlink" href="#run" title="Permalink to this heading"></a></h2>
 <p>Usage:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">&lt;command&gt;</span></code> (shell form, the command is run in a shell, by default <code class="docutils literal notranslate"><span class="pre">/bin/sh</span> <span class="pre">-c</span></code>)</p></li>
@@ -185,7 +186,7 @@
 </ul>
 </section>
 <section id="cmd">
-<h2>CMD<a class="headerlink" href="#cmd" title="Permalink to this headline"></a></h2>
+<h2>CMD<a class="headerlink" href="#cmd" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CMD</span></code> aims to provide defaults for an executing container.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -203,7 +204,7 @@
 </ul>
 </section>
 <section id="label">
-<h2>LABEL<a class="headerlink" href="#label" title="Permalink to this headline"></a></h2>
+<h2>LABEL<a class="headerlink" href="#label" title="Permalink to this heading"></a></h2>
 <p>The LABEL instruction adds metadata to an image.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -218,7 +219,7 @@
 </ul>
 </section>
 <section id="expose">
-<h2>EXPOSE<a class="headerlink" href="#expose" title="Permalink to this headline"></a></h2>
+<h2>EXPOSE<a class="headerlink" href="#expose" title="Permalink to this heading"></a></h2>
 <p>Informs Docker that the container listens on the specified network port(s) at runtime.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -230,7 +231,7 @@
 </ul>
 </section>
 <section id="env">
-<h2>ENV<a class="headerlink" href="#env" title="Permalink to this headline"></a></h2>
+<h2>ENV<a class="headerlink" href="#env" title="Permalink to this heading"></a></h2>
 <p>Sets environment variable <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> to the value <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -245,7 +246,7 @@
 </ul>
 </section>
 <section id="add">
-<h2>ADD<a class="headerlink" href="#add" title="Permalink to this headline"></a></h2>
+<h2>ADD<a class="headerlink" href="#add" title="Permalink to this heading"></a></h2>
 <p>Copies new files, directories, or remote file URLs from <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> and adds them to the filesystem of the image at the path <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -260,7 +261,7 @@
 </ul>
 </section>
 <section id="copy">
-<h2>COPY<a class="headerlink" href="#copy" title="Permalink to this headline"></a></h2>
+<h2>COPY<a class="headerlink" href="#copy" title="Permalink to this heading"></a></h2>
 <p>Copies new files or directories from <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> and adds them to the filesystem of the image at the path <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -276,7 +277,7 @@
 </ul>
 </section>
 <section id="entrypoint">
-<h2>ENTRYPOINT<a class="headerlink" href="#entrypoint" title="Permalink to this headline"></a></h2>
+<h2>ENTRYPOINT<a class="headerlink" href="#entrypoint" title="Permalink to this heading"></a></h2>
 <p>Configure a container that will run as an executable.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -291,7 +292,7 @@
 </ul>
 </section>
 <section id="volume">
-<h2>VOLUME<a class="headerlink" href="#volume" title="Permalink to this headline"></a></h2>
+<h2>VOLUME<a class="headerlink" href="#volume" title="Permalink to this heading"></a></h2>
 <p>Creates a mount point with the specified name, holding externally mounted volumes from native host or other containers.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -300,7 +301,7 @@
 </ul>
 </section>
 <section id="user">
-<h2>USER<a class="headerlink" href="#user" title="Permalink to this headline"></a></h2>
+<h2>USER<a class="headerlink" href="#user" title="Permalink to this heading"></a></h2>
 <p>Sets the user name or <code class="docutils literal notranslate"><span class="pre">UID</span></code> to use for any <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -308,7 +309,7 @@
 </ul>
 </section>
 <section id="workdir">
-<h2>WORKDIR<a class="headerlink" href="#workdir" title="Permalink to this headline"></a></h2>
+<h2>WORKDIR<a class="headerlink" href="#workdir" title="Permalink to this heading"></a></h2>
 <p>Sets the working directory for any <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, <code class="docutils literal notranslate"><span class="pre">CMD</span></code>, <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code>, <code class="docutils literal notranslate"><span class="pre">COPY</span></code>, and <code class="docutils literal notranslate"><span class="pre">ADD</span></code> instructions that follow it.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -321,7 +322,7 @@
 </ul>
 </section>
 <section id="arg">
-<h2>ARG<a class="headerlink" href="#arg" title="Permalink to this headline"></a></h2>
+<h2>ARG<a class="headerlink" href="#arg" title="Permalink to this heading"></a></h2>
 <p>Defines a <strong>build-time</strong> variable that can be passed using the <code class="docutils literal notranslate"><span class="pre">--build-arg</span> <span class="pre">&lt;varname&gt;=&lt;value&gt;</span></code> flag of the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> command.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -340,7 +341,7 @@
 </ul>
 </section>
 <section id="onbuild">
-<h2>ONBUILD<a class="headerlink" href="#onbuild" title="Permalink to this headline"></a></h2>
+<h2>ONBUILD<a class="headerlink" href="#onbuild" title="Permalink to this heading"></a></h2>
 <p>Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. The trigger will be executed in the context of the downstream build, as if it had been inserted immediately after the <code class="docutils literal notranslate"><span class="pre">FROM</span></code> instruction in the downstream <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -354,7 +355,7 @@
 </ul>
 </section>
 <section id="stopsignal">
-<h2>STOPSIGNAL<a class="headerlink" href="#stopsignal" title="Permalink to this headline"></a></h2>
+<h2>STOPSIGNAL<a class="headerlink" href="#stopsignal" title="Permalink to this heading"></a></h2>
 <p>Sets the system call signal that will be sent to the container to exit.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -366,7 +367,7 @@
 </ul>
 </section>
 <section id="healthcheck">
-<h2>HEALTHCHECK<a class="headerlink" href="#healthcheck" title="Permalink to this headline"></a></h2>
+<h2>HEALTHCHECK<a class="headerlink" href="#healthcheck" title="Permalink to this heading"></a></h2>
 <p>Tells Docker how to test a container to check that it is still working.</p>
 <p>Usage:</p>
 <ul class="simple">
@@ -392,7 +393,7 @@
 </ul>
 </section>
 <section id="shell">
-<h2>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline"></a></h2>
+<h2>SHELL<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h2>
 <p>Set the default shell to be used for the shell form of commands.</p>
 <p>Usage:</p>
 <ul class="simple">

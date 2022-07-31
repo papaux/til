@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -119,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="mtu">
-<h1>MTU<a class="headerlink" href="#mtu" title="Permalink to this headline"></a></h1>
+<h1>MTU<a class="headerlink" href="#mtu" title="Permalink to this heading"></a></h1>
 <p>Debugging network issues related to MTU can be tricky.</p>
 <p>When encountering weird connectivity issues through VPN, the probability is high that it’s a MTU issue.</p>
 <p>Check configured MTU size:</p>
@@ -168,7 +169,7 @@ ping: local error: Message too long, mtu=1412
 </pre></div>
 </div>
 <section id="solution">
-<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline"></a></h2>
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this heading"></a></h2>
 <p><cite>iptables</cite> can be used to setup a workaround, by automatically sending a lower MTU on TCP connection estalishment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">mangle</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">tcp</span><span class="o">-</span><span class="n">flags</span> <span class="n">SYN</span><span class="p">,</span><span class="n">RST</span> <span class="n">SYN</span> <span class="o">-</span><span class="n">o</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">j</span> <span class="n">TCPMSS</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1300</span>
 </pre></div>

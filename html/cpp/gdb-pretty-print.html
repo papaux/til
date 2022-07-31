@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -118,7 +119,7 @@
            <div itemprop="articleBody">
              
   <section id="gdb-pretty-print">
-<h1>gdb pretty print<a class="headerlink" href="#gdb-pretty-print" title="Permalink to this headline"></a></h1>
+<h1>gdb pretty print<a class="headerlink" href="#gdb-pretty-print" title="Permalink to this heading"></a></h1>
 <p>gdb allows to customize the way variable are printed. If you are using
 gdb version 7+ and your gdb has been compiled with python support, you
 can use the python pretty-printers.</p>
@@ -126,7 +127,7 @@ can use the python pretty-printers.</p>
 printers, there is still a possibility to integrate the functions in
 your .gdbinit directly.</p>
 <section id="with-python">
-<h2>With python<a class="headerlink" href="#with-python" title="Permalink to this headline"></a></h2>
+<h2>With python<a class="headerlink" href="#with-python" title="Permalink to this heading"></a></h2>
 <p>You can checkout the scripts at:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">gdb_printers</span><span class="o">/</span>
 <span class="n">svn</span> <span class="n">co</span> <span class="n">svn</span><span class="p">:</span><span class="o">//</span><span class="n">gcc</span><span class="o">.</span><span class="n">gnu</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="n">trunk</span><span class="o">/</span><span class="n">libstdc</span><span class="o">++-</span><span class="n">v3</span><span class="o">/</span><span class="n">python</span>
@@ -143,7 +144,7 @@ your .gdbinit directly.</p>
 </div>
 </section>
 <section id="without-python">
-<h2>Without python<a class="headerlink" href="#without-python" title="Permalink to this headline"></a></h2>
+<h2>Without python<a class="headerlink" href="#without-python" title="Permalink to this heading"></a></h2>
 <p>Here is a sample .gdbinit with some predefined pretty printers for the
 stl: <a class="reference external" href="https://gist.github.com/skyscribe/3978082">https://gist.github.com/skyscribe/3978082</a></p>
 <p>For the records, here is a dump of the file:</p>

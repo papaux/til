@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -153,17 +154,17 @@
            <div itemprop="articleBody">
              
   <section id="hard-disk-management">
-<h1>Hard Disk Management<a class="headerlink" href="#hard-disk-management" title="Permalink to this headline"></a></h1>
+<h1>Hard Disk Management<a class="headerlink" href="#hard-disk-management" title="Permalink to this heading"></a></h1>
 <p>This page is not exactly a single small TIL but a collection of useful commands for managing disk and partitions as well as getting state information.</p>
 <section id="global-information">
-<h2>Global information<a class="headerlink" href="#global-information" title="Permalink to this headline"></a></h2>
+<h2>Global information<a class="headerlink" href="#global-information" title="Permalink to this heading"></a></h2>
 <p>Get all information about a disk:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">I</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
 </pre></div>
 </div>
 </section>
 <section id="diagnostic">
-<h2>Diagnostic<a class="headerlink" href="#diagnostic" title="Permalink to this headline"></a></h2>
+<h2>Diagnostic<a class="headerlink" href="#diagnostic" title="Permalink to this heading"></a></h2>
 <p>Get number of running hours:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smartctl</span> <span class="o">--</span><span class="nb">all</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Power_On_Hours</span>
 </pre></div>
@@ -174,7 +175,7 @@
 </div>
 </section>
 <section id="power-mode">
-<h2>Power mode<a class="headerlink" href="#power-mode" title="Permalink to this headline"></a></h2>
+<h2>Power mode<a class="headerlink" href="#power-mode" title="Permalink to this heading"></a></h2>
 <p>Get drive power state (might wake up the drive):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdparm</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
 </pre></div>
@@ -189,7 +190,7 @@
 </div>
 </section>
 <section id="partition">
-<h2>Partition<a class="headerlink" href="#partition" title="Permalink to this headline"></a></h2>
+<h2>Partition<a class="headerlink" href="#partition" title="Permalink to this heading"></a></h2>
 <p><strong>View partition information</strong></p>
 <p>View information like: creation time, features, block info, mount count, etc:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">tune2fs</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
@@ -197,7 +198,7 @@
 </div>
 </section>
 <section id="partition-table">
-<h2>Partition table<a class="headerlink" href="#partition-table" title="Permalink to this headline"></a></h2>
+<h2>Partition table<a class="headerlink" href="#partition-table" title="Permalink to this heading"></a></h2>
 <p><strong>GPT to MS-DOS</strong></p>
 <p>Transform a disk that has been previously set to GPT partitioning back to MS DOS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parted</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
@@ -207,7 +208,7 @@
 </div>
 </section>
 <section id="benchmark">
-<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline"></a></h2>
+<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this heading"></a></h2>
 <p><strong>Using dd</strong></p>
 <p><strong>Using hdparm</strong></p>
 <p>Test read speed with <cite>hdparm</cite>:</p>

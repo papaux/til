@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -135,10 +136,10 @@
            <div itemprop="articleBody">
              
   <section id="fork">
-<h1>Fork<a class="headerlink" href="#fork" title="Permalink to this headline"></a></h1>
+<h1>Fork<a class="headerlink" href="#fork" title="Permalink to this heading"></a></h1>
 <p>Some helpers when dealing with fork of repository.</p>
 <section id="synchronize">
-<h2>Synchronize<a class="headerlink" href="#synchronize" title="Permalink to this headline"></a></h2>
+<h2>Synchronize<a class="headerlink" href="#synchronize" title="Permalink to this heading"></a></h2>
 <p>This assumes the upstream is called <cite>origin</cite> and the fork is called <cite>fork</cite>.</p>
 <p>Setup all remote branches tracking to local branches:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>remote=origin ; for brname in `git branch -r | grep origin | grep -v master | grep -v HEAD | sed -e &#39;s/.*\///g&#39;`; do git branch --track $brname  $remote/$brname ; done

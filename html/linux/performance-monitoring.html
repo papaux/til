@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -153,12 +154,12 @@
            <div itemprop="articleBody">
              
   <section id="performance-monitoring">
-<h1>Performance monitoring<a class="headerlink" href="#performance-monitoring" title="Permalink to this headline"></a></h1>
+<h1>Performance monitoring<a class="headerlink" href="#performance-monitoring" title="Permalink to this heading"></a></h1>
 <p>This TIL will be a bit longer because it aims to list some of the most useful and most important performance monitoring tools available on Linux. Some are usually installed by default and some must be installed manually.</p>
 <p>The tools are split into several categories.</p>
 <p>The base of this page has been constructed by selecting information from: <a class="reference external" href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/</a>. It has then been enhanced based on my personal preference and uses.</p>
 <section id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline"></a></h2>
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
 <p>This section shows tools displaying general information about the system state and usage.
 When troubleshooting a Linux machine, these are the tools to be inspected first.</p>
 <p><strong>top</strong></p>
@@ -201,7 +202,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 </div>
 </section>
 <section id="processes">
-<h2>Processes<a class="headerlink" href="#processes" title="Permalink to this headline"></a></h2>
+<h2>Processes<a class="headerlink" href="#processes" title="Permalink to this heading"></a></h2>
 <p><strong>htop</strong></p>
 <p>It is an advanced and interactive top command. Actually it is my advised replacement for htop.</p>
 <p><strong>progress</strong></p>
@@ -222,7 +223,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 </div>
 </section>
 <section id="file-system-and-i-o">
-<h2>File system and I/O<a class="headerlink" href="#file-system-and-i-o" title="Permalink to this headline"></a></h2>
+<h2>File system and I/O<a class="headerlink" href="#file-system-and-i-o" title="Permalink to this heading"></a></h2>
 <p>Some of the most useful tools for debugging file system and disk IO issues.</p>
 <p><strong>iotop</strong></p>
 <p>It is a live and real time monitoring of disk I/O operations per process. It shows the number of bytes read from / written to the disk, the IO capacity usaged of the media, etc. Very useful to find why your disk is slow or heavily used.</p>
@@ -298,7 +299,7 @@ tmpfs                  788M  2.6M  786M   1% /run/user/1000
 </div>
 </section>
 <section id="network-stats">
-<h2>Network stats<a class="headerlink" href="#network-stats" title="Permalink to this headline"></a></h2>
+<h2>Network stats<a class="headerlink" href="#network-stats" title="Permalink to this heading"></a></h2>
 <p>The best tool to show which application is sending which amount of data is <cite>nethogs</cite></p>
 <p><strong>nethogs</strong></p>
 <p>The result is self-describing:</p>
@@ -331,7 +332,7 @@ TOTAL                                                      4.173      42.838 KB/
 </div>
 </section>
 <section id="network-traffic-analysis">
-<h2>Network traffic analysis<a class="headerlink" href="#network-traffic-analysis" title="Permalink to this headline"></a></h2>
+<h2>Network traffic analysis<a class="headerlink" href="#network-traffic-analysis" title="Permalink to this heading"></a></h2>
 <p><strong>tcpdump</strong></p>
 <p>Tcpdump could have its own dedicated TIL because it has so many options. But here are some useful simple commands:</p>
 <ul class="simple">
@@ -365,7 +366,7 @@ TOTAL                                                      4.173      42.838 KB/
 <p>Monitors ARP address resolution happening on the network. Useful to debug ARP resolution on the network and ARP spoofing. It can even send e-mail alerts when addresses change.</p>
 </section>
 <section id="load-average">
-<h2>Load average<a class="headerlink" href="#load-average" title="Permalink to this headline"></a></h2>
+<h2>Load average<a class="headerlink" href="#load-average" title="Permalink to this heading"></a></h2>
 <p>Linux makes use of three “magic” numbers that get used in several of these tools to describe the load average of the system. They could be quite confusing for beginners, but actually there are easy to understand. This is one example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span> <span class="n">average</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">5.09</span>
 </pre></div>

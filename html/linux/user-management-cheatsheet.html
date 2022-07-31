@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,10 +150,10 @@
            <div itemprop="articleBody">
              
   <section id="user-management-cheatsheet">
-<h1>User Management Cheatsheet<a class="headerlink" href="#user-management-cheatsheet" title="Permalink to this headline"></a></h1>
+<h1>User Management Cheatsheet<a class="headerlink" href="#user-management-cheatsheet" title="Permalink to this heading"></a></h1>
 <p>As other TILs, this one is a cheatsheet regrouping typical Linux commands for managing the users.</p>
 <section id="user">
-<h2>User<a class="headerlink" href="#user" title="Permalink to this headline"></a></h2>
+<h2>User<a class="headerlink" href="#user" title="Permalink to this heading"></a></h2>
 <p><strong>Create User</strong></p>
 <p>There are two utilities to add user. The first one, <code class="docutils literal notranslate"><span class="pre">adduser</span></code> is the default builtin command. The recommended tool is <code class="docutils literal notranslate"><span class="pre">useradd</span></code> is a perl script using adduser in the background but doing some additional initializations for the newly created user. Therefore the recommended way is to user <strong>useradd</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="n">leopold</span>
@@ -165,7 +166,7 @@
 </div>
 </section>
 <section id="groups">
-<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline"></a></h2>
+<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this heading"></a></h2>
 <p><strong>Add existing user to existing group</strong></p>
 <p>This is for me the most common use case.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">G</span> <span class="n">wireshark</span> <span class="n">leopold</span>
