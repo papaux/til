@@ -7,6 +7,7 @@ Python
 
    gil.rst
    pip.rst
+   one-liner.rst
    pipenv.rst
    pylint.rst
    virtual-env.rst
