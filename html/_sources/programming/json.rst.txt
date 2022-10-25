@@ -11,3 +11,8 @@ Python::
   # or
   echo '{ "field": "value" }' | python -m json.tool
 
+**Formatting**
+
+Python::
+
+  python -m json.tool --sort-keys --json-lines < data.jsonl

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python: Virtual envs &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>One-Liners in Python &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reveal.js" href="../revealjs/_.html" />
-    <link rel="prev" title="pylint" href="pylint.html" /> 
+    <link rel="next" title="pipenv" href="pipenv.html" />
+    <link rel="prev" title="Pip" href="pip.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -72,15 +72,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gil.html">GIL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip.html">Pip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="one-liner.html">One-Liners in Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">One-Liners in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipenv.html">pipenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pylint.html">pylint</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Python: Virtual envs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#python-2">Python 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-3">Python 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generic">Generic</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="virtual-env.html">Python: Virtual envs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../revealjs/_.html">Reveal.js</a></li>
@@ -110,9 +105,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Python</a> &raquo;</li>
-      <li>Python: Virtual envs</li>
+      <li>One-Liners in Python</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/python/virtual-env.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/python/one-liner.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -120,40 +115,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="python-virtual-envs">
-<h1>Python: Virtual envs<a class="headerlink" href="#python-virtual-envs" title="Permalink to this heading"></a></h1>
-<p>This page shows an ideal python workflow using virtual environments, for both python 2 and python 3.</p>
-<section id="python-2">
-<h2>Python 2<a class="headerlink" href="#python-2" title="Permalink to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">python2</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">venv</span>
+  <section id="one-liners-in-python">
+<h1>One-Liners in Python<a class="headerlink" href="#one-liners-in-python" title="Permalink to this heading"></a></h1>
+<p>Start a HTTP server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="mi">8080</span> \
+   <span class="o">--</span><span class="n">directory</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span> \
+   <span class="o">--</span><span class="n">bind</span> <span class="mf">127.0.0.1</span>  <span class="c1"># Defaults to all interfaces; supports IPv6</span>
 </pre></div>
 </div>
-</section>
-<section id="python-3">
-<h2>Python 3<a class="headerlink" href="#python-3" title="Permalink to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">venv</span>
+<p>Start a FTP server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pyftpdlib</span> \
+   <span class="o">--</span><span class="n">port</span> <span class="mi">2121</span> \
+   <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span> \
+   <span class="o">-</span><span class="n">u</span> <span class="n">someuser</span> \
+   <span class="o">-</span><span class="n">P</span> <span class="n">somepass</span>
 </pre></div>
 </div>
-</section>
-<section id="generic">
-<h2>Generic<a class="headerlink" href="#generic" title="Permalink to this heading"></a></h2>
-<p>Activate the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<p>JSON Formatting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span> <span class="o">--</span><span class="n">sort</span><span class="o">-</span><span class="n">keys</span> <span class="o">--</span><span class="n">json</span><span class="o">-</span><span class="n">lines</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">jsonl</span>
 </pre></div>
 </div>
-<p>Deactivate the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pylint.html" class="btn btn-neutral float-left" title="pylint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../revealjs/_.html" class="btn btn-neutral float-right" title="Reveal.js" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pip.html" class="btn btn-neutral float-left" title="Pip" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pipenv.html" class="btn btn-neutral float-right" title="pipenv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
