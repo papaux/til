@@ -127,9 +127,11 @@
 <p>A couple of Bash best practices summarized in a single page.</p>
 <p>Note that most of the -o options have a shorter variant. Both are listed on this page.</p>
 <p>All-in-one:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-</span><span class="n">exuo</span> <span class="n">pipefail</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-</span><span class="n">euo</span> <span class="n">pipefail</span>
+<span class="k">if</span> <span class="p">[[</span> <span class="s2">&quot;${DEBUG-0}&quot;</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span> <span class="p">]];</span> <span class="n">then</span> <span class="nb">set</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span> <span class="n">fi</span>
 </pre></div>
 </div>
+<p>Note: to enable debug mode, run your script with <code class="docutils literal notranslate"><span class="pre">DEBUG=1</span> <span class="pre">./my-script.sh</span></code></p>
 <p>Exit as soon as one command fails:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-</span><span class="n">e</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">o</span> <span class="n">errexit</span>
@@ -152,11 +154,11 @@
 <span class="n">DEBUG</span><span class="o">=</span><span class="mi">1</span> <span class="o">./</span><span class="n">script</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>Use double brackets <cite>[[ ]]</cite> for conditions:</p>
+<p>Use double brackets <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">]]</span></code> for conditions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">]]</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">&quot;1 is less than 2&quot;</span>
 </pre></div>
 </div>
-<p>Why ? It supports <cite>&lt;&gt;</cite>, <cite>&amp;&amp;</cite>, <cite>||</cite>, grouping expressions with <cite>( )</cite>, pattern matching <cite>[[ $name = *c* ]]</cite> and regular expression <cite>[[ $name =~ ^Ali ]]</cite></p>
+<p>Why ? It supports <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, grouping expressions with <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, pattern matching <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">*c*</span> <span class="pre">]]</span></code> and regular expression <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">$name</span> <span class="pre">=~</span> <span class="pre">^Ali</span> <span class="pre">]]</span></code></p>
 </section>
 
 
