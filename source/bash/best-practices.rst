@@ -7,7 +7,10 @@ Note that most of the -o options have a shorter variant. Both are listed on this
 
 All-in-one::
 
-    set -exuo pipefail
+    set -euo pipefail
+    if [[ "${DEBUG-0}" == "1" ]]; then set -x; fi
+
+Note: to enable debug mode, run your script with ``DEBUG=1 ./my-script.sh``
 
 Exit as soon as one command fails::
 
@@ -31,8 +34,8 @@ Optional debugging from argument::
     # Call with
     DEBUG=1 ./script.sh
 
-Use double brackets `[[ ]]` for conditions::
+Use double brackets ``[[ ]]`` for conditions::
 
     [[ 1 < 2 ]] && echo "1 is less than 2"
 
-Why ? It supports `<>`, `&&`, `||`, grouping expressions with `( )`, pattern matching `[[ $name = *c* ]]` and regular expression `[[ $name =~ ^Ali ]]`
+Why ? It supports ``<>``, ``&&``, ``||``, grouping expressions with ``( )``, pattern matching ``[[ $name = *c* ]]`` and regular expression ``[[ $name =~ ^Ali ]]``
