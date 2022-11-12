@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chaos generators &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Run commands in parallel &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Color Output" href="color-output.html" />
-    <link rel="prev" title="Best Practices" href="best-practices.html" /> 
+    <link rel="next" title="Scripts boilerplate" href="scripts-boilerplate.html" />
+    <link rel="prev" title="Run command on file change" href="run-command-file-changed.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,7 +50,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Bash</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="alias.html">Alias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best-practices.html">Best Practices</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Chaos generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaos.html">Chaos generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="color-output.html">Color Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copy-to-clipboard.html">Copy to clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compression.html">Compression</a></li>
@@ -58,7 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="multiline.html">Multi-line in Bash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="one-liners.html">Bash One-Liners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="run-command-file-changed.html">Run command on file change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-parallel.html">Run commands in parallel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run commands in parallel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scripts-boilerplate.html">Scripts boilerplate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="script-template.html">Script template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="true-color-test.html">True color test</a></li>
@@ -113,9 +113,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Bash</a> &raquo;</li>
-      <li>Chaos generators</li>
+      <li>Run commands in parallel</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/bash/chaos.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/bash/run-parallel.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -123,10 +123,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="chaos-generators">
-<h1>Chaos generators<a class="headerlink" href="#chaos-generators" title="Permalink to this heading"></a></h1>
-<p>Randomly kill a process with a given name:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span><span class="p">;</span> <span class="n">do</span> <span class="n">sleep</span> <span class="mi">5</span><span class="p">;</span> <span class="n">pidof</span> <span class="n">processname</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">shuf</span>  <span class="o">-</span><span class="n">n1</span> <span class="o">-</span><span class="n">e</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">kill</span> <span class="o">-</span><span class="mi">9</span><span class="p">;</span> <span class="n">done</span>
+  <section id="run-commands-in-parallel">
+<h1>Run commands in parallel<a class="headerlink" href="#run-commands-in-parallel" title="Permalink to this heading"></a></h1>
+<p>Run commands in parallel with a configurable parallelism.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">PARALLELISM</span><span class="o">=</span><span class="m">4</span>
+<span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+
+<span class="k">function</span> timed_run<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">start</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
+    <span class="nv">$@</span>
+    <span class="nv">end</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
+    <span class="nv">runtime</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$end</span><span class="s2"> - </span><span class="nv">$start</span><span class="s2">&quot;</span> <span class="p">|</span> bc -l <span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Completed in </span><span class="nv">$runtime</span><span class="s2"> seconds&quot;</span>
+<span class="o">}</span>
+
+<span class="k">function</span> execute_parallel<span class="o">()</span> <span class="o">{</span>
+    <span class="o">((</span><span class="nv">i</span><span class="o">=</span>i%PARALLELISM<span class="o">))</span> <span class="o">||</span> true<span class="p">;</span> <span class="o">((</span>i++<span class="o">==</span><span class="m">0</span><span class="o">))</span> <span class="o">&amp;&amp;</span> <span class="nb">wait</span>
+    timed_run <span class="nv">$@</span> <span class="p">&amp;</span>
+<span class="o">}</span>
+
+<span class="k">for</span> u <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..20<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  execute_parallel sleep <span class="m">3</span>
+<span class="k">done</span>
+
+<span class="nb">wait</span>
 </pre></div>
 </div>
 </section>
@@ -135,8 +157,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="best-practices.html" class="btn btn-neutral float-left" title="Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="color-output.html" class="btn btn-neutral float-right" title="Color Output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="run-command-file-changed.html" class="btn btn-neutral float-left" title="Run command on file change" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scripts-boilerplate.html" class="btn btn-neutral float-right" title="Scripts boilerplate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

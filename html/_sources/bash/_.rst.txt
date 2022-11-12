@@ -14,6 +14,7 @@ Bash
    multiline.rst
    one-liners.rst
    run-command-file-changed.rst
+   run-parallel.rst
    scripts-boilerplate.rst
    script-template.rst
    true-color-test.rst
