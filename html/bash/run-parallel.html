@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-watch.html">Tech Watch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
@@ -131,21 +132,21 @@
 <span class="nv">PARALLELISM</span><span class="o">=</span><span class="m">4</span>
 <span class="nv">i</span><span class="o">=</span><span class="m">0</span>
 
-<span class="k">function</span> timed_run<span class="o">()</span> <span class="o">{</span>
-    <span class="nv">start</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
-    <span class="nv">$@</span>
-    <span class="nv">end</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
-    <span class="nv">runtime</span><span class="o">=</span><span class="k">$(</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$end</span><span class="s2"> - </span><span class="nv">$start</span><span class="s2">&quot;</span> <span class="p">|</span> bc -l <span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Completed in </span><span class="nv">$runtime</span><span class="s2"> seconds&quot;</span>
+<span class="k">function</span><span class="w"> </span>timed_run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">start</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>+%s<span class="sb">`</span>
+<span class="w">    </span><span class="nv">$@</span>
+<span class="w">    </span><span class="nv">end</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>+%s<span class="sb">`</span>
+<span class="w">    </span><span class="nv">runtime</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$end</span><span class="s2"> - </span><span class="nv">$start</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bc<span class="w"> </span>-l<span class="w"> </span><span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Completed in </span><span class="nv">$runtime</span><span class="s2"> seconds&quot;</span>
 <span class="o">}</span>
 
-<span class="k">function</span> execute_parallel<span class="o">()</span> <span class="o">{</span>
-    <span class="o">((</span><span class="nv">i</span><span class="o">=</span>i%PARALLELISM<span class="o">))</span> <span class="o">||</span> true<span class="p">;</span> <span class="o">((</span>i++<span class="o">==</span><span class="m">0</span><span class="o">))</span> <span class="o">&amp;&amp;</span> <span class="nb">wait</span>
-    timed_run <span class="nv">$@</span> <span class="p">&amp;</span>
+<span class="k">function</span><span class="w"> </span>execute_parallel<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="o">((</span><span class="nv">i</span><span class="o">=</span>i%PARALLELISM<span class="o">))</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="o">((</span>i++<span class="o">==</span><span class="m">0</span><span class="o">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">wait</span>
+<span class="w">    </span>timed_run<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="o">}</span>
 
-<span class="k">for</span> u <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..20<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-  execute_parallel sleep <span class="m">3</span>
+<span class="k">for</span><span class="w"> </span>u<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..20<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>execute_parallel<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
 <span class="k">done</span>
 
 <span class="nb">wait</span>

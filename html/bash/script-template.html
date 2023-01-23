@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-watch.html">Tech Watch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
@@ -128,13 +129,13 @@
 <p>A shell script template with parameter handling</p>
 <div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
-<span class="nb">set</span> -Eeuo pipefail
-<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="p">-0</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">set</span> -x<span class="p">;</span> <span class="k">fi</span>
+<span class="nb">set</span><span class="w"> </span>-Eeuo<span class="w"> </span>pipefail
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="p">-0</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>-x<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
 
-<span class="nv">script_dir</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="p">&amp;</span>&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> -P<span class="k">)</span>
+<span class="nv">script_dir</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">pwd</span><span class="w"> </span>-P<span class="k">)</span>
 
-usage<span class="o">()</span> <span class="o">{</span>
-  cat <span class="s">&lt;&lt;EOF</span>
+usage<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">Usage: $(basename &quot;${BASH_SOURCE[0]}&quot;) [-h] -p param_value arg1 [arg2...]</span>
 
 <span class="s">A wonderful script doing XYZ.</span>
@@ -146,36 +147,36 @@ usage<span class="o">()</span> <span class="o">{</span>
 <span class="s">EOF</span>
 <span class="o">}</span>
 
-error_usage_and_exit<span class="o">()</span> <span class="o">{</span>
-  <span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">\n&quot;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
-  usage
-  <span class="nb">exit</span> <span class="m">1</span>
+error_usage_and_exit<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">\n&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span>usage
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="o">}</span>
 
-parse_params<span class="o">()</span> <span class="o">{</span>
-  <span class="nv">param</span><span class="o">=</span><span class="s2">&quot;default&quot;</span>
-  <span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&quot;:hp:&quot;</span> arg<span class="p">;</span> <span class="k">do</span>
-    <span class="k">case</span> <span class="nv">$arg</span> <span class="k">in</span>
-      p<span class="o">)</span> <span class="c1"># Specify p value.</span>
-	<span class="nv">param</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="p">;;</span>
-      h<span class="o">)</span> <span class="c1"># Display help.</span>
-        usage
-        <span class="nb">exit</span> <span class="m">0</span>
-        <span class="p">;;</span>
-      <span class="se">\?</span> <span class="o">)</span>
-        error_usage_and_exit <span class="s2">&quot;ERROR: Invalid option: </span><span class="nv">$OPTARG</span><span class="s2">&quot;</span>
-	<span class="p">;;</span>
-      : <span class="o">)</span>
-        error_usage_and_exit <span class="s2">&quot;ERROR: Invalid option: </span><span class="nv">$OPTARG</span><span class="s2"> requires an argument&quot;</span>
-        <span class="p">;;</span>
-    <span class="k">esac</span>
-  <span class="k">done</span>
+parse_params<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">param</span><span class="o">=</span><span class="s2">&quot;default&quot;</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s2">&quot;:hp:&quot;</span><span class="w"> </span>arg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$arg</span><span class="w"> </span><span class="k">in</span>
+<span class="w">      </span>p<span class="o">)</span><span class="w"> </span><span class="c1"># Specify p value.</span>
+<span class="w">	</span><span class="nv">param</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span>h<span class="o">)</span><span class="w"> </span><span class="c1"># Display help.</span>
+<span class="w">        </span>usage
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">      </span><span class="se">\?</span><span class="w"> </span><span class="o">)</span>
+<span class="w">        </span>error_usage_and_exit<span class="w"> </span><span class="s2">&quot;ERROR: Invalid option: </span><span class="nv">$OPTARG</span><span class="s2">&quot;</span>
+<span class="w">	</span><span class="p">;;</span>
+<span class="w">      </span>:<span class="w"> </span><span class="o">)</span>
+<span class="w">        </span>error_usage_and_exit<span class="w"> </span><span class="s2">&quot;ERROR: Invalid option: </span><span class="nv">$OPTARG</span><span class="s2"> requires an argument&quot;</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="k">done</span>
 <span class="o">}</span>
 
-parse_params <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+parse_params<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 
-<span class="nb">echo</span> <span class="s2">&quot;Running script with p=</span><span class="nv">$param</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running script with p=</span><span class="nv">$param</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </section>
