@@ -42,6 +42,7 @@ There are 122 TILs in this repository! Enjoy!
    rfc/_.rst
    sphinx/_.rst
    scala/_.rst
+   tech-watch.rst
    tmux/_.rst
    ubuntu-debian/_.rst
    vim/_.rst
