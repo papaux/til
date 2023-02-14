@@ -8,6 +8,7 @@ Docker
    clean.rst
    container.rst
    cron.rst
+   debug.rst
    docker-compose.rst
    dockerfile.rst
    entrypoint-cmd.rst
