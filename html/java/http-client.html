@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS Caching &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>HTTP Client &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="HTTP Client" href="http-client.html" />
-    <link rel="prev" title="Java" href="_.html" /> 
+    <link rel="next" title="JAR files" href="jar-files.html" />
+    <link rel="prev" title="DNS Caching" href="dns-caching.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,12 +58,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Java</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DNS Caching</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#security-context">Security Context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-property">System Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns-caching.html">DNS Caching</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTTP Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="http-client.html">HTTP Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jar-files.html">JAR files</a></li>
 </ul>
 </li>
@@ -107,9 +106,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Java</a> &raquo;</li>
-      <li>DNS Caching</li>
+      <li>HTTP Client</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/java/dns-caching.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/java/http-client.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -117,29 +116,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dns-caching">
-<h1>DNS Caching<a class="headerlink" href="#dns-caching" title="Permalink to this heading"></a></h1>
-<p>The JVM keeps previous DNS resolution (successful or failed) in a local cache.</p>
-<p>There is no true default value. The cache is _usually_ 30 seconds on Oracle JVM. It may vary with implementations.</p>
-<p>DNS TTL is considered a security settings (to avoid DNS Spoofing) and the default value also changes when a security context is given. Usually, if a security context is given, the DNS TTL changes to infinite!! Which means that any DNS resolution is kept until the JVM restarts!</p>
-<p>This works fine most of the time, but breaks when the target IP might change (load balancing, service fail-over, …).</p>
-<p>Fortunately, the configuration can be changed. Some special values:
-* -1 means “cache forever”
-* 0 means “never cache”</p>
-<section id="security-context">
-<h2>Security Context<a class="headerlink" href="#security-context" title="Permalink to this heading"></a></h2>
-<p>Configuration to be set in the <cite>java.security</cite> file.</p>
+  <section id="http-client">
+<h1>HTTP Client<a class="headerlink" href="#http-client" title="Permalink to this heading"></a></h1>
+<p>Starting with JDK 11, Java provides a new API for performing HTTP requests, the <a class="reference external" href="https://www.baeldung.com/java-9-http-client">HttpClient API</a></p>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h2>
+<p>Debug logs can be enabled by setting various system properties.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.ttl</span></code>: caching policy for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.negative.ttl</span></code>: caching policy for failed lookups.</p></li>
-</ul>
-</section>
-<section id="system-property">
-<h2>System Property<a class="headerlink" href="#system-property" title="Permalink to this heading"></a></h2>
-<p>While some sun private system properties do exist, the recommended option is to use security properties.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.ttl</span></code>: a sun private system property for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.negative.ttl</span></code>: a sun private system property for failed lookups.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Djdk.httpclient.HttpClient.log=all</span></code>: general debugging log from the HTTP client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Djdk.internal.httpclient.debug=true</span></code>: more internal specific debug logs.</p></li>
 </ul>
 </section>
 </section>
@@ -148,8 +133,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="http-client.html" class="btn btn-neutral float-right" title="HTTP Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dns-caching.html" class="btn btn-neutral float-left" title="DNS Caching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jar-files.html" class="btn btn-neutral float-right" title="JAR files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

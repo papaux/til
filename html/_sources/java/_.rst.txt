@@ -6,5 +6,6 @@ Java
    :maxdepth: 1
 
    dns-caching.rst
+   http-client.rst
    jar-files.rst
 
