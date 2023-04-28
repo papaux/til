@@ -28,6 +28,7 @@ There are 122 TILs in this repository! Enjoy!
    java/_.rst
    kubernetes/_.rst
    kvm/_.rst
+   links/_.rst
    linux/_.rst
    markdown/_.rst
    media/_.rst
