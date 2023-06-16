@@ -5,10 +5,11 @@ Running benchmarks on Arch Linux, using phoronix-test-suite.
 
 Pre-requisite::
 
-    sudo pacman -S fio glm vtk fmt opencl-nvidia opencl-headers
-    python -m venv ~/venv && source ~/venv/bin/activate && pip install --upgrade pip
+    yay -S phoronix-test-suite
+    sudo pacman -S fio glm vtk fmt opencl-nvidia opencl-headers cmake meson yasm nasm vulkan-icd-loader vulkan-headers vulkan-tools p7zip
+    python -m venv ~/sandbox/venv && source ~/sandbox/venv/bin/activate && pip install --upgrade pip
 
-    vim ~/venv/pyvenv.cfg
+    vim ~/sandbox/venv/pyvenv.cfg
     # set: include-system-site-packages = true  
 
 Install tests::
@@ -37,4 +38,4 @@ Run tests comparing against previous run::
     FORCE_TIMES_TO_RUN=3 phoronix-test-suite batch-benchmark 2306160-NE-2023NEWBU27
 
 Clean up
-    sudo pacman -Rs fio glm vtk fmt opencl-nvidia opencl-headers
+    sudo pacman -Rs fio glm vtk fmt opencl-nvidia opencl-headers cmake meson yasm nasm vulkan-icd-loader vulkan-headers vulkan-tools phoronix-test-suite p7zip
