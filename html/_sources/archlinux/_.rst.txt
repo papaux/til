@@ -5,6 +5,7 @@ ArchLinux
 .. toctree::
    :maxdepth: 1
 
+   benchmark.rst
    gnome-autostart-script.rst
    pacman-aur-packages-list.rst
    pacman-clean-cache.rst
