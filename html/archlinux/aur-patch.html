@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yay: installer for AUR packages &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>AUR: patch &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bash" href="../bash/_.html" />
-    <link rel="prev" title="System installation date" href="system-installation-date.html" /> 
+    <link rel="next" title="Benchmark" href="benchmark.html" />
+    <link rel="prev" title="ArchLinux" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">ArchLinux</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="aur-patch.html">AUR: patch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AUR: patch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gnome-autostart-script.html">Gnome: autostart script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pacman-aur-packages-list.html">Pacman: list packages from AUR</a></li>
@@ -60,7 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pacman-reinstall-with-deps.html">Pacman: reinstall packages and their dependencies from update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove-unused-locales.html">Remove unused locales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system-installation-date.html">System installation date</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Yay: installer for AUR packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yay.html">Yay: installer for AUR packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
@@ -115,9 +115,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">ArchLinux</a> &raquo;</li>
-      <li>Yay: installer for AUR packages</li>
+      <li>AUR: patch</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/archlinux/yay.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/archlinux/aur-patch.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -125,13 +125,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="yay-installer-for-aur-packages">
-<h1>Yay: installer for AUR packages<a class="headerlink" href="#yay-installer-for-aur-packages" title="Permalink to this heading"></a></h1>
-<p>Yay is a replacement for <code class="docutils literal notranslate"><span class="pre">yaourt</span></code>. This is a cheatsheet with useful commands.</p>
-<p><strong>Disable compression</strong></p>
-<p>On slow hardware, compressing packages might take a very and unnecessary long time if you clean your cache frequently.</p>
-<p>This will install packages without compressing them:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PKGEXT</span><span class="o">=</span><span class="s1">&#39;.pkg.tar&#39;</span> <span class="n">yay</span> <span class="o">-</span><span class="n">Syu</span>
+  <section id="aur-patch">
+<h1>AUR: patch<a class="headerlink" href="#aur-patch" title="Permalink to this heading"></a></h1>
+<p>Patch an AUR package and install locally.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yay</span> <span class="o">-</span><span class="n">G</span> <span class="n">spotify</span>
+<span class="n">cd</span> <span class="n">spotify</span><span class="o">/</span>
+<span class="n">vim</span> <span class="n">version</span><span class="o">.</span><span class="n">patch</span> <span class="c1"># or directly edit pkgbuild</span>
+<span class="n">patch</span> <span class="o">-</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="o">./</span><span class="n">version</span><span class="o">.</span><span class="n">patch</span>
+<span class="n">makepkg</span> <span class="o">-</span><span class="n">Si</span>
 </pre></div>
 </div>
 </section>
@@ -140,8 +141,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="system-installation-date.html" class="btn btn-neutral float-left" title="System installation date" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../bash/_.html" class="btn btn-neutral float-right" title="Bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_.html" class="btn btn-neutral float-left" title="ArchLinux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="benchmark.html" class="btn btn-neutral float-right" title="Benchmark" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
