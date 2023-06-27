@@ -6,7 +6,7 @@ Running benchmarks on Arch Linux, using phoronix-test-suite.
 Pre-requisite::
 
     yay -S phoronix-test-suite
-    sudo pacman -S fio glm vtk fmt opencl-nvidia opencl-headers cmake meson yasm nasm vulkan-icd-loader vulkan-headers vulkan-tools p7zip
+    sudo pacman -S fio glm vtk fmt opencl-nvidia opencl-headers cmake meson yasm nasm vulkan-icd-loader vulkan-headers vulkan-tools p7zip tcl bc unzip mesa-utils
     python -m venv ~/sandbox/venv && source ~/sandbox/venv/bin/activate && pip install --upgrade pip
 
     vim ~/sandbox/venv/pyvenv.cfg
