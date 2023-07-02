@@ -10,4 +10,5 @@ Python
    one-liner.rst
    pipenv.rst
    pylint.rst
+   script-template.rst
    virtual-env.rst
