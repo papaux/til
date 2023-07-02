@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ansible &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Script template &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ansible: Ad-hoc commands" href="ad-hoc-commands.html" />
-    <link rel="prev" title="TIL (Today I Learned)" href="../index.html" /> 
+    <link rel="next" title="Python: Virtual envs" href="virtual-env.html" />
+    <link rel="prev" title="pylint" href="pylint.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,11 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ad-hoc-commands.html">Ansible: Ad-hoc commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vault.html">Ansible Vault</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
@@ -74,7 +70,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gil.html">GIL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pip.html">Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">One-Liners in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipenv.html">pipenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pylint.html">pylint</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Script template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtual-env.html">Python: Virtual envs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../revealjs/_.html">Reveal.js</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
@@ -102,9 +107,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Ansible</li>
+          <li><a href="_.html">Python</a> &raquo;</li>
+      <li>Script template</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/ansible/_.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/python/script-template.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -112,13 +118,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ansible">
-<h1>Ansible<a class="headerlink" href="#ansible" title="Permalink to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ad-hoc-commands.html">Ansible: Ad-hoc commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vault.html">Ansible Vault</a></li>
-</ul>
+  <section id="script-template">
+<h1>Script template<a class="headerlink" href="#script-template" title="Permalink to this heading"></a></h1>
+<p>A Python script template with parameter handling and logging support.</p>
+<div class="highlight-PYTHON notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">loglevel</span><span class="p">):</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(levelname)s</span><span class="s2">: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">loglevel</span><span class="p">)</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">file_input</span>
+  
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;File </span><span class="si">%s</span><span class="s2"> does not exist&quot;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Processing: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
+
+ 
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;A very useful script.&quot;</span><span class="p">,</span>
+                                   <span class="n">epilog</span> <span class="o">=</span> <span class="s2">&quot;Detailed description of the script. Params can also be specified in a file  that is passed as command line argument, like this: &#39;</span><span class="si">%(prog)s</span><span class="s2"> @params.conf&#39;.&quot;</span><span class="p">,</span>
+                                   <span class="n">fromfile_prefix_chars</span> <span class="o">=</span> <span class="s1">&#39;@&#39;</span><span class="p">)</span>
+
+  <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;file_input&quot;</span><span class="p">,</span> <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;pass ARG to the program&quot;</span><span class="p">,</span> <span class="n">metavar</span> <span class="o">=</span> <span class="s2">&quot;file&quot;</span><span class="p">)</span>
+  <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;increase output verbosity&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+  
+  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+    <span class="n">loglevel</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">loglevel</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+  
+  <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">loglevel</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 
@@ -126,8 +162,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="TIL (Today I Learned)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ad-hoc-commands.html" class="btn btn-neutral float-right" title="Ansible: Ad-hoc commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pylint.html" class="btn btn-neutral float-left" title="pylint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="virtual-env.html" class="btn btn-neutral float-right" title="Python: Virtual envs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

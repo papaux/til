@@ -3,11 +3,12 @@ Python
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    gil.rst
    pip.rst
    one-liner.rst
    pipenv.rst
    pylint.rst
+   script-template.rst
    virtual-env.rst
