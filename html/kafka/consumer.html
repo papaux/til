@@ -123,7 +123,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">group.id</span></code>: consumers sharing the same group ID will share the the workload to be consumed from a topic.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">client.id</span></code>: an optional label to name a particular consumer or producer. Only useful to make debugging easier to track the source of requests beyond IP and Port that will appear in Kafka server logs.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">consumer.id</span></code>:  referenced as <code class="docutils literal notranslate"><span class="pre">group.instance.id</span></code>, is an optional unique identifier of the consumer instance. If set, only one instance with the ID is allowed, which is used to reduce consumer rebalancing (KIP-345). If not set, the consumer will join as a dynamic member.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consumer.id</span></code>:  referenced as <code class="docutils literal notranslate"><span class="pre">group.instance.id</span></code>, is an optional unique identifier of the consumer instance. If set, only one instance with the ID is allowed per consumer group, which is used to reduce consumer rebalancing (KIP-345). If not set, the consumer will join as a dynamic member.</p></li>
 </ul>
 </section>
 </section>
