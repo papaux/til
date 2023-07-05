@@ -26,6 +26,7 @@ There are 122 TILs in this repository! Enjoy!
    influxdb/_.rst
    iptables/_.rst
    java/_.rst
+   kafka/_.rst
    kubernetes/_.rst
    kvm/_.rst
    links/_.rst
