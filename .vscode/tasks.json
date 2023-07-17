@@ -1,21 +1,52 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "command": "make",
-    "args": [
-        "html"
-    ],
+    "linux": {
+        "options": {
+            "shell": {
+                "executable": "bash",
+                "args": [
+                    "--init-file",
+                    "venv/bin/activate",
+                    "-ci",
+                ]
+            }
+        },
+    },
     "tasks": [
         {
             "label": "make",
             "type": "shell",
             "command": "make",
             "args": [
+                "-j4",
                 "html"
             ],
             "problemMatcher": [],
+        },
+        {
+            "label": "Make and Firefox",
+            "type": "process",
+            "command": "firefox",
+            "args": [
+                "build/html/index.html"
+            ],
+            "dependsOn": [
+                "make"
+            ],
+            "problemMatcher": [],
             "group": "build"
+        },
+        {
+            "label": "Firefox: latest modified file",
+            "type": "process",
+            "command": "build-and-open.sh",
+            "args": [
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
