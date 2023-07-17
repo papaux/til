@@ -1,0 +1,7 @@
+VSCode
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   tasks.rst

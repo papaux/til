@@ -48,6 +48,7 @@ There are 122 TILs in this repository! Enjoy!
    tmux/_.rst
    ubuntu-debian/_.rst
    vim/_.rst
+   vscode/_.rst
    web/_.rst
    yum/_.rst
    zsh/_.rst

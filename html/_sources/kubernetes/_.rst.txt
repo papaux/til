@@ -9,3 +9,4 @@ Kubernetes
    imperative.rst
    job.rst
    kubectl.rst
+   kustomize.rst
