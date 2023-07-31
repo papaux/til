@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS Caching &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Garbage Collection &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Garbage Collection" href="garbage-collection.html" />
-    <link rel="prev" title="Java" href="_.html" /> 
+    <link rel="next" title="HTTP Client" href="http-client.html" />
+    <link rel="prev" title="DNS Caching" href="dns-caching.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,12 +58,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Java</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DNS Caching</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#security-context">Security Context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-property">System Property</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="garbage-collection.html">Garbage Collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns-caching.html">DNS Caching</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Garbage Collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="http-client.html">HTTP Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jar-files.html">JAR files</a></li>
 </ul>
@@ -111,9 +107,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Java</a> &raquo;</li>
-      <li>DNS Caching</li>
+      <li>Garbage Collection</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/java/dns-caching.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/java/garbage-collection.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -121,39 +117,133 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dns-caching">
-<h1>DNS Caching<a class="headerlink" href="#dns-caching" title="Permalink to this heading"></a></h1>
-<p>The JVM keeps previous DNS resolution (successful or failed) in a local cache.</p>
-<p>There is no true default value. The cache is _usually_ 30 seconds on Oracle JVM. It may vary with implementations.</p>
-<p>DNS TTL is considered a security settings (to avoid DNS Spoofing) and the default value also changes when a security context is given. Usually, if a security context is given, the DNS TTL changes to infinite!! Which means that any DNS resolution is kept until the JVM restarts!</p>
-<p>This works fine most of the time, but breaks when the target IP might change (load balancing, service fail-over, …).</p>
-<p>Fortunately, the configuration can be changed. Some special values:
-* -1 means “cache forever”
-* 0 means “never cache”</p>
-<section id="security-context">
-<h2>Security Context<a class="headerlink" href="#security-context" title="Permalink to this heading"></a></h2>
-<p>Configuration to be set in the <cite>java.security</cite> file.</p>
+  <section id="garbage-collection">
+<h1>Garbage Collection<a class="headerlink" href="#garbage-collection" title="Permalink to this heading"></a></h1>
+<p>A summary of JVM Garbage Collection.</p>
+<p><strong>Garbage collector tasks</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.ttl</span></code>: caching policy for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.negative.ttl</span></code>: caching policy for failed lookups.</p></li>
+<li><p>Marking =&gt; traverse the stack and all nested references and mark all objects that have a reference pointing to them in the heap</p></li>
+<li><p>Sweeping =&gt; delete the objects not having a reference</p>
+<ul>
+<li><p>By Copying: copy all live objects in a new memory portion, delete the old</p></li>
+<li><p>By Compacting: delete all objects from the memory, and move around existing memory</p></li>
 </ul>
-</section>
-<section id="system-property">
-<h2>System Property<a class="headerlink" href="#system-property" title="Permalink to this heading"></a></h2>
-<p>While some sun private system properties do exist, the recommended option is to use security properties.</p>
+</li>
+</ul>
+<p><strong>Heap memory</strong></p>
+<ul>
+<li><p>Young Generation =&gt; most java objects do not live long, will be part of generation. Fast allocation</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Eden space =&gt; new object created here</p></li>
+<li><p>Survivor =&gt; GC moves object still alive from eden to survivor space</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Old Generation =&gt; GC moves object from Young Generation for long lived object (scaveration)
+=&gt; Old Generation needs special GC treatment</p></li>
+<li><p>Copying objects from Young to Old generation can be expensive</p></li>
+</ul>
+<p><strong>Non-Heap memory</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.ttl</span></code>: a sun private system property for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.negative.ttl</span></code>: a sun private system property for failed lookups.</p></li>
+<li><p>Metaspace (used to be called permanent)</p>
+<ul>
+<li><p>Storing:</p>
+<ul>
+<li><p>Class structure</p></li>
+<li><p>Method of the class</p></li>
+<li><p>Constants</p></li>
+<li><p>Annotations</p></li>
+<li><p>Optimizations</p></li>
 </ul>
-</section>
+</li>
+<li><p>Contains metadata for classes stored in Heap</p></li>
+<li><p>Once objects are cleaned from heap, metaspace is cleaned too</p></li>
+<li><p>Garbage collection of metaspace is special</p>
+<ul>
+<li><p>Triggers when metaspace is reaching memory threshold or running out of memory</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Stop the world</strong></p>
+<ul class="simple">
+<li><p>Expensive process as application needs to be paused during marking</p></li>
+<li><p>There are alternatives</p></li>
+</ul>
+<p><strong>Garbage collector implementations</strong></p>
+<p>The best GC depends on your app and use case. Needs to be monitored and measured.</p>
+<ul class="simple">
+<li><p>Serial GC</p>
+<ul>
+<li><p>Young: mark and cpy</p></li>
+<li><p>Old: mark sweep compact</p></li>
+<li><p>Single threaded</p></li>
+<li><p>Stop the world</p></li>
+<li><p>=&gt; Fine for small programs, not ideal for large program</p></li>
+</ul>
+</li>
+<li><p>Parallel GC</p>
+<ul>
+<li><p>Young: mark and cpy</p></li>
+<li><p>Old: mark sweep compact</p></li>
+<li><p>Multi-threaded</p></li>
+<li><p>Stop the world (but shorter)</p></li>
+<li><p>=&gt; Good for multi-core machine</p></li>
+</ul>
+</li>
+<li><p>CMS GC (Concurrent Mark Sweep)</p>
+<ul>
+<li><p>Young: mark and cpy</p></li>
+<li><p>Old: mark sweep compact and mostly concurrent (concurrent =&gt; no requirement to stop the app)</p></li>
+<li><p>Multi-threaded</p></li>
+<li><p>Stop the world and mostly concurrent (sometimes will stop the world)</p></li>
+</ul>
+</li>
+<li><p>G1 GC (Garbage First)</p>
+<ul>
+<li><p>Divides the heap into small regions</p></li>
+<li><p>Parallel, concurrent, incrementally compacting</p></li>
+<li><p>Keeps track of amount of live and dead objects</p></li>
+<li><p>Aim for shorter pauses</p></li>
+<li><p>=&gt; Good for large memory space and high performance machines</p></li>
+</ul>
+</li>
+<li><p>Z GC</p>
+<ul>
+<li><p>Aims for max 10ms pause</p></li>
+<li><p>Reference coloring =&gt; only works on 64 bits as it stores color into the reference</p></li>
+<li><p>Sweep and copy</p></li>
+<li><p>Load barriers =&gt; when reference from the heap is loaded, do some checking (remapping)</p></li>
+<li><p>Multi threads</p></li>
+<li><p>Concurrent</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Metrics for GC</strong></p>
+<ul class="simple">
+<li><p>Allocation rate</p></li>
+<li><p>Heap population</p></li>
+<li><p>Mutation rate (how often references are updated)</p></li>
+<li><p>Object life span</p></li>
+<li><p>Mark time (how long the GC needs to find all objects on heap)</p></li>
+<li><p>Compaction time (how long does it take to move objects)</p></li>
+<li><p>GC cycle time (how long does it take for a full cycle)</p></li>
+</ul>
+<p><strong>Tools</strong></p>
+<ul class="simple">
+<li><p>jstat: jstat -gcutil</p></li>
+<li><p>jvisualvm</p></li>
+</ul>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="garbage-collection.html" class="btn btn-neutral float-right" title="Garbage Collection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dns-caching.html" class="btn btn-neutral float-left" title="DNS Caching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="http-client.html" class="btn btn-neutral float-right" title="HTTP Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
