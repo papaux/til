@@ -7,7 +7,7 @@ Some entries are not *concise write-ups* but long true articles or *cheatsheets*
 
 The source code is hosted on `github <https://github.com/papaux/til>`_.
 
-There are 122 TILs in this repository! Enjoy!
+There are 180 TILs in this repository! Enjoy!
 
 .. toctree::
    :maxdepth: 1
