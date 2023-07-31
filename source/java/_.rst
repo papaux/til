@@ -6,6 +6,7 @@ Java
    :maxdepth: 1
 
    dns-caching.rst
+   garbage-collection.rst
    http-client.rst
    jar-files.rst
 
