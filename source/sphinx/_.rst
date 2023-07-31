@@ -1,7 +1,7 @@
 Sphinx
 -------
 
-This page is a show case for what can be embedded in sphinx pages.
+This page is a show case for what can be embedded in sphinx pages (reStructuredText).
 
 Text formatting
 ~~~~~~~~~~~~~~~~
