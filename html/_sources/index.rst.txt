@@ -36,6 +36,7 @@ There are 180 TILs in this repository! Enjoy!
    mysql/_.rst
    network/_.rst
    nodejs/_.rst
+   obsidian/_.rst
    php/_.rst
    postgres/_.rst
    programming/_.rst

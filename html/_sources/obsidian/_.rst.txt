@@ -1,0 +1,7 @@
+Obsidian
+=========
+
+.. toctree::
+   :maxdepth: 1
+   
+   dataview.rst
