@@ -29,6 +29,7 @@ Linux
    rpm.rst
    rsync.rst
    simple-http-server.rst
+   software-raid.rst
    ssh-remove-hostname.rst
    ssh-tunnels.rst
    sudo-timeout.rst

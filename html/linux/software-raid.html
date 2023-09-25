@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mount &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Software RAID &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Performance monitoring" href="performance-monitoring.html" />
-    <link rel="prev" title="journalctl size" href="journalctl-size.html" /> 
+    <link rel="next" title="SSH Remove hostname" href="ssh-remove-hostname.html" />
+    <link rel="prev" title="Simple HTTP Server" href="simple-http-server.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -80,11 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="install-date.html">Installation date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="journalctl.html">journalctl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="journalctl-size.html">journalctl size</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mount</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mount-point-read-only">Mount point read only</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mount-without-root">Mount without root</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="mount.html">Mount</a></li>
 <li class="toctree-l2"><a class="reference internal" href="performance-monitoring.html">Performance monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package-managers.html">Package manager commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recursive-md5.html">Recursive md5</a></li>
@@ -92,7 +88,10 @@
 <li class="toctree-l2"><a class="reference internal" href="rpm.html">RPM Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rsync.html">rsync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simple-http-server.html">Simple HTTP Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software-raid.html">Software RAID</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Software RAID</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#efi-and-raid">EFI and RAID</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
@@ -145,9 +144,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Linux</a> &raquo;</li>
-      <li>Mount</li>
+      <li>Software RAID</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/linux/mount.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/software-raid.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -155,25 +154,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mount">
-<h1>Mount<a class="headerlink" href="#mount" title="Permalink to this heading"></a></h1>
-<section id="mount-point-read-only">
-<h2>Mount point read only<a class="headerlink" href="#mount-point-read-only" title="Permalink to this heading"></a></h2>
-<p>Protect the moint point by setting the folder as read only. In case of mount failure, nothing can be written to the folder.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chattr</span> <span class="o">+</span><span class="n">i</span> <span class="o">/</span><span class="n">mountpoint</span>
-</pre></div>
-</div>
-</section>
-<section id="mount-without-root">
-<h2>Mount without root<a class="headerlink" href="#mount-without-root" title="Permalink to this heading"></a></h2>
-<p>When mounting shared folders such as samba shares, we don’t want them to be mounted when we don’t need them or when the server is not available, that is we don’t want to mount automatically at startup.</p>
-<p>It’s still possible to use the mount command, but then root access is required.</p>
-<p>There is a solution to have both advantages: mount pre-defined folders “on demand” without root access.</p>
-<p>This is achieved by putting a corresponding entry in <code class="docutils literal notranslate"><span class="pre">fstab</span></code> and adding the option <code class="docutils literal notranslate"><span class="pre">noauto</span></code>.</p>
-<p>Example of such an a fstab entry:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">server</span><span class="o">/</span><span class="n">share</span> <span class="o">/</span><span class="n">mount</span><span class="o">/</span><span class="n">point</span> <span class="n">cifs</span> <span class="n">noauto</span><span class="p">,</span><span class="n">user</span> <span class="mi">0</span> <span class="mi">0</span>
-</pre></div>
-</div>
+  <section id="software-raid">
+<h1>Software RAID<a class="headerlink" href="#software-raid" title="Permalink to this heading"></a></h1>
+<section id="efi-and-raid">
+<h2>EFI and RAID<a class="headerlink" href="#efi-and-raid" title="Permalink to this heading"></a></h2>
+<p>While installing Debian 12, it was impossible to setup RAID during the install. Grub would fail installing.</p>
+<p>The alternative is to install without RAID, and add RAID afterwards. This shows how to proceed, based on this link: <a class="reference external" href="https://unix.stackexchange.com/questions/644108/raid-1-of-boot-efi-partition-on-debian">https://unix.stackexchange.com/questions/644108/raid-1-of-boot-efi-partition-on-debian</a></p>
+<ol class="arabic simple">
+<li><p>Backup the content of <code class="docutils literal notranslate"><span class="pre">/boot/efi</span></code> to another location: <code class="docutils literal notranslate"><span class="pre">midir</span> <span class="pre">/efi-backup</span> <span class="pre">&amp;&amp;</span> <span class="pre">cp</span> <span class="pre">-R</span> <span class="pre">/boot/efi</span> <span class="pre">/efi-backup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">umount</span> <span class="pre">/boot/efi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mdadm</span> <span class="pre">--create</span> <span class="pre">--verbose</span> <span class="pre">/dev/md0</span> <span class="pre">--level=1</span> <span class="pre">--raid-devices=2</span> <span class="pre">--metadata=1.0</span> <span class="pre">/dev/sda1</span> <span class="pre">/dev/sdb1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkfs.vfat</span> <span class="pre">/dev/md0</span></code></p></li>
+<li><p>Find the UUID of the md partiton: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-alh</span> <span class="pre">/dev/disk/by-uuid</span></code></p></li>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">/boot/efi</span></code> entry in fstab with the new UUID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mount</span> <span class="pre">/boot/efi</span></code></p></li>
+<li><p>Copy the content back to <code class="docutils literal notranslate"><span class="pre">/boot/efi</span></code></p></li>
+<li><p>Make sure both devices have the boot flag enabled</p></li>
+<li><p>Test removing a disk and booting. Test the other way around</p></li>
+</ol>
 </section>
 </section>
 
@@ -181,8 +179,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="journalctl-size.html" class="btn btn-neutral float-left" title="journalctl size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="performance-monitoring.html" class="btn btn-neutral float-right" title="Performance monitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="simple-http-server.html" class="btn btn-neutral float-left" title="Simple HTTP Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ssh-remove-hostname.html" class="btn btn-neutral float-right" title="SSH Remove hostname" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
