@@ -6,6 +6,7 @@ Git
 
    blame-user-friendly-interface.rst
    branches.rst
+   branching-models.rst
    clean.rst
    config.rst
    create-empty-branch.rst
