@@ -39,3 +39,7 @@ Use double brackets ``[[ ]]`` for conditions::
     [[ 1 < 2 ]] && echo "1 is less than 2"
 
 Why ? It supports ``<>``, ``&&``, ``||``, grouping expressions with ``( )``, pattern matching ``[[ $name = *c* ]]`` and regular expression ``[[ $name =~ ^Ali ]]``
+
+Get the current script path::
+
+    SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
