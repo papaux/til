@@ -9,6 +9,8 @@ Collection of playlists and music for different mood and occasions.
     - `Piano Music <https://www.youtube.com/watch?v=CycAxKcL_S4>`_
     - `Gentle healing music <https://www.youtube.com/watch?v=CwRvM2TfYbs>`_
     - `Binaural Beats Concentratoin <https://www.youtube.com/watch?v=U0eLmyJkQBc>`_
+    - `Marconi Union - Weightless <https://www.youtube.com/watch?v=UfcAVejslrU>` _
 
 **Movie music**
     - `Hans Zimmer Compilation <https://www.youtube.com/watch?v=IqiTJK_uzUY>`_
+

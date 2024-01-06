@@ -165,6 +165,10 @@
 </pre></div>
 </div>
 <p>Why ? It supports <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, grouping expressions with <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, pattern matching <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">*c*</span> <span class="pre">]]</span></code> and regular expression <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">$name</span> <span class="pre">=~</span> <span class="pre">^Ali</span> <span class="pre">]]</span></code></p>
+<p>Get the current script path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SCRIPTPATH=&quot;$( cd -- &quot;$(dirname &quot;$0&quot;)&quot; &gt;/dev/null 2&gt;&amp;1 ; pwd -P )&quot;
+</pre></div>
+</div>
 </section>
 
 

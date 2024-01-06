@@ -20,6 +20,7 @@ Git
    merge-tips.rst
    mirror-repository.rst
    oh-my-zsh-aliases.rst
+   rebase-squash.rst
    rebase-with-conflicts.rst
    remote.rst
    reset.rst
