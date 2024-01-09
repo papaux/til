@@ -1,4 +1,4 @@
-Branches
+Branch
 --------
 
 List all branches
