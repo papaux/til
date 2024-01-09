@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remote Repositories Commands &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Blame &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reset commands" href="reset.html" />
-    <link rel="prev" title="Rebase with conflicts" href="rebase-with-conflicts.html" /> 
+    <link rel="next" title="Branch" href="branch.html" />
+    <link rel="prev" title="Git" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,7 +53,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Git</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="blame.html">Blame</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Blame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#graphical-git-blame">Graphical git blame</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="branch.html">Branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="branching-models.html">Branching Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
@@ -71,7 +74,7 @@
 <li class="toctree-l2"><a class="reference internal" href="oh-my-zsh-aliases.html">Oh My Zsh Aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-squash.html">Rebase/Squash strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Remote Repositories Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="retag.html">Re-tag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
@@ -131,9 +134,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Git</a> &raquo;</li>
-      <li>Remote Repositories Commands</li>
+      <li>Blame</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/git/remote.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/blame.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -141,32 +144,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="remote-repositories-commands">
-<h1>Remote Repositories Commands<a class="headerlink" href="#remote-repositories-commands" title="Permalink to this heading"></a></h1>
-<p>List remote branches</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
+  <section id="blame">
+<h1>Blame<a class="headerlink" href="#blame" title="Permalink to this heading"></a></h1>
+<section id="graphical-git-blame">
+<h2>Graphical git blame<a class="headerlink" href="#graphical-git-blame" title="Permalink to this heading"></a></h2>
+<p>It took me some time to find a powerful git blame interface. In fact the integrated git gui is a very effective tool and has an interesting blame view, capable of following commits by clicking on them and also following renamed / moved files.</p>
+<p>Just start blaming a file with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">gui</span> <span class="n">blame</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span><span class="o">.</span><span class="n">src</span>
 </pre></div>
 </div>
-<p>Get details about a remote Repositories</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">show</span> <span class="n">github</span>
+<p><strong>Install on Arch Linux</strong></p>
+<p>This git gui is an optional dependcy of the git package on Arch Linux.
+You can install it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">tk</span>
 </pre></div>
 </div>
-<p>Rename remote repository</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">old</span> <span class="n">new</span>
-</pre></div>
-</div>
-<p>Delete a remote</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">remove</span> <span class="n">old</span>
-</pre></div>
-</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="rebase-with-conflicts.html" class="btn btn-neutral float-left" title="Rebase with conflicts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="reset.html" class="btn btn-neutral float-right" title="Reset commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="branch.html" class="btn btn-neutral float-right" title="Branch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

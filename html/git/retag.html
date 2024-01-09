@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blame with user-friendly interface &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Re-tag &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Branches" href="branches.html" />
-    <link rel="prev" title="Git" href="_.html" /> 
+    <link rel="next" title="Revert commands" href="revert.html" />
+    <link rel="prev" title="Reset commands" href="reset.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,11 +53,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Git</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Blame with user-friendly interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-on-arch-linux">Install on Arch Linux</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="branches.html">Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blame.html">Blame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branch.html">Branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="branching-models.html">Branching Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config management</a></li>
@@ -76,6 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Re-tag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
@@ -133,9 +131,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Git</a> &raquo;</li>
-      <li>Blame with user-friendly interface</li>
+      <li>Re-tag</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/git/blame-user-friendly-interface.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/retag.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -143,29 +141,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="blame-with-user-friendly-interface">
-<h1>Blame with user-friendly interface<a class="headerlink" href="#blame-with-user-friendly-interface" title="Permalink to this heading"></a></h1>
-<p>It took me some time to find a powerful git blame interface. In fact the integrated git gui is a very effective tool and has an interesting blame view, capable of following commits by clicking on them and also following renamed / moved files.</p>
-<p>Just start blaming a file with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">gui</span> <span class="n">blame</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span><span class="o">.</span><span class="n">src</span>
+  <section id="re-tag">
+<h1>Re-tag<a class="headerlink" href="#re-tag" title="Permalink to this heading"></a></h1>
+<p>This is something that we should never be doing. But life isn’t perfect, isn’t it ?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Delete locally
+$ git tag -d v1.0.0
+
+# Push tag deletion to remote
+$ git push origin :refs/tags/v1.0.0
+
+# Create new tag
+$ git tag v1.0.0
+
+# Push new tag to remote
+$ git push origin v1.0.0
 </pre></div>
 </div>
-<section id="install-on-arch-linux">
-<h2>Install on Arch Linux<a class="headerlink" href="#install-on-arch-linux" title="Permalink to this heading"></a></h2>
-<p>This git gui is an optional dependcy of the git package on Arch Linux.
-You can install it with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">tk</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reset.html" class="btn btn-neutral float-left" title="Reset commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="revert.html" class="btn btn-neutral float-right" title="Revert commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

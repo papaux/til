@@ -4,8 +4,8 @@ Git
 .. toctree::
    :maxdepth: 1
 
-   blame-user-friendly-interface.rst
-   branches.rst
+   blame.rst
+   branch.rst
    branching-models.rst
    clean.rst
    config.rst
@@ -24,6 +24,7 @@ Git
    rebase-with-conflicts.rst
    remote.rst
    reset.rst
+   retag.rst
    revert.rst
    short-hash-from-full.rst
    stash-only-unstage.rst
