@@ -11,6 +11,9 @@ Collection of playlists and music for different mood and occasions.
     - `Binaural Beats Concentratoin <https://www.youtube.com/watch?v=U0eLmyJkQBc>`_
     - `Marconi Union - Weightless <https://www.youtube.com/watch?v=UfcAVejslrU>` _
 
+**Piano music**
+    - `Instrumental Worship & Scriptures with Nature | Christian Piano <https://www.youtube.com/watch?v=QCJPp20ZV4c>`_
+
 **Movie music**
     - `Hans Zimmer Compilation <https://www.youtube.com/watch?v=IqiTJK_uzUY>`_
 
