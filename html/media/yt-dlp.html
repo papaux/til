@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConfigMap &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>yt-dlp &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Manage Deployment" href="deployment.html" />
-    <link rel="prev" title="Kubernetes" href="_.html" /> 
+    <link rel="next" title="Mysql" href="../mysql/_.html" />
+    <link rel="prev" title="Record from Soundcard" href="record-soundcard.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -59,21 +59,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ConfigMap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
-<li class="toctree-l2"><a class="reference internal" href="k3s.html">K3s on Ubuntu 24.04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kustomize.html">Kustomize</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Media</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="decrease-pdf-file-size.html">Decrease PDF file size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ffmpeg.html">ffmpeg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image-conversion.html">Image conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture-exif.html">Picture exif manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record-soundcard.html">Record from Soundcard</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">yt-dlp</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
@@ -110,10 +109,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="_.html">Kubernetes</a> &raquo;</li>
-      <li>ConfigMap</li>
+          <li><a href="_.html">Media</a> &raquo;</li>
+      <li>yt-dlp</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/kubernetes/configmap.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/media/yt-dlp.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -121,14 +120,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="configmap">
-<h1>ConfigMap<a class="headerlink" href="#configmap" title="Permalink to this heading"></a></h1>
-<p>Get all configmaps:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cm</span>
-</pre></div>
-</div>
-<p>Create from command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">cm</span> <span class="n">webapp</span><span class="o">-</span><span class="n">config</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">literal</span><span class="o">=</span><span class="n">APP_COLOR</span><span class="o">=</span><span class="n">darkblue</span>
+  <section id="yt-dlp">
+<h1>yt-dlp<a class="headerlink" href="#yt-dlp" title="Permalink to this heading"></a></h1>
+<p>Download mp3 from youtube video:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yt</span><span class="o">-</span><span class="n">dlp</span> <span class="o">-</span><span class="n">x</span> <span class="o">--</span><span class="n">audio</span><span class="o">-</span><span class="nb">format</span> <span class="n">mp3</span> <span class="s1">&#39;&lt;url&gt;&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -137,8 +132,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="deployment.html" class="btn btn-neutral float-right" title="Manage Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="record-soundcard.html" class="btn btn-neutral float-left" title="Record from Soundcard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mysql/_.html" class="btn btn-neutral float-right" title="Mysql" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

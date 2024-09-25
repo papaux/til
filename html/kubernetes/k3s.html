@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConfigMap &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>K3s on Ubuntu 24.04 &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Manage Deployment" href="deployment.html" />
-    <link rel="prev" title="Kubernetes" href="_.html" /> 
+    <link rel="next" title="kubectl" href="kubectl.html" />
+    <link rel="prev" title="job and cronjob" href="job.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -60,11 +60,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ConfigMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
-<li class="toctree-l2"><a class="reference internal" href="k3s.html">K3s on Ubuntu 24.04</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">K3s on Ubuntu 24.04</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kustomize.html">Kustomize</a></li>
 </ul>
@@ -111,9 +111,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">Kubernetes</a> &raquo;</li>
-      <li>ConfigMap</li>
+      <li>K3s on Ubuntu 24.04</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/kubernetes/configmap.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/kubernetes/k3s.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -121,24 +121,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="configmap">
-<h1>ConfigMap<a class="headerlink" href="#configmap" title="Permalink to this heading"></a></h1>
-<p>Get all configmaps:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cm</span>
+  <section id="k3s-on-ubuntu-24-04">
+<h1>K3s on Ubuntu 24.04<a class="headerlink" href="#k3s-on-ubuntu-24-04" title="Permalink to this heading"></a></h1>
+<ol class="arabic">
+<li><p>Download a VDI disk image from <a class="reference external" href="https://www.osboxes.org/ubuntu-server/">https://www.osboxes.org/ubuntu-server/</a></p></li>
+<li><p>Import in VirtualBox and run as a VM</p></li>
+<li><p>Install basics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
 </pre></div>
 </div>
-<p>Create from command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">cm</span> <span class="n">webapp</span><span class="o">-</span><span class="n">config</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">literal</span><span class="o">=</span><span class="n">APP_COLOR</span><span class="o">=</span><span class="n">darkblue</span>
+</li>
+<li><p>Install k3s:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sfL</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">k3s</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">sh</span> <span class="o">-</span>
 </pre></div>
 </div>
+</li>
+<li><p>Validate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">status</span> <span class="n">k3s</span>
+<span class="n">kubectl</span> <span class="n">get</span> <span class="nb">all</span> <span class="o">-</span><span class="n">n</span> <span class="n">kube</span><span class="o">-</span><span class="n">system</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install helm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="o">-</span><span class="n">o</span> <span class="n">get_helm</span><span class="o">.</span><span class="n">sh</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">helm</span><span class="o">/</span><span class="n">helm</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">get</span><span class="o">-</span><span class="n">helm</span><span class="o">-</span><span class="mi">3</span>
+<span class="n">chmod</span> <span class="mi">700</span> <span class="n">get_helm</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">./</span><span class="n">get_helm</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="deployment.html" class="btn btn-neutral float-right" title="Manage Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="job.html" class="btn btn-neutral float-left" title="job and cronjob" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kubectl.html" class="btn btn-neutral float-right" title="kubectl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

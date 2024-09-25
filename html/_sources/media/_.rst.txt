@@ -4,7 +4,9 @@ Media
 .. toctree::
    :maxdepth: 1
 
+   decrease-pdf-file-size.rst
    ffmpeg.rst
    image-conversion.rst
-   decrease-pdf-file-size.rst
    picture-exif.rst
+   record-soundcard.rst
+   yt-dlp.rst

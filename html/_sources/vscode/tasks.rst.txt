@@ -30,20 +30,20 @@ Task dependencies to run another task before::
 Load a python venv automatically before all tasks::
 
     {
-    "linux": {
-        "options": {
-            "shell": {
-                "executable": "bash",
-                "args": [
-                    "--init-file",
-                    "venv/bin/activate",
-                    "-ci",
-                ]
-            }
+        "linux": {
+            "options": {
+                "shell": {
+                    "executable": "bash",
+                    "args": [
+                        "--init-file",
+                        "venv/bin/activate",
+                        "-ci",
+                    ]
+                }
+            },
         },
-    },
-    "tasks": [
-        ...
-    ]
-}
+        "tasks": [
+            ...
+        ]
+    }
 
