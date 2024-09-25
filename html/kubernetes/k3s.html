@@ -64,7 +64,10 @@
 <li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">K3s on Ubuntu 24.04</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">K3s on Ubuntu 24.04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-helm-chart-install">Example helm chart install</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kustomize.html">Kustomize</a></li>
 </ul>
@@ -127,7 +130,9 @@
 <li><p>Download a VDI disk image from <a class="reference external" href="https://www.osboxes.org/ubuntu-server/">https://www.osboxes.org/ubuntu-server/</a></p></li>
 <li><p>Import in VirtualBox and run as a VM</p></li>
 <li><p>Install basics:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span>
+    <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span> <span class="n">vim</span>
 </pre></div>
 </div>
 </li>
@@ -150,6 +155,37 @@
 </div>
 </li>
 </ol>
+<section id="example-helm-chart-install">
+<h2>Example helm chart install<a class="headerlink" href="#example-helm-chart-install" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Set k3s config file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">KUBECONFIG</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">rancher</span><span class="o">/</span><span class="n">k3s</span><span class="o">/</span><span class="n">k3s</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add helm repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">helm</span> <span class="n">repo</span> <span class="n">add</span> <span class="n">airbyte</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">airbytehq</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">helm</span><span class="o">-</span><span class="n">charts</span>
+<span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span>
+<span class="n">helm</span> <span class="n">search</span> <span class="n">repo</span> <span class="n">airbyte</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install</p>
+<blockquote>
+<div><p>helm install airbyte-test airbyte/airbyte</p>
+</div></blockquote>
+</li>
+<li><p>Pay attention to instructions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Get the application URL by running these commands:
+export POD_NAME=$(kubectl get pods --namespace default -l &quot;app.kubernetes.io/name=webapp&quot; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
+export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath=&quot;{.spec.containers[0].ports[0].containerPort}&quot;)
+echo &quot;Visit http://127.0.0.1:8080 to use your application&quot;
+kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
 </section>
 
 
