@@ -102,3 +102,12 @@ Simply create a template yaml file using::
 
   kubectl run bee --image=nginx --dry-run -o yaml > pod.yaml
 
+Advanced stuff
+~~~~~~~~~~~~~~~
+
+List all docker images used in your kubernetes environment (assuming you have access to all namespaces)::
+
+  kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec['initContainers', 'containers'][*].image}" |\
+  tr -s '[[:space:]]' '\n' |\
+  sort |\
+  uniq -c
