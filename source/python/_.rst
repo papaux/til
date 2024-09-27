@@ -5,6 +5,7 @@ Python
 .. toctree::
    :maxdepth: 1
 
+   django.rst
    gil.rst
    pip.rst
    one-liner.rst
