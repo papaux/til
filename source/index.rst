@@ -51,5 +51,6 @@ There are 180 TILs in this repository! Enjoy!
    vim/_.rst
    vscode/_.rst
    web/_.rst
+   windows/_.rst
    yum/_.rst
    zsh/_.rst
