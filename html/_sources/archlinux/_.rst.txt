@@ -9,6 +9,7 @@ ArchLinux
    benchmark.rst
    emoji.rst
    gnome-autostart-script.rst
+   grub-repair.rst
    pacman-aur-packages-list.rst
    pacman-clean-cache.rst
    pacman-downgrade-package.rst

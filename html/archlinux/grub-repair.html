@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System installation date &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>GRUB Repair &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Yay: installer for AUR packages" href="yay.html" />
-    <link rel="prev" title="Remove unused locales" href="remove-unused-locales.html" /> 
+    <link rel="next" title="Pacman: list packages from AUR" href="pacman-aur-packages-list.html" />
+    <link rel="prev" title="Gnome: autostart script" href="gnome-autostart-script.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,7 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emoji.html">Emoji</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gnome-autostart-script.html">Gnome: autostart script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grub-repair.html">GRUB Repair</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GRUB Repair</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pacman-aur-packages-list.html">Pacman: list packages from AUR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pacman-clean-cache.html">Pacman: clean cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pacman-downgrade-package.html">Pacman: downgrade package</a></li>
@@ -61,7 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pacman-maintenance.html">Pacman: maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pacman-reinstall-with-deps.html">Pacman: reinstall packages and their dependencies from update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove-unused-locales.html">Remove unused locales</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">System installation date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system-installation-date.html">System installation date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yay.html">Yay: installer for AUR packages</a></li>
 </ul>
 </li>
@@ -121,9 +121,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="_.html">ArchLinux</a> &raquo;</li>
-      <li>System installation date</li>
+      <li>GRUB Repair</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/archlinux/system-installation-date.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/archlinux/grub-repair.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -131,21 +131,95 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="system-installation-date">
-<h1>System installation date<a class="headerlink" href="#system-installation-date" title="Permalink to this heading"></a></h1>
-<p>Are you wondering for how long you have been using Arch Linux ?</p>
-<p>You can find it out by looking at the pacman installation log:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">pacman</span><span class="o">.</span><span class="n">log</span>
+  <section id="grub-repair">
+<h1>GRUB Repair<a class="headerlink" href="#grub-repair" title="Permalink to this heading"></a></h1>
+<p>This is the go-to guide in case of grub issues. It could fail for many reasons:</p>
+<ul class="simple">
+<li><p>Having a dual boot could easily nuke your GRUB (e.g. getting into rescue mode). It happened in October 2024 after a Windows 11 update.</p></li>
+<li><p>After a GRUB config update that is incompatible with your current version of GRUB</p></li>
+</ul>
+<p><strong>If your system doesn’t boot</strong></p>
+<ol class="arabic">
+<li><p>Boot into a ArchLinux ISO</p></li>
+<li><p>Mount your system drives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fdisk</span> <span class="o">-</span><span class="n">l</span>
+<span class="c1"># identify your boot, root and efi partitions</span>
+
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvme0n1p2</span> <span class="o">/</span><span class="n">mnt</span>
+<span class="n">mount</span> <span class="o">--</span><span class="n">mkdir</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvme0n1p1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span>
+<span class="n">mount</span> <span class="o">--</span><span class="n">mkdir</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvme0n1p3</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">efi</span>
 </pre></div>
 </div>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>chroot in the partition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arch</span><span class="o">-</span><span class="n">chroot</span> <span class="o">/</span><span class="n">mnt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the required tools</p>
+<blockquote>
+<div><p>pacman -S grub efibootmgr os-prober dosfstools mtools ntfs-3g</p>
+</div></blockquote>
+</li>
+<li><p>Re-install grub and update the config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">install</span> <span class="o">--</span><span class="n">target</span><span class="o">=</span><span class="n">x86_64</span><span class="o">-</span><span class="n">efi</span> <span class="o">--</span><span class="n">efi</span><span class="o">-</span><span class="n">directory</span><span class="o">=/</span><span class="n">efi</span> <span class="o">--</span><span class="n">bootloader</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="n">GRUB</span>
+<span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">mkconfig</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</li>
+<li><p>Validate that your Windows install has been discovered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">windows</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>If your system is booting</strong></p>
+<ol class="arabic">
+<li><p>Install the required tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">os</span><span class="o">-</span><span class="n">prober</span>
+</pre></div>
+</div>
+</li>
+<li><p>Mount the EFI partition to detect your windows install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">fdisk</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">EFI</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvme0n1p1</span>       <span class="mi">2048</span>     <span class="mi">534527</span>     <span class="mi">532480</span>   <span class="mi">260</span><span class="n">M</span> <span class="n">EFI</span> <span class="n">System</span>
+
+<span class="n">sudo</span> <span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvme0n1p1</span> <span class="o">/</span><span class="n">efi</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run os-prober:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">os</span><span class="o">-</span><span class="n">prober</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a backup of your current config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cp</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span><span class="p">{,</span><span class="mi">2024</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Re-install grub and update the config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">install</span> <span class="o">--</span><span class="n">target</span><span class="o">=</span><span class="n">x86_64</span><span class="o">-</span><span class="n">efi</span> <span class="o">--</span><span class="n">efi</span><span class="o">-</span><span class="n">directory</span><span class="o">=/</span><span class="n">efi</span> <span class="o">--</span><span class="n">bootloader</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="n">GRUB</span>
+<span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">mkconfig</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</li>
+<li><p>Validate that your Windows install has been discovered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">windows</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="remove-unused-locales.html" class="btn btn-neutral float-left" title="Remove unused locales" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="yay.html" class="btn btn-neutral float-right" title="Yay: installer for AUR packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gnome-autostart-script.html" class="btn btn-neutral float-left" title="Gnome: autostart script" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pacman-aur-packages-list.html" class="btn btn-neutral float-right" title="Pacman: list packages from AUR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
