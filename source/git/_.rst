@@ -11,6 +11,7 @@ Git
    config.rst
    create-empty-branch.rst
    diff.rst
+   eol.rst
    fork.rst
    gitignore.rst
    grep-in-logs.rst
