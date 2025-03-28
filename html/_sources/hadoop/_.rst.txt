@@ -1,9 +1,0 @@
-Hadoop
-=========
-
-
-.. toctree::
-   :maxdepth: 1
-
-   survivor-guide.rst
-

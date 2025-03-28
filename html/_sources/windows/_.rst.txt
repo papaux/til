@@ -1,7 +1,0 @@
-Windows
-=======
-
-.. toctree::
-   :maxdepth: 1
-
-   wsl.rst

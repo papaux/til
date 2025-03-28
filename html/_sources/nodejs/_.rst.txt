@@ -1,7 +1,0 @@
-NodeJS
-=======
-
-.. toctree::
-   :maxdepth: 1
-   
-   update-globally-installed-packages.rst

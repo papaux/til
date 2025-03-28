@@ -1,8 +1,0 @@
-Cassandra
-==========
-
-.. toctree::
-   :maxdepth: 1
-
-   exploration.rst
-   getting_started.rst

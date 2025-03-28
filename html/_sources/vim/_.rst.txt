@@ -1,8 +1,0 @@
-vim
-====
-
-.. toctree::
-   :maxdepth: 1
-
-   cheatsheet.rst
-   ../linux/vi-write-sudo.rst

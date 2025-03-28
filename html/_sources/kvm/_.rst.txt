@@ -1,9 +1,0 @@
-KVM
-=======
-
-
-.. toctree::
-   :maxdepth: 1
-
-   snapshot.rst
-   

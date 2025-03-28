@@ -1,7 +1,0 @@
-Development environment
-========================
-
-.. toctree::
-   :maxdepth: 1
-
-   search-in-source-files.rst

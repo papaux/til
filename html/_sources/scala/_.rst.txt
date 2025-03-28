@@ -1,7 +1,0 @@
-Scala
-=========
-
-.. toctree::
-   :maxdepth: 1
-
-   play-framework.rst

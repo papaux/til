@@ -1,9 +1,0 @@
-Kafka
-========
-
-
-.. toctree::
-   :maxdepth: 1
-
-   consumer.rst
-   
