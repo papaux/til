@@ -5,6 +5,7 @@ Kubernetes
    :maxdepth: 1
 
    configmap.rst
+   debug.rst
    deployment.rst
    imperative.rst
    job.rst
