@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kustomize &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KVM" href="../kvm/_.html" />
+    <link rel="prev" title="kubectl" href="kubectl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Geoffrey's TIL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cassandra/_.html">Cassandra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/_.html">Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Kubernetes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="configmap.html">ConfigMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html">Manage Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imperative.html">Imperative commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job.html">job and cronjob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="k3s.html">K3s on Ubuntu 24.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kustomize</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kustomizaton-yaml-anatomy">kustomizaton.yaml anatomy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../obsidian/_.html">Obsidian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../revealjs/_.html">Reveal.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-watch.html">Tech Watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/_.html">VSCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/_.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yum/_.html">yum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="_.html">Kubernetes</a></li>
+      <li class="breadcrumb-item active">Kustomize</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/kubernetes/kustomize.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kustomize">
+<h1>Kustomize<a class="headerlink" href="#kustomize" title="Link to this heading"></a></h1>
+<section id="kustomizaton-yaml-anatomy">
+<h2>kustomizaton.yaml anatomy<a class="headerlink" href="#kustomizaton-yaml-anatomy" title="Link to this heading"></a></h2>
+<p>Features of kustomization.yaml</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">resources</span></code>: list of configuration files or folders to be included</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">patchesStrategicMerge</span></code>: list of strategic merge files for kubernetes objects (patch existing object with entries from the)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">namespace</span></code>: namespace to apply to all resources</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">secretGenerator</span></code>: list of entries generating a secret</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commonLabels</span></code>: map of labels / values to add to all resources and selectors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commonAnnotations</span></code>: map of annotations to add to all resources</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: list of image name overrides (name/tags/digest) without the need of a patch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">namePrefix</span></code>: text to be prepended to the name of all resources</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nameSuffix</span></code>: text to be appended to the name of all resources</p></li>
+</ul>
+<p>Folder structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">base</span><span class="o">/</span><span class="p">:</span> <span class="nb">all</span> <span class="n">base</span> <span class="n">manifests</span> <span class="n">shared</span> <span class="n">between</span> <span class="n">environments</span>
+  <span class="o">--</span> <span class="n">deployment</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="o">--</span> <span class="n">kustomization</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="o">--</span> <span class="n">service</span><span class="o">.</span><span class="n">yaml</span>
+<span class="o">-</span> <span class="n">overlays</span><span class="o">/</span><span class="p">:</span> <span class="n">environment</span> <span class="n">specific</span> <span class="n">files</span>
+  <span class="o">-</span> <span class="n">dev</span><span class="o">/</span>
+    <span class="o">--</span> <span class="n">kustomization</span><span class="o">.</span><span class="n">yaml</span>
+    <span class="o">--</span> <span class="n">replicas</span><span class="o">.</span><span class="n">yaml</span>
+    <span class="o">--</span> <span class="n">config</span><span class="o">.</span><span class="n">properties</span>
+  <span class="o">-</span> <span class="n">prod</span><span class="o">/</span>
+    <span class="o">--</span> <span class="n">kustomization</span><span class="o">.</span><span class="n">yaml</span>
+    <span class="o">--</span> <span class="n">replicas</span><span class="o">.</span><span class="n">yaml</span>
+    <span class="o">--</span> <span class="n">config</span><span class="o">.</span><span class="n">properties</span>
+<span class="o">-</span> <span class="n">components</span><span class="o">/</span><span class="p">:</span> <span class="n">optional</span> <span class="n">parts</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">selectively</span> <span class="n">included</span> <span class="n">per</span> <span class="n">environment</span>
+  <span class="o">-</span> <span class="n">mock</span><span class="o">-</span><span class="n">server</span><span class="o">/</span>
+    <span class="o">--</span> <span class="n">kustomization</span><span class="o">.</span><span class="n">yaml</span>
+    <span class="o">--</span> <span class="n">deployment</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>base/kustomization.yaml:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">kustomize</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">k8s</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1beta1</span>
+<span class="n">kind</span><span class="p">:</span> <span class="n">Kustomization</span>
+
+<span class="n">commonLabels</span><span class="p">:</span>
+  <span class="n">app</span><span class="p">:</span> <span class="n">hello</span><span class="o">-</span><span class="n">world</span>
+
+<span class="n">resources</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">service</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="o">-</span> <span class="n">deployment</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>overlay/**/kustomization.yaml:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">kustomize</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">k8s</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1beta1</span>
+<span class="n">kind</span><span class="p">:</span> <span class="n">Kustomization</span>
+<span class="n">namePrefix</span><span class="p">:</span> <span class="n">prod</span><span class="o">-</span>
+<span class="n">bases</span><span class="p">:</span>
+<span class="o">-</span> <span class="o">../../</span><span class="n">base</span>
+<span class="n">patchesStrategicMerge</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">replicas</span><span class="o">.</span><span class="n">yaml</span>
+<span class="n">configMapGenerator</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">app</span><span class="o">-</span><span class="n">configmap</span>
+  <span class="n">files</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">config</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kubectl.html" class="btn btn-neutral float-left" title="kubectl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../kvm/_.html" class="btn btn-neutral float-right" title="KVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Geoffrey Papaux.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

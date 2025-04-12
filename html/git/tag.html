@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tag commands &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Undo in git" href="undo.html" />
+    <link rel="prev" title="Status commands" href="status.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Geoffrey's TIL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cassandra/_.html">Cassandra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="blame.html">Blame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branch.html">Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branching-models.html">Branching Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diff.html">Diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eol.html">End of line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fork.html">Fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Grep in git logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="housekeeping.html">Housekeeping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Log commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mirror-repository.html">Replicate a repository (branches+tags)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oh-my-zsh-aliases.html">Oh My Zsh Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebase-squash.html">Rebase/Squash strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retag.html">Re-tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">Status commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tag commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undo.html">Undo in git</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/_.html">Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/_.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../obsidian/_.html">Obsidian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../revealjs/_.html">Reveal.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-watch.html">Tech Watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/_.html">VSCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/_.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yum/_.html">yum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="_.html">Git</a></li>
+      <li class="breadcrumb-item active">Tag commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/git/tag.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tag-commands">
+<h1>Tag commands<a class="headerlink" href="#tag-commands" title="Link to this heading"></a></h1>
+<p>Annotated tags <code class="docutils literal notranslate"><span class="pre">-a</span></code>, in addition to lightweight tag contains some metadata:
+- committer name
+- creation date
+- etc.</p>
+<p>Create a new annotated tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="n">v1</span><span class="mf">.2</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;Release 1.2&#39;</span>
+</pre></div>
+</div>
+<p>Remove a tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">d</span> <span class="n">beta</span>
+</pre></div>
+</div>
+<p>Delete a tag from remote:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="p">:</span><span class="n">beta</span>
+</pre></div>
+</div>
+<p>Fetch all tags from remote:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="o">--</span><span class="n">tags</span> <span class="o">--</span><span class="n">force</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="status.html" class="btn btn-neutral float-left" title="Status commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="undo.html" class="btn btn-neutral float-right" title="Undo in git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Geoffrey Papaux.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

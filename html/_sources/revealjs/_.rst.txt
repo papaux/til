@@ -1,0 +1,10 @@
+Reveal.js
+==========
+
+
+.. toctree::
+   :maxdepth: 1
+
+   git-submodule.rst
+   github-pages.rst
+   

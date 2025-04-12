@@ -1,0 +1,8 @@
+Postgres
+=========
+
+.. toctree::
+   :maxdepth: 1
+
+   housekeeping.rst
+   schema_exploration.rst

@@ -1,0 +1,20 @@
+Bash
+======
+
+.. toctree::
+   :maxdepth: 1
+
+   alias.rst
+   best-practices.rst
+   chaos.rst
+   color-output.rst
+   copy-to-clipboard.rst
+   compression.rst
+   env-vars.rst
+   multiline.rst
+   one-liners.rst
+   run-command-file-changed.rst
+   run-parallel.rst
+   scripts-boilerplate.rst
+   script-template.rst
+   true-color-test.rst

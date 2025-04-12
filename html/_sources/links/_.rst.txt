@@ -1,0 +1,10 @@
+Links
+======
+
+This is not a usual TIL, but a collection of bookmarks that I want to be able to access from anywhere!
+
+.. toctree::
+   :maxdepth: 1
+
+   best-of-youtube.rst
+   music.rst

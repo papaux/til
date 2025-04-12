@@ -1,0 +1,7 @@
+Golang
+========
+
+.. toctree::
+   :maxdepth: 1
+
+   module.rst

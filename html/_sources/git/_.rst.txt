@@ -1,0 +1,34 @@
+Git
+=========
+
+.. toctree::
+   :maxdepth: 1
+
+   blame.rst
+   branch.rst
+   branching-models.rst
+   clean.rst
+   config.rst
+   create-empty-branch.rst
+   diff.rst
+   eol.rst
+   fork.rst
+   gitignore.rst
+   grep-in-logs.rst
+   housekeeping.rst
+   kdiff-as-mergetool.rst
+   log.rst
+   merge-tips.rst
+   mirror-repository.rst
+   oh-my-zsh-aliases.rst
+   rebase-squash.rst
+   rebase-with-conflicts.rst
+   remote.rst
+   reset.rst
+   retag.rst
+   revert.rst
+   short-hash-from-full.rst
+   stash-only-unstage.rst
+   status.rst
+   tag.rst
+   undo.rst

@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTU &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SNMP" href="snmp.html" />
+    <link rel="prev" title="DNS" href="dns.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Geoffrey's TIL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ansible/_.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archlinux/_.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cassandra/_.html">Cassandra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/_.html">Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/_.html">Mysql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Network</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_.html#books">Books</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="_.html#table-of-content">Table of content</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MTU</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="snmp.html">SNMP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../nodejs/_.html">NodeJS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../obsidian/_.html">Obsidian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../php/_.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/_.html">Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/_.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/_.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../revealjs/_.html">Reveal.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc/_.html">RFCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/_.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/_.html">Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-watch.html">Tech Watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tmux/_.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/_.html">VSCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/_.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../yum/_.html">yum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Geoffrey's TIL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="_.html">Network</a></li>
+      <li class="breadcrumb-item active">MTU</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/network/mtu.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mtu">
+<h1>MTU<a class="headerlink" href="#mtu" title="Link to this heading"></a></h1>
+<p>Debugging network issues related to MTU can be tricky.</p>
+<p>When encountering weird connectivity issues through VPN, the probability is high that it’s a MTU issue.</p>
+<p>Check configured MTU size:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">eth0</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;mtu.*&quot;</span>
+<span class="c1"># or</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;mtu [0-9]*&quot;</span>
+</pre></div>
+</div>
+<p>Send these ping commands to check the MTU size by changing the packet size (<cite>-s</cite> parameter)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1300</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1400</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">ping</span> <span class="o">-</span><span class="n">M</span> <span class="n">do</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1500</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>In case it’s a MTU issue, you’ll see:
+1. First ping commands with small values are working</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1300 example.com
+PING example.com (93.184.216.34) 1300(1328) bytes of data.
+1308 bytes from 93.184.216.34 (93.184.216.34): icmp_seq=1 ttl=55 time=361 ms
+1308 bytes from 93.184.216.34 (93.184.216.34): icmp_seq=2 ttl=55 time=180 ms
+^C
+--- example.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 179.919/270.407/360.896/90.489 ms
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Then pings are failing with no answer: this is the window where we are in the MTU issue</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1380 example.com
+PING example.com (93.184.216.34) 1380(1408) bytes of data.
+^C
+--- example.com ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 129ms
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Finally when the size gets bigger, we see MTU error messages.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping -M do -s 1420 example.com
+PING example.com (93.184.216.34) 1420(1448) bytes of data.
+ping: local error: Message too long, mtu=1412
+^C
+--- example.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+</pre></div>
+</div>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<p><cite>iptables</cite> can be used to setup a workaround, by automatically sending a lower MTU on TCP connection estalishment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">mangle</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">tcp</span><span class="o">-</span><span class="n">flags</span> <span class="n">SYN</span><span class="p">,</span><span class="n">RST</span> <span class="n">SYN</span> <span class="o">-</span><span class="n">o</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">j</span> <span class="n">TCPMSS</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1300</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dns.html" class="btn btn-neutral float-left" title="DNS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="snmp.html" class="btn btn-neutral float-right" title="SNMP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Geoffrey Papaux.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
