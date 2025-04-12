@@ -14,3 +14,4 @@ Python
    pylint.rst
    script-template.rst
    virtual-env.rst
+   venv-setup-script.rst
