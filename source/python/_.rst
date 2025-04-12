@@ -8,6 +8,7 @@ Python
    django.rst
    gil.rst
    pip.rst
+   pip-packages-upgrade.rst
    one-liner.rst
    pipenv.rst
    pylint.rst
