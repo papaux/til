@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasks &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>devcontainers &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Web" href="../web/_.html" />
-    <link rel="prev" title="devcontainers" href="devcontainers.html" /> 
+    <link rel="next" title="Tasks" href="tasks.html" />
+    <link rel="prev" title="VSCode" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -83,8 +83,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../ubuntu-debian/_.html">Ubuntu / Debian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">VSCode</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="devcontainers.html">devcontainers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Tasks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">devcontainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
@@ -108,9 +108,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="_.html">VSCode</a></li>
-      <li class="breadcrumb-item active">Tasks</li>
+      <li class="breadcrumb-item active">devcontainers</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/vscode/tasks.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/vscode/devcontainers.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -118,62 +118,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="tasks">
-<h1>Tasks<a class="headerlink" href="#tasks" title="Link to this heading"></a></h1>
-<p>Standard shell based task:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;make&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shell&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;make&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;-j4&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;html&quot;</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;problemMatcher&quot;</span><span class="p">:</span> <span class="p">[],</span>
-<span class="p">}</span>
+  <section id="devcontainers">
+<h1>devcontainers<a class="headerlink" href="#devcontainers" title="Link to this heading"></a></h1>
+<p><strong>Connect to the dev container from your regular terminal</strong></p>
+<ol class="arabic">
+<li><p>Open the command palette and select _Dev Containers: Install Dev Container <a href="#id1"><span class="problematic" id="id2">CLI_</span></a>.</p></li>
+<li><p>Paste the path in a terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:$USER/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin
 </pre></div>
 </div>
-<p>Define the default build task (executed with <code class="docutils literal notranslate"><span class="pre">ctrl+maj+b</span></code>), add this to the task definition:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;isDefault&quot;</span><span class="p">:</span> <span class="n">true</span>
-<span class="p">}</span>
+</li>
+<li><p>Connect to the dev container from your terminal, when in the project folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">devcontainer</span> <span class="n">exec</span> <span class="o">--</span><span class="n">workspace</span><span class="o">-</span><span class="n">folder</span> <span class="o">.</span> <span class="n">bash</span>
 </pre></div>
 </div>
-<p>Task dependencies to run another task before:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dependsOn&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;make&quot;</span>
-<span class="p">],</span>
-</pre></div>
-</div>
-<p>Load a python venv automatically before all tasks:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;linux&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;shell&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;executable&quot;</span><span class="p">:</span> <span class="s2">&quot;bash&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="s2">&quot;--init-file&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;venv/bin/activate&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;-ci&quot;</span><span class="p">,</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;tasks&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="o">...</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="devcontainers.html" class="btn btn-neutral float-left" title="devcontainers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../web/_.html" class="btn btn-neutral float-right" title="Web" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_.html" class="btn btn-neutral float-left" title="VSCode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tasks.html" class="btn btn-neutral float-right" title="Tasks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
