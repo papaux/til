@@ -4,4 +4,5 @@ VSCode
 .. toctree::
    :maxdepth: 1
 
+   devcontainers.rst
    tasks.rst
