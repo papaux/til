@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Name of the virtual environment directory
-VENV_DIR=".venv"
-REQ_FILE="requirements.txt"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+VENV_DIR="$SCRIPT_DIR/.venv"
+REQ_FILE="$SCRIPT_DIR/requirements.txt"
 
 # Function to create a new virtual environment
 create_venv() {
