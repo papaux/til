@@ -7,7 +7,7 @@ devcontainers
 
 2. Paste the path in a terminal::
 
-    export PATH=$PATH:$USER/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin
+    export PATH=$PATH:$HOME/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin
 
 3. Connect to the dev container from your terminal, when in the project folder::
 
