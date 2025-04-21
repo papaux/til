@@ -21,6 +21,8 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from datetime import datetime
+
 def setup(app):
     app.add_css_file('style.css')
 
@@ -57,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Geoffrey\'s TIL'
-copyright = '2021, Geoffrey Papaux'
+copyright = f'{datetime.now().year}, Geoffrey Papaux'
 author = 'Geoffrey Papaux'
 
 # The version info for the project you're documenting, acts as replacement for
