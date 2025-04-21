@@ -3,7 +3,7 @@ devcontainers
 
 **Connect to the dev container from your regular terminal**
 
-1. Open the command palette and select _Dev Containers: Install Dev Container CLI_.
+1. Open the command palette and select *Dev Containers: Install Dev Container CLI*.
 
 2. Paste the path in a terminal::
 
