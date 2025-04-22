@@ -61,7 +61,17 @@ This is the go-to guide in case of grub issues. It could fail for many reasons:
     sudo grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-6. Validate that your Windows install has been discovered::
+6. If you are getting the message it means os prober has been disabled: ``Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.``::
+
+    # edit grub config
+    vim /etc/default/grub
+
+    # enable it by uncommenting this line
+    GRUB_DISABLE_OS_PROBER=false
+
+7. Validate that your Windows install has been discovered::
 
     grep -i windows /boot/grub/grub.cfg
 
