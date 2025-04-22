@@ -159,10 +159,10 @@
 </pre></div>
 </div>
 </li>
-<li><p>Install the required tools</p>
-<blockquote>
-<div><p>pacman -S grub efibootmgr os-prober dosfstools mtools ntfs-3g</p>
-</div></blockquote>
+<li><p>Install the required tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">grub</span> <span class="n">efibootmgr</span> <span class="n">os</span><span class="o">-</span><span class="n">prober</span> <span class="n">dosfstools</span> <span class="n">mtools</span> <span class="n">ntfs</span><span class="o">-</span><span class="mi">3</span><span class="n">g</span>
+</pre></div>
+</div>
 </li>
 <li><p>Re-install grub and update the config:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">install</span> <span class="o">--</span><span class="n">target</span><span class="o">=</span><span class="n">x86_64</span><span class="o">-</span><span class="n">efi</span> <span class="o">--</span><span class="n">efi</span><span class="o">-</span><span class="n">directory</span><span class="o">=/</span><span class="n">efi</span> <span class="o">--</span><span class="n">bootloader</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="n">GRUB</span>

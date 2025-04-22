@@ -22,7 +22,7 @@ This is the go-to guide in case of grub issues. It could fail for many reasons:
 
     arch-chroot /mnt
 
-5. Install the required tools
+5. Install the required tools::
 
     pacman -S grub efibootmgr os-prober dosfstools mtools ntfs-3g
 
