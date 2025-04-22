@@ -207,6 +207,18 @@
 </pre></div>
 </div>
 </li>
+</ol>
+<p>6. If you are getting the message it means os prober has been disabled: <code class="docutils literal notranslate"><span class="pre">Warning:</span> <span class="pre">os-prober</span> <span class="pre">will</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">executed</span> <span class="pre">to</span> <span class="pre">detect</span> <span class="pre">other</span> <span class="pre">bootable</span> <span class="pre">partitions.</span>
+<span class="pre">Systems</span> <span class="pre">on</span> <span class="pre">them</span> <span class="pre">will</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">added</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">GRUB</span> <span class="pre">boot</span> <span class="pre">configuration.</span>
+<span class="pre">Check</span> <span class="pre">GRUB_DISABLE_OS_PROBER</span> <span class="pre">documentation</span> <span class="pre">entry.</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit grub config</span>
+<span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">default</span><span class="o">/</span><span class="n">grub</span>
+
+<span class="c1"># enable it by uncommenting this line</span>
+<span class="n">GRUB_DISABLE_OS_PROBER</span><span class="o">=</span><span class="n">false</span>
+</pre></div>
+</div>
+<ol class="arabic" start="7">
 <li><p>Validate that your Windows install has been discovered:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">windows</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span><span class="o">/</span><span class="n">grub</span><span class="o">.</span><span class="n">cfg</span>
 </pre></div>
