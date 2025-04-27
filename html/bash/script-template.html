@@ -138,11 +138,12 @@
 <span class="nb">set</span><span class="w"> </span>-Eeuo<span class="w"> </span>pipefail
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DEBUG</span><span class="p">-0</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>-x<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
 
-<span class="nv">script_dir</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">pwd</span><span class="w"> </span>-P<span class="k">)</span>
+<span class="nv">script_dir</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">:-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%x</span><span class="si">}}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">pwd</span><span class="w"> </span>-P<span class="k">)</span>
+
 
 usage<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">  </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">Usage: $(basename &quot;${BASH_SOURCE[0]}&quot;) [-h] -p param_value arg1 [arg2...]</span>
+<span class="s">Usage: $(basename &quot;${BASH_SOURCE[0]:-${(%):-%x}}&quot;) [-h] -p param_value arg1 [arg2...]</span>
 
 <span class="s">A wonderful script doing XYZ.</span>
 

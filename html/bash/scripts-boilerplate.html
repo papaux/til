@@ -172,7 +172,7 @@
 </section>
 <section id="get-script-directory">
 <h2>Get script directory<a class="headerlink" href="#get-script-directory" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>script_dir=$(cd &quot;$(dirname &quot;${BASH_SOURCE[0]}&quot;)&quot; &amp;&gt;/dev/null &amp;&amp; pwd -P)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>script_dir=$(cd &quot;$(dirname &quot;${BASH_SOURCE[0]:-${(%):-%x}}&quot;)&quot; &amp;&gt;/dev/null &amp;&amp; pwd -P)
 </pre></div>
 </div>
 </section>
