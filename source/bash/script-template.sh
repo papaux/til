@@ -3,11 +3,12 @@
 set -Eeuo pipefail
 if [[ "${DEBUG-0}" == "1" ]]; then set -x; fi
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]:-${(%):-%x}}")" &>/dev/null && pwd -P)
+
 
 usage() {
   cat <<EOF
-Usage: $(basename "${BASH_SOURCE[0]}") [-h] -p param_value arg1 [arg2...]
+Usage: $(basename "${BASH_SOURCE[0]:-${(%):-%x}}") [-h] -p param_value arg1 [arg2...]
 
 A wonderful script doing XYZ.
 
