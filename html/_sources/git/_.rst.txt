@@ -21,6 +21,7 @@ Git
    merge-tips.rst
    mirror-repository.rst
    oh-my-zsh-aliases.rst
+   pr-stacking.rst
    rebase-squash.rst
    rebase-with-conflicts.rst
    remote.rst

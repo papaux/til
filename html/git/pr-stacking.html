@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Re-tag &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>PR Stacking Flow &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Revert commands" href="revert.html" />
-    <link rel="prev" title="Reset commands" href="reset.html" /> 
+    <link rel="next" title="Rebase/Squash strategies" href="rebase-squash.html" />
+    <link rel="prev" title="Oh My Zsh Aliases" href="oh-my-zsh-aliases.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -71,12 +71,12 @@
 <li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mirror-repository.html">Replicate a repository (branches+tags)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="oh-my-zsh-aliases.html">Oh My Zsh Aliases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pr-stacking.html">PR Stacking Flow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PR Stacking Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-squash.html">Rebase/Squash strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Re-tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retag.html">Re-tag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
@@ -135,9 +135,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="_.html">Git</a></li>
-      <li class="breadcrumb-item active">Re-tag</li>
+      <li class="breadcrumb-item active">PR Stacking Flow</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/git/retag.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/pr-stacking.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -145,30 +145,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="re-tag">
-<h1>Re-tag<a class="headerlink" href="#re-tag" title="Link to this heading"></a></h1>
-<p>This is something that we should never be doing. But life isn’t perfect, isn’t it ?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Delete locally
-$ git tag -d v1.0.0
-
-# Push tag deletion to remote
-$ git push origin :refs/tags/v1.0.0
-
-# Create new tag
-$ git tag v1.0.0
-
-# Push new tag to remote
-$ git push origin v1.0.0
+  <section id="pr-stacking-flow">
+<h1>PR Stacking Flow<a class="headerlink" href="#pr-stacking-flow" title="Link to this heading"></a></h1>
+<p>Imagine this scenario: you completed some changes, opened a PR to your main branch.
+These changes are not merged yet, but you need to start a new task that builds on the previous changes.
+Of course, you want to minimize the merge / rebase overhead.</p>
+<p>One solution is to create a new branch based off your last feature branch, squash all the previous commits into one, and then start implementing your feature. That way, when the original changes are integrated into the main branch, you can simply rebase, removing the squashed commit.</p>
+<ol class="arabic">
+<li><p>Stash all uncommitted changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span>
 </pre></div>
 </div>
+</li>
+<li><p>Create a new branch (feature-2) based on the previous feature branch (feature-1):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">feature</span><span class="o">-</span><span class="mi">2</span> <span class="n">feature</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Reset all the commits not yes in develop, keeping the actual file changes</p>
+<blockquote>
+<div><p>git reset –soft $(git merge-base develop HEAD)</p>
+</div></blockquote>
+</li>
+<li><p>Create a commit with a meaningful name. This commit will need to be erased from history when the original feature has been merged</p>
+<blockquote>
+<div><p>git commit -m “DROP ME squash commits from previous feature branch”</p>
+</div></blockquote>
+</li>
+<li><p>Once the original changes have been merged to develop, rebase and delete the line with the DROP ME commit</p>
+<blockquote>
+<div><p>git rebase -i origin/develop</p>
+<p>…
+drop 0135a1609 DROP ME squash commits from previous feature branch
+…</p>
+</div></blockquote>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="reset.html" class="btn btn-neutral float-left" title="Reset commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="revert.html" class="btn btn-neutral float-right" title="Revert commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="oh-my-zsh-aliases.html" class="btn btn-neutral float-left" title="Oh My Zsh Aliases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rebase-squash.html" class="btn btn-neutral float-right" title="Rebase/Squash strategies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
