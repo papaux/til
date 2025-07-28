@@ -10,7 +10,7 @@ It requires a clean local state before starting (no unstaged changes).
 ::
 
     git checkout <branch>
-    git reset origin/<branch>
+    git reset --soft origin/<branch>
     git add .
     git commit -m <message>
     git push -f
