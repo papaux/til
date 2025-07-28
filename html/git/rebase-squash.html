@@ -151,7 +151,7 @@
 <p>This allows to create a single commit with all the changes between the current branch and the branch you are rebasing on.</p>
 <p>It requires a clean local state before starting (no unstaged changes).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
-<span class="n">git</span> <span class="n">reset</span> <span class="n">origin</span><span class="o">/&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">origin</span><span class="o">/&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
 <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span>
 <span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span>

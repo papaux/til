@@ -15,15 +15,19 @@ One solution is to create a new branch based off your last feature branch, squas
 
     git checkout -b feature-2 feature-1
 
-3. Reset all the commits not yes in develop, keeping the actual file changes
+3. Reset all the commits not yes in develop, keeping the actual file changes::
 
     git reset --soft $(git merge-base develop HEAD)
 
-4. Create a commit with a meaningful name. This commit will need to be erased from history when the original feature has been merged
+4. Create a commit with a meaningful name. This commit will need to be erased from history when the original feature has been merged::
 
     git commit -m "DROP ME squash commits from previous feature branch"
 
-5. Once the original changes have been merged to develop, rebase and delete the line with the DROP ME commit
+5. Unstash::
+
+    git stash apply
+
+6. Once the original changes have been merged to develop, rebase and delete the line with the DROP ME commit::
 
     git rebase -i origin/develop
 
