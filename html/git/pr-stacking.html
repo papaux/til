@@ -163,7 +163,7 @@ Of course, you want to minimize the merge / rebase overhead.</p>
 </div>
 </li>
 <li><p>Reset all the commits not yes in develop, keeping the actual file changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git reset --soft $(git merge-base develop HEAD)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git reset --soft $(git merge-base origin/develop HEAD)
 </pre></div>
 </div>
 </li>

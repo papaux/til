@@ -17,7 +17,7 @@ One solution is to create a new branch based off your last feature branch, squas
 
 3. Reset all the commits not yes in develop, keeping the actual file changes::
 
-    git reset --soft $(git merge-base develop HEAD)
+    git reset --soft $(git merge-base origin/develop HEAD)
 
 4. Create a commit with a meaningful name. This commit will need to be erased from history when the original feature has been merged::
 
