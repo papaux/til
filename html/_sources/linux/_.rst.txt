@@ -21,6 +21,7 @@ Linux
    install-date.rst
    journalctl.rst
    journalctl-size.rst
+   lsblk.rst
    mount.rst
    performance-monitoring.rst
    package-managers.rst
