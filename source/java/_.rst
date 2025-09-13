@@ -9,4 +9,5 @@ Java
    garbage-collection.rst
    http-client.rst
    jar-files.rst
+   maven.rst
 
