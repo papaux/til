@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS Caching &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>PR Splitting Flow &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Garbage Collection" href="garbage-collection.html" />
-    <link rel="prev" title="Java" href="_.html" /> 
+    <link rel="next" title="Rebase/Squash strategies" href="rebase-squash.html" />
+    <link rel="prev" title="PR Stacking Flow" href="pr-stacking.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,23 +53,44 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/_.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev-env/_.html">Development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/_.html">Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/_.html">Git</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="blame.html">Blame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branch.html">Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branching-models.html">Branching Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean.html">Clean commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-empty-branch.html">Create empty branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diff.html">Diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eol.html">End of line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fork.html">Fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitignore.html">Gitignore syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grep-in-logs.html">Grep in git logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="housekeeping.html">Housekeeping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kdiff-as-mergetool.html">Kdiff as mergetool without auto merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Log commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge-tips.html">Merge tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mirror-repository.html">Replicate a repository (branches+tags)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oh-my-zsh-aliases.html">Oh My Zsh Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pr-stacking.html">PR Stacking Flow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PR Splitting Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebase-squash.html">Rebase/Squash strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebase-with-conflicts.html">Rebase with conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Repositories Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset.html">Reset commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retag.html">Re-tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revert.html">Revert commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="short-hash-from-full.html">Short hash from full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stash-only-unstage.html">Stash only unstaged</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">Status commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tag.html">Tag commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undo.html">Undo in git</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../go/_.html">Golang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hadoop/_.html">Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../influxdb/_.html">InfluxDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iptables/_.html">iptables</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">Java</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DNS Caching</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#security-context">Security Context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-property">System Property</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="garbage-collection.html">Garbage Collection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="http-client.html">HTTP Client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jar-files.html">JAR files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="maven.html">Maven</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../java/_.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
@@ -114,10 +135,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="_.html">Java</a></li>
-      <li class="breadcrumb-item active">DNS Caching</li>
+          <li class="breadcrumb-item"><a href="_.html">Git</a></li>
+      <li class="breadcrumb-item active">PR Splitting Flow</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/java/dns-caching.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git/pr-split-multiple-branches.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -125,39 +146,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dns-caching">
-<h1>DNS Caching<a class="headerlink" href="#dns-caching" title="Link to this heading"></a></h1>
-<p>The JVM keeps previous DNS resolution (successful or failed) in a local cache.</p>
-<p>There is no true default value. The cache is _usually_ 30 seconds on Oracle JVM. It may vary with implementations.</p>
-<p>DNS TTL is considered a security settings (to avoid DNS Spoofing) and the default value also changes when a security context is given. Usually, if a security context is given, the DNS TTL changes to infinite!! Which means that any DNS resolution is kept until the JVM restarts!</p>
-<p>This works fine most of the time, but breaks when the target IP might change (load balancing, service fail-over, …).</p>
-<p>Fortunately, the configuration can be changed. Some special values:
-* -1 means “cache forever”
-* 0 means “never cache”</p>
-<section id="security-context">
-<h2>Security Context<a class="headerlink" href="#security-context" title="Link to this heading"></a></h2>
-<p>Configuration to be set in the <cite>java.security</cite> file.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.ttl</span></code>: caching policy for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">networkaddress.cache.negative.ttl</span></code>: caching policy for failed lookups.</p></li>
-</ul>
-</section>
-<section id="system-property">
-<h2>System Property<a class="headerlink" href="#system-property" title="Link to this heading"></a></h2>
-<p>While some sun private system properties do exist, the recommended option is to use security properties.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.ttl</span></code>: a sun private system property for successful resolutions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sun.net.inetaddr.negative.ttl</span></code>: a sun private system property for failed lookups.</p></li>
-</ul>
-</section>
+  <section id="pr-splitting-flow">
+<h1>PR Splitting Flow<a class="headerlink" href="#pr-splitting-flow" title="Link to this heading"></a></h1>
+<p>Split a big PR / branch in multiple smaller chunks.</p>
+<ol class="arabic">
+<li><p>Get the common ancestor</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">BASE=$(git</span> <span class="pre">merge-base</span> <span class="pre">origin/develop</span> <span class="pre">HEAD)</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Get a patch with all changes</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">git</span> <span class="pre">format-patch</span> <span class="pre">--stdout</span> <span class="pre">$BASE..HEAD</span> <span class="pre">&gt;</span> <span class="pre">my-feature.patch</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Create a new empty branch based off the BASE</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">gco</span> <span class="pre">-b</span> <span class="pre">my-feature-a</span> <span class="pre">$BASE</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Apply the patch, leaving working tree uncommitted</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">git</span> <span class="pre">apply</span> <span class="pre">--index</span> <span class="pre">my-feature.patch</span>
+<span class="pre">git</span> <span class="pre">reset</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Stage whatever you want with your IDE or interactively add</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">git</span> <span class="pre">add</span> <span class="pre">-p</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Commit</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Topic</span> <span class="pre">A:</span> <span class="pre">...&quot;</span>
+<span class="pre">``</span></code></p>
+</div></blockquote>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="garbage-collection.html" class="btn btn-neutral float-right" title="Garbage Collection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pr-stacking.html" class="btn btn-neutral float-left" title="PR Stacking Flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rebase-squash.html" class="btn btn-neutral float-right" title="Rebase/Squash strategies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

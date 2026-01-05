@@ -22,6 +22,7 @@ Git
    mirror-repository.rst
    oh-my-zsh-aliases.rst
    pr-stacking.rst
+   pr-split-multiple-branches.rst
    rebase-squash.rst
    rebase-with-conflicts.rst
    remote.rst
