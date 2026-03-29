@@ -6,7 +6,6 @@ ArchLinux
    :maxdepth: 1
 
    aur-patch.rst
-   benchmark.rst
    emoji.rst
    gnome-autostart-script.rst
    grub-repair.rst
@@ -18,6 +17,7 @@ ArchLinux
    pacman-list-packages-by-size.rst
    pacman-maintenance.rst
    pacman-reinstall-with-deps.rst
+   phoronix-benchmark.rst
    remove-unused-locales.rst
    system-installation-date.rst
    yay.rst
