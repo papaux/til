@@ -5,6 +5,7 @@ Linux
    :maxdepth: 1
 
    arp.rst
+   benchmark.rst
    bluetooth.rst
    cgroup.rst
    cpu-supervision.rst
@@ -38,7 +39,6 @@ Linux
    tcpdump-filters.rst
    usb-power.rst
    user-management-cheatsheet.rst
-   vi-write-sudo.rst
    vnc-server.rst
    yum.rst
    zfs.rst

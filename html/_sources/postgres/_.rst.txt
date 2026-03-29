@@ -4,5 +4,6 @@ Postgres
 .. toctree::
    :maxdepth: 1
 
+   benchmark.rst
    housekeeping.rst
    schema_exploration.rst

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sudo timeouts &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Linux Benchmark &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="netstat" href="netstat.html" />
-    <link rel="prev" title="SSH Tunnels" href="ssh-tunnels.html" /> 
+    <link rel="next" title="bluetooth" href="bluetooth.html" />
+    <link rel="prev" title="arp" href="arp.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -65,7 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">Linux</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arp.html">arp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Linux Benchmark</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bluetooth.html">bluetooth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cgroup.html">cgroup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu-supervision.html">CPU Supervision</a></li>
@@ -94,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="software-raid.html">Software RAID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-remove-hostname.html">SSH Remove hostname</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh-tunnels.html">SSH Tunnels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sudo timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sudo-timeout.html">sudo timeouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netstat.html">netstat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tcpdump-filters.html">tcpdump: filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb-power.html">USB Power Management</a></li>
@@ -144,9 +144,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="_.html">Linux</a></li>
-      <li class="breadcrumb-item active">sudo timeouts</li>
+      <li class="breadcrumb-item active">Linux Benchmark</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/linux/sudo-timeout.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/linux/benchmark.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -154,26 +154,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sudo-timeouts">
-<h1>sudo timeouts<a class="headerlink" href="#sudo-timeouts" title="Link to this heading"></a></h1>
-<p>The default timeouts for <code class="docutils literal notranslate"><span class="pre">sudo</span></code> commands are pretty aggressive.</p>
-<p>Here are two parameters to tweek the sudo behavior:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">passwd_timeout</span></code>: Number of minutes before the sudo password prompt expires.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">timestamp_timeout</span></code>: Number of minutes before the user needs to re-enter the sudo password.</p></li>
-</ul>
-<p>You need to apply these changes to the sudoers config file. Usually with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code> command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Defaults</span> <span class="n">env_reset</span><span class="p">,</span><span class="n">passwd_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">timestamp_timeout</span><span class="o">=</span><span class="mi">30</span>
+  <section id="linux-benchmark">
+<h1>Linux Benchmark<a class="headerlink" href="#linux-benchmark" title="Link to this heading"></a></h1>
+<p>Disk benchmark (read):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fio</span> <span class="o">--</span><span class="n">filename</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">vda1</span> <span class="o">--</span><span class="n">direct</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="n">rw</span><span class="o">=</span><span class="n">randread</span> <span class="o">--</span><span class="n">bs</span><span class="o">=</span><span class="mi">4</span><span class="n">k</span> <span class="o">--</span><span class="n">ioengine</span><span class="o">=</span><span class="n">libaio</span> <span class="o">--</span><span class="n">iodepth</span><span class="o">=</span><span class="mi">256</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="mi">120</span> <span class="o">--</span><span class="n">numjobs</span><span class="o">=</span><span class="mi">4</span> <span class="o">--</span><span class="n">time_based</span> <span class="o">--</span><span class="n">group_reporting</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">iops</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">job</span> <span class="o">--</span><span class="n">eta</span><span class="o">-</span><span class="n">newline</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="n">readonly</span>
 </pre></div>
 </div>
+<p>Options:
+* <cite>–filename</cite> : the file or device to test
+* <cite>–direct</cite> : use direct I/O
+* <cite>–rw</cite> : type of I/O pattern (e.g., randread, randwrite, read, write)
+* <cite>–bs</cite> : block size
+* <cite>–ioengine</cite> : I/O engine to use (e.g., libaio, sync)
+* <cite>–iodepth</cite> : number of I/O operations to keep in flight
+* <cite>–runtime</cite> : duration of the test in seconds
+* <cite>–numjobs</cite> : number of threads to use
+* <cite>–time_based</cite> : run the test for the specified time
+* <cite>–group_reporting</cite> : report results for the entire group of jobs
+* <cite>–name</cite> : name of the job
+* <cite>–eta-newline</cite> : print ETA on a new line
+* <cite>–readonly</cite> : perform read-only tests</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ssh-tunnels.html" class="btn btn-neutral float-left" title="SSH Tunnels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="netstat.html" class="btn btn-neutral float-right" title="netstat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arp.html" class="btn btn-neutral float-left" title="arp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bluetooth.html" class="btn btn-neutral float-right" title="bluetooth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
