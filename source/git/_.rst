@@ -8,6 +8,7 @@ Git
    branch.rst
    branching-models.rst
    clean.rst
+   codebase-analysis.rst
    config.rst
    create-empty-branch.rst
    diff.rst
