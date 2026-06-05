@@ -137,10 +137,11 @@
 <h1>Davinci Resolve on Arch<a class="headerlink" href="#davinci-resolve-on-arch" title="Link to this heading"></a></h1>
 <p>There is an AUR package, but I had trouble to get it working.
 The first issue was qt5-webenging causing GCC segfault.</p>
-<p>This is how I did.</p>
+<p>This is how I did using info from AUR, arch wiki and this post
+<a class="reference external" href="https://forum.blackmagicdesign.com/viewtopic.php?f=21&amp;t=237038">https://forum.blackmagicdesign.com/viewtopic.php?f=21&amp;t=237038</a></p>
 <ol class="arabic">
 <li><p>Install dependencies from AUR:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yay</span> <span class="o">-</span><span class="n">S</span> <span class="n">qt5</span><span class="o">-</span><span class="n">multimedia</span> <span class="n">libpng12</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yay</span> <span class="o">-</span><span class="n">S</span> <span class="n">qt5</span><span class="o">-</span><span class="n">multimedia</span> <span class="n">libpng12</span> <span class="n">qt5</span><span class="o">-</span><span class="n">websockets</span>
 </pre></div>
 </div>
 </li>
@@ -171,6 +172,28 @@ BUILDDIR=$HOME/tmp/makepkg
 </li>
 <li><p>Build and install:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">makepkg</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start resolve:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">resolve</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">resolve</span>
+</pre></div>
+</div>
+</li>
+<li><p>If getting <code class="docutils literal notranslate"><span class="pre">undefined</span> <span class="pre">symbol:</span> <span class="pre">_ZNSt3__117bad_function_callD1Ev</span></code> at startup, then some custom libs are needed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">tmp</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="o">~/</span><span class="n">tmp</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">o</span> <span class="n">libc</span><span class="o">++-</span><span class="mf">20.1.6</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">zst</span> \\<span class="n">n</span><span class="s1">&#39;https://archive.archlinux.org/packages/l/libc%2B%2B/libc%2B%2B-20.1.6-2-x86_64.pkg.tar.zst&#39;</span>
+<span class="n">ll</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">o</span> <span class="n">libc</span><span class="o">++</span><span class="n">abi</span><span class="o">-</span><span class="mf">20.1.6</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">zst</span> \\<span class="n">n</span><span class="s1">&#39;https://archive.archlinux.org/packages/l/libc%2B%2Babi/libc%2B%2Babi-20.1.6-2-x86_64.pkg.tar.zst&#39;</span>
+<span class="n">sudo</span> <span class="n">bsdtar</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">resolve</span><span class="o">/</span><span class="n">libs</span> <span class="o">-</span><span class="n">xf</span> <span class="n">libc</span><span class="o">++-</span><span class="mf">20.1.6</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">zst</span> <span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+<span class="n">sudo</span> <span class="n">bsdtar</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">resolve</span><span class="o">/</span><span class="n">libs</span> <span class="o">-</span><span class="n">xf</span> <span class="n">libc</span><span class="o">++</span><span class="n">abi</span><span class="o">-</span><span class="mf">20.1.6</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">zst</span> <span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">resolve</span><span class="o">/</span><span class="n">libs</span>
+<span class="n">sudo</span> <span class="n">mv</span> <span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libc</span><span class="o">++*.</span><span class="n">so</span><span class="o">*</span> <span class="o">.</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">usr</span>
+</pre></div>
+</div>
+</li>
+<li><p>Try starting again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">resolve</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">resolve</span>
 </pre></div>
 </div>
 </li>
