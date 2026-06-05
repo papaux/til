@@ -6,6 +6,7 @@ ArchLinux
    :maxdepth: 1
 
    aur-patch.rst
+   davinci-resolve.rst
    emoji.rst
    gnome-autostart-script.rst
    grub-repair.rst

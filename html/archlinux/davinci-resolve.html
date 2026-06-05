@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yay: installer for AUR packages &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Davinci Resolve on Arch &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bash" href="../bash/_.html" />
-    <link rel="prev" title="System installation date" href="system-installation-date.html" /> 
+    <link rel="next" title="Emoji" href="emoji.html" />
+    <link rel="prev" title="AUR: patch" href="aur-patch.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/_.html">Applications</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="_.html">ArchLinux</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="aur-patch.html">AUR: patch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="davinci-resolve.html">Davinci Resolve on Arch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Davinci Resolve on Arch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emoji.html">Emoji</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gnome-autostart-script.html">Gnome: autostart script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grub-repair.html">GRUB Repair</a></li>
@@ -64,7 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="phoronix-benchmark.html">Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove-unused-locales.html">Remove unused locales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system-installation-date.html">System installation date</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Yay: installer for AUR packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yay.html">Yay: installer for AUR packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bash/_.html">Bash</a></li>
@@ -123,9 +123,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="_.html">ArchLinux</a></li>
-      <li class="breadcrumb-item active">Yay: installer for AUR packages</li>
+      <li class="breadcrumb-item active">Davinci Resolve on Arch</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/archlinux/yay.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/archlinux/davinci-resolve.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -133,23 +133,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="yay-installer-for-aur-packages">
-<h1>Yay: installer for AUR packages<a class="headerlink" href="#yay-installer-for-aur-packages" title="Link to this heading"></a></h1>
-<p>Yay is a replacement for <code class="docutils literal notranslate"><span class="pre">yaourt</span></code>. This is a cheatsheet with useful commands.</p>
-<p><strong>Disable compression</strong></p>
-<p>On slow hardware, compressing packages might take a very and unnecessary long time if you clean your cache frequently.</p>
-<p>This will install packages without compressing them:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PKGEXT</span><span class="o">=</span><span class="s1">&#39;.pkg.tar&#39;</span> <span class="n">yay</span> <span class="o">-</span><span class="n">Syu</span>
+  <section id="davinci-resolve-on-arch">
+<h1>Davinci Resolve on Arch<a class="headerlink" href="#davinci-resolve-on-arch" title="Link to this heading"></a></h1>
+<p>There is an AUR package, but I had trouble to get it working.
+The first issue was qt5-webenging causing GCC segfault.</p>
+<p>This is how I did.</p>
+<ol class="arabic">
+<li><p>Install dependencies from AUR:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yay</span> <span class="o">-</span><span class="n">S</span> <span class="n">qt5</span><span class="o">-</span><span class="n">multimedia</span> <span class="n">libpng12</span>
 </pre></div>
 </div>
+</li>
+<li><p>Install pre-compiled dependencies</p>
+<blockquote>
+<div><ul>
+<li><p>Download pre-built qt5-webengine as I had GCC crash while building it: <a class="reference external" href="https://sourceforge.net/projects/fabiololix-os-archive/files/Packages/">https://sourceforge.net/projects/fabiololix-os-archive/files/Packages/</a></p></li>
+<li><p>Install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">U</span> <span class="n">qt5</span><span class="o">-</span><span class="n">webengine</span><span class="o">-</span><span class="mf">5.15.19</span><span class="o">-</span><span class="mf">4.1</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">pkg</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">zst</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Get the prebuilt package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aur</span><span class="o">.</span><span class="n">archlinux</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">davinci</span><span class="o">-</span><span class="n">resolve</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">davinci</span><span class="o">-</span><span class="n">resolve</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download DaVinci resolve ZIP and save it in that folder</p></li>
+<li><p>Make sure your build dir is NOT in /tmp as it uses lots of storage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep BUILDDIR /etc/makepkg.conf
+BUILDDIR=$HOME/tmp/makepkg
+</pre></div>
+</div>
+</li>
+<li><p>Build and install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">makepkg</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="system-installation-date.html" class="btn btn-neutral float-left" title="System installation date" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../bash/_.html" class="btn btn-neutral float-right" title="Bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="aur-patch.html" class="btn btn-neutral float-left" title="AUR: patch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="emoji.html" class="btn btn-neutral float-right" title="Emoji" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
