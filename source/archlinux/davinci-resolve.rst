@@ -8,7 +8,7 @@ This is how I did.
 
 1. Install dependencies from AUR::
 
-    yay -S qt5-multimedia
+    yay -S qt5-multimedia libpng12
 
 2. Install pre-compiled dependencies
 
