@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Best of Youtube &mdash; Geoffrey&#39;s TIL 0 documentation</title>
+  <title>Winget &mdash; Geoffrey&#39;s TIL 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/style.css?v=26f6988d" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="List of cloud services" href="cloud-services.html" />
-    <link rel="prev" title="Links" href="_.html" /> 
+    <link rel="next" title="WSL" href="wsl.html" />
+    <link rel="prev" title="Windows" href="_.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,17 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../kafka/_.html">Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes/_.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/_.html">KVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="_.html">Links</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Best of Youtube</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#technical">Technical</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="cloud-services.html">List of cloud services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="engineering-manager-resources.html">Engineering Manager Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="free-design.html">Free Design Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html">Music</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../links/_.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/_.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/_.html">Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../media/_.html">Media</a></li>
@@ -94,7 +84,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../vim/_.html">vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vscode/_.html">VSCode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web/_.html">Web</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../windows/_.html">Windows</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="_.html">Windows</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Winget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wsl.html">WSL</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../yum/_.html">yum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zsh/_.html">zsh</a></li>
 </ul>
@@ -113,10 +107,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="_.html">Links</a></li>
-      <li class="breadcrumb-item active">Best of Youtube</li>
+          <li class="breadcrumb-item"><a href="_.html">Windows</a></li>
+      <li class="breadcrumb-item active">Winget</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/links/best-of-youtube.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/windows/winget.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -124,28 +118,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="best-of-youtube">
-<h1>Best of Youtube<a class="headerlink" href="#best-of-youtube" title="Link to this heading"></a></h1>
-<p>Some of the best youtube videos for motivation, learning, inspiration, …</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=xguam0TKMw8">Principles for Dealing with the Changing World Order by Ray Dalio</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=REeROakzwfU">You Will Never Be Lazy Again by Jim Kwik</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=xNgQOHwsIbg">This Is Why You Don’t Succeed - Simon Sinek on The Millennial Generation</a></p></li>
-</ul>
-<section id="technical">
-<h2>Technical<a class="headerlink" href="#technical" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=pBASqUbZgkY">Every Type Of API You Must Know Explained!</a></p></li>
-</ul>
-</section>
+  <section id="winget">
+<h1>Winget<a class="headerlink" href="#winget" title="Link to this heading"></a></h1>
+<p>Winget allows to manage software packages on Windows.</p>
+<p>Update all packages in unattended mode (start from admin command prompt):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">winget</span> <span class="n">upgrade</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">source</span> <span class="n">winget</span> <span class="o">--</span><span class="n">silent</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">agreements</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="n">agreements</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_.html" class="btn btn-neutral float-left" title="Links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cloud-services.html" class="btn btn-neutral float-right" title="List of cloud services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_.html" class="btn btn-neutral float-left" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wsl.html" class="btn btn-neutral float-right" title="WSL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

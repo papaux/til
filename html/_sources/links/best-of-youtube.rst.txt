@@ -8,6 +8,7 @@ Some of the best youtube videos for motivation, learning, inspiration, ...
 * `This Is Why You Don't Succeed - Simon Sinek on The Millennial Generation <https://www.youtube.com/watch?v=xNgQOHwsIbg>`_ 
 
 
+Technical
+~~~~~~~~~
 
-
-
+* `Every Type Of API You Must Know Explained! <https://www.youtube.com/watch?v=pBASqUbZgkY>`_
